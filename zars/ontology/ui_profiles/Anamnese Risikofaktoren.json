@@ -1,0 +1,3126 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [],
+                    "display": "Lungentuberkulose ohne Angabe einer bakteriologischen, molekularbiologischen oder histologischen Sicherung",
+                    "id": "c8edd728-2bcc-475d-a4f6-6e691dbf67ad",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "A16.2",
+                        "display": "Lungentuberkulose ohne Angabe einer bakteriologischen, molekularbiologischen oder histologischen Sicherung",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "\u00dcberm\u00e4\u00dfige Adipositas mit alveol\u00e4rer Hypoventilation",
+                    "id": "f6f4688d-e8e5-49a9-b79c-3c648951a36d",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "E66.2",
+                        "display": "\u00dcberm\u00e4\u00dfige Adipositas mit alveol\u00e4rer Hypoventilation",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Schlafapnoe",
+                    "id": "0f98ca2c-4c3b-4fe2-8e7f-8ecd485c3608",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "G47.3",
+                        "display": "Schlafapnoe",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Krankheit der Atemwege durch spezifischen organischen Staub",
+                    "id": "e90a4f47-0f8b-43f1-9a95-cae7d67a565c",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "J66.0",
+                        "display": "Krankheit der Atemwege durch spezifischen organischen Staub",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Farmerlunge",
+                    "id": "baf5b5f8-0126-40e6-913f-0ad3121140bf",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "J67.0",
+                        "display": "Farmerlunge",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Bagassose",
+                    "id": "2b96be3d-cc60-44bd-970f-bdcbed9d4757",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "J67.1",
+                        "display": "Bagassose",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Chronische Krankheiten der Atmungsorgane durch chemische Substanzen, Gase, Rauch und D\u00e4mpfe",
+                    "id": "c621d822-372f-4cf3-966a-761968d58017",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "J68.4",
+                        "display": "Chronische Krankheiten der Atmungsorgane durch chemische Substanzen, Gase, Rauch und D\u00e4mpfe",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Chronische und sonstige Lungenbeteiligung bei Strahleneinwirkung",
+                    "id": "7c751e54-395c-4618-8040-6279dac81b39",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "J70.1",
+                        "display": "Chronische und sonstige Lungenbeteiligung bei Strahleneinwirkung",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Arzneimittelinduzierte interstitielle Lungenkrankheit, nicht n\u00e4her bezeichnet",
+                    "id": "4188d081-9840-4461-b1b6-6014c455e4f5",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "J70.4",
+                        "display": "Arzneimittelinduzierte interstitielle Lungenkrankheit, nicht n\u00e4her bezeichnet",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sonstige interstitielle Lungenkrankheiten mit Fibrose",
+                    "id": "10c492c5-fcdf-4e50-8274-b302dd4d2628",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "J84.1",
+                        "display": "Sonstige interstitielle Lungenkrankheiten mit Fibrose",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sonstige chronische Atemwegskrankheiten mit Ursprung in der Perinatalperiode",
+                    "id": "61c841c6-1a9b-486a-a56a-59bee284db80",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "P27.8",
+                        "display": "Sonstige chronische Atemwegskrankheiten mit Ursprung in der Perinatalperiode",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Krankheiten des Atmungssystems in der Eigenanamnese",
+                    "id": "014d3cd8-4a7c-43c2-9e11-7f37003e5188",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "Z87.0",
+                        "display": "Krankheiten des Atmungssystems in der Eigenanamnese",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Zystische Fibrose",
+                    "id": "39d9f564-9028-4cc3-a4f6-cc84e207d5cd",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "E84",
+                        "display": "Zystische Fibrose",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sonstige pulmonale Herzkrankheiten",
+                    "id": "f930d59a-41c5-485d-ae49-3ef5ba5ca323",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "I27",
+                        "display": "Sonstige pulmonale Herzkrankheiten",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sonstige chronische obstruktive Lungenkrankheit",
+                    "id": "6d82bcf9-16a1-4b06-9099-bcd8bd69c604",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "J44",
+                        "display": "Sonstige chronische obstruktive Lungenkrankheit",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Asthma bronchiale",
+                    "id": "b5d2e56e-54d6-4e76-9e71-fa318a2a1453",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "J45",
+                        "display": "Asthma bronchiale",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Kohlenbergarbeiter-Pneumokoniose",
+                    "id": "ad0012d2-bd0d-4fc1-aaba-10c312f26094",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "J60",
+                        "display": "Kohlenbergarbeiter-Pneumokoniose",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Pneumokoniose durch Asbest und sonstige anorganische Fasern",
+                    "id": "0f3d0bf6-d623-45f1-a156-cf25c81b1e1a",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "J61",
+                        "display": "Pneumokoniose durch Asbest und sonstige anorganische Fasern",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Pneumokoniose durch Quarzstaub",
+                    "id": "83dd8344-6d20-4975-b19e-cfa5c3ede8b1",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "J62",
+                        "display": "Pneumokoniose durch Quarzstaub",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Pneumokoniose durch sonstige anorganische St\u00e4ube",
+                    "id": "b2c6e973-126e-4a13-911f-cba3c2a35129",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "J63",
+                        "display": "Pneumokoniose durch sonstige anorganische St\u00e4ube",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Nicht n\u00e4her bezeichnete Pneumokoniose",
+                    "id": "05284440-c286-4260-85c6-c6f954a98868",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "J64",
+                        "display": "Nicht n\u00e4her bezeichnete Pneumokoniose",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                }
+            ],
+            "display": "Chronische Lungenerkrankungen",
+            "id": "d7525d5a-dded-4d71-9580-b0d8710a60c9",
+            "leaf": false,
+            "selectable": true,
+            "termCode": {
+                "code": "413839001",
+                "display": "chronische longziekte (aandoening)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [
+                {
+                    "children": [],
+                    "display": "Vorhandensein eines aortokoronaren Bypasses",
+                    "id": "9188d60c-dd06-4406-885f-99778adbcc70",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "Z95.1",
+                        "display": "Vorhandensein eines aortokoronaren Bypasses",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vorhandensein eines Implantates oder Transplantates nach koronarer Gef\u00e4\u00dfplastik",
+                    "id": "f26b296e-afbc-4f43-bb57-055bb1600d56",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "Z95.5",
+                        "display": "Vorhandensein eines Implantates oder Transplantates nach koronarer Gef\u00e4\u00dfplastik",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Akutes rheumatisches Fieber",
+                    "id": "c9484d6b-93a8-4729-bdc8-e7e817cc485a",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "I00-I02",
+                        "display": "Akutes rheumatisches Fieber",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Chronische rheumatische Herzkrankheiten",
+                    "id": "4f1c46ea-6853-4914-8271-4f55f0bd2c7e",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "I05-I09",
+                        "display": "Chronische rheumatische Herzkrankheiten",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Hypertonie [Hochdruckkrankheit]",
+                    "id": "f9837510-63ad-489f-9faf-6aa1964c6516",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "I10-I15",
+                        "display": "Hypertonie [Hochdruckkrankheit]",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Isch\u00e4mische Herzkrankheiten",
+                    "id": "41d7ff38-5255-4131-95d8-2ec664e58984",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "I20-I25",
+                        "display": "Isch\u00e4mische Herzkrankheiten",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Pulmonale Herzkrankheit und Krankheiten des Lungenkreislaufes",
+                    "id": "76b190ca-f60f-4c36-b18b-eafa09326c3f",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "I26-I28",
+                        "display": "Pulmonale Herzkrankheit und Krankheiten des Lungenkreislaufes",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sonstige Formen der Herzkrankheit",
+                    "id": "a636d8a8-f4ac-47a9-9e14-33a82027bf07",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "I30-I52",
+                        "display": "Sonstige Formen der Herzkrankheit",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Zerebrovaskul\u00e4re Krankheiten",
+                    "id": "ed2b3f9a-e9f3-448e-a49a-4d3b75cb7457",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "I60-I69",
+                        "display": "Zerebrovaskul\u00e4re Krankheiten",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Krankheiten der Arterien, Arteriolen und Kapillaren",
+                    "id": "e5b2e137-f5a6-4596-9eeb-b0f91ea9e3c4",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "I70-I79",
+                        "display": "Krankheiten der Arterien, Arteriolen und Kapillaren",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Krankheiten der Venen, der Lymphgef\u00e4\u00dfe und der Lymphknoten, anderenorts nicht klassifiziert",
+                    "id": "be9e6fdd-7855-42f7-b922-30592153eae1",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "I80-I89",
+                        "display": "Krankheiten der Venen, der Lymphgef\u00e4\u00dfe und der Lymphknoten, anderenorts nicht klassifiziert",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sonstige und nicht n\u00e4her bezeichnete Krankheiten des Kreislaufsystems",
+                    "id": "66db004e-cefa-4d49-9392-65bf1d46394c",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "I95-I99",
+                        "display": "Sonstige und nicht n\u00e4her bezeichnete Krankheiten des Kreislaufsystems",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                }
+            ],
+            "display": "Herz-Kreislauf-Erkrankungen",
+            "id": "3fa50203-852e-4dae-a221-29445287f320",
+            "leaf": false,
+            "selectable": true,
+            "termCode": {
+                "code": "49601007",
+                "display": "Disorder of cardiovascular system (disorder)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [
+                {
+                    "children": [],
+                    "display": "Chronische Virushepatitis",
+                    "id": "a4c5d9f0-7aaf-4d35-9c5f-3331ef36735e",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "B18",
+                        "display": "Chronische Virushepatitis",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Krankheiten der Leber",
+                    "id": "405f2986-8b8a-455e-9115-c714147d183f",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "K70-K77",
+                        "display": "Krankheiten der Leber",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                }
+            ],
+            "display": "Chronische Lebererkrankungen",
+            "id": "ec4ae417-7da6-4db7-904c-2671b53733bb",
+            "leaf": false,
+            "selectable": true,
+            "termCode": {
+                "code": "328383001",
+                "display": "chronische leverziekte (aandoening)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [
+                {
+                    "children": [],
+                    "display": "Chronische Polyarthritis, nicht n\u00e4her bezeichnet : Nicht n\u00e4her bezeichnete Lokalisation",
+                    "id": "453b84f0-b211-4f36-89c3-4e294393fc9a",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "M06.99",
+                        "display": "Chronische Polyarthritis, nicht n\u00e4her bezeichnet : Nicht n\u00e4her bezeichnete Lokalisation",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Arteriitis, nicht n\u00e4her bezeichnet",
+                    "id": "8a96e5d5-4dc6-4830-bd59-af5e885c902a",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "I77.6",
+                        "display": "Arteriitis, nicht n\u00e4her bezeichnet",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Immundefekt mit vorherrschendem Antik\u00f6rpermangel",
+                    "id": "2d2c7b4d-7357-416a-bfcd-870379613355",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "D80",
+                        "display": "Immundefekt mit vorherrschendem Antik\u00f6rpermangel",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Kombinierte Immundefekte",
+                    "id": "7ab598bc-adf3-4b40-ab5a-009514c52db6",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "D81",
+                        "display": "Kombinierte Immundefekte",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Immundefekt in Verbindung mit anderen schweren Defekten",
+                    "id": "03081813-e037-4263-8522-64b78cb4385f",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "D82",
+                        "display": "Immundefekt in Verbindung mit anderen schweren Defekten",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Variabler Immundefekt [common variable immunodeficiency]",
+                    "id": "8164f7b4-9311-4077-b57c-0fe32fe73eec",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "D83",
+                        "display": "Variabler Immundefekt [common variable immunodeficiency]",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sonstige Immundefekte",
+                    "id": "97184995-60b5-4847-858c-5b31167da416",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "D84",
+                        "display": "Sonstige Immundefekte",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sarkoidose",
+                    "id": "0b32fb32-7add-480e-961c-134a312019f6",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "D86",
+                        "display": "Sarkoidose",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sonstige St\u00f6rungen mit Beteiligung des Immunsystems, anderenorts nicht klassifiziert",
+                    "id": "098a47d5-6f14-464b-9195-06a72230d552",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "D89",
+                        "display": "Sonstige St\u00f6rungen mit Beteiligung des Immunsystems, anderenorts nicht klassifiziert",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Immunkompromittierung nach Bestrahlung, Chemotherapie und sonstigen immunsuppressiven Ma\u00dfnahmen",
+                    "id": "1e3aa5c8-0fa6-4634-8898-506b4f529c10",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "D90",
+                        "display": "Immunkompromittierung nach Bestrahlung, Chemotherapie und sonstigen immunsuppressiven Ma\u00dfnahmen",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Crohn-Krankheit [Enteritis regionalis] [Morbus Crohn]",
+                    "id": "e6aaecb5-7c13-48dc-953e-b5f2a0373fae",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "K50",
+                        "display": "Crohn-Krankheit [Enteritis regionalis] [Morbus Crohn]",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Colitis ulcerosa",
+                    "id": "119e9979-8f39-4ee1-bb06-ae74517a8827",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "K51",
+                        "display": "Colitis ulcerosa",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sonstige nichtinfekti\u00f6se Gastroenteritis und Kolitis",
+                    "id": "2f1e4504-6490-4025-868f-932fd0003b3a",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "K52",
+                        "display": "Sonstige nichtinfekti\u00f6se Gastroenteritis und Kolitis",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Panarteriitis nodosa und verwandte Zust\u00e4nde",
+                    "id": "78eb168b-8038-4538-b12d-5c6a55200717",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "M30",
+                        "display": "Panarteriitis nodosa und verwandte Zust\u00e4nde",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sonstige nekrotisierende Vaskulopathien",
+                    "id": "94e3c9bc-d83a-4cf6-8d14-d8a928d33147",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "M31",
+                        "display": "Sonstige nekrotisierende Vaskulopathien",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Systemischer Lupus erythematodes",
+                    "id": "6d2d198a-3053-447d-a0dd-75a55f8e2ddd",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "M32",
+                        "display": "Systemischer Lupus erythematodes",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Dermatomyositis-Polymyositis",
+                    "id": "6214e565-69b3-4949-80a9-cbe01ddc7aa4",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "M33",
+                        "display": "Dermatomyositis-Polymyositis",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Systemische Sklerose",
+                    "id": "7b49f8f6-9716-4896-b95b-bbc2c30d11c9",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "M34",
+                        "display": "Systemische Sklerose",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sonstige Krankheiten mit Systembeteiligung des Bindegewebes",
+                    "id": "68489d53-d34f-4b31-adf0-3c634acc19fb",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "M35",
+                        "display": "Sonstige Krankheiten mit Systembeteiligung des Bindegewebes",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Systemkrankheiten des Bindegewebes bei anderenorts klassifizierten Krankheiten",
+                    "id": "7682c7b4-3c40-4dc6-9c1b-487dae6fd545",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "M36",
+                        "display": "Systemkrankheiten des Bindegewebes bei anderenorts klassifizierten Krankheiten",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                }
+            ],
+            "display": "Rheumatologische/immunologische Erkrankungen",
+            "id": "b923da84-ec71-4f7d-b3ac-0fb8d8a6a0c2",
+            "leaf": false,
+            "selectable": true,
+            "termCode": {
+                "code": "396332003",
+                "display": "Rheumatism (disorder)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [
+                {
+                    "children": [],
+                    "display": "Infekti\u00f6se und parasit\u00e4re Krankheiten infolge HIV-Krankheit [Humane Immundefizienz-Viruskrankheit]",
+                    "id": "96261870-25d0-4db6-9836-4b057088e615",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "B20",
+                        "display": "Infekti\u00f6se und parasit\u00e4re Krankheiten infolge HIV-Krankheit [Humane Immundefizienz-Viruskrankheit]",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "B\u00f6sartige Neubildungen infolge HIV-Krankheit [Humane Immundefizienz-Viruskrankheit]",
+                    "id": "d0e24d93-15e5-4d97-9cac-a77843320db7",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "B21",
+                        "display": "B\u00f6sartige Neubildungen infolge HIV-Krankheit [Humane Immundefizienz-Viruskrankheit]",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sonstige n\u00e4her bezeichnete Krankheiten infolge HIV-Krankheit [Humane Immundefizienz-Viruskrankheit]",
+                    "id": "69f3fe71-4a09-4681-9ed7-ecbe48b1594f",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "B22",
+                        "display": "Sonstige n\u00e4her bezeichnete Krankheiten infolge HIV-Krankheit [Humane Immundefizienz-Viruskrankheit]",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sonstige Krankheitszust\u00e4nde infolge HIV-Krankheit [Humane Immundefizienz-Viruskrankheit]",
+                    "id": "10e01e7b-0fb6-451e-8234-8cd39f1fe39d",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "B23",
+                        "display": "Sonstige Krankheitszust\u00e4nde infolge HIV-Krankheit [Humane Immundefizienz-Viruskrankheit]",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Nicht n\u00e4her bezeichnete HIV-Krankheit [Humane Immundefizienz-Viruskrankheit]",
+                    "id": "17c7606d-7dfe-439e-91e3-c8bc3de7db88",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "B24",
+                        "display": "Nicht n\u00e4her bezeichnete HIV-Krankheit [Humane Immundefizienz-Viruskrankheit]",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                }
+            ],
+            "display": "Bestehende HIV-Infektion",
+            "id": "f48c8033-b3fd-4b1c-8f4c-b5efe810285b",
+            "leaf": false,
+            "selectable": true,
+            "termCode": {
+                "code": "86406008",
+                "display": "Human immunodeficiency virus infection (disorder)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [
+                {
+                    "children": [],
+                    "display": "Zustand nach h\u00e4matopoetischer Stammzelltransplantation ohne gegenw\u00e4rtige Immunsuppression",
+                    "id": "daf74f69-806c-4e95-b229-9bcc7e412a9d",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "Z94.80",
+                        "display": "Zustand nach h\u00e4matopoetischer Stammzelltransplantation ohne gegenw\u00e4rtige Immunsuppression",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Zustand nach h\u00e4matopoetischer Stammzelltransplantation mit gegenw\u00e4rtiger Immunsuppression",
+                    "id": "157b24d2-8cde-4bb4-9dab-72fa57e302ef",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "Z94.81",
+                        "display": "Zustand nach h\u00e4matopoetischer Stammzelltransplantation mit gegenw\u00e4rtiger Immunsuppression",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Zustand nach sonstiger Organ- oder Gewebetransplantation Inkl.: Darm Pankreas",
+                    "id": "92a7a5ae-3191-4739-93fb-861c983478cd",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "Z94.88",
+                        "display": "Zustand nach sonstiger Organ- oder Gewebetransplantation Inkl.: Darm Pankreas",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vorhandensein von sonstigen kardialen oder vaskul\u00e4ren Implantaten oder Transplantaten",
+                    "id": "d0cf37d2-53f2-41ba-a0b1-b5be08a8375e",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "Z95.88",
+                        "display": "Vorhandensein von sonstigen kardialen oder vaskul\u00e4ren Implantaten oder Transplantaten",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Zustand nach Nierentransplantation",
+                    "id": "17f9e270-8f5b-4df8-882e-75a3b605ef5c",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "Z94.0",
+                        "display": "Zustand nach Nierentransplantation",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Zustand nach Herztransplantation",
+                    "id": "bf519243-7564-4245-aa36-40cecacdc02b",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "Z94.1",
+                        "display": "Zustand nach Herztransplantation",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Zustand nach Lungentransplantation",
+                    "id": "3f2cbdb8-95e8-47f6-b400-914e377d39bf",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "Z94.2",
+                        "display": "Zustand nach Lungentransplantation",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Zustand nach Herz-Lungen-Transplantation",
+                    "id": "7ceb01cc-b074-42a0-92a4-f08b2b0334a8",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "Z94.3",
+                        "display": "Zustand nach Herz-Lungen-Transplantation",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Zustand nach Lebertransplantation",
+                    "id": "42d9bb32-2bc3-4cb3-a270-f4edb2caff95",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "Z94.4",
+                        "display": "Zustand nach Lebertransplantation",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Zustand nach Hauttransplantation",
+                    "id": "e3b70575-d6cd-4b8e-a708-fbc96c8b9f27",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "Z94.5",
+                        "display": "Zustand nach Hauttransplantation",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Zustand nach Knochentransplantation",
+                    "id": "647f21ed-8d85-4a8b-a455-d9c83e3eb21f",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "Z94.6",
+                        "display": "Zustand nach Knochentransplantation",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Zustand nach Keratoplastik",
+                    "id": "45171722-0acb-4da4-a6c6-ea17117a7ff2",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "Z94.7",
+                        "display": "Zustand nach Keratoplastik",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Zustand nach Organ- oder Gewebetransplantation, nicht n\u00e4her bezeichnet",
+                    "id": "a09f38cf-57a6-498b-bf63-87fea3c317c5",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "Z94.9",
+                        "display": "Zustand nach Organ- oder Gewebetransplantation, nicht n\u00e4her bezeichnet",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vorhandensein eines Implantates oder Transplantates nach koronarer Gef\u00e4\u00dfplastik",
+                    "id": "47d24012-2886-4403-972c-405222431b02",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "Z95.5",
+                        "display": "Vorhandensein eines Implantates oder Transplantates nach koronarer Gef\u00e4\u00dfplastik",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                }
+            ],
+            "display": "Organtransplantiert",
+            "id": "5d50750b-d752-4ecf-af09-00864154a5b6",
+            "leaf": false,
+            "selectable": true,
+            "termCode": {
+                "code": "161663000",
+                "display": "History of being a tissue or organ recipient (situation)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [
+                {
+                    "children": [],
+                    "display": "Diabetes mellitus, Typ 1",
+                    "id": "ccfc10f8-4d8c-427a-86ad-2f94e54b6fd4",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "E10",
+                        "display": "Diabetes mellitus, Typ 1",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Diabetes mellitus, Typ 2",
+                    "id": "79034755-9dd4-4685-aff4-e95292d504e5",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "E11",
+                        "display": "Diabetes mellitus, Typ 2",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sonstiger n\u00e4her bezeichneter Diabetes mellitus",
+                    "id": "b75648cd-a255-4658-926e-c8acc6ef1f65",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "E13",
+                        "display": "Sonstiger n\u00e4her bezeichneter Diabetes mellitus",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Nicht n\u00e4her bezeichneter Diabetes mellitus",
+                    "id": "c30da5c0-84b1-41d5-a527-84a06ddfdccd",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "E14",
+                        "display": "Nicht n\u00e4her bezeichneter Diabetes mellitus",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                }
+            ],
+            "display": "Diabetes",
+            "id": "2c65a76e-bac7-46a8-90ba-401793f65d39",
+            "leaf": false,
+            "selectable": true,
+            "termCode": {
+                "code": "73211009",
+                "display": "Diabetes mellitus (disorder)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [
+                {
+                    "children": [],
+                    "display": "B\u00f6sartige Neubildungen der Lippe, der Mundh\u00f6hle und des Pharynx",
+                    "id": "5e815ebd-4c78-4f0c-9b77-847cc397241f",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "C00-C14",
+                        "display": "B\u00f6sartige Neubildungen der Lippe, der Mundh\u00f6hle und des Pharynx",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "B\u00f6sartige Neubildungen an genau bezeichneten Lokalisationen, als prim\u00e4r festgestellt oder vermutet, ausgenommen lymphatisches, blutbildendes und verwandtes Gewebe",
+                    "id": "0bc19470-b843-434d-a7af-c3d23134390e",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "C00-C75",
+                        "display": "B\u00f6sartige Neubildungen an genau bezeichneten Lokalisationen, als prim\u00e4r festgestellt oder vermutet, ausgenommen lymphatisches, blutbildendes und verwandtes Gewebe",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "B\u00f6sartige Neubildungen",
+                    "id": "f723117a-d24a-4dc0-8681-d240d0b154ec",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "C00-C97",
+                        "display": "B\u00f6sartige Neubildungen",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "B\u00f6sartige Neubildungen der Verdauungsorgane",
+                    "id": "7f829fca-16ab-44d6-8d38-aa311b991e6c",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "C15-C26",
+                        "display": "B\u00f6sartige Neubildungen der Verdauungsorgane",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "B\u00f6sartige Neubildungen der Atmungsorgane und sonstiger intrathorakaler Organe",
+                    "id": "f601e9d2-4501-46fd-8ab8-afccf6f734f2",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "C30-C39",
+                        "display": "B\u00f6sartige Neubildungen der Atmungsorgane und sonstiger intrathorakaler Organe",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "B\u00f6sartige Neubildungen des Knochens und des Gelenkknorpels",
+                    "id": "038e50a8-8252-49c1-8b05-7f71484c7cbc",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "C40-C41",
+                        "display": "B\u00f6sartige Neubildungen des Knochens und des Gelenkknorpels",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Melanom und sonstige b\u00f6sartige Neubildungen der Haut",
+                    "id": "87b802e4-5e2b-4733-aff5-9d5621a6c760",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "C43-C44",
+                        "display": "Melanom und sonstige b\u00f6sartige Neubildungen der Haut",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "B\u00f6sartige Neubildungen des mesothelialen Gewebes und des Weichteilgewebes",
+                    "id": "5b483954-b8f1-4cc2-afa8-1e18a0cc8792",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "C45-C49",
+                        "display": "B\u00f6sartige Neubildungen des mesothelialen Gewebes und des Weichteilgewebes",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "B\u00f6sartige Neubildungen der Brustdr\u00fcse [Mamma]",
+                    "id": "2d3095d6-f34b-435e-b483-5be438bc3c20",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "C50-C50",
+                        "display": "B\u00f6sartige Neubildungen der Brustdr\u00fcse [Mamma]",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "B\u00f6sartige Neubildungen der weiblichen Genitalorgane",
+                    "id": "95d5dd3f-7b97-4f00-985f-cf4bf20f1843",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "C51-C58",
+                        "display": "B\u00f6sartige Neubildungen der weiblichen Genitalorgane",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "B\u00f6sartige Neubildungen der m\u00e4nnlichen Genitalorgane",
+                    "id": "91b2b673-6294-4055-8ee5-54652db8840c",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "C60-C63",
+                        "display": "B\u00f6sartige Neubildungen der m\u00e4nnlichen Genitalorgane",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "B\u00f6sartige Neubildungen der Harnorgane",
+                    "id": "cc6d93e9-a349-4c1b-948f-ecc3be1a5320",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "C64-C68",
+                        "display": "B\u00f6sartige Neubildungen der Harnorgane",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "B\u00f6sartige Neubildungen des Auges, des Gehirns und sonstiger Teile des Zentralnervensystems",
+                    "id": "8cc2e522-1d9f-4970-89a0-c160c803f3c5",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "C69-C72",
+                        "display": "B\u00f6sartige Neubildungen des Auges, des Gehirns und sonstiger Teile des Zentralnervensystems",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "B\u00f6sartige Neubildungen der Schilddr\u00fcse und sonstiger endokriner Dr\u00fcsen",
+                    "id": "7b2eca72-4955-4b0a-b271-d4b07fdf4963",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "C73-C75",
+                        "display": "B\u00f6sartige Neubildungen der Schilddr\u00fcse und sonstiger endokriner Dr\u00fcsen",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "B\u00f6sartige Neubildungen ungenau bezeichneter, sekund\u00e4rer und nicht n\u00e4her bezeichneter Lokalisationen",
+                    "id": "b9e4d167-280a-46be-82c4-67db2527d6fe",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "C76-C80",
+                        "display": "B\u00f6sartige Neubildungen ungenau bezeichneter, sekund\u00e4rer und nicht n\u00e4her bezeichneter Lokalisationen",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "B\u00f6sartige Neubildungen des lymphatischen, blutbildenden und verwandten Gewebes, als prim\u00e4r festgestellt oder vermutet",
+                    "id": "89e8766a-ccc1-4bb8-af59-dac91fd3ec45",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "C81-C96",
+                        "display": "B\u00f6sartige Neubildungen des lymphatischen, blutbildenden und verwandten Gewebes, als prim\u00e4r festgestellt oder vermutet",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "B\u00f6sartige Neubildungen als Prim\u00e4rtumoren an mehreren Lokalisationen",
+                    "id": "29a4c421-75cf-4093-9528-d255fded6f1a",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "C97-C97",
+                        "display": "B\u00f6sartige Neubildungen als Prim\u00e4rtumoren an mehreren Lokalisationen",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                }
+            ],
+            "display": "Aktive Tumor-/Krebserkrankungen",
+            "id": "3497b3e8-5fab-4689-a985-dcf439cd25bf",
+            "leaf": false,
+            "selectable": true,
+            "termCode": {
+                "code": "363346000",
+                "display": "Malignant neoplastic disease (disorder)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [],
+            "display": "Raucherstatus",
+            "id": "0b9d931f-ced2-4c86-badf-95aa4be570c5",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "72166-2",
+                "display": "Tobacco smoking status",
+                "system": "http://loinc.org"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": [
+                {
+                    "allowedUnits": [],
+                    "precision": 1,
+                    "selectableConcepts": [
+                        {
+                            "code": "LA15920-4",
+                            "display": "Former smoker",
+                            "system": "http://loinc.org"
+                        },
+                        {
+                            "code": "LA18976-3",
+                            "display": "Current every day smoker",
+                            "system": "http://loinc.org"
+                        },
+                        {
+                            "code": "LA18978-9",
+                            "display": "Never smoker",
+                            "system": "http://loinc.org"
+                        },
+                        {
+                            "code": "LA18980-5",
+                            "display": "Unknown if ever smoked",
+                            "system": "http://loinc.org"
+                        }
+                    ],
+                    "type": "concept"
+                }
+            ]
+        },
+        {
+            "children": [
+                {
+                    "children": [],
+                    "display": "Akute polymorphe psychotische St\u00f6rung ohne Symptome einer Schizophrenie",
+                    "id": "87e8c361-4506-4fbd-a129-877197b3562f",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F23.0",
+                        "display": "Akute polymorphe psychotische St\u00f6rung ohne Symptome einer Schizophrenie",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Akute polymorphe psychotische St\u00f6rung mit Symptomen einer Schizophrenie",
+                    "id": "e381e877-4294-4cab-9ab5-cffcd11575dd",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F23.1",
+                        "display": "Akute polymorphe psychotische St\u00f6rung mit Symptomen einer Schizophrenie",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Akute schizophreniforme psychotische St\u00f6rung",
+                    "id": "8179f7ee-cc13-43af-84be-c3fdf3df5284",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F23.2",
+                        "display": "Akute schizophreniforme psychotische St\u00f6rung",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sonstige akute vorwiegend wahnhafte psychotische St\u00f6rungen",
+                    "id": "8cfd8b06-b4aa-46ab-937f-968d63527de1",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F23.3",
+                        "display": "Sonstige akute vorwiegend wahnhafte psychotische St\u00f6rungen",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sonstige akute vor\u00fcbergehende psychotische St\u00f6rungen",
+                    "id": "73f64e86-1957-42f8-a409-677583c7cdbf",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F23.8",
+                        "display": "Sonstige akute vor\u00fcbergehende psychotische St\u00f6rungen",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Akute vor\u00fcbergehende psychotische St\u00f6rung, nicht n\u00e4her bezeichnet",
+                    "id": "e221ffda-1f2c-4f59-a199-51b224e0eadf",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F23.9",
+                        "display": "Akute vor\u00fcbergehende psychotische St\u00f6rung, nicht n\u00e4her bezeichnet",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Leichte depressive Episode",
+                    "id": "11a5b94c-e6a8-47fc-b9b6-ccbcdab80b8b",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F32.0",
+                        "display": "Leichte depressive Episode",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Mittelgradige depressive Episode",
+                    "id": "1563aa19-c255-4378-a499-f99125b75dd4",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F32.1",
+                        "display": "Mittelgradige depressive Episode",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Schwere depressive Episode ohne psychotische Symptome",
+                    "id": "f1161202-9cb8-4a7e-9322-370e44861da5",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F32.2",
+                        "display": "Schwere depressive Episode ohne psychotische Symptome",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Schwere depressive Episode mit psychotischen Symptomen",
+                    "id": "7aa53355-dccf-487d-83e4-290cbf99d6c2",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F32.3",
+                        "display": "Schwere depressive Episode mit psychotischen Symptomen",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sonstige depressive Episoden",
+                    "id": "23235473-f19e-4668-ac4a-1a5bf2178036",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F32.8",
+                        "display": "Sonstige depressive Episoden",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Depressive Episode, nicht n\u00e4her bezeichnet",
+                    "id": "835e793b-cb11-47de-8249-b854d88784e2",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F32.9",
+                        "display": "Depressive Episode, nicht n\u00e4her bezeichnet",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Rezidivierende depressive St\u00f6rung, gegenw\u00e4rtig leichte Episode",
+                    "id": "75f3857d-8a0e-439f-819f-0ae60923a321",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F33.0",
+                        "display": "Rezidivierende depressive St\u00f6rung, gegenw\u00e4rtig leichte Episode",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Rezidivierende depressive St\u00f6rung, gegenw\u00e4rtig mittelgradige Episode",
+                    "id": "5892cadb-44d1-4711-9564-fd58286bd18d",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F33.1",
+                        "display": "Rezidivierende depressive St\u00f6rung, gegenw\u00e4rtig mittelgradige Episode",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Rezidivierende depressive St\u00f6rung, gegenw\u00e4rtig schwere Episode ohne psychotische Symptome",
+                    "id": "e728cf80-9ec4-404e-a16f-5ce774420717",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F33.2",
+                        "display": "Rezidivierende depressive St\u00f6rung, gegenw\u00e4rtig schwere Episode ohne psychotische Symptome",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Rezidivierende depressive St\u00f6rung, gegenw\u00e4rtig schwere Episode mit psychotischen Symptomen",
+                    "id": "41ceb861-0ed9-42a7-bb93-d716f21adac6",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F33.3",
+                        "display": "Rezidivierende depressive St\u00f6rung, gegenw\u00e4rtig schwere Episode mit psychotischen Symptomen",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Rezidivierende depressive St\u00f6rung, gegenw\u00e4rtig remittiert",
+                    "id": "f67f9707-2046-411d-9707-0992471bb163",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F33.4",
+                        "display": "Rezidivierende depressive St\u00f6rung, gegenw\u00e4rtig remittiert",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sonstige rezidivierende depressive St\u00f6rungen",
+                    "id": "d0a35b06-be21-4488-bdec-868bbd2d4e29",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F33.8",
+                        "display": "Sonstige rezidivierende depressive St\u00f6rungen",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Rezidivierende depressive St\u00f6rung, nicht n\u00e4her bezeichnet",
+                    "id": "1576960a-6bac-49d5-8c50-6ea71e1d4c58",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F33.9",
+                        "display": "Rezidivierende depressive St\u00f6rung, nicht n\u00e4her bezeichnet",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Agoraphobie",
+                    "id": "2786c8ae-e95e-400e-bb74-b477ce1dfbea",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F40.0",
+                        "display": "Agoraphobie",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Soziale Phobien",
+                    "id": "24ad07b9-bf7b-4d60-bee4-477af7484858",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F40.1",
+                        "display": "Soziale Phobien",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Spezifische (isolierte) Phobien",
+                    "id": "9b59376f-cc96-48d7-a23f-1f0d6b0d2744",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F40.2",
+                        "display": "Spezifische (isolierte) Phobien",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sonstige phobische St\u00f6rungen",
+                    "id": "27b01b35-d762-44bb-b3c0-b44aca7a6cdd",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F40.8",
+                        "display": "Sonstige phobische St\u00f6rungen",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Phobische St\u00f6rung, nicht n\u00e4her bezeichnet",
+                    "id": "63673e33-fdad-4a88-b374-c4b70b7d87c6",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F40.9",
+                        "display": "Phobische St\u00f6rung, nicht n\u00e4her bezeichnet",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Panikst\u00f6rung [episodisch paroxysmale Angst]",
+                    "id": "d9e106bc-e9ef-48f7-ae40-1c0ca03dbdea",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F41.0",
+                        "display": "Panikst\u00f6rung [episodisch paroxysmale Angst]",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Generalisierte Angstst\u00f6rung",
+                    "id": "1715acb9-cb90-435b-9d36-35da73dc17d3",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F41.1",
+                        "display": "Generalisierte Angstst\u00f6rung",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Angst und depressive St\u00f6rung, gemischt",
+                    "id": "7817cb6c-4c19-48b8-bf1a-e703c6c52d96",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F41.2",
+                        "display": "Angst und depressive St\u00f6rung, gemischt",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Andere gemischte Angstst\u00f6rungen",
+                    "id": "5e554aa3-db0a-457a-8e94-f272aeeb536f",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F41.3",
+                        "display": "Andere gemischte Angstst\u00f6rungen",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sonstige spezifische Angstst\u00f6rungen",
+                    "id": "2a70eb0d-9366-47d6-9e86-3f3ee1fa5fa3",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F41.8",
+                        "display": "Sonstige spezifische Angstst\u00f6rungen",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Angstst\u00f6rung, nicht n\u00e4her bezeichnet",
+                    "id": "ba510c83-c1ca-4747-8127-94426cee6312",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F41.9",
+                        "display": "Angstst\u00f6rung, nicht n\u00e4her bezeichnet",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Krankheit des Zentralnervensystems, nicht n\u00e4her bezeichnet",
+                    "id": "785b72e3-d5ac-4322-bc4e-2e42d4604e5a",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "G96.9",
+                        "display": "Krankheit des Zentralnervensystems, nicht n\u00e4her bezeichnet",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Folgen einer Subarachnoidalblutung",
+                    "id": "7924d3d3-5bc2-4726-83c2-a450f2cc3cef",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "I69.0",
+                        "display": "Folgen einer Subarachnoidalblutung",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Folgen einer intrazerebralen Blutung",
+                    "id": "6ff5825c-89da-43a8-9bc3-839cea477f22",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "I69.1",
+                        "display": "Folgen einer intrazerebralen Blutung",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Folgen einer sonstigen nichttraumatischen intrakraniellen Blutung",
+                    "id": "33f58c91-89e7-467e-9ea5-53f716839719",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "I69.2",
+                        "display": "Folgen einer sonstigen nichttraumatischen intrakraniellen Blutung",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Folgen eines Hirninfarktes",
+                    "id": "918b0de2-2da1-439d-aa4b-215fd39a78d6",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "I69.3",
+                        "display": "Folgen eines Hirninfarktes",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Folgen eines Schlaganfalls, nicht als Blutung oder Infarkt bezeichnet",
+                    "id": "b3b89e1f-d950-43b0-8e92-e2250a759b82",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "I69.4",
+                        "display": "Folgen eines Schlaganfalls, nicht als Blutung oder Infarkt bezeichnet",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Folgen sonstiger und nicht n\u00e4her bezeichneter zerebrovaskul\u00e4rer Krankheiten",
+                    "id": "0603a8a2-38b3-4bc7-9b79-972348393833",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "I69.8",
+                        "display": "Folgen sonstiger und nicht n\u00e4her bezeichneter zerebrovaskul\u00e4rer Krankheiten",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Krankheiten des Kreislaufsystems in der Eigenanamnese",
+                    "id": "137e6711-4a44-442c-89f3-a339898506a5",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "Z86.7",
+                        "display": "Krankheiten des Kreislaufsystems in der Eigenanamnese",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Demenz bei Alzheimer-Krankheit [G30.- ]",
+                    "id": "dddb5a8e-4a53-489b-a5aa-9a9d2323965f",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F00",
+                        "display": "Demenz bei Alzheimer-Krankheit [G30.- ]",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaskul\u00e4re Demenz",
+                    "id": "74dde69b-66c3-4a0a-a3e8-7545b0793dd3",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F01",
+                        "display": "Vaskul\u00e4re Demenz",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Demenz bei anderenorts klassifizierten Krankheiten",
+                    "id": "6d99a742-2bdb-4860-8b87-de8e4db56099",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F02",
+                        "display": "Demenz bei anderenorts klassifizierten Krankheiten",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Nicht n\u00e4her bezeichnete Demenz",
+                    "id": "1e165438-a479-4ba7-84f3-4231da93bfa7",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F03",
+                        "display": "Nicht n\u00e4her bezeichnete Demenz",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sonstige nichtorganische psychotische St\u00f6rungen",
+                    "id": "3a073f7b-2116-4645-870d-2e9cb7a5f5bf",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F28",
+                        "display": "Sonstige nichtorganische psychotische St\u00f6rungen",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Nicht n\u00e4her bezeichnete nichtorganische Psychose",
+                    "id": "ec4a4830-9769-4396-9cc3-72bf1bd0b705",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F29",
+                        "display": "Nicht n\u00e4her bezeichnete nichtorganische Psychose",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Psychische St\u00f6rung ohne n\u00e4here Angabe",
+                    "id": "89484a77-1296-45a2-859d-915aa638b00e",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "F99",
+                        "display": "Psychische St\u00f6rung ohne n\u00e4here Angabe",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Prim\u00e4res Parkinson-Syndrom",
+                    "id": "de4bae36-f8cf-41a5-961a-8fe5cd03b8ab",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "G20",
+                        "display": "Prim\u00e4res Parkinson-Syndrom",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Multiple Sklerose [Encephalomyelitis disseminata]",
+                    "id": "20a8393d-4e11-4ac6-ac40-847137a71995",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "G35",
+                        "display": "Multiple Sklerose [Encephalomyelitis disseminata]",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Epilepsie",
+                    "id": "fa51d6e6-11a4-403e-b55f-5cc83c644fe2",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "G40",
+                        "display": "Epilepsie",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Status epilepticus",
+                    "id": "ccbc4a3b-5643-43ba-aea8-3577a682345e",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "G41",
+                        "display": "Status epilepticus",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Migr\u00e4ne",
+                    "id": "422e71df-e8e4-41b8-b695-c0be2864e991",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "G43",
+                        "display": "Migr\u00e4ne",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Myasthenia gravis und sonstige neuromuskul\u00e4re Krankheiten",
+                    "id": "c6934b54-8d1f-4fed-86bc-966b584eede3",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "G70",
+                        "display": "Myasthenia gravis und sonstige neuromuskul\u00e4re Krankheiten",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Prim\u00e4re Myopathien",
+                    "id": "b34b728a-3fd6-4b0b-817d-e933cf1f910e",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "G71",
+                        "display": "Prim\u00e4re Myopathien",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sonstige Myopathien",
+                    "id": "61035767-f492-4c1b-baa8-feea8634b107",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "G72",
+                        "display": "Sonstige Myopathien",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Krankheiten im Bereich der neuromuskul\u00e4ren Synapse und des Muskels bei anderenorts klassifizierten Krankheiten",
+                    "id": "b91b5e51-5e97-4847-9bed-b0ca36484736",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "G73",
+                        "display": "Krankheiten im Bereich der neuromuskul\u00e4ren Synapse und des Muskels bei anderenorts klassifizierten Krankheiten",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                }
+            ],
+            "display": "Chronische neurologische oder psychiatrische Erkrankungen",
+            "id": "961a1246-ecae-4833-93b9-303145c9bff3",
+            "leaf": false,
+            "selectable": true,
+            "termCode": {
+                "code": "74732009",
+                "display": "Mental disorder (disorder)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [],
+            "display": "Bestehende Sauerstoff- oder Beatmungstherapie",
+            "id": "0cb9eb08-8329-48c0-87a4-4488e5b201d3",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "53950000",
+                "display": "ademhalingstherapie (verrichting)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [
+                {
+                    "children": [],
+                    "display": "Chronische Nierenkrankheit, Stadium 1",
+                    "id": "c5bc5bbc-7e01-4d2c-afeb-b8537460f380",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "N18.1",
+                        "display": "Chronische Nierenkrankheit, Stadium 1",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Chronische Nierenkrankheit, Stadium 2",
+                    "id": "b6851761-888a-4c73-8748-3056399a74ef",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "N18.2",
+                        "display": "Chronische Nierenkrankheit, Stadium 2",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Chronische Nierenkrankheit, Stadium 3",
+                    "id": "619b153c-7632-4181-9ec4-6a711b36ec48",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "N18.3",
+                        "display": "Chronische Nierenkrankheit, Stadium 3",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Chronische Nierenkrankheit, Stadium 4",
+                    "id": "c846f53a-3383-4b07-9b0a-4ed95229ebf2",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "N18.4",
+                        "display": "Chronische Nierenkrankheit, Stadium 4",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Chronische Nierenkrankheit, Stadium 5",
+                    "id": "4c2610b7-6d79-4d79-a786-b43a439f21a9",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "N18.5",
+                        "display": "Chronische Nierenkrankheit, Stadium 5",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sonstige chronische Nierenkrankheit",
+                    "id": "f6075a27-fc1d-4abb-99e2-60db858ddd35",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "N18.8",
+                        "display": "Sonstige chronische Nierenkrankheit",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Chronische Nierenkrankheit, nicht n\u00e4her bezeichnet",
+                    "id": "9454d2a5-1a04-4fb1-8333-9c820f808fd1",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "N18.9",
+                        "display": "Chronische Nierenkrankheit, nicht n\u00e4her bezeichnet",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Langzeitige Abh\u00e4ngigkeit von Dialyse bei Niereninsuffizienz",
+                    "id": "13c6eaca-0578-45ef-a42b-ca6fcb042c20",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "Z99.2",
+                        "display": "Langzeitige Abh\u00e4ngigkeit von Dialyse bei Niereninsuffizienz",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                }
+            ],
+            "display": "Chronische Nierenerkrankungen",
+            "id": "7860302e-489f-4951-bf33-251cd26d1122",
+            "leaf": false,
+            "selectable": true,
+            "termCode": {
+                "code": "709044004",
+                "display": "Chronic kidney disease (disorder)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [],
+            "display": "Reiseaktivit\u00e4t",
+            "id": "3151f16e-8773-4846-b28c-00951380cfce",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "8691-8",
+                "display": "History of Travel",
+                "system": "http://loinc.org"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": [
+                {
+                    "allowedUnits": [],
+                    "precision": 1,
+                    "selectableConcepts": [
+                        {
+                            "code": "261665006",
+                            "display": "Unknown (qualifier value)",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "373066001",
+                            "display": "Yes (qualifier value)",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "373067005",
+                            "display": "No (qualifier value)",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "385432009",
+                            "display": "Not applicable (qualifier value)",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "74964007",
+                            "display": "Other (qualifier value)",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ],
+                    "type": "concept"
+                }
+            ]
+        },
+        {
+            "children": [
+                {
+                    "children": [],
+                    "display": "Ulcus pepticum jejuni",
+                    "id": "0e67c948-323c-4482-b008-dd94af45528b",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "K28",
+                        "display": "Ulcus pepticum jejuni",
+                        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                }
+            ],
+            "display": "Magengeschw\u00fcre",
+            "id": "c0b79a46-458d-4b43-9a3a-656efc3e3d08",
+            "leaf": false,
+            "selectable": true,
+            "termCode": {
+                "code": "40845000",
+                "display": "Gastrointestinal ulcer (disorder)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [
+                {
+                    "children": [],
+                    "display": "Vaccine product containing Human poliovirus antigen (medicinal product)",
+                    "id": "53e08df0-d9a4-4321-97c2-29bcf255ac7a",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "1031000221108",
+                        "display": "Vaccine product containing Human poliovirus antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing only Severe acute respiratory syndrome coronavirus 2 antigen (medicinal product)",
+                    "id": "c0ed4903-92ea-431b-9ea7-ea6e8495548d",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "1119305005",
+                        "display": "Vaccine product containing only Severe acute respiratory syndrome coronavirus 2 antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing only Severe acute respiratory syndrome coronavirus 2 messenger ribonucleic acid (medicinal product)",
+                    "id": "a6ce39ca-b35b-42b0-bc60-e3cbdf28abc5",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "1119349007",
+                        "display": "Vaccine product containing only Severe acute respiratory syndrome coronavirus 2 messenger ribonucleic acid (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing only live attenuated Human alphaherpesvirus 3 antigen (medicinal product)",
+                    "id": "2b300795-2083-4231-af31-b739eb799434",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "2221000221107",
+                        "display": "Vaccine product containing only live attenuated Human alphaherpesvirus 3 antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Typhus vaccine (product)",
+                    "id": "60cd47fb-03c1-4b05-a8cb-7258e8191e1a",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "37146000",
+                        "display": "Typhus vaccine (product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing Bordetella pertussis antigen (medicinal product)",
+                    "id": "88b44718-7822-4a98-8665-973bf191dad9",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "601000221108",
+                        "display": "Vaccine product containing Bordetella pertussis antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product (medicinal product)",
+                    "id": "92500b67-e938-4012-bb9e-844fb7f2f81c",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "787859002",
+                        "display": "Vaccine product (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing Hepatitis B virus antigen (medicinal product)",
+                    "id": "9a00f456-43f0-44f7-ac56-20d32f0dc4ef",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "836374004",
+                        "display": "Vaccine product containing Hepatitis B virus antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing Hepatitis A virus antigen (medicinal product)",
+                    "id": "6184441f-a68c-4bd4-8b2f-c65a71ff6715",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "836375003",
+                        "display": "Vaccine product containing Hepatitis A virus antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing Influenza virus antigen (medicinal product)",
+                    "id": "1a34fa45-ee85-4f3e-acbc-e22d47fe5513",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "836377006",
+                        "display": "Vaccine product containing Influenza virus antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing Japanese encephalitis virus antigen (medicinal product)",
+                    "id": "cce2cef0-43f4-416c-92a1-daa33cf175f3",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "836378001",
+                        "display": "Vaccine product containing Japanese encephalitis virus antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing Human papillomavirus antigen (medicinal product)",
+                    "id": "0eb79a45-0bb3-49d8-8b69-3c8eecd86329",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "836379009",
+                        "display": "Vaccine product containing Human papillomavirus antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing Haemophilus influenzae type B antigen (medicinal product)",
+                    "id": "bd60df79-1f76-4133-bac7-0b48466987d4",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "836380007",
+                        "display": "Vaccine product containing Haemophilus influenzae type B antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing Corynebacterium diphtheriae antigen (medicinal product)",
+                    "id": "7da7a6cf-cf6c-415c-b84b-d90469f91ddf",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "836381006",
+                        "display": "Vaccine product containing Corynebacterium diphtheriae antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing Measles morbillivirus antigen (medicinal product)",
+                    "id": "37c99cbc-81d9-49fc-92d3-7240bbb710f4",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "836382004",
+                        "display": "Vaccine product containing Measles morbillivirus antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing Vibrio cholerae antigen (medicinal product)",
+                    "id": "ff5465b2-8ae1-46e3-bda1-81e6a32dd9fd",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "836383009",
+                        "display": "Vaccine product containing Vibrio cholerae antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing Bacillus anthracis antigen (medicinal product)",
+                    "id": "f539679a-0c8a-4fa3-9b66-6365fffc83b8",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "836384003",
+                        "display": "Vaccine product containing Bacillus anthracis antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing Yellow fever virus antigen (medicinal product)",
+                    "id": "37f4cdd5-055d-4fef-886d-e1df4c20d282",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "836385002",
+                        "display": "Vaccine product containing Yellow fever virus antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing Rotavirus antigen (medicinal product)",
+                    "id": "1ba804e1-4c53-46d0-afde-dbb9f40ceebc",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "836387005",
+                        "display": "Vaccine product containing Rotavirus antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing Rubella virus antigen (medicinal product)",
+                    "id": "3024523d-06a0-4251-b5ce-0e18e2b25d96",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "836388000",
+                        "display": "Vaccine product containing Rubella virus antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing Vaccinia virus antigen (medicinal product)",
+                    "id": "88d951dd-25b9-452a-83c6-527aae6baf22",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "836389008",
+                        "display": "Vaccine product containing Vaccinia virus antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing Salmonella enterica subspecies enterica serovar Typhi antigen (medicinal product)",
+                    "id": "fc0ccb80-a651-4746-9ed7-1d9b292669c9",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "836390004",
+                        "display": "Vaccine product containing Salmonella enterica subspecies enterica serovar Typhi antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing Rabies lyssavirus antigen (medicinal product)",
+                    "id": "f242e28b-1561-455b-bc53-63fb1283e56d",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "836393002",
+                        "display": "Vaccine product containing Rabies lyssavirus antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing Streptococcus pneumoniae antigen (medicinal product)",
+                    "id": "461e3af8-8eaa-490c-83fb-c281823afda2",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "836398006",
+                        "display": "Vaccine product containing Streptococcus pneumoniae antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing Neisseria meningitidis antigen (medicinal product)",
+                    "id": "ef78a038-9e8e-451b-abbd-3cfe1bf4e87d",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "836401009",
+                        "display": "Vaccine product containing Neisseria meningitidis antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing live attenuated Mycobacterium bovis antigen (medicinal product)",
+                    "id": "73903370-22b9-4b37-8027-eb2d4e218394",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "836402002",
+                        "display": "Vaccine product containing live attenuated Mycobacterium bovis antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing Tick-borne encephalitis virus antigen (medicinal product)",
+                    "id": "927809d2-74c4-45ba-875e-b0539af20772",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "836403007",
+                        "display": "Vaccine product containing Tick-borne encephalitis virus antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing Human alphaherpesvirus 3 antigen (medicinal product)",
+                    "id": "dee8d71a-7852-4512-b963-50603280ae82",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "836495005",
+                        "display": "Vaccine product containing Human alphaherpesvirus 3 antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing only Haemophilus influenzae type B and Neisseria meningitidis serogroup C antigens (medicinal product)",
+                    "id": "46329cb6-3bc1-420c-b6e2-bcb9e9f2232b",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "836500008",
+                        "display": "Vaccine product containing only Haemophilus influenzae type B and Neisseria meningitidis serogroup C antigens (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing Yersinia pestis antigen (medicinal product)",
+                    "id": "97994265-45bc-4ae1-9c90-a1fd5d9ee47e",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "840549009",
+                        "display": "Vaccine product containing Yersinia pestis antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing Clostridium tetani antigen (medicinal product)",
+                    "id": "19751515-920a-4fdc-a947-c9dcc0811b3f",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "863911006",
+                        "display": "Vaccine product containing Clostridium tetani antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing only live attenuated Mumps orthorubulavirus antigen (medicinal product)",
+                    "id": "46a6cbf9-4b62-48d8-a923-224e633ea085",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "871738001",
+                        "display": "Vaccine product containing only live attenuated Mumps orthorubulavirus antigen (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing only Hepatitis A and Hepatitis B virus antigens (medicinal product)",
+                    "id": "c08a9c9c-b6a9-406b-868d-4227a0e9fc5d",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "871803007",
+                        "display": "Vaccine product containing only Hepatitis A and Hepatitis B virus antigens (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing only Hepatitis A virus and Salmonella enterica subspecies enterica serovar Typhi antigens (medicinal product)",
+                    "id": "65282a68-f60b-4c20-9549-31701bbdb7bc",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "871804001",
+                        "display": "Vaccine product containing only Hepatitis A virus and Salmonella enterica subspecies enterica serovar Typhi antigens (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing only Haemophilus influenzae type B and Hepatitis B virus antigens (medicinal product)",
+                    "id": "7daab4d7-1585-4bcf-994f-2946a64f7c07",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "871806004",
+                        "display": "Vaccine product containing only Haemophilus influenzae type B and Hepatitis B virus antigens (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing only Clostridium tetani and Corynebacterium diphtheriae antigens (medicinal product)",
+                    "id": "e777d12d-adc5-46a3-b44c-9861d1978185",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "871826000",
+                        "display": "Vaccine product containing only Clostridium tetani and Corynebacterium diphtheriae antigens (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing only Measles morbillivirus and Mumps orthorubulavirus and Rubella virus antigens (medicinal product)",
+                    "id": "fd381a6f-8323-4fee-b0ca-4adf22e32129",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "871831003",
+                        "display": "Vaccine product containing only Measles morbillivirus and Mumps orthorubulavirus and Rubella virus antigens (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing only Clostridium tetani and Corynebacterium diphtheriae and Human poliovirus antigens (medicinal product)",
+                    "id": "62082e1a-6adf-400d-bcb8-3f4308b34c28",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "871837004",
+                        "display": "Vaccine product containing only Clostridium tetani and Corynebacterium diphtheriae and Human poliovirus antigens (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing only Bordetella pertussis and Clostridium tetani and Corynebacterium diphtheriae antigens (medicinal product)",
+                    "id": "6ccd58c8-3ee2-4855-9853-defbe48d4c96",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "871875004",
+                        "display": "Vaccine product containing only Bordetella pertussis and Clostridium tetani and Corynebacterium diphtheriae antigens (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing only Bordetella pertussis and Clostridium tetani and Corynebacterium diphtheriae and Human poliovirus antigens (medicinal product)",
+                    "id": "183419aa-39fc-4a79-9803-1374e0b41ed7",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "871878002",
+                        "display": "Vaccine product containing only Bordetella pertussis and Clostridium tetani and Corynebacterium diphtheriae and Human poliovirus antigens (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing only Bordetella pertussis and Clostridium tetani and Corynebacterium diphtheriae and Haemophilus influenzae type B and Human poliovirus antigens (medicinal product)",
+                    "id": "e5df72e6-d3a5-4db6-b743-79b05f793499",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "871887006",
+                        "display": "Vaccine product containing only Bordetella pertussis and Clostridium tetani and Corynebacterium diphtheriae and Haemophilus influenzae type B and Human poliovirus antigens (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing only acellular Bordetella pertussis and Clostridium tetani and Corynebacterium diphtheriae and Hepatitis B virus and inactivated whole Human poliovirus antigens (medicinal product)",
+                    "id": "7ba35dd9-d3bf-4e41-9895-cfe3b9688169",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "871891001",
+                        "display": "Vaccine product containing only acellular Bordetella pertussis and Clostridium tetani and Corynebacterium diphtheriae and Hepatitis B virus and inactivated whole Human poliovirus antigens (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing only Bordetella pertussis and Clostridium tetani and Corynebacterium diphtheriae and Haemophilus influenzae type B and Hepatitis B virus and Human poliovirus antigens (medicinal product)",
+                    "id": "8f5fa082-650b-40b2-8ef8-c59ba231db95",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "871895005",
+                        "display": "Vaccine product containing only Bordetella pertussis and Clostridium tetani and Corynebacterium diphtheriae and Haemophilus influenzae type B and Hepatitis B virus and Human poliovirus antigens (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Vaccine product containing only Human alphaherpesvirus 3 and Measles morbillivirus and Mumps orthorubulavirus and Rubella virus antigens (medicinal product)",
+                    "id": "22ed024e-e906-4cae-87d9-6281133a1ab3",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "871908002",
+                        "display": "Vaccine product containing only Human alphaherpesvirus 3 and Measles morbillivirus and Mumps orthorubulavirus and Rubella virus antigens (medicinal product)",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                }
+            ],
+            "display": "Impfungen",
+            "id": "816a103c-cdfe-45e8-9a16-4fb29d94009f",
+            "leaf": false,
+            "selectable": false,
+            "termCode": {
+                "code": "Immunization status",
+                "display": "Immunization status",
+                "system": "num.codex"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        }
+    ],
+    "display": "Anamnese / Risikofaktoren",
+    "id": "44c3154e-f1e0-4cd2-a37e-acc1a5515b8b",
+    "leaf": false,
+    "selectable": false,
+    "termCode": {
+        "code": "Anamnese / Risikofaktoren",
+        "display": "Anamnese / Risikofaktoren",
+        "system": "num.codex"
+    },
+    "timeRestrictionAllowed": false,
+    "valueDefinitions": []
+}

@@ -1,0 +1,40 @@
+version: '3.7'
+services:
+  zars-feasibility-gui-backend:
+    image: ghcr.io/num-codex/codex-feasibility-backend:0.0.1
+    ports:
+    - ${PORT_FEASIBILITY_GUI_BACKEND:-127.0.0.1:8091}:8090
+    depends_on:
+      - zars-feasibility-db
+    environment:
+      SPRING_DATASOURCE_URL: ${CODEX_FEASIBILITY_BACKEND_DATASOURCE_URL:-jdbc:postgresql://zars-feasibility-db:5432/codex_ui?currentSchema=codex}
+      SPRING_DATASOURCE_USERNAME: ${CODEX_FEASIBILITY_BACKEND_DATASOURCE_USERNAME:-codex-postgres}
+      SPRING_DATASOURCE_PASSWORD: ${CODEX_FEASIBILITY_BACKEND_DATASOURCE_PASSWORD:-codex-password} 
+      BROKER_CLIENT_TYPE: ${BROKER_CLIENT_TYPE:-MOCK}
+      KEYCLOAK_ENDPOINT: ${CODEX_FEASIBILITY_BACKEND_KEYCLOAK_ENDPOINT:-https://zars-keycloak:8443}
+      KEYCLOAK_REALM: ${CODEX_FEASIBILITY_BACKEND_KEYCLOAK_REALM:-Num}
+      KEYCLOAK_CLIENT_ID: ${CODEX_FEASIBILITY_BACKEND_KEYCLOAK_CLIENT_ID:-codexFeasibilityGuiBackend}
+      CQL_TRANSLATE_ENABLED: ${CODEX_FEASIBILITY_BACKEND_CQL_TRANSLATE_ENABLED:-false}
+      FHIR_TRANSLATE_ENABLED: ${CODEX_FEASIBILITY_BACKEND_FHIR_TRANSLATE_ENABLED:-false}
+      FLARE_WEBSERVICE_BASE_URL: ${FLARE_WEBSERVICE_BASE_URL:-http://zars-flare:5000}
+# ---- Aktin
+      AKTIN_BROKER_BASE_URL: ${CODEX_FEASIBILITY_BACKEND_AKTIN_BROKER_BASE_URL:-http://aktin:8080/broker}
+      AKTIN_BROKER_API_KEY: ${CODEX_FEASIBILITY_BACKEND_AKTIN_BROKER_API_KEY:-abc123}
+# ---- DSF
+      DSF_SECURITY_CACERT: ${CODEX_FEASIBILITY_BACKEND_DSF_SECURITY_CACERT}
+      DSF_SECURITY_KEYSTORE_P12FILE: ${CODEX_FEASIBILITY_BACKEND_DSF_SECURITY_KEYSTORE_P12FILE}
+      DSF_SECURITY_KEYSTORE_PASSWORD: ${CODEX_FEASIBILITY_BACKEND_DSF_SECURITY_KEYSTORE_PASSWORD}
+      DSF_WEBSERVICE_BASE_URL: ${CODEX_FEASIBILITY_BACKEND_DSF_WEBSERVICE_BASE_URL:-https://dsf:8080/fhir}
+      DSF_WEBSOCKET_URL: ${CODEX_FEASIBILITY_BACKEND_DSF_WEBSOCKET_URL:-wws://dsf:8080/fhir/ws}
+      DSF_ORGANIZATION_ID: ${CODEX_FEASIBILITY_BACKEND_DSF_ORGANIZATION_ID}
+    volumes:
+      - ${CODEX_UI_PROFILES_PATH:-../ontology/ui_profiles}:/opt/codex-feasibility-backend/ontology/ui_profiles
+      - ${CODEX_CONCEPT_TREE_PATH:-../ontology/conceptTree.json}:/opt/codex-feasibility-backend/ontology/conceptTree.json
+      - ${CODEX_TERM_CODE_MAPPING_PATH:-../ontology/termCodeMapping.json}:/opt/codex-feasibility-backend/ontology/termCodeMapping.json
+
+  zars-feasibility-db:
+    image: 'postgres:13.1-alpine'
+    environment:
+      - POSTGRES_USER=codex-postgres
+      - POSTGRES_PASSWORD=codex-password
+      - POSTGRES_DB=codex_ui

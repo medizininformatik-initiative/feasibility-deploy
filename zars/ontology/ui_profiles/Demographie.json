@@ -1,0 +1,1470 @@
+{
+    "children": [
+        {
+            "children": [],
+            "display": "Schwangerschaft",
+            "id": "c4ce6923-e3e9-4426-af58-c7ca49064e18",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "82810-3",
+                "display": "Pregnancy status",
+                "system": "http://loinc.org"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": [
+                {
+                    "allowedUnits": [],
+                    "precision": 1,
+                    "selectableConcepts": [
+                        {
+                            "code": "LA15173-0",
+                            "display": "Pregnant",
+                            "system": "http://loinc.org"
+                        },
+                        {
+                            "code": "LA26683-5",
+                            "display": "Not pregnant",
+                            "system": "http://loinc.org"
+                        },
+                        {
+                            "code": "LA4489-6",
+                            "display": "Unknown",
+                            "system": "http://loinc.org"
+                        }
+                    ],
+                    "type": "concept"
+                }
+            ]
+        },
+        {
+            "children": [],
+            "display": "Ethnische Zugeh\u00f6rigkeit",
+            "id": "f46e76ff-4dfc-4780-b958-0538c1925ab8",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "372148003",
+                "display": "Ethnic group (ethnic group)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": [
+                {
+                    "allowedUnits": [],
+                    "precision": 1,
+                    "selectableConcepts": [
+                        {
+                            "code": "10008004",
+                            "display": "Ewe",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "10117001",
+                            "display": "Finns",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "10292001",
+                            "display": "Guamians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "10432001",
+                            "display": "Onge",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "108342005",
+                            "display": "South Asian AND/OR Australian aborigine",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "113169009",
+                            "display": "Armenians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "113170005",
+                            "display": "Aymara",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "113171009",
+                            "display": "Coushatta",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "11794009",
+                            "display": "Kenyans",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "12556008",
+                            "display": "Tamils",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "13233008",
+                            "display": "Flathead",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "1340002",
+                            "display": "Malays",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "13440006",
+                            "display": "Tanganyikans",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "14045001",
+                            "display": "Caucasian (ethnic group)",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "14176005",
+                            "display": "Danes",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "14470009",
+                            "display": "Tutsi",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "1451003",
+                            "display": "Greeks",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "14999008",
+                            "display": "Welsh",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "15086000",
+                            "display": "African American",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "15801006",
+                            "display": "Kapingas",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "160531006",
+                            "display": "Race: West indian",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "17095009",
+                            "display": "Norwegians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "17789004",
+                            "display": "Papuans",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "18167009",
+                            "display": "Black African (ethnic group)",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "18575005",
+                            "display": "Oceanian",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "18583004",
+                            "display": "Estonians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "185984009",
+                            "display": "White - ethnic group",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "185988007",
+                            "display": "Black Caribbean",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "185990008",
+                            "display": "Black British",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "185995003",
+                            "display": "Black Indian sub-continent",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "186001005",
+                            "display": "Indian (East Indian)",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "186002003",
+                            "display": "Pakistani",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "186003008",
+                            "display": "Bangladeshi",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "186019001",
+                            "display": "Other ethnic, mixed origin (ethnic group)",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "186035008",
+                            "display": "New Zealand ethnic groups",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "186036009",
+                            "display": "New Zealand European",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "186039002",
+                            "display": "New Zealand Maori",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "186040000",
+                            "display": "Cook Island Maori",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "186041001",
+                            "display": "Niuean",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "186042008",
+                            "display": "Tokelauan",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "186044009",
+                            "display": "South East Asian",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "18664001",
+                            "display": "Xavante",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "19085009",
+                            "display": "Saipanese",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "1919006",
+                            "display": "Egyptians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "19434008",
+                            "display": "French",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "20140003",
+                            "display": "Hawaiians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "20291009",
+                            "display": "Lacandon",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "20449009",
+                            "display": "Javanese",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "21047009",
+                            "display": "Aleuts",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "2135-2",
+                            "display": "Hispanic or Latino",
+                            "system": "urn:oid:2.16.840.1.113883.6.238"
+                        },
+                        {
+                            "code": "21868006",
+                            "display": "Madagascans",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "21993009",
+                            "display": "Indonesians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "22007004",
+                            "display": "Shoshone",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "23517005",
+                            "display": "Polynesians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "23534002",
+                            "display": "Melanesians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "23922002",
+                            "display": "Batutsi",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "24812003",
+                            "display": "Mongol",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "25750005",
+                            "display": "Admiralty Islanders",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "25804004",
+                            "display": "English",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "26215007",
+                            "display": "South Asian Aborigine",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "2688009",
+                            "display": "Tristan da Cunhans",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "270460000",
+                            "display": "Black Caribbean/W.I./Guyana",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "270461001",
+                            "display": "Black N African/Arab/Iranian",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "270462008",
+                            "display": "Black East African Asian/Indo-Caribbean",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "2720008",
+                            "display": "Hututu",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "27301002",
+                            "display": "Paez",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "275586009",
+                            "display": "Black North African",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "275587000",
+                            "display": "Black Arab",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "275588005",
+                            "display": "Black Iranian",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "275589002",
+                            "display": "Black East African Asian",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "275590006",
+                            "display": "Black Indo-Caribbean",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "27683006",
+                            "display": "Ainu",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "27700004",
+                            "display": "Iraqi",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "28409002",
+                            "display": "Spaniards",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "2852001",
+                            "display": "Bhutanese",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "28562006",
+                            "display": "Poles",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "286009",
+                            "display": "Czech",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "28796001",
+                            "display": "Siamese",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "28821007",
+                            "display": "Easter Islanders",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "29343004",
+                            "display": "Bulgarian",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "309643000",
+                            "display": "Black West Indian",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "309644006",
+                            "display": "Black Guyana",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "312859007",
+                            "display": "Vietnamese",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "315236000",
+                            "display": "White British",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "315237009",
+                            "display": "White Irish",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "315240009",
+                            "display": "Black - ethnic group",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "315280000",
+                            "display": "Asian - ethnic group (ethnic group)",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "315283003",
+                            "display": "Irish traveller",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "315634007",
+                            "display": "Black Caribbean and White",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "315635008",
+                            "display": "Black African and White",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "31637002",
+                            "display": "Italians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "32045009",
+                            "display": "Georgians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "32513008",
+                            "display": "Dyaks",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "32873005",
+                            "display": "Bloods",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "33182009",
+                            "display": "Trukese",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "3353005",
+                            "display": "Pueblo",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "33897005",
+                            "display": "Chinese",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "34334001",
+                            "display": "New Caledonians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "35007000",
+                            "display": "Utes",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "36329002",
+                            "display": "Slovak",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "3698008",
+                            "display": "Micronesians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "37474002",
+                            "display": "Ghanaians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "37843006",
+                            "display": "Fulani",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "38144004",
+                            "display": "Athabascans",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "3818007",
+                            "display": "Senegalese",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "38361009",
+                            "display": "Koreans",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "38750003",
+                            "display": "Bororo",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "39007007",
+                            "display": "Black Jews",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "39764005",
+                            "display": "Bantu",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "401213008",
+                            "display": "White Scottish",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "40165009",
+                            "display": "Buriats",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "40182006",
+                            "display": "Gypsies",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "4073004",
+                            "display": "Palauans",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "41076003",
+                            "display": "Mozambiquans",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "413465009",
+                            "display": "Afro-Caribbean",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "413466005",
+                            "display": "Afro-Caucasian",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "414152003",
+                            "display": "European",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "414551003",
+                            "display": "Japanese",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "414661004",
+                            "display": "Melanesian",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "414978006",
+                            "display": "Oriental",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "41798002",
+                            "display": "Caroline Islanders",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "42632009",
+                            "display": "Andamanese",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "4299001",
+                            "display": "Marathas",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "43056000",
+                            "display": "Cuna",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "43608005",
+                            "display": "Australian Aborigines",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "43890005",
+                            "display": "Dieguenos",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "44460002",
+                            "display": "Turks",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "445343003",
+                            "display": "Romanian",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "45465003",
+                            "display": "Basques",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "46110004",
+                            "display": "Somalis",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "46723002",
+                            "display": "Badagas",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "47250000",
+                            "display": "Bruneians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "47327008",
+                            "display": "Mexican Indians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "48118002",
+                            "display": "Yapese",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "48294008",
+                            "display": "Solomon Islanders",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "48375000",
+                            "display": "Seminole",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "48679001",
+                            "display": "Bogobos",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "49202008",
+                            "display": "Gilbertese",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "50405005",
+                            "display": "Senoi",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "51827000",
+                            "display": "Oriental Jews",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "52075006",
+                            "display": "Congolese",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "521000220104",
+                            "display": "Black Irish",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "53195006",
+                            "display": "Kirghiz",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "53460002",
+                            "display": "Serbs",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "55990000",
+                            "display": "Inca",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "56056003",
+                            "display": "Belgians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "57405008",
+                            "display": "Chenchu",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "57539009",
+                            "display": "Navaho",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "58047002",
+                            "display": "Barundi",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "59366001",
+                            "display": "Ibo",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "59487007",
+                            "display": "Syrians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "59597001",
+                            "display": "Marshallese",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "60157000",
+                            "display": "Ellice Islanders",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "62598008",
+                            "display": "Venezuelan Indians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "63457007",
+                            "display": "Maya",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "6373008",
+                            "display": "Choco",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "63732001",
+                            "display": "New Hebrideans",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "63736003",
+                            "display": "Taiwanese",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "64483007",
+                            "display": "Indians (Hindi-speaking)",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "64693008",
+                            "display": "Hungarian",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "65776006",
+                            "display": "Blackfeet",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "66406004",
+                            "display": "Huasteco",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "66920001",
+                            "display": "Amerind",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "67165000",
+                            "display": "Lapps",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "67439005",
+                            "display": "Msutu",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "67931002",
+                            "display": "Aztec",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "68486007",
+                            "display": "Austrians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "69865008",
+                            "display": "Fijian",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "69983001",
+                            "display": "Irani",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "704385002",
+                            "display": "Punjabi",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "704386001",
+                            "display": "Orang asli",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "704387005",
+                            "display": "Kadazan",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "704388000",
+                            "display": "Melanau",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "704389008",
+                            "display": "Murut",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "704390004",
+                            "display": "Bajau",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "704391000",
+                            "display": "Bidayuh",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "704392007",
+                            "display": "Iban",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "71176007",
+                            "display": "Pygmies",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "718958002",
+                            "display": "Roma",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "718959005",
+                            "display": "Czech Roma",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "718960000",
+                            "display": "Romanian Roma",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "718961001",
+                            "display": "Slovak Roma",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "718962008",
+                            "display": "Bulgarian Roma",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "718963003",
+                            "display": "Hungarian Roma",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "718964009",
+                            "display": "Polish Roma",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "71949006",
+                            "display": "Chippewa",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "72201005",
+                            "display": "Hobe",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "72248007",
+                            "display": "Kikuyu",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "72337002",
+                            "display": "Brazilian Indians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "72809004",
+                            "display": "Icelanders",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "733078003",
+                            "display": "Ukrainian",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "733446001",
+                            "display": "Canadian",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "735001008",
+                            "display": "Scandinavian",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "73524008",
+                            "display": "Caingang",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "73736004",
+                            "display": "Maori",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "74159009",
+                            "display": "Melanuans",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "74302004",
+                            "display": "Apache",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "75301003",
+                            "display": "Mapuche",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "75326007",
+                            "display": "Labradors",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "75704009",
+                            "display": "Toba",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "76253004",
+                            "display": "Zulu",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "76460008",
+                            "display": "Yanomama",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "76574004",
+                            "display": "Swiss",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "76768002",
+                            "display": "Filipinos",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "76775001",
+                            "display": "Ugandans",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "76883002",
+                            "display": "Huichol",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "7695005",
+                            "display": "Germans",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "77502007",
+                            "display": "Atacamenos",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "77686000",
+                            "display": "Kwakiutl",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "79434006",
+                            "display": "Quechua",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "80208004",
+                            "display": "Portuguese",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "80528001",
+                            "display": "Xosa",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "81035008",
+                            "display": "Pakistani (Urduspeakers)",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "8124001",
+                            "display": "West Africans",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "81283004",
+                            "display": "Todas",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "81403004",
+                            "display": "Swedes",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "81560001",
+                            "display": "Tongan",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "81653003",
+                            "display": "Pehuenches",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "81846005",
+                            "display": "Naiars",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "82174001",
+                            "display": "Shona",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "83365001",
+                            "display": "Thais",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "83584002",
+                            "display": "Luo",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "83939006",
+                            "display": "Irula",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "85163001",
+                            "display": "Russians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "85371009",
+                            "display": "Bushmen",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "85515006",
+                            "display": "Eskimo",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "86275006",
+                            "display": "Samoan",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "870448005",
+                            "display": "Khoikhoi",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "87323008",
+                            "display": "Nez Perc\u00e9",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "88790004",
+                            "display": "Abyssinians (Amharas)",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "88839008",
+                            "display": "Sudanese",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "88934004",
+                            "display": "Nigerians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "89026003",
+                            "display": "Alacaluf",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "90027003",
+                            "display": "Arabs (ethnic group)",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "90348007",
+                            "display": "Ghashgai",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "90822005",
+                            "display": "Gambians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "91066000",
+                            "display": "Tatars",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "91191002",
+                            "display": "Oraons",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "91488008",
+                            "display": "New Britons",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "9158000",
+                            "display": "Liberians",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "9533000",
+                            "display": "Dutch",
+                            "system": "http://snomed.info/sct"
+                        }
+                    ],
+                    "type": "concept"
+                }
+            ]
+        },
+        {
+            "children": [],
+            "display": "Biologisches Geschlecht",
+            "id": "41b73e29-edea-4481-baad-3156e13acb05",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "76689-9",
+                "display": "Sex assigned at birth",
+                "system": "http://loinc.org"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": [
+                {
+                    "allowedUnits": [],
+                    "precision": 1,
+                    "selectableConcepts": [
+                        {
+                            "code": "D",
+                            "display": "divers",
+                            "system": "http://fhir.de/CodeSystem/gender-amtlich-de"
+                        },
+                        {
+                            "code": "X",
+                            "display": "unbestimmt",
+                            "system": "http://fhir.de/CodeSystem/gender-amtlich-de"
+                        },
+                        {
+                            "code": "female",
+                            "display": "Female",
+                            "system": "http://hl7.org/fhir/administrative-gender"
+                        },
+                        {
+                            "code": "male",
+                            "display": "Male",
+                            "system": "http://hl7.org/fhir/administrative-gender"
+                        },
+                        {
+                            "code": "unknown",
+                            "display": "Unknown",
+                            "system": "http://hl7.org/fhir/administrative-gender"
+                        }
+                    ],
+                    "type": "concept"
+                }
+            ]
+        },
+        {
+            "children": [],
+            "display": "Alter",
+            "id": "22d4b365-aeee-42aa-b043-05ab34ccebf3",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "424144002",
+                "display": "Current chronological age (observable entity)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": [
+                {
+                    "allowedUnits": [],
+                    "precision": 1,
+                    "selectableConcepts": [],
+                    "type": "quantity"
+                }
+            ]
+        },
+        {
+            "children": [],
+            "display": "Frailty-Score",
+            "id": "f5ab3fe3-9fda-4c42-b8c9-2084bb08fabe",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "763264000",
+                "display": "Canadian Study of Health and Aging Clinical Frailty Scale score (observable entity)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": [
+                {
+                    "allowedUnits": [],
+                    "precision": 1,
+                    "selectableConcepts": [
+                        {
+                            "code": "1",
+                            "display": "Very Fit",
+                            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/frailty-score"
+                        },
+                        {
+                            "code": "2",
+                            "display": "Well",
+                            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/frailty-score"
+                        },
+                        {
+                            "code": "3",
+                            "display": "Managing Well",
+                            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/frailty-score"
+                        },
+                        {
+                            "code": "4",
+                            "display": "Vulnerable",
+                            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/frailty-score"
+                        },
+                        {
+                            "code": "5",
+                            "display": "Mildly Frail",
+                            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/frailty-score"
+                        },
+                        {
+                            "code": "6",
+                            "display": "Moderately Frail",
+                            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/frailty-score"
+                        },
+                        {
+                            "code": "7",
+                            "display": "Severely Frail",
+                            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/frailty-score"
+                        },
+                        {
+                            "code": "8",
+                            "display": "Very Severely Frail",
+                            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/frailty-score"
+                        },
+                        {
+                            "code": "9",
+                            "display": "Terminally Ill",
+                            "system": "https://www.netzwerk-universitaetsmedizin.de/fhir/CodeSystem/frailty-score"
+                        }
+                    ],
+                    "type": "concept"
+                }
+            ]
+        },
+        {
+            "children": [],
+            "display": "Gewicht",
+            "id": "c01a2575-0259-4dfb-9910-c5fdd5736cc3",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "27113001",
+                "display": "Body weight (observable entity)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": [
+                {
+                    "allowedUnits": [
+                        {
+                            "code": "kg",
+                            "display": "kg"
+                        }
+                    ],
+                    "precision": 1,
+                    "selectableConcepts": [],
+                    "type": "quantity"
+                }
+            ]
+        },
+        {
+            "children": [],
+            "display": "K\u00f6rpergr\u00f6\u00dfe",
+            "id": "f0401d37-fe40-4919-82e1-756c10c9984b",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "50373000",
+                "display": "Body height measure (observable entity)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": [
+                {
+                    "allowedUnits": [
+                        {
+                            "code": "cm",
+                            "display": "cm"
+                        },
+                        {
+                            "code": "m",
+                            "display": "m"
+                        }
+                    ],
+                    "precision": 1,
+                    "selectableConcepts": [],
+                    "type": "quantity"
+                }
+            ]
+        }
+    ],
+    "display": "Demographie",
+    "id": "51de7ab3-f29c-4d49-8d43-d6760f7ebaf1",
+    "leaf": false,
+    "selectable": false,
+    "termCode": {
+        "code": "Demographie",
+        "display": "Demographie",
+        "system": "num.codex"
+    },
+    "timeRestrictionAllowed": false,
+    "valueDefinitions": []
+}

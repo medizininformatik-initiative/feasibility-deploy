@@ -1,0 +1,36 @@
+{
+  "env": {
+    "name": "deploy"
+  },
+  "api": {
+    "baseUrl": "/api"
+  },
+  "uiBackendApi": {
+    "baseUrl": "https://localhost/api/"
+  },
+  "auth": {
+    "baseUrl": "https://localhost",
+    "realm": "codex-develop",
+    "clientId": "feasibility-gui"
+  },
+  "legal": {
+    "version": "0.9.0",
+    "copyrightOwner": "CODEX Team"
+  },
+  "features": {
+    "v2": {
+      "multiplevaluedefinitions": false,
+      "multiplegroups": false,
+      "dependentgroups": false,
+      "timerestriction": false
+    },
+    "extra": {
+      "displayvaluefiltericon": false
+    }
+  },
+  "mock": {
+    "terminology": false,
+    "query": false,
+    "result": false
+  }
+}
