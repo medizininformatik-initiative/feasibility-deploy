@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   zars-feasibility-gui-backend:
-    image: ghcr.io/num-codex/codex-feasibility-backend:0.0.1
+    image: ghcr.io/num-codex/codex-feasibility-backend:0.0.2
     ports:
     - ${PORT_FEASIBILITY_GUI_BACKEND:-127.0.0.1:8091}:8090
     depends_on:
@@ -17,6 +17,7 @@ services:
       CQL_TRANSLATE_ENABLED: ${CODEX_FEASIBILITY_BACKEND_CQL_TRANSLATE_ENABLED:-false}
       FHIR_TRANSLATE_ENABLED: ${CODEX_FEASIBILITY_BACKEND_FHIR_TRANSLATE_ENABLED:-false}
       FLARE_WEBSERVICE_BASE_URL: ${FLARE_WEBSERVICE_BASE_URL:-http://zars-flare:5000}
+      API_BASE_URL: ${API_BASE_URL:-https://localhost/api/}
 # ---- Aktin
       AKTIN_BROKER_BASE_URL: ${CODEX_FEASIBILITY_BACKEND_AKTIN_BROKER_BASE_URL:-http://aktin-broker:8080/broker/}
       AKTIN_BROKER_API_KEY: ${CODEX_FEASIBILITY_BACKEND_AKTIN_BROKER_API_KEY:-xxxApiKeyAdmin123}
