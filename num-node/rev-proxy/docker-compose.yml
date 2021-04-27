@@ -1,0 +1,17 @@
+version: '2.0'
+
+services:
+  nginx-num-node:
+    container_name: nginx-num-node
+    restart: unless-stopped
+    image: nginx:1.19
+    ports:
+      - "444:443"
+    volumes:
+      - ../auth/cert.pem:/etc/nginx/conf.d/cert.pem
+      - ../auth/key.pem:/etc/nginx/conf.d/key.pem
+      - ../auth/.htpasswd:/etc/nginx/.htpasswd
+     # - ./dhparam.pem:/etc/nginx/dhparam.pem
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./mime.types:/etc/nginx/conf.d/mime.types
+

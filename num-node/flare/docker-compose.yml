@@ -2,13 +2,12 @@ version: "3.7"
 
 services:
   node-flare:
+    image: ghcr.io/num-codex/codex-flare:0.0.1
     ports:
       - ${PORT_FLARE:-127.0.0.1:5000}:5000
     environment:
       FHIR_BASE_URL: ${FHIR_BASE_URL:-http://fhir-server:8080/fhir}
-    build: .
     restart: always
     volumes:
-      - ./src:/opt/flare/src
       - ${CODEX_CONCEPT_TREE_PATH:-../ontology/conceptTree.json}:/opt/flare/src/query_parser/codex/codex-code-tree.json
       - ${CODEX_TERM_CODE_MAPPING_PATH:-../ontology/termCodeMapping.json}:/opt/flare/src/query_parser/codex/codex-mapping.json

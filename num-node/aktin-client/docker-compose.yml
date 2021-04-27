@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  aktin-client:
+    image: harbor.miracum.org/codex-ap2/aktin-client:1.1.2-snapshot
+    environment:
+      FLARE_BASE_URL: ${FLARE_BASE_URL:-http://node-flare:5000}
+    volumes:
+      - ./client-exec-scripts/echo.sh:/opt/codex-aktin/echo.sh
+      - ./client-exec-scripts/call-cql.sh:/opt/codex-aktin/call-cql.sh
+      - ./client-exec-scripts/execute-cql.sh:/opt/codex-aktin/execute-cql.sh
+      - ./client-exec-scripts/call-flare.sh:/opt/codex-aktin/call-flare.sh
+      - ./sysproc.properties:/opt/codex-aktin/sysproc.properties

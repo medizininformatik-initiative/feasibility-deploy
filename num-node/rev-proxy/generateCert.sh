@@ -1,0 +1,1 @@
+docker run --rm -v $(pwd):/export --entrypoint openssl alpine/openssl req -nodes -subj '/CN=localhost' -x509 -newkey rsa:4096 -keyout /export/key.pem -out /export/cert.pem -days 99999

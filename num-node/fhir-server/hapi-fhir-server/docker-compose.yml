@@ -5,8 +5,6 @@ services:
     container_name: fhir-server
     # image: hapiproject/hapi:v5.1.0
     image: ghcr.io/chgl/hapi/hapi-fhir-jpaserver-starter:5.2.0-distroless
-    networks:
-      - num-node
     restart: always
     ports:
       - ${PORT_HAPI_FHIR:-127.0.0.1:8081}:8080
@@ -27,16 +25,6 @@ services:
     container_name: hapidb
     image: postgres:12.6-alpine
     restart: always
-    networks:
-      - num-node
     environment:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: fhir
-
-volumes:
-  hapi-data: {}
-
-networks:
-  num-node:
-    external: true
-    name: num-node
