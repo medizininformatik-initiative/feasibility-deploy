@@ -1,6 +1,6 @@
 services:
   zars-feasibility-gui:
-    image: ghcr.io/num-codex/codex-feasibility-gui:0.0.13
+    image: ghcr.io/num-codex/codex-feasibility-gui:0.0.2
     ports:
     - "443:443"
     volumes:

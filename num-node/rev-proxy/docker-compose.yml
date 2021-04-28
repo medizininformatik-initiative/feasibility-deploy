@@ -4,7 +4,7 @@ services:
   nginx-num-node:
     container_name: nginx-num-node
     restart: unless-stopped
-    image: nginx:1.19
+    image: nginxinc/nginx-unprivileged:1.20-alpine
     ports:
       - "444:443"
     volumes:
