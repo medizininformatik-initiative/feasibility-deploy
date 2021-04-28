@@ -1,2 +1,4 @@
 auth/*.pem
 auth/.htpasswd
+
+dsf-client/bpe/app/last_event/time.file

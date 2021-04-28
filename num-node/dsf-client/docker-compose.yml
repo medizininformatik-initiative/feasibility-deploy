@@ -1,0 +1,123 @@
+version: '3.7'
+
+services:
+  # DIC FHIR ------------------------------------------------------------------
+  dsf-dic-fhir-proxy:
+    image: ghcr.io/highmed/fhir_proxy:0.4.0
+    restart: on-failure
+    volumes:
+    - type: bind
+      source: ./fhir/proxy/ssl
+      target: /usr/local/apache2/ssl
+    environment:
+      HTTPS_SERVER_NAME_PORT: dsf-dic-fhir-proxy:443
+      APP_SERVER_IP: dsf-dic-fhir-app
+    depends_on:
+    - dsf-dic-fhir-app
+
+  dsf-dic-fhir-app:
+    image: ghcr.io/num-codex/codex-processes-ap2/fhir:0.1.0-rc1
+    restart: on-failure
+    volumes:
+    - type: bind
+      source: ./fhir/app/conf/dsf-dic-fhir-proxy-client_certificate.p12
+      target: /opt/fhir/certs/dsf-dic-fhir-proxy-client_certificate.p12
+    - type: bind
+      source: ./fhir/app/conf/bundle.xml
+      target: /opt/fhir/init/bundle.xml
+    environment:
+      TZ: Europe/Berlin
+      DB_URL: "jdbc:postgresql://dsf-dic-fhir-db/fhir"
+      DB_LIQUIBASE_USER: "liquibase_user"
+      DB_LIQUIBASE_USER_PASSWORD: "95c06527-6b67-48fc-8158-4cdb5b8dcbef"
+      DB_SERVER_USER_PASSWORD: "jnZkystPHM52FG3ryr7YHSTsWC9wu7KW"
+      CORS_ORIGINS: "http://dsf-zars-bpe-app"
+      ORGANIZATION_IDENTIFIER: "Test_DIC"
+      ORGANIZATION_TYPE: "MeDIC"
+      WEBSERVICE_BASE_URL: "https://dsf-dic-fhir-proxy/fhir"
+      WEBSERVICE_P12_CERTIFICATE: "/opt/fhir/certs/dsf-dic-fhir-proxy-client_certificate.p12"
+      WEBSERVICE_P12_CERTIFICATE_PASSWORD: "password"
+      FHIR_INIT_BUNDLE: "/opt/fhir/init/bundle.xml"
+      USER_THUMBPRINTS: "4136af1cc62a92c3fdc34422e302166fc2db23e88ff9ccc46f63111ba57e0897f67c7c8b84b59752372c77d7b611dc38d21e625a0a32ee454498189f09d6b200,159db26fbecf96002256ff9f7bd3e53368c4d94b36a12c1714aceaa53207d620946c3675a4971f34f39b42284fee993637cc63cc375f5e6fd2cf93e767a9f1ef"
+    depends_on:
+    - dsf-dic-fhir-db
+
+  dsf-dic-fhir-db:
+    image: postgres:13
+    restart: on-failure
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U liquibase_user -d fhir" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    environment:
+      POSTGRES_PASSWORD_FILE: /run/secrets/dsf-dic-fhir-postgres_password
+      POSTGRES_USER: liquibase_user
+      POSTGRES_DB: fhir
+    volumes:
+    - type: volume
+      source: dsf-dic-fhir-db-data
+      target: /var/lib/postgresql/data
+    secrets:
+    - dsf-dic-fhir-postgres_password
+
+  # DIC BPE -------------------------------------------------------------------
+  dsf-dic-bpe-app:
+    image: ghcr.io/num-codex/codex-processes-ap2/bpe:0.1.0-rc1
+    restart: on-failure
+    volumes:
+    - type: bind
+      source: ./bpe/app/last_event
+      target: /opt/bpe/last_event
+    - type: bind
+      source: ./bpe/app/conf/dsf-dic-fhir-proxy-client_certificate.p12
+      target: /opt/bpe/certs/dsf-dic-fhir-proxy-client_certificate.p12
+    environment:
+      TZ: Europe/Berlin
+      DB_URL: "jdbc:postgresql://dsf-dic-bpe-db/bpe"
+      DB_LIQUIBASE_USER: "liquibase_user"
+      DB_LIQUIBASE_USER_PASSWORD: "ead9af4e-2647-43cd-86c0-b8327867c5c2"
+      DB_SERVER_USER_PASSWORD: "8s4cGYqY41mrWqTmwhZ3beVQcz6wc3Yr"
+      DB_CAMUNDA_USER_PASSWORD: "dcPa7a9wTCaTxFk7BdjmCuQp8k29e2eL"
+      ORGANIZATION_IDENTIFIER: "Test_DIC"
+      WEBSERVICE_BASE_URL: "https://dsf-dic-fhir-proxy/fhir"
+      WEBSERVICE_P12_CERTIFICATE: "/opt/bpe/certs/dsf-dic-fhir-proxy-client_certificate.p12"
+      WEBSERVICE_P12_CERTIFICATE_PASSWORD: "password"
+      WEBSOCKET_URL: "wss://dsf-dic-fhir-proxy/fhir/ws"
+      WEBSOCKET_P12_CERTIFICATE: "/opt/bpe/certs/dsf-dic-fhir-proxy-client_certificate.p12"
+      WEBSOCKET_P12_CERTIFICATE_PASSWORD: "password"
+      PROCESS_STORE_URL: "http://fhir-server:8080/fhir"
+    depends_on:
+    - dsf-dic-fhir-proxy
+    - dsf-dic-bpe-db
+
+  dsf-dic-bpe-db:
+    image: postgres:13
+    restart: on-failure
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U liquibase_user -d bpe" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    environment:
+      POSTGRES_PASSWORD_FILE: /run/secrets/dsf-dic-bpe-postgres_password
+      POSTGRES_USER: liquibase_user
+      POSTGRES_DB: bpe
+    volumes:
+    - type: volume
+      source: dsf-dic-bpe-db-data
+      target: /var/lib/postgresql/data
+    secrets:
+    - dsf-dic-bpe-postgres_password
+
+secrets:
+  dsf-dic-fhir-postgres_password:
+    file: ./fhir/db/conf/postgres_password
+  dsf-dic-bpe-postgres_password:
+    file: ./bpe/db/conf/postgres_password
+
+volumes:
+  dsf-dic-fhir-db-data:
+    name: "dsf-dic-fhir-db-data"
+  dsf-dic-bpe-db-data:
+    name: "dsf-dic-bpe-db-data"
