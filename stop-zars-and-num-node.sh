@@ -21,7 +21,7 @@ cd ../aktin-broker
 docker-compose -p $COMPOSE_PROJECT stop
 
 cd ../dsf-broker
-./stop.sh -p $COMPOSE_PROJECT
+./stop.sh $COMPOSE_PROJECT
 
 
 printf "Stopping Num-Node components"
@@ -30,8 +30,8 @@ cd ../../num-node
 cd aktin-client
 docker-compose -p $COMPOSE_PROJECT stop
 
-cd dsf-client
-./stop -p $COMPOSE_PROJECT
+cd ../dsf-client
+bash stop.sh $COMPOSE_PROJECT
 
 cd ../flare
 docker-compose -p $COMPOSE_PROJECT stop
