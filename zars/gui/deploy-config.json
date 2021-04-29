@@ -28,6 +28,10 @@
       "displayvaluefiltericon": false
     }
   },
+  "options": {
+    "pollingtimeinseconds": 10,
+    "pollingintervallinseconds": 1
+  },
   "mock": {
     "terminology": false,
     "query": false,
