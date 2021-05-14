@@ -7,6 +7,7 @@ services:
       PROXY_ADDRESS_FORWARDING: "true"
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: admin
+      KEYCLOAK_FRONTEND_URL: https://localhost/auth
     ports:
       - 8443:8443
     volumes:
