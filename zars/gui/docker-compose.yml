@@ -2,7 +2,7 @@ services:
   zars-feasibility-gui:
     image: ghcr.io/num-codex/codex-feasibility-gui:0.0.2
     ports:
-    - "443:443"
+    - "443:8443"
     volumes:
       - ../auth/cert.pem:/etc/nginx/conf.d/cert.pem
       - ../auth/key.pem:/etc/nginx/conf.d/key.pem
