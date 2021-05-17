@@ -8,6 +8,12 @@
 #    
 #fi
 
+if [ -z "$1" ] && [ -z "$2" ]; then
+  echo "please provide a username and password"
+  echo "setup-all-base-auth.sh <username> <password>"
+  exit
+fi
+
 echo "Generating default certificate..."
 docker run --rm -v $(pwd)/auth:/export --entrypoint openssl alpine/openssl req -nodes -subj '/CN=localhost' -x509 -newkey rsa:4096 -keyout /export/key.pem -out /export/cert.pem -days 99999
 

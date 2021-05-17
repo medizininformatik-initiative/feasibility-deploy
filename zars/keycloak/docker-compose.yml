@@ -9,7 +9,7 @@ services:
       KEYCLOAK_PASSWORD: admin
       KEYCLOAK_FRONTEND_URL: https://localhost/auth
     ports:
-      - 8443:8443
+      - 127.0.0.1:8443:8443
     volumes:
       - ../auth/cert.pem:/etc/x509/https/tls.crt
       - ../auth/key.pem:/etc/x509/https/tls.key

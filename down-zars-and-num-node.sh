@@ -20,6 +20,9 @@ docker-compose -p $COMPOSE_PROJECT down
 cd ../aktin-broker
 docker-compose -p $COMPOSE_PROJECT down
 
+cd ../aktin-broker
+docker-compose -p $COMPOSE_PROJECT down
+
 
 printf "Down Num-Node components ..."
 cd ../../num-node
