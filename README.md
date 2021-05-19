@@ -32,6 +32,8 @@ Set the rights of the cert.pem and key.pem files to 655.
 
 Use the `start-zars-and-num-node.sh` to start up the ZARS and num node.
 
+Additional flags are explained when running `start-zars-and-num-node.sh -h`. 
+
 
 ### Step 4 - Restrict rights for certificates 
 
