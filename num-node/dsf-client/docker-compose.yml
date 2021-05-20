@@ -16,7 +16,7 @@ services:
     - dsf-dic-fhir-app
 
   dsf-dic-fhir-app:
-    image: ghcr.io/num-codex/codex-processes-ap2/fhir:0.1.0-rc1
+    image: ghcr.io/num-codex/codex-processes-ap2/fhir:0.1.0-rc5
     restart: on-failure
     volumes:
     - type: bind
@@ -63,7 +63,7 @@ services:
 
   # DIC BPE -------------------------------------------------------------------
   dsf-dic-bpe-app:
-    image: ghcr.io/num-codex/codex-processes-ap2/bpe:0.1.0-rc1
+    image: ghcr.io/num-codex/codex-processes-ap2/bpe:0.1.0-rc5
     restart: on-failure
     volumes:
     - type: bind
@@ -87,6 +87,8 @@ services:
       WEBSOCKET_P12_CERTIFICATE: "/opt/bpe/certs/dsf-dic-fhir-proxy-client_certificate.p12"
       WEBSOCKET_P12_CERTIFICATE_PASSWORD: "password"
       PROCESS_STORE_URL: "http://fhir-server:8080/fhir"
+      PROCESS_EVALUATION_STRATEGY: "cql"
+      PROCESS_EVALUATION_OBFUSCATE: "true"
     depends_on:
     - dsf-dic-fhir-proxy
     - dsf-dic-bpe-db

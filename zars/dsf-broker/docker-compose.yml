@@ -15,7 +15,7 @@ services:
     - dsf-zars-fhir-app
 
   dsf-zars-fhir-app:
-    image: ghcr.io/num-codex/codex-processes-ap2/fhir:0.1.0-rc1
+    image: ghcr.io/num-codex/codex-processes-ap2/fhir:0.1.0-rc5
     restart: on-failure
     volumes:
     - type: bind
@@ -62,7 +62,7 @@ services:
 
   # ZARS BPE ------------------------------------------------------------------
   dsf-zars-bpe-app:
-    image: ghcr.io/num-codex/codex-processes-ap2/bpe:0.1.0-rc1
+    image: ghcr.io/num-codex/codex-processes-ap2/bpe:0.1.0-rc5
     restart: on-failure
     volumes:
     - type: bind
