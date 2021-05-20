@@ -56,7 +56,7 @@ Services exposed via the two nginx reverse proxys provided:
 | Feasibility UI backend       | <https://localhost/api>                          | ZARS     | connect via keycloak| -         |
 | Keycloak                     | <https://localhost/auth>                         | ZARS     | admin               | admin     |
 | (GECCO) FHIR Server          | <https://localhost:444/fhir>                     | Num-Node | -                   | -         |
-| Flare              | <https://localhost:444/flare>                              | Num-Node | -                   | -         |
+| Flare                        | <https://localhost:444/flare>                    | Num-Node | -                   | -         |
 
 
 Direct (non reverse proxy) access to the services:
@@ -149,3 +149,29 @@ curl -k --location --request GET '<insert-location-header-url-from-above-request
 --header 'Authorization: Bearer <insert-access_token-from-token-request-above-response-here>' \
 --header 'Content-Type: application/json'
 ```
+
+## Components
+
+The following components alongside their versions are used within this deployment:
+
+### NUM-Node
+| Component | Version |
+|-----------|---------|
+|aktin-client|1.1.3|
+|codex-processes-ap2/fhir|0.1.0-rc5|
+|codex-processes-ap2/bpe|0.1.0-rc5|
+|samply/blaze|0.11.0-alpha.6|
+|hapi-fhir-jpaserver-starter|5.2.0-distroless|
+|codex-flare|0.0.2|
+|nginx-unprivileged|1.20-alpine|
+
+### ZARS:
+| Component | Version |
+|-----------|---------|
+|aktin-broker|1.1.3|
+|codex-feasibility-backend|0.0.3|
+|codex-processes-ap2/fhir|0.1.0-rc5|
+|codex-processes-ap2/bpe|0.1.0-rc5|
+|codex-flare|0.0.2|
+|codex-feasibility-gui|0.0.2|
+|codex-keycloak|0.0.1|
