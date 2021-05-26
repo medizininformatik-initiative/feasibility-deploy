@@ -39,5 +39,8 @@ docker-compose -p $COMPOSE_PROJECT stop
 cd ../fhir-server/blaze-server
 docker-compose -p $COMPOSE_PROJECT stop
 
+cd ../fhir-server/hapi-fhir-server
+docker-compose -p $COMPOSE_PROJECT stop
+
 cd ../../rev-proxy
 docker-compose -p $COMPOSE_PROJECT stop

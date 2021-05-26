@@ -3,13 +3,10 @@ version: "3.7"
 services:
   fhir-server:
     container_name: fhir-server
-    # image: hapiproject/hapi:v5.1.0
-    image: ghcr.io/chgl/hapi/hapi-fhir-jpaserver-starter:5.2.0-distroless
+    image: hapiproject/hapi:v5.4.0
     restart: always
     ports:
       - ${PORT_HAPI_FHIR:-127.0.0.1:8081}:8080
-    volumes:
-      - ./application.yml:/data/hapi/application.yml
     environment:
       SPRING_DATASOURCE_URL: "jdbc:postgresql://db:5432/fhir?currentSchema=public"
       SPRING_DATASOURCE_USERNAME: postgres

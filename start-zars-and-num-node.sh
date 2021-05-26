@@ -5,6 +5,7 @@ COMPOSE_PROJECT=codex-deploy
 
 # Option Defaults
 MIDDLEWARE_TYPE=AKTIN
+FHIR_SERVER_TYPE=BLAZE
 
 usage() {
   cat <<USAGE
@@ -12,6 +13,7 @@ usage: $(basename $0) [flags]
 
 The following flags are available:
     --with-middleware-type=AKTIN     the middleware type to use (AKTIN or DSF)
+    --with-fhir-server-type=$FHIR_SERVER_TYPE    the FHIR server to use (BLAZE or HAPI)
 USAGE
 }
 
@@ -21,6 +23,15 @@ for opt in "$@"; do
     MIDDLEWARE_TYPE=$(echo "${opt#*=}" | tr '[:lower:]' '[:upper:]')
     if [ "$MIDDLEWARE_TYPE" != "AKTIN" ] && [ "$MIDDLEWARE_TYPE" != "DSF" ]; then
       echo "Unknown middleware type: $MIDDLEWARE_TYPE".
+      usage
+      exit 1
+    fi
+    shift
+    ;;
+  --with-fhir-server-type=*)
+    FHIR_SERVER_TYPE=$(echo "${opt#*=}" | tr '[:lower:]' '[:upper:]')
+    if [ "$FHIR_SERVER_TYPE" != "BLAZE" ] && [ "$FHIR_SERVER_TYPE" != "HAPI" ]; then
+      echo "Unknown FHIR server type: $FHIR_SERVER_TYPE".
       usage
       exit 1
     fi
@@ -68,8 +79,13 @@ cd ../../num-node
 cd flare
 docker-compose -p $COMPOSE_PROJECT up -d
 
-cd ../fhir-server/blaze-server
-docker-compose -p $COMPOSE_PROJECT up -d
+if [ "$FHIR_SERVER_TYPE" = "BLAZE" ]; then
+  cd ../fhir-server/blaze-server
+  docker-compose -p $COMPOSE_PROJECT up -d
+else
+  cd ../fhir-server/hapi-fhir-server
+  docker-compose -p $COMPOSE_PROJECT up -d
+fi
 
 cd ../../rev-proxy
 docker-compose -p $COMPOSE_PROJECT up -d

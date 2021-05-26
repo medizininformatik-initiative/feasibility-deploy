@@ -36,5 +36,8 @@ docker-compose -p $COMPOSE_PROJECT down
 cd ../fhir-server/blaze-server
 docker-compose -p $COMPOSE_PROJECT down
 
+cd ../fhir-server/hapi-fhir-server
+docker-compose -p $COMPOSE_PROJECT down
+
 cd ../../rev-proxy
 docker-compose -p $COMPOSE_PROJECT down
