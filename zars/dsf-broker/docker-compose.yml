@@ -15,7 +15,7 @@ services:
     - dsf-zars-fhir-app
 
   dsf-zars-fhir-app:
-    image: ghcr.io/num-codex/codex-processes-ap2/fhir:0.1.0-rc1
+    image: ghcr.io/num-codex/codex-processes-ap2/fhir:0.1.0-rc5
     restart: on-failure
     volumes:
     - type: bind
@@ -25,6 +25,7 @@ services:
       source: ./fhir/app/conf/bundle.xml
       target: /opt/fhir/init/bundle.xml
     environment:
+      EXTRA_JVM_ARGS: ${CODEX_DSF_ZARS_FHIR_APP_JVM_ARGS}
       TZ: Europe/Berlin
       DB_URL: "jdbc:postgresql://dsf-zars-fhir-db/fhir"
       DB_LIQUIBASE_USER: "liquibase_user"
@@ -62,7 +63,7 @@ services:
 
   # ZARS BPE ------------------------------------------------------------------
   dsf-zars-bpe-app:
-    image: ghcr.io/num-codex/codex-processes-ap2/bpe:0.1.0-rc1
+    image: ghcr.io/num-codex/codex-processes-ap2/bpe:0.1.0-rc5
     restart: on-failure
     volumes:
     - type: bind
@@ -72,6 +73,7 @@ services:
       source: ./bpe/app/conf/dsf-zars-fhir-proxy-client_certificate.p12
       target: /opt/bpe/certs/dsf-zars-fhir-proxy-client_certificate.p12
     environment:
+      EXTRA_JVM_ARGS: ${CODEX_DSF_ZARS_BPE_APP_JVM_ARGS}
       TZ: "Europe/Berlin"
       DB_URL: "jdbc:postgresql://dsf-zars-bpe-db/bpe"
       DB_LIQUIBASE_USER: "liquibase_user"
