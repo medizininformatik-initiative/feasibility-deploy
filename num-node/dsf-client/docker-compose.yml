@@ -89,8 +89,9 @@ services:
       WEBSOCKET_P12_CERTIFICATE: "/opt/bpe/certs/dsf-dic-fhir-proxy-client_certificate.p12"
       WEBSOCKET_P12_CERTIFICATE_PASSWORD: "password"
       PROCESS_STORE_URL: "http://fhir-server:8080/fhir"
-      PROCESS_EVALUATION_STRATEGY: "cql"
+      PROCESS_EVALUATION_STRATEGY: ${CODEX_FEASIBILITY_DSF_CLIENT_PROCESS_EVALUATION_STRATEGY:-structured-query}
       PROCESS_EVALUATION_OBFUSCATE: "true"
+      FLARE_BASE_URL: "http://node-flare:5000"
     depends_on:
     - dsf-dic-fhir-proxy
     - dsf-dic-bpe-db
