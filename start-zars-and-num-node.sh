@@ -7,6 +7,7 @@ COMPOSE_PROJECT=codex-deploy
 MIDDLEWARE_TYPE=AKTIN
 FHIR_SERVER_TYPE=BLAZE
 QUERY_FORMAT=STRUCTURED
+OBFUSCATE=true
 
 usage() {
   cat <<USAGE
@@ -16,6 +17,7 @@ The following flags are available:
     --with-middleware-type=AKTIN     the middleware type to use (AKTIN or DSF)
     --with-fhir-server-type=BLAZE    the FHIR server to use (BLAZE or HAPI)
     --with-query-format=STRUCTURED   format used for the queries (STRUCTURED or CQL)
+    --disable-result-obfuscation     disabled the result obfuscation
 USAGE
 }
 
@@ -48,6 +50,10 @@ for opt in "$@"; do
     fi
     shift
     ;;
+  --disable-obfuscation)
+    OBFUSCATE=false
+    shift
+    ;;
   -h | --help)
     usage
     exit 0
@@ -72,6 +78,14 @@ fi
 if [ "$MIDDLEWARE_TYPE" = "DSF" ]; then
   # Always required by DSF alongside the "Structured Query" format even though it is not used for evaluation.
   export CODEX_FEASIBILITY_BACKEND_CQL_TRANSLATE_ENABLED=true
+fi
+
+if [ "$OBFUSCATE" = true ]; then
+  export CODEX_FEASIBILITY_AKTIN_CLIENT_OBFUSCATE=true
+  export CODEX_FEASIBILITY_DSF_CLIENT_PROCESS_EVALUATION_OBFUSCATE=true
+else
+  export CODEX_FEASIBILITY_AKTIN_CLIENT_OBFUSCATE=false
+  export CODEX_FEASIBILITY_DSF_CLIENT_PROCESS_EVALUATION_OBFUSCATE=false
 fi
 
 export CODEX_FEASIBILITY_BACKEND_BROKER_CLIENT_TYPE=$MIDDLEWARE_TYPE
@@ -103,7 +117,7 @@ docker-compose -p $COMPOSE_PROJECT up -d
 printf "Startup Num-Node components"
 cd ../../num-node
 
-if [ "$MIDDLEWARE_TYPE" = "AKTIN" ] || { [ "$MIDDLEWARE_TYPE" = "DSF" ] && [ "$QUERY_FORMAT" = "STRUCTURED" ]; } then
+if [ "$MIDDLEWARE_TYPE" = "AKTIN" ] || { [ "$MIDDLEWARE_TYPE" = "DSF" ] && [ "$QUERY_FORMAT" = "STRUCTURED" ]; }; then
   cd flare
   docker-compose -p $COMPOSE_PROJECT up -d
 fi
