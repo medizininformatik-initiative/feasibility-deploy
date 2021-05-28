@@ -1,16 +1,17 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
-export COMPOSE_PROJECT=codex-deploy
+COMPOSE_PROJECT=codex-deploy
 
+readlink "$0" >/dev/null
+if [ $? -ne 0 ]; then
+  BASE_DIR=$(dirname "$0")
+else
+  BASE_DIR=$(dirname "$(readlink "$0")")
+fi
 
-cd keycloak
-docker-compose -p $COMPOSE_PROJECT stop
-
-cd ../flare
-docker-compose -p $COMPOSE_PROJECT stop
-
-cd ../backend
-docker-compose -p $COMPOSE_PROJECT stop
-
-cd ../gui
-docker-compose -p $COMPOSE_PROJECT stop
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/keycloak/docker-compose.yml stop
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/flare/docker-compose.yml stop
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/backend/docker-compose.yml stop
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/gui/docker-compose.yml stop
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/aktin-broker/docker-compose.yml stop
+sh $BASE_DIR/dsf-broker/stop.sh $COMPOSE_PROJECT

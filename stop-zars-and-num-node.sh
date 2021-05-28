@@ -1,46 +1,27 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 export COMPOSE_PROJECT=codex-deploy
 
+readlink "$0" >/dev/null
+if [ $? -ne 0 ]; then
+  BASE_DIR=$(dirname "$0")
+else
+  BASE_DIR=$(dirname "$(readlink "$0")")
+fi
 
 printf "Stopping ZARS components ..."
-cd zars
-cd keycloak
-docker-compose -p $COMPOSE_PROJECT stop
-
-cd ../flare
-docker-compose -p $COMPOSE_PROJECT stop
-
-cd ../backend
-docker-compose -p $COMPOSE_PROJECT stop
-
-cd ../gui
-docker-compose -p $COMPOSE_PROJECT stop
-
-cd ../aktin-broker
-docker-compose -p $COMPOSE_PROJECT stop
-
-cd ../dsf-broker
-./stop.sh $COMPOSE_PROJECT
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/zars/keycloak/docker-compose.yml stop
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/zars/flare/docker-compose.yml stop
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/zars/backend/docker-compose.yml stop
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/zars/gui/docker-compose.yml stop
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/zars/aktin-broker/docker-compose.yml stop
+sh $BASE_DIR/zars/dsf-broker/stop.sh $COMPOSE_PROJECT
 
 
 printf "Stopping Num-Node components"
-cd ../../num-node
-
-cd aktin-client
-docker-compose -p $COMPOSE_PROJECT stop
-
-cd ../dsf-client
-bash stop.sh $COMPOSE_PROJECT
-
-cd ../flare
-docker-compose -p $COMPOSE_PROJECT stop
-
-cd ../fhir-server/blaze-server
-docker-compose -p $COMPOSE_PROJECT stop
-
-cd ../fhir-server/hapi-fhir-server
-docker-compose -p $COMPOSE_PROJECT stop
-
-cd ../../rev-proxy
-docker-compose -p $COMPOSE_PROJECT stop
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/num-node/aktin-client/docker-compose.yml stop
+bash $BASE_DIR/num-node/dsf-client/stop.sh $COMPOSE_PROJECT
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/num-node/flare/docker-compose.yml stop
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/num-node/fhir-server/blaze-server/docker-compose.yml stop
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/num-node/fhir-server/hapi-fhir-server/docker-compose.yml stop
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/num-node/rev-proxy/docker-compose.yml stop

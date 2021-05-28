@@ -1,4 +1,14 @@
-#!/bin/sh
+#!/usr/bin/env sh
+
+# Globals
+COMPOSE_PROJECT=codex-deploy
+
+readlink "$0" >/dev/null
+if [ $? -ne 0 ]; then
+  BASE_DIR=$(dirname "$0")
+else
+  BASE_DIR=$(dirname "$(readlink "$0")")
+fi
 
 # Globals
 COMPOSE_PROJECT=codex-deploy
@@ -92,51 +102,34 @@ export CODEX_FEASIBILITY_BACKEND_BROKER_CLIENT_TYPE=$MIDDLEWARE_TYPE
 
 # Execution -------------------------------------------------------------------
 printf "Startup ZARS components ..."
-cd zars
-
-cd keycloak
-docker-compose -p $COMPOSE_PROJECT up -d
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/zars/keycloak/docker-compose.yml up -d
 
 if [ "$MIDDLEWARE_TYPE" = "AKTIN" ]; then
-  cd ../aktin-broker
-  docker-compose -p $COMPOSE_PROJECT up -d
+  docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/zars/aktin-broker/docker-compose.yml up -d
 else
-  cd ../dsf-broker
-  ./start.sh $COMPOSE_PROJECT
+  sh $BASE_DIR/zars/dsf-broker/start.sh $COMPOSE_PROJECT
 fi
 
-cd ../flare
-docker-compose -p $COMPOSE_PROJECT up -d
-
-cd ../backend
-docker-compose -p $COMPOSE_PROJECT up -d
-
-cd ../gui
-docker-compose -p $COMPOSE_PROJECT up -d
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/zars/flare/docker-compose.yml up -d
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/zars/backend//docker-compose.yml up -d
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/zars/gui//docker-compose.yml up -d
 
 printf "Startup Num-Node components"
-cd ../../num-node
 
 if [ "$MIDDLEWARE_TYPE" = "AKTIN" ] || { [ "$MIDDLEWARE_TYPE" = "DSF" ] && [ "$QUERY_FORMAT" = "STRUCTURED" ]; }; then
-  cd flare
-  docker-compose -p $COMPOSE_PROJECT up -d
+  docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/num-node/flare/docker-compose.yml up -d
 fi
 
 if [ "$FHIR_SERVER_TYPE" = "BLAZE" ]; then
-  cd ../fhir-server/blaze-server
-  docker-compose -p $COMPOSE_PROJECT up -d
+  docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/num-node/fhir-server/blaze-server/docker-compose.yml up -d
 else
-  cd ../fhir-server/hapi-fhir-server
-  docker-compose -p $COMPOSE_PROJECT up -d
+  docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/num-node/fhir-server/hapi-fhir-server/docker-compose.yml up -d
 fi
 
-cd ../../rev-proxy
-docker-compose -p $COMPOSE_PROJECT up -d
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/num-node/rev-proxy/docker-compose.yml up -d
 
 if [ "$CODEX_FEASIBILITY_BACKEND_BROKER_CLIENT_TYPE" = "AKTIN" ]; then
-  cd ../aktin-client
-  docker-compose -p $COMPOSE_PROJECT up -d
+  docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/num-node/aktin-client/docker-compose.yml up -d
 else
-  cd ../dsf-client
-  ./start.sh $COMPOSE_PROJECT
+  sh $BASE_DIR/num-node/dsf-client/start.sh $COMPOSE_PROJECT
 fi

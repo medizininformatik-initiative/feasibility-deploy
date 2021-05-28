@@ -10,4 +10,4 @@ else
   BASE_DIR=$(dirname "$(readlink "$0")")
 fi
 
-docker-compose -p $1 -f $BASE_DIR/docker-compose.yml stop
+docker-compose -p $1 -f $BASE_DIR/docker-compose.yml down
