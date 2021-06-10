@@ -6,24 +6,24 @@ two Middlewares for the transfer of the queries from the feasibility platform to
 The feasibility platform can be run standalone inside a data integration center for local queries or, if connected via the middlewares provided as part of this project,
 connected to decentral num-nodes inside data integration centers.
 
-The feasibility gui allows a researcher to define feasibility queries, by combining inclusion and exlcusion search criterions using boolean logic (see example Figure 2 below).
+The feasibility gui allows a researcher to define feasibility queries, by combining inclusion and exlcusion search criterions using boolean logic (see example Figure 1 below).
 
 <figure class="image">
   <img src="../img/feasibility-gui-example.png">
-  <figcaption>Figure 2 - Example feasibility query</figcaption>
+  <figcaption>Figure 1 - Example feasibility query</figcaption>
 </figure>
 
 
-An overview of the platform is depicteed in Figure 1 below and shows the architecture of the complete system neccessary for distributed dezentralized feasibility queries accross multiple independent institutions.
+An overview of the platform is depicted in Figure 2 below and shows the architecture of the complete system neccessary for distributed dezentralized feasibility queries accross multiple independent institutions.
 
 <figure class="image">
   <img src="../img/codex-ap2-overview.png">
-  <figcaption>Figure 1 - Overview Codex AP2 - Feasibility Queries</figcaption>
+  <figcaption>Figure 2 - Overview Codex AP2 - Feasibility Queries</figcaption>
 </figure>
 
 
-the System includes one central platform (ZARS) and multiple Num-Nodes the ZARS connects to.
-The central part is responsible for providing the user interface, translating the user input into and generating three types of queries (Structured Query, CQL, FHIR Search) to be send to the Num-Nodes.
+the System includes one central platform (ZARS) and multiple Num-Nodes the central platform connects to.
+The central part is responsible for providing the user interface and translating the user input into and generating three types of queries (Structured Query, CQL, FHIR Search) to be send to the Num-Nodes.
 
 The query translation is described in more detail here: 
 [Query Translation](../Feasibility-Query.md)
