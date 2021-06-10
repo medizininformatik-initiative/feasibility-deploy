@@ -39,13 +39,3 @@ The other components, which are part of the central platform are:
 
 For further details on each component please refer to the respective repositories.
 
-
-
-
-
-
-
-
-
-
-
