@@ -19,9 +19,10 @@ The Num-Node parts here are only part of the Num-Node components to be deployed 
 
 ### Step 1 - clone this Repository to your virtual machine
 
-ssh to your virtual machine create a folder for your setup, we suggest /opt/num-node (`mkdir -p /opt/num-node`)
-navigate to the directory and clone this repository: `git clone https://github.com/num-codex/codex-deploy`
-navigate to the num-node folder of the repository: `cd /opt/num-node-codex-deploy/num-node`
+ssh to your virtual machine and switch to sudo `sudo -s`.
+Create a folder for your setup, we suggest /opt/num-node (`mkdir -p /opt/num-node`)
+Navigate to the directory and clone this repository: `git clone https://github.com/num-codex/codex-deploy`
+Navigate to the num-node folder of the repository: `cd /opt/num-node/codex-deploy/num-node`
 
 ### Step 2 - Setup basic auth
 
@@ -44,6 +45,8 @@ Ask for the Broker Endpoint Uri for the central platfrom from central platform t
 
 
 ### Step 4 - Start the Num-Node
+
+Switch back to the num-node folder `cd ..`
 
 To start the Num-Node execute the `start-node.sh`.
 

@@ -15,7 +15,7 @@ services:
       PROCESS_ARGS: ${PROCESS_ARGS:-10}
       FLARE_BASE_URL: ${FLARE_BASE_URL:-http://node-flare:5000}
     volumes:
-      - ./client-exec-scripts/echo.sh:/opt/codex-aktin/echo.sh
-      - ./client-exec-scripts/call-cql.sh:/opt/codex-aktin/call-cql.sh
-      - ./client-exec-scripts/execute-cql.sh:/opt/codex-aktin/execute-cql.sh
-      - ./client-exec-scripts/call-flare.sh:/opt/codex-aktin/call-flare.sh
+      - ./client-exec-scripts/echo.sh:/opt/aktin/echo.sh
+      - ./client-exec-scripts/call-cql.sh:/opt/aktin/call-cql.sh
+      - ./client-exec-scripts/execute-cql.sh:/opt/aktin/execute-cql.sh
+      - ./client-exec-scripts/call-flare.sh:/opt/aktin/call-flare.sh
