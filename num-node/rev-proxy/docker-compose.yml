@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     image: nginxinc/nginx-unprivileged:1.20-alpine
     ports:
-      - ${PORT_NUM_NODE_REV_PROXY:-444}:8080
+      - ${PORT_NUM_NODE_REV_PROXY:-444}:8443
     volumes:
       - ../auth/cert.pem:/etc/nginx/conf.d/cert.pem
       - ../auth/key.pem:/etc/nginx/conf.d/key.pem
