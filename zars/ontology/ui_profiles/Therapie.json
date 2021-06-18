@@ -1,24 +1,179 @@
 {
     "children": [
         {
-            "children": [],
-            "display": "Dialyse / H\u00e4mofiltration",
-            "id": "6f41010d-f9ba-4e73-b6cb-00fe570ebd99",
-            "leaf": true,
-            "selectable": true,
-            "termCode": {
-                "code": "108241001",
-                "display": "dialyse (verrichting)",
-                "system": "http://snomed.info/sct"
-            },
-            "timeRestrictionAllowed": false,
-            "valueDefinitions": []
-        },
-        {
-            "children": [],
+            "children": [
+                {
+                    "children": [],
+                    "display": "Apheresis",
+                    "id": "241685a3-4a64-4b30-915a-1232dee1fdef",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "127788007",
+                        "display": "Apheresis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Erythrocytapheresis",
+                    "id": "78f3b02d-6c79-4e95-b988-8c6e03949d02",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "438839005",
+                        "display": "Erythrocytapheresis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Extracorporeal photopheresis",
+                    "id": "981c33ed-fa0c-4d41-872f-e3794805a0f6",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "83794005",
+                        "display": "Extracorporeal photopheresis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Leukopheresis",
+                    "id": "18e21db3-2a2c-4d27-8249-fe6c0849360d",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "77257005",
+                        "display": "Leukopheresis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Lipopheresis",
+                    "id": "5e75be68-da0f-475c-ba5f-dabef37bfae9",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "233594006",
+                        "display": "Lipopheresis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Low density lipoprotein apheresis",
+                    "id": "78d22eca-00d6-4673-87a0-ceccac877183",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "448955002",
+                        "display": "Low density lipoprotein apheresis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Plasma exchange",
+                    "id": "a52f2514-9b5a-4442-bc11-f6efbd54e68f",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "19647005",
+                        "display": "Plasma exchange",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Plasmapheresis",
+                    "id": "ccbc647d-7951-406f-9841-b7177ba8b35d",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "20720000",
+                        "display": "Plasmapheresis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Platelet apheresis using HLA matched donors",
+                    "id": "0a662e98-06e0-4efd-b865-2ca5b1e4b6bc",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "233564000",
+                        "display": "Platelet apheresis using HLA matched donors",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Platelet apheresis using random donors",
+                    "id": "b204ced0-962b-494b-a1c0-736a2f0b4c70",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "233565004",
+                        "display": "Platelet apheresis using random donors",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Plateletpheresis",
+                    "id": "b8ed5f54-683a-4f1e-b08d-f7fdae6da367",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "72541002",
+                        "display": "Plateletpheresis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Therapeutic plasma exchange",
+                    "id": "b2b3afb2-bb52-49d3-9ef4-50ea028a637c",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "225067007",
+                        "display": "Therapeutic plasma exchange",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                }
+            ],
             "display": "Apherese",
-            "id": "3c7c4b06-404f-4f0b-ac57-16fabe3fb11d",
-            "leaf": true,
+            "id": "6283877a-7b4d-44ae-aecf-83380872d06b",
+            "leaf": false,
             "selectable": true,
             "termCode": {
                 "code": "127788007",
@@ -31,8 +186,8 @@
         {
             "children": [],
             "display": "Bauchlage",
-            "id": "c053edf3-378c-400e-bd15-69e0020a9fb5",
-            "leaf": true,
+            "id": "0a3582f4-0423-45ec-8e97-dcd649d7dec5",
+            "leaf": false,
             "selectable": true,
             "termCode": {
                 "code": "431182000",
@@ -43,10 +198,3400 @@
             "valueDefinitions": []
         },
         {
+            "children": [
+                {
+                    "children": [],
+                    "display": "Active cycle of breathing technique",
+                    "id": "b774c485-53f8-409f-9976-15da37da1dad",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229294007",
+                        "display": "Active cycle of breathing technique",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Administration of cardiovascular drug to increase oxygen delivery",
+                    "id": "e9f25d25-183e-4600-a7e9-6b5b15c867ae",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "397815001",
+                        "display": "Administration of cardiovascular drug to increase oxygen delivery",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Airway pressure release ventilation",
+                    "id": "c422190c-5ce0-4cff-a961-29ecae8d49fe",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243143008",
+                        "display": "Airway pressure release ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Airway suction technique",
+                    "id": "53c2ded6-c8f7-4b12-b82d-b5dabaa7f49a",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "230040009",
+                        "display": "Airway suction technique",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Alcohol-oxygen vapor therapy",
+                    "id": "37944df9-7b2d-471a-8c26-53729d7265e4",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "788538002",
+                        "display": "Alcohol-oxygen vapor therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Alteration of circulating volume to increase oxygen delivery",
+                    "id": "04f33f01-d8bc-4758-b47f-e80cde205737",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "398287006",
+                        "display": "Alteration of circulating volume to increase oxygen delivery",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Alteration of hemoglobin concentration to increase oxygen delivery",
+                    "id": "cc757aad-cf39-4aae-8b18-de2fc679b464",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "397867002",
+                        "display": "Alteration of hemoglobin concentration to increase oxygen delivery",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Apical expansion exercises",
+                    "id": "c73bb017-1ced-4833-8f32-47f843e0110d",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229290003",
+                        "display": "Apical expansion exercises",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Apneic oxygenation",
+                    "id": "f16fc801-dcb1-459a-b3c4-32e6d0f4c741",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "276732005",
+                        "display": "Apneic oxygenation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Artificial respiration",
+                    "id": "412c7bda-b3dd-42c3-8da3-7c823b4c417d",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "40617009",
+                        "display": "Artificial respiration",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Assisted breathing",
+                    "id": "9b6a9881-2b02-4a49-8b64-852a42e01e13",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "266700009",
+                        "display": "Assisted breathing",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Assisted controlled mandatory ventilation",
+                    "id": "905bd0f2-fab0-4b6a-a9d8-ca86f3ddfbc3",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243150007",
+                        "display": "Assisted controlled mandatory ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Assisted ventilation in prone position",
+                    "id": "1b685aa5-4b44-4c78-9424-a1aab7775299",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "870391004",
+                        "display": "Assisted ventilation in prone position",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Assisted ventilation therapy, pressure or volume preset, initiation and management",
+                    "id": "904ff69f-e752-4603-bfec-dc9fd1d40da3",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "8948006",
+                        "display": "Assisted ventilation therapy, pressure or volume preset, initiation and management",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Asthma control step 0",
+                    "id": "6868d409-1d04-491e-94fb-6d46e2873b9c",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "182726007",
+                        "display": "Asthma control step 0",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Asthma control step 1",
+                    "id": "5853692e-6898-4cda-b476-8b7451c6c2b0",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "182727003",
+                        "display": "Asthma control step 1",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Asthma control step 2",
+                    "id": "5c6e6249-8c62-44e0-85d2-b731a2799f39",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "182728008",
+                        "display": "Asthma control step 2",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Asthma control step 3",
+                    "id": "860f4ef4-652b-40bf-86ee-e3f719becab8",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "182729000",
+                        "display": "Asthma control step 3",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Asthma control step 4",
+                    "id": "1ab03787-99d8-40b9-a310-44b3701ea672",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "182730005",
+                        "display": "Asthma control step 4",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Asthma control step 5",
+                    "id": "dbb692f7-bb1f-45ec-ad00-5a1a190c0710",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "182731009",
+                        "display": "Asthma control step 5",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Asthma control steps",
+                    "id": "e6a463ed-8e4d-42a8-9233-d4674a645133",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "302220000",
+                        "display": "Asthma control steps",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Autogenic pulmonary drainage",
+                    "id": "763fe80f-20be-40b6-ad9e-0bd97b023377",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "127782008",
+                        "display": "Autogenic pulmonary drainage",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Bag valve mask ventilation",
+                    "id": "83234973-e547-4797-b960-6ef83aec827e",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "425447009",
+                        "display": "Bag valve mask ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Basal expansion exercises",
+                    "id": "dd761beb-34b4-4d91-97c1-da849bfd35ce",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229289007",
+                        "display": "Basal expansion exercises",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Bennett respirator therapy",
+                    "id": "799028b3-25ca-42d4-a4bc-64f3aab00ac2",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "38282001",
+                        "display": "Bennett respirator therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Bird respiratory therapy",
+                    "id": "d02ee534-7a00-41c5-b836-81fc8e7d6b25",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "773454006",
+                        "display": "Bird respiratory therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Breathing awareness for childbirth",
+                    "id": "15a55475-c9c1-4020-a04f-033cf14f2582",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229314005",
+                        "display": "Breathing awareness for childbirth",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Breathing control",
+                    "id": "fef84699-0390-4073-a2f6-ab0708eb8e2b",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229298005",
+                        "display": "Breathing control",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Breathing exercise, blow bottle",
+                    "id": "5cb0fb45-a85d-4514-90a3-cd763edae1db",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "11310004",
+                        "display": "Breathing exercise, blow bottle",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Bronchial hygiene",
+                    "id": "007972b3-5a76-4023-8351-ab488e68d66b",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "385982006",
+                        "display": "Bronchial hygiene",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Catalytic oxygen therapy",
+                    "id": "f8b202f7-76aa-426e-ad76-e882e3ed95a9",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "182713008",
+                        "display": "Catalytic oxygen therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Class in postural drainage",
+                    "id": "939c3371-fd28-4f01-a554-7d80d9defe4f",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "9519000",
+                        "display": "Class in postural drainage",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Continuous flow ventilation",
+                    "id": "a1db14d9-59cd-44be-a439-797b2ed84d97",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243156001",
+                        "display": "Continuous flow ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Continuous negative pressure ventilation treatment",
+                    "id": "aba23475-969a-4bc8-966d-27fa2a1218e2",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "82433009",
+                        "display": "Continuous negative pressure ventilation treatment",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Continuous positive airway pressure to nonventilated lung",
+                    "id": "3214717c-3509-480b-884b-fa74c72de0cf",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "448134000",
+                        "display": "Continuous positive airway pressure to nonventilated lung",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Continuous positive airway pressure ventilation treatment",
+                    "id": "b866b456-56c8-4daf-97a3-a658776ac252",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "47545007",
+                        "display": "Continuous positive airway pressure ventilation treatment",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Continuous positive airway pressure ventilation weaning protocol",
+                    "id": "fc65cb9e-ea88-4ae4-8835-71245ecbcd0e",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "423574009",
+                        "display": "Continuous positive airway pressure ventilation weaning protocol",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Control of atmospheric pressure and composition with antigen-free air conditioning",
+                    "id": "8ac5aa39-8073-421f-a0fd-7f7bc9e64523",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "39496003",
+                        "display": "Control of atmospheric pressure and composition with antigen-free air conditioning",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Control of end expiratory pressure",
+                    "id": "c550a8a9-c12c-405f-9e97-0f00dc97c7c4",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243160003",
+                        "display": "Control of end expiratory pressure",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Controlled mandatory ventilation",
+                    "id": "ea982ab2-9265-404b-933e-0066160ef6de",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243148004",
+                        "display": "Controlled mandatory ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Controlled mandatory ventilation with sigh",
+                    "id": "c28c0cbf-5ea4-4f32-81d3-9d8b4a520fb2",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243149007",
+                        "display": "Controlled mandatory ventilation with sigh",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Controlled ventilation",
+                    "id": "657cbb3f-eee9-496d-8fa3-eeb68e67bd9f",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243147009",
+                        "display": "Controlled ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Controlled ventilation procedure and therapy, initiation and management",
+                    "id": "c9d7cb57-1337-43eb-a890-fa1d162c919a",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "26763009",
+                        "display": "Controlled ventilation procedure and therapy, initiation and management",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Cuirasse ventilation",
+                    "id": "0c26878d-3503-4efb-80cc-4152ab0b4782",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "281508008",
+                        "display": "Cuirasse ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Decompression chamber therapy",
+                    "id": "fa978107-b825-4573-90cd-97b88c72eef4",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "44387004",
+                        "display": "Decompression chamber therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Deep breathing and coughing exercises",
+                    "id": "e63ee0bb-7859-48ba-8d5f-35ce12018b93",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "371605008",
+                        "display": "Deep breathing and coughing exercises",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Deep breathing exercises",
+                    "id": "c71a54b0-e95e-4e09-a974-e59e73d25c72",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229287009",
+                        "display": "Deep breathing exercises",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Deep breathing, clapping and postural drainage",
+                    "id": "980fad19-d9e3-4f33-9f4f-993d818f76f0",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "38158002",
+                        "display": "Deep breathing, clapping and postural drainage",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Diaphragmatic augmentation",
+                    "id": "ce2ca5c8-d26c-46fe-a4aa-1c269423f2fa",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243145001",
+                        "display": "Diaphragmatic augmentation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Diaphragmatic augmentation by rocking bed",
+                    "id": "1a888ec5-ba37-4f07-9cee-63f7ecd7b5a1",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243146000",
+                        "display": "Diaphragmatic augmentation by rocking bed",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Diaphragmatic breathing exercises",
+                    "id": "ce10f026-f1c0-44dd-8b86-5a0e1ab550d8",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229809001",
+                        "display": "Diaphragmatic breathing exercises",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Domiciliary ventilation",
+                    "id": "8b456d95-70f4-47f6-87c0-2c5a139026ee",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "276737004",
+                        "display": "Domiciliary ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Dual pressure spontaneous ventilation support",
+                    "id": "1da54f0a-3956-46fd-8e27-0a380ebf1bca",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243142003",
+                        "display": "Dual pressure spontaneous ventilation support",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Dual pressure spontaneous ventilation support weaning protocol",
+                    "id": "0950c699-fc49-4a8c-ace4-9a57ee8e178e",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "424172009",
+                        "display": "Dual pressure spontaneous ventilation support weaning protocol",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Electrophrenic respiration",
+                    "id": "a28cf3d4-769a-4184-a4f3-8d1918f7b07a",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "76777009",
+                        "display": "Electrophrenic respiration",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Endotracheal respiratory assistance",
+                    "id": "a923294f-85fe-492e-b2b7-d4c8039dd106",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "182686001",
+                        "display": "Endotracheal respiratory assistance",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Expectoration technique",
+                    "id": "3a39e0f2-157c-4140-9f7d-456a547c0b0f",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229297000",
+                        "display": "Expectoration technique",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Expired air ventilation",
+                    "id": "6afe3a34-d12e-4237-9838-373f1f681dc4",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243180002",
+                        "display": "Expired air ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Expired air ventilation with airway aid",
+                    "id": "5f064bee-0e13-4609-b28c-6af50a6872c6",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243181003",
+                        "display": "Expired air ventilation with airway aid",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Extended mandatory minute volume ventilation",
+                    "id": "547f8c9a-d5e6-4d6c-8408-9d7d296313c9",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243152004",
+                        "display": "Extended mandatory minute volume ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Flow and timed ventilation procedure, initiation and management",
+                    "id": "8fcd52fc-0a81-45f8-90a0-f8b75a3c014a",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "66852000",
+                        "display": "Flow and timed ventilation procedure, initiation and management",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Fluorocarbon ventilation",
+                    "id": "d9887ac5-2c39-4499-96f5-acb213b8ad4f",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243158000",
+                        "display": "Fluorocarbon ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Fog inhalation therapy",
+                    "id": "aaca0942-5ba9-49ee-a6b3-ccac06f457d7",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "80677001",
+                        "display": "Fog inhalation therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Forced expiration technique",
+                    "id": "e6eaed74-1881-464a-ac79-c064127e3b60",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229295008",
+                        "display": "Forced expiration technique",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Global oxygen delivery increase",
+                    "id": "e99eb787-77c3-4cdc-b920-5469f6970ef2",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243177003",
+                        "display": "Global oxygen delivery increase",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Heated and humidified high flow oxygen therapy",
+                    "id": "ae1a4939-cf3d-41fe-bc99-c79b7f8c519c",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "870533002",
+                        "display": "Heated and humidified high flow oxygen therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Helium inhalation therapy",
+                    "id": "c6c7fd84-64df-4327-8a66-5f9220fdaa8a",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243131007",
+                        "display": "Helium inhalation therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Helium therapy",
+                    "id": "cb53f23d-8f37-492f-a5a7-bcaa6aeaf204",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "20261004",
+                        "display": "Helium therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "High ambient pressure therapy",
+                    "id": "7456213e-4372-4995-a5b2-f27afefa8b8c",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243138001",
+                        "display": "High ambient pressure therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "High concentration oxygen therapy",
+                    "id": "8f4507eb-bfd0-4b98-922a-065c52547632",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "315041000",
+                        "display": "High concentration oxygen therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "High frequency chest compression vest physiotherapy",
+                    "id": "5092ac68-636b-4c4c-8bb0-6cc0455c3389",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "127780000",
+                        "display": "High frequency chest compression vest physiotherapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "High frequency jet ventilation",
+                    "id": "77895376-5705-4db6-8856-b9fc74425def",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243154003",
+                        "display": "High frequency jet ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "High frequency oscillatory ventilation",
+                    "id": "4a6341f4-1fdb-443b-b456-8261de41a922",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243155002",
+                        "display": "High frequency oscillatory ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "High frequency positive pressure ventilation",
+                    "id": "d43299c5-3fcf-4b34-bad4-13d1c9bae655",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243153009",
+                        "display": "High frequency positive pressure ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Home oxygen therapy",
+                    "id": "384ccf03-e754-4c14-b3f6-dfa1c83b2a11",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "426990007",
+                        "display": "Home oxygen therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Humidification therapy",
+                    "id": "384092eb-4f36-4ebc-b2a5-f48673fe9410",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243130008",
+                        "display": "Humidification therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Humidified oxygen therapy",
+                    "id": "010188c8-69c3-42b9-ae5a-ca3084f764f1",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "304577004",
+                        "display": "Humidified oxygen therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Hyperbaric oxygen therapy",
+                    "id": "1a6f928b-d099-457b-8084-ad5d1d9e8fc3",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "18678000",
+                        "display": "Hyperbaric oxygen therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Hyperventilation therapy for traumatic brain injury",
+                    "id": "62fe4e50-ec8a-4e5c-a534-6d61c8b5bc16",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "438603002",
+                        "display": "Hyperventilation therapy for traumatic brain injury",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Incentive spirometry",
+                    "id": "52ebd286-002b-4995-8501-d1749229657e",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229301009",
+                        "display": "Incentive spirometry",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Inhalation anesthesia, machine system, semi-closed, no rebreathing of primary agent",
+                    "id": "42f8f790-cb2f-4a61-b546-93db79485cc7",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "30050007",
+                        "display": "Inhalation anesthesia, machine system, semi-closed, no rebreathing of primary agent",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Inhalation therapy procedure",
+                    "id": "71e7fead-c5e7-4b3d-96f2-c6a67fbc5490",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "1366004",
+                        "display": "Inhalation therapy procedure",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Inspiration mandatory ventilation therapy, initiation and management",
+                    "id": "db80d194-90af-4687-9cdc-8dbad5d0aec0",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "55089006",
+                        "display": "Inspiration mandatory ventilation therapy, initiation and management",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Inspiratory muscle training",
+                    "id": "6264cacf-9221-433a-8fd5-c3b317fd21af",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229300005",
+                        "display": "Inspiratory muscle training",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Inspired gas humidification",
+                    "id": "b6a2802b-eada-43e6-9e6d-53b8acae5246",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "286814009",
+                        "display": "Inspired gas humidification",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Intermittent CPAP",
+                    "id": "ba950f74-c5d0-4d0f-9046-6f74c56648c9",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229308003",
+                        "display": "Intermittent CPAP",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Intermittent negative pressure ventilation",
+                    "id": "ab34b39a-b14d-44cd-b9d3-4e2ba757f756",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243159008",
+                        "display": "Intermittent negative pressure ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Intermittent positive pressure breathing treatment",
+                    "id": "d6b91841-5e71-4dac-a91f-27cb7622b442",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "387727008",
+                        "display": "Intermittent positive pressure breathing treatment",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Intermittent positive pressure breathing treatment with nebulized medication",
+                    "id": "c8372576-4e0a-4074-8b0f-2d888cece152",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "19861002",
+                        "display": "Intermittent positive pressure breathing treatment with nebulized medication",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Intermittent positive pressure breathing treatment without nebulized medication",
+                    "id": "67a8c6d1-c03c-42de-9838-07e393f42996",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "387726004",
+                        "display": "Intermittent positive pressure breathing treatment without nebulized medication",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Intermittent positive pressure ventilation",
+                    "id": "959cf3c2-5084-4531-b850-c99d103d5fdd",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "182687005",
+                        "display": "Intermittent positive pressure ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Intermittent positive pressure ventilation via bag and mask",
+                    "id": "aa286af2-3702-49a1-b8c0-d58aec6cab6d",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "408852001",
+                        "display": "Intermittent positive pressure ventilation via bag and mask",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Intermittent positive pressure ventilation via endotracheal tube",
+                    "id": "27146f01-e210-46e0-a735-41d1d838aad5",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "408853006",
+                        "display": "Intermittent positive pressure ventilation via endotracheal tube",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Intranasal oxygen therapy",
+                    "id": "ba820580-d930-4f63-b9bf-d3bcef11b6e4",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "71786000",
+                        "display": "Intranasal oxygen therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Jet ventilation procedure",
+                    "id": "af46afc3-3b78-4ac9-9d6d-81c0f2a9f3c4",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "4764004",
+                        "display": "Jet ventilation procedure",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Liquid ventilation",
+                    "id": "d48f931b-2723-45a2-8273-4bba8b8d4249",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243157005",
+                        "display": "Liquid ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Long-term oxygen therapy",
+                    "id": "e4b697d5-ab43-4679-9cc7-e91f55cb008d",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243137006",
+                        "display": "Long-term oxygen therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Lower lateral costal expansion exercises",
+                    "id": "e51ecc15-76ef-4b1d-ab95-d27d5971cc78",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229288004",
+                        "display": "Lower lateral costal expansion exercises",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Lower thoracic expansion exercises",
+                    "id": "93c1a8e2-4114-469b-a213-62dd11b1ab0b",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229293001",
+                        "display": "Lower thoracic expansion exercises",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Lung inflation by intermittent compression of reservoir bag",
+                    "id": "a5372abb-0f1b-4528-a8ec-99414aeae639",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243140006",
+                        "display": "Lung inflation by intermittent compression of reservoir bag",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Maintaining ventilation",
+                    "id": "c2be949b-2b0b-47fb-8376-47a8df65f3cd",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "710976005",
+                        "display": "Maintaining ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Mandatory minute volume ventilation",
+                    "id": "7d27cb66-cd95-4541-ba95-df83181b27e1",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243151006",
+                        "display": "Mandatory minute volume ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Manipulation of oxygen dynamics",
+                    "id": "42010a8c-2f7c-4854-80a9-f43d36927971",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "391893003",
+                        "display": "Manipulation of oxygen dynamics",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Manual hyperinflation",
+                    "id": "166780ea-c360-497d-934d-9d7f0ed38ea6",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229313004",
+                        "display": "Manual hyperinflation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Mechanical assistance to circulation to increase oxygen delivery",
+                    "id": "1d4b5b46-55f7-4a12-9781-8f54faa19317",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "397957008",
+                        "display": "Mechanical assistance to circulation to increase oxygen delivery",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Mechanical insufflation exsufflation",
+                    "id": "e13ee9da-4980-4411-9d24-d5110374c88c",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "787180006",
+                        "display": "Mechanical insufflation exsufflation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Mechanically assisted spontaneous ventilation",
+                    "id": "b07d12ed-d99c-4ff3-93d8-3b809f3b6e9e",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243141005",
+                        "display": "Mechanically assisted spontaneous ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Menthol inhalations",
+                    "id": "9294af72-7f86-4c40-bf39-eb8446b839bd",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229305000",
+                        "display": "Menthol inhalations",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Mist inhalation therapy",
+                    "id": "31ff4948-6843-4cb7-a0ac-14838b32a786",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229303007",
+                        "display": "Mist inhalation therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Mouth to mouth expired air ventilation with airway",
+                    "id": "4a8a767a-1c52-4bdd-837e-a2d4bd259798",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243182005",
+                        "display": "Mouth to mouth expired air ventilation with airway",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Mouth to nose expired air ventilation",
+                    "id": "a7532b4b-6664-46d7-9b62-5db40cb0774a",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243183000",
+                        "display": "Mouth to nose expired air ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Mouth-to-mouth resuscitation",
+                    "id": "6f6530ff-d4b5-4669-913f-e8dc1138a61c",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "37113006",
+                        "display": "Mouth-to-mouth resuscitation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "NEEP decreased - Negative end expiratory pressure decreased",
+                    "id": "70a161b9-8cc2-48cf-9855-cc84301a1461",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243172009",
+                        "display": "NEEP decreased - Negative end expiratory pressure decreased",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "NEEP increased - Negative end expiratory pressure increased",
+                    "id": "e0580775-f9d2-4eda-88f9-7853d9c1d05a",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243171002",
+                        "display": "NEEP increased - Negative end expiratory pressure increased",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Nasal ventilation therapy",
+                    "id": "0691297d-d30c-42d8-a33d-d467a139b87d",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229312009",
+                        "display": "Nasal ventilation therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Negative end expiratory pressure applied",
+                    "id": "ac64f71f-1394-456e-962e-58b6f6363fbf",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243170001",
+                        "display": "Negative end expiratory pressure applied",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Nocturnal continuous positive airway pressure",
+                    "id": "d2162325-94bf-4154-a744-0a23d65249aa",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "34281000175105",
+                        "display": "Nocturnal continuous positive airway pressure",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Nocturnal dual pressure spontaneous ventilation support",
+                    "id": "5bd256dc-7265-4595-ae4e-a8d2f0720a52",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "34291000175108",
+                        "display": "Nocturnal dual pressure spontaneous ventilation support",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Noninvasive positive pressure ventilation",
+                    "id": "b4e07ef1-6588-4a08-9409-81c4c24818e5",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "447837008",
+                        "display": "Noninvasive positive pressure ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Noninvasive ventilation",
+                    "id": "6fe955d1-56bc-4bce-a2ef-0bed49f0bfcc",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "428311008",
+                        "display": "Noninvasive ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Oscillating positive expiratory pressure (flutter) physiotherapy",
+                    "id": "37895d0c-bb06-4bd8-aff5-8531650966b2",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "127779003",
+                        "display": "Oscillating positive expiratory pressure (flutter) physiotherapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Oxygen administration by Venturi mask",
+                    "id": "f19e4e59-7263-4f7f-883a-81b68791bbe9",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "429253002",
+                        "display": "Oxygen administration by Venturi mask",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Oxygen administration by mask",
+                    "id": "41307ddd-8640-4afd-8968-6b0f8de5a1d4",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "371908008",
+                        "display": "Oxygen administration by mask",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Oxygen administration by nasal cannula",
+                    "id": "c9b544db-0b26-4515-bb39-a3f4910eb6a0",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "371907003",
+                        "display": "Oxygen administration by nasal cannula",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Oxygen dynamic interventions",
+                    "id": "fe2e0664-a993-4d46-a13f-103e8da22677",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "398077001",
+                        "display": "Oxygen dynamic interventions",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Oxygen enrichment therapy",
+                    "id": "bb817936-d020-4c81-ba98-6672a982e9b6",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "266702001",
+                        "display": "Oxygen enrichment therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Oxygen therapy",
+                    "id": "956bf034-8adb-4d18-a474-4d6b774d22c1",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "57485005",
+                        "display": "Oxygen therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Oxygenator therapy",
+                    "id": "2dcc5c96-3af7-493a-aa18-44b0236616ac",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "182714002",
+                        "display": "Oxygenator therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Patient triggered inspiratory assistance",
+                    "id": "b40636d8-7d4d-454c-a4bb-516bf4775d22",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243144002",
+                        "display": "Patient triggered inspiratory assistance",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Physiotherapeutic breathing exercise",
+                    "id": "e09d627a-4046-4d42-896c-42ac334d3662",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "12895002",
+                        "display": "Physiotherapeutic breathing exercise",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Physiotherapy of chest",
+                    "id": "848e57f4-446f-4595-bc2d-e473162c44d8",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "34431008",
+                        "display": "Physiotherapy of chest",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Positive end expiratory pressure increased",
+                    "id": "0b2e05d9-a1ce-4a9b-880b-f1be2a320fd2",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243161004",
+                        "display": "Positive end expiratory pressure increased",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Positive end expiratory pressure increased to best PEEP",
+                    "id": "432c7b1b-e7f9-4c52-af98-d5739aab05c4",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243163001",
+                        "display": "Positive end expiratory pressure increased to best PEEP",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Positive end expiratory pressure increased to optimal PEEP",
+                    "id": "8248e4ea-59ee-41a9-aa33-4862fc23629e",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243162006",
+                        "display": "Positive end expiratory pressure increased to optimal PEEP",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Positive end expiratory pressure reduced",
+                    "id": "c7b693d7-d577-47ce-ac8f-ad166e4103b5",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243164007",
+                        "display": "Positive end expiratory pressure reduced",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Positive end expiratory pressure reduced to best PEEP",
+                    "id": "c462f1fd-e56b-43e6-937d-55082e9fc72f",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243167000",
+                        "display": "Positive end expiratory pressure reduced to best PEEP",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Positive end expiratory pressure reduced to optimal PEEP",
+                    "id": "6696c22a-065e-45d0-9f80-59f29d0bce72",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243166009",
+                        "display": "Positive end expiratory pressure reduced to optimal PEEP",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Positive end expiratory pressure ventilation therapy, initiation and management",
+                    "id": "bedd1989-281a-4adc-aaa8-d045a48701e9",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "45851008",
+                        "display": "Positive end expiratory pressure ventilation therapy, initiation and management",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Positive end expiratory pressure withdrawn",
+                    "id": "9537b772-ac22-42f5-adaa-de48928e6836",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243168005",
+                        "display": "Positive end expiratory pressure withdrawn",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Positive expiratory pressure mask physiotherapy",
+                    "id": "ec6add8f-6eee-4514-bb5b-b42f85b5cf3e",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "127778006",
+                        "display": "Positive expiratory pressure mask physiotherapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Positive pressure therapy",
+                    "id": "c99d798a-7d4b-439f-8df7-5ec2a984d2d6",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229306004",
+                        "display": "Positive pressure therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Postural drainage therapy",
+                    "id": "5f0782e8-5759-4957-8ffe-ce3bfea828ba",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "386565009",
+                        "display": "Postural drainage therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Postural drainage with chest clapping",
+                    "id": "1f1f20e4-1f39-491e-adb4-92feab09a1df",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "386566005",
+                        "display": "Postural drainage with chest clapping",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Pressure controlled SIMV",
+                    "id": "8e0f834c-99d1-41fb-b0f9-5dc1cea954a7",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "286813003",
+                        "display": "Pressure controlled SIMV",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Pressure controlled ventilation",
+                    "id": "3e247aab-e881-4f02-adf6-7b995e75206b",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "286812008",
+                        "display": "Pressure controlled ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Reduction of oxygen consumption",
+                    "id": "591b446f-02c6-4037-a0be-6cac1da08b9b",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243178008",
+                        "display": "Reduction of oxygen consumption",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Relaxed breathing",
+                    "id": "e853deba-72ba-402f-910a-138367b14bd7",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229299002",
+                        "display": "Relaxed breathing",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Respiratory assist, manual",
+                    "id": "be3b81df-e439-4b4b-bf3d-7e2ad5ecc565",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "11140008",
+                        "display": "Respiratory assist, manual",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Respiratory assist, manual, using bag-valve-mask",
+                    "id": "0e825f68-73bc-4528-b933-20ef1b7aa82a",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "425696007",
+                        "display": "Respiratory assist, manual, using bag-valve-mask",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Respiratory care and adjustment",
+                    "id": "1cc56a8e-2b9d-41d5-b405-db3be5c71383",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "12484000",
+                        "display": "Respiratory care and adjustment",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Respiratory drainage techniques",
+                    "id": "b41ef7d2-95db-435b-b462-fb06a59679c1",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "306765008",
+                        "display": "Respiratory drainage techniques",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Respiratory expansion exercises",
+                    "id": "a22800ee-4c4b-4e49-b5cb-9648b0cb7fe3",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229286000",
+                        "display": "Respiratory expansion exercises",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Respiratory therapy",
+                    "id": "580fb977-f3eb-44a9-b6bf-dac80f1c7f7b",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "53950000",
+                        "display": "Respiratory therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Respiratory therapy by atmospheric control",
+                    "id": "64a5a491-fc54-4836-9170-436be48894b3",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "270484008",
+                        "display": "Respiratory therapy by atmospheric control",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Respiratory therapy by control of atmospheric composition",
+                    "id": "a6557673-2e7c-4f87-9524-a7997fc76480",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "698800009",
+                        "display": "Respiratory therapy by control of atmospheric composition",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Respiratory therapy by control of atmospheric pressure",
+                    "id": "b8605fdf-1212-4d46-9029-c72695b684e1",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "698799005",
+                        "display": "Respiratory therapy by control of atmospheric pressure",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Respiratory therapy by control of atmospheric pressure and composition",
+                    "id": "5daea2a0-5768-4721-982d-e3e0a736933b",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "698801008",
+                        "display": "Respiratory therapy by control of atmospheric pressure and composition",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Respiratory therapy by modification of proportion of atmospheric gas",
+                    "id": "2d465be1-4846-4a23-9885-9d34f938d06e",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "698510006",
+                        "display": "Respiratory therapy by modification of proportion of atmospheric gas",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Resuscitation with artificial respiration",
+                    "id": "fc2409ce-df76-4775-a707-32d3ad8e68d7",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "74596007",
+                        "display": "Resuscitation with artificial respiration",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Short-term oxygen therapy",
+                    "id": "37fff8e1-c47d-4251-858b-dd4061bff424",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243136002",
+                        "display": "Short-term oxygen therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sputum induction technique",
+                    "id": "90a7b335-82a4-4acf-8111-35fd3062d532",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229296009",
+                        "display": "Sputum induction technique",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Steam inhalations",
+                    "id": "7f09ed66-8f85-4db5-93ac-c745dbfbfeca",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229304001",
+                        "display": "Steam inhalations",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Synchronized intermittent mandatory ventilation",
+                    "id": "ebb93a50-8d82-436d-9ab1-809860d79b4a",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "59427005",
+                        "display": "Synchronized intermittent mandatory ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Thoracic expansion exercises",
+                    "id": "272f1503-b072-4418-9c64-a58dadac700a",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229291004",
+                        "display": "Thoracic expansion exercises",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Transtracheal jet ventilation",
+                    "id": "a8866871-a035-4b11-aef8-3fb4acd33f46",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "448442005",
+                        "display": "Transtracheal jet ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Treatment by iron lung",
+                    "id": "ab6f24a5-2c80-42d7-8a5d-2899d74f5238",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "52729008",
+                        "display": "Treatment by iron lung",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Trial for spontaneous breathing",
+                    "id": "cdbf9407-03fa-4c4e-9a6c-dbeb8f7731d6",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "424139009",
+                        "display": "Trial for spontaneous breathing",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Ultrasonic humidification",
+                    "id": "779b2752-19ec-408d-9082-6b6a599fd5d1",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229302002",
+                        "display": "Ultrasonic humidification",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Upper thoracic expansion exercises",
+                    "id": "6088bdce-0384-4629-9ae2-618a6433631a",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "229292006",
+                        "display": "Upper thoracic expansion exercises",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Ventilation with self-inflating bag",
+                    "id": "4c5f31f5-8320-46d0-821a-655432869543",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243184006",
+                        "display": "Ventilation with self-inflating bag",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Volume controlled ventilation",
+                    "id": "a295370d-7695-413b-a231-330db7a48c99",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "405609003",
+                        "display": "Volume controlled ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Warming of inhaled gases",
+                    "id": "c904903c-0a6f-4ffc-aeb9-a79d854ef54b",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "262277005",
+                        "display": "Warming of inhaled gases",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Weaning from mechanically assisted ventilation",
+                    "id": "b74b2016-45c1-45f6-b918-810e674404c7",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243174005",
+                        "display": "Weaning from mechanically assisted ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Weaning from mechanically assisted ventilation commenced",
+                    "id": "3b4ba7c3-ef6f-4498-adfd-a3cf305d71a7",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "397899008",
+                        "display": "Weaning from mechanically assisted ventilation commenced",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Weaning from mechanically assisted ventilation continued",
+                    "id": "dc81237d-de92-4273-93a2-78f80068959b",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "397998001",
+                        "display": "Weaning from mechanically assisted ventilation continued",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Weaning from noninvasive ventilation",
+                    "id": "6927c739-d874-4223-bf28-4e8889de791b",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "870392006",
+                        "display": "Weaning from noninvasive ventilation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Whole body hyperbaric oxygen therapy",
+                    "id": "ae7fe8ee-f0dd-495f-996c-5e55f70ecb59",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "110474005",
+                        "display": "Whole body hyperbaric oxygen therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Zero end expiratory pressure maintained",
+                    "id": "c4aa0233-3267-47cd-a8bc-3005fbed2d12",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "243169002",
+                        "display": "Zero end expiratory pressure maintained",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                }
+            ],
+            "display": "Beatmungstherapie",
+            "id": "86c7db22-914f-4e1e-ab16-cecfbdde702b",
+            "leaf": false,
+            "selectable": true,
+            "termCode": {
+                "code": "Ventilation therapy",
+                "display": "Ventilation therapy",
+                "system": "num.codex"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [
+                {
+                    "children": [],
+                    "display": "Aquapheresis",
+                    "id": "bd7bb85c-73dc-4916-86b6-1afb6efb9c9e",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "14130001000004103",
+                        "display": "Aquapheresis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Arteriovenous extracorporeal membrane oxygenation",
+                    "id": "52201218-3e09-4e4f-bff3-4a5112ba78da",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "786452006",
+                        "display": "Arteriovenous extracorporeal membrane oxygenation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Automated peritoneal dialysis",
+                    "id": "81461ba2-ed57-4834-bb29-5466730d6bde",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "428648006",
+                        "display": "Automated peritoneal dialysis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Chronic peritoneal dialysis",
+                    "id": "ee02fa82-93cc-4217-86c7-bb97e4d193bd",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "225230008",
+                        "display": "Chronic peritoneal dialysis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Continuous ambulatory peritoneal dialysis",
+                    "id": "b6544c59-0b5a-4e09-98e0-9aaa5699610a",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "238318009",
+                        "display": "Continuous ambulatory peritoneal dialysis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Continuous arteriovenous hemodiafiltration",
+                    "id": "fb2d1281-1e05-48ce-8a62-207ca98e5679",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "233589006",
+                        "display": "Continuous arteriovenous hemodiafiltration",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Continuous arteriovenous hemodialysis",
+                    "id": "2f43cd77-b574-4487-ae71-410e51f8bb7d",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "233579007",
+                        "display": "Continuous arteriovenous hemodialysis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Continuous arteriovenous hemofiltration",
+                    "id": "d8d568f8-2d39-4415-8141-255dbe4d8f18",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "233584001",
+                        "display": "Continuous arteriovenous hemofiltration",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Continuous cycling peritoneal dialysis",
+                    "id": "45cd8bb3-ecf5-4fac-b21c-07eda786ca4e",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "238319001",
+                        "display": "Continuous cycling peritoneal dialysis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Continuous hemodiafiltration",
+                    "id": "4f273854-20e4-43d9-b7fa-65305d2c2894",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "233588003",
+                        "display": "Continuous hemodiafiltration",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Continuous hemodialysis",
+                    "id": "155ed813-4c4a-4085-8c59-7b01f02a5afa",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "233578004",
+                        "display": "Continuous hemodialysis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Continuous hemofiltration",
+                    "id": "4be800f7-37fb-4b6c-8cb6-7d17709504da",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "233583007",
+                        "display": "Continuous hemofiltration",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Continuous renal replacement therapy",
+                    "id": "a36e0574-6bf0-4d75-b441-a89e8e39f427",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "714749008",
+                        "display": "Continuous renal replacement therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Continuous venovenous hemodiafiltration",
+                    "id": "b1c8281b-3228-4c1b-b812-ed9e590a1f80",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "233590002",
+                        "display": "Continuous venovenous hemodiafiltration",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Continuous venovenous hemodialysis",
+                    "id": "67e8e2ea-ffd2-405f-ba42-bc12d8be9eae",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "233580005",
+                        "display": "Continuous venovenous hemodialysis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Continuous venovenous hemofiltration",
+                    "id": "4c7caf5b-8bce-4167-ab77-3e84cfc17c2f",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "233585000",
+                        "display": "Continuous venovenous hemofiltration",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Dialysis procedure",
+                    "id": "e53ce7a0-7c54-4e31-b5f6-6d62718f1a6e",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "108241001",
+                        "display": "Dialysis procedure",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Emergency hemodiafiltration",
+                    "id": "82c96b18-d917-4084-9d7d-fd7d3508c456",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "708933000",
+                        "display": "Emergency hemodiafiltration",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Emergency hemodialysis",
+                    "id": "c392d3a7-e284-4fb9-a015-5dd5950a90bd",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "708932005",
+                        "display": "Emergency hemodialysis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Emergency hemofiltration",
+                    "id": "33ef5ec7-93c5-46be-b9cf-de46bc729bb1",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "715743002",
+                        "display": "Emergency hemofiltration",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Empty and measure peritoneal dialysis fluid",
+                    "id": "52b9a7eb-cce3-4e44-af8d-dc65d36ea309",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "3257008",
+                        "display": "Empty and measure peritoneal dialysis fluid",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Extracorporeal albumin hemodialysis",
+                    "id": "62eb7fd6-d547-49e6-9e6c-c787654a308b",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "427053002",
+                        "display": "Extracorporeal albumin hemodialysis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Extracorporeal blood irradiation",
+                    "id": "cb9c0c64-13a8-452d-8725-bce9a6dd7885",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "182749009",
+                        "display": "Extracorporeal blood irradiation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Extracorporeal carbon dioxide removal",
+                    "id": "a1a0c50c-d657-4b4b-863c-5f5f74a4203a",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "233574002",
+                        "display": "Extracorporeal carbon dioxide removal",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Extracorporeal gas exchange",
+                    "id": "d5156eaa-72cf-4c38-a8d7-5f564d9cdad0",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "233572003",
+                        "display": "Extracorporeal gas exchange",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Extracorporeal hemofiltration",
+                    "id": "a8c21e9e-f167-4b75-b9c9-37c3bb8b706e",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "341939001",
+                        "display": "Extracorporeal hemofiltration",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Extracorporeal kidney",
+                    "id": "60ec5477-bd59-4a98-81b9-1de8ccf13e68",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "288182009",
+                        "display": "Extracorporeal kidney",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Extracorporeal membrane oxygenation",
+                    "id": "52b77b5c-b650-4f8e-b500-3d9b1f378a04",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "233573008",
+                        "display": "Extracorporeal membrane oxygenation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Hemodiafiltration",
+                    "id": "37b6c03e-dc34-47bb-b041-f72f9b80f740",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "233586004",
+                        "display": "Hemodiafiltration",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Hemodialysis",
+                    "id": "726503b4-3254-4fd0-84d2-593227054aec",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "302497006",
+                        "display": "Hemodialysis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Hemodialysis, maintenance at home",
+                    "id": "68bb9925-2a36-46b2-a75a-133d8e5f7b1a",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "67970008",
+                        "display": "Hemodialysis, maintenance at home",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Hemodialysis, maintenance in hospital",
+                    "id": "4e4c9c23-c74f-48e3-b0e0-1bb143c9be07",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "34897002",
+                        "display": "Hemodialysis, maintenance in hospital",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Hemodialysis, supervision at home",
+                    "id": "5764db95-b186-4606-9602-e1bf69a41ed0",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "68341005",
+                        "display": "Hemodialysis, supervision at home",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Hemofiltration",
+                    "id": "24b24705-7ccb-4e71-af26-4ce2f1b8ec28",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "233581009",
+                        "display": "Hemofiltration",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Increase dialyzer size for hemodialysis",
+                    "id": "1b964ea6-2947-45fd-9635-b2247ef5ce2f",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "381000124105",
+                        "display": "Increase dialyzer size for hemodialysis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Initial hemodialysis",
+                    "id": "7f312674-13b5-4a4c-9c86-657857e85ef8",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "57274006",
+                        "display": "Initial hemodialysis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Intermittent hemodiafiltration",
+                    "id": "77142294-ff58-4f29-b413-955b48c7a918",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "233587008",
+                        "display": "Intermittent hemodiafiltration",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Intermittent hemodialysis",
+                    "id": "9352c968-0e2d-4b85-8a19-fcd047d57e50",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "233575001",
+                        "display": "Intermittent hemodialysis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Intermittent hemodialysis with continuous ultrafiltration",
+                    "id": "ff69e9a1-5d9f-4aab-bc93-41c7fb6c967e",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "233577009",
+                        "display": "Intermittent hemodialysis with continuous ultrafiltration",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Intermittent hemodialysis with sequential ultrafiltration",
+                    "id": "57c4c7da-d4bb-4783-96b3-4a8a38bfe7aa",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "233576000",
+                        "display": "Intermittent hemodialysis with sequential ultrafiltration",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Intermittent hemofiltration",
+                    "id": "304a0c1a-28ea-4527-937d-d1b6582a8681",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "233582002",
+                        "display": "Intermittent hemofiltration",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Intermittent peritoneal dialysis",
+                    "id": "f3d7b630-a6be-4dea-bc0d-dc55f1dfe62f",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "238321006",
+                        "display": "Intermittent peritoneal dialysis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Intestinal dialysis",
+                    "id": "d8500f28-2ca6-4c00-a947-0f4fe2483fbd",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "182753006",
+                        "display": "Intestinal dialysis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Intravenous gas exchange",
+                    "id": "f8625c93-acd5-43d4-967a-7ad36990d2a0",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "233595007",
+                        "display": "Intravenous gas exchange",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Maintenance hemodiafiltration",
+                    "id": "4600efa1-025c-43f9-8891-b7cf928c5787",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "708930002",
+                        "display": "Maintenance hemodiafiltration",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Maintenance hemodialysis",
+                    "id": "42f65bd1-58d5-4a9d-a0dd-7846feeb5a6d",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "708931003",
+                        "display": "Maintenance hemodialysis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Maintenance hemofiltration",
+                    "id": "bf9d4c29-9084-4654-aa49-9254094efd7d",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "708934006",
+                        "display": "Maintenance hemofiltration",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Night-time intermittent peritoneal dialysis",
+                    "id": "bb9bd100-f571-4d53-b291-f2f37a749d5d",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "238323009",
+                        "display": "Night-time intermittent peritoneal dialysis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Peritoneal dialysis",
+                    "id": "1772c51d-1bef-48ed-b675-01b74c031508",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "71192002",
+                        "display": "Peritoneal dialysis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Peritoneal dialysis catheter maintenance",
+                    "id": "93941776-39e2-4853-b52d-19e46c729ea6",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "73257006",
+                        "display": "Peritoneal dialysis catheter maintenance",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Peritoneal dialysis excluding cannulation",
+                    "id": "5472fb0f-86b0-4583-9f5e-296d2b1256d7",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "14684005",
+                        "display": "Peritoneal dialysis excluding cannulation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Peritoneal dialysis including cannulation",
+                    "id": "ee1d287b-ba75-4b95-8972-978870840bd1",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "676002",
+                        "display": "Peritoneal dialysis including cannulation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Plasma filtration",
+                    "id": "1fc97f37-cc69-4ace-8644-393c603f9533",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "233592005",
+                        "display": "Plasma filtration",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Prolonged intermittent renal replacement therapy",
+                    "id": "b3b404ec-ced9-43eb-982c-b7831f4cad39",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "895382009",
+                        "display": "Prolonged intermittent renal replacement therapy",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Renal dialysis",
+                    "id": "360758ac-532b-42e6-b33f-852300e51201",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "265764009",
+                        "display": "Renal dialysis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Stab peritoneal dialysis",
+                    "id": "f2ab9582-1429-4286-88a4-99267f572ce4",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "225231007",
+                        "display": "Stab peritoneal dialysis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Stabilizing hemodialysis",
+                    "id": "c94991a1-5fe3-4f45-bdd6-19c1751f21ca",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "11932001",
+                        "display": "Stabilizing hemodialysis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Sustained low-efficiency dialysis",
+                    "id": "9452788d-d683-4d73-9beb-5bc154e41c7c",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "698074000",
+                        "display": "Sustained low-efficiency dialysis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Tidal peritoneal dialysis",
+                    "id": "6f60a121-0c36-4f18-a646-3e11ff22b776",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "238322004",
+                        "display": "Tidal peritoneal dialysis",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Ultrafiltration",
+                    "id": "0958c7de-2add-4670-857d-045cc114b95c",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "182750009",
+                        "display": "Ultrafiltration",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Venoarterial extracorporeal membrane oxygenation",
+                    "id": "b431fc9f-e296-4073-b72d-0dbe310d4cd8",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "786451004",
+                        "display": "Venoarterial extracorporeal membrane oxygenation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                },
+                {
+                    "children": [],
+                    "display": "Venovenous extracorporeal membrane oxygenation",
+                    "id": "0f0d1b86-bc25-4d82-a202-2056ae69fdbe",
+                    "leaf": true,
+                    "selectable": true,
+                    "termCode": {
+                        "code": "786453001",
+                        "display": "Venovenous extracorporeal membrane oxygenation",
+                        "system": "http://snomed.info/sct"
+                    },
+                    "timeRestrictionAllowed": false,
+                    "valueDefinitions": []
+                }
+            ],
+            "display": "Dialyse / H\u00e4mofiltration",
+            "id": "9ae5f148-24a0-4133-9d07-777c6e09ff51",
+            "leaf": false,
+            "selectable": true,
+            "termCode": {
+                "code": "108241001",
+                "display": "dialyse (verrichting)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
             "children": [],
             "display": "ECMO-Therapie",
-            "id": "724619d4-2ec1-4702-9892-876b241916d0",
-            "leaf": true,
+            "id": "71f1e27a-7557-4b49-a435-50c68635681e",
+            "leaf": false,
             "selectable": true,
             "termCode": {
                 "code": "233573008",
@@ -59,7 +3604,7 @@
         {
             "children": [],
             "display": "Liegt der Patient auf der Intensivstation?",
-            "id": "4d24a663-4d5f-4109-8b97-193f38a9e7fe",
+            "id": "0152c2b7-e882-4041-bc3f-c63934059239",
             "leaf": true,
             "selectable": true,
             "termCode": {
@@ -74,16 +3619,6 @@
                     "precision": 1,
                     "selectableConcepts": [
                         {
-                            "code": "261665006",
-                            "display": "Unknown (qualifier value)",
-                            "system": "http://snomed.info/sct"
-                        },
-                        {
-                            "code": "373066001",
-                            "display": "Yes (qualifier value)",
-                            "system": "http://snomed.info/sct"
-                        },
-                        {
                             "code": "373067005",
                             "display": "No (qualifier value)",
                             "system": "http://snomed.info/sct"
@@ -97,29 +3632,25 @@
                             "code": "74964007",
                             "display": "Other (qualifier value)",
                             "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "261665006",
+                            "display": "Unknown (qualifier value)",
+                            "system": "http://snomed.info/sct"
+                        },
+                        {
+                            "code": "373066001",
+                            "display": "Yes (qualifier value)",
+                            "system": "http://snomed.info/sct"
                         }
                     ],
                     "type": "concept"
                 }
             ]
-        },
-        {
-            "children": [],
-            "display": "Beatmungstherapie",
-            "id": "3db9c820-250c-41f4-9869-50e35653ede1",
-            "leaf": true,
-            "selectable": true,
-            "termCode": {
-                "code": "Ventilation therapy",
-                "display": "Ventilation therapy",
-                "system": "num.codex"
-            },
-            "timeRestrictionAllowed": false,
-            "valueDefinitions": []
         }
     ],
     "display": "Therapie",
-    "id": "78d169ff-8cfe-41f4-bcf9-97595f8e33f8",
+    "id": "2c3edda9-d604-40c0-8d43-f404a34439c9",
     "leaf": false,
     "selectable": false,
     "termCode": {
