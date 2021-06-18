@@ -21809,6 +21809,750 @@
                         {
                             "children": [],
                             "termCode": {
+                                "code": "6-001.eb",
+                                "display": "1.000 mg bis unter 1.200 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.m7",
+                                "display": "1.120 mg bis unter 1.280 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.n6",
+                                "display": "1.134 mg bis unter 1.296 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.ec",
+                                "display": "1.200 mg bis unter 1.400 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.m8",
+                                "display": "1.280 mg bis unter 1.440 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.n7",
+                                "display": "1.296 mg bis unter 1.458 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.ed",
+                                "display": "1.400 mg bis unter 1.600 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.m9",
+                                "display": "1.440 mg bis unter 1.600 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.n8",
+                                "display": "1.458 mg bis unter 1.620 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.ma",
+                                "display": "1.600 mg bis unter 1.760 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.ee",
+                                "display": "1.600 mg bis unter 1.800 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.n9",
+                                "display": "1.620 mg bis unter 1.782 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.mb",
+                                "display": "1.760 mg bis unter 1.920 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.na",
+                                "display": "1.782 mg bis unter 1.944 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.ef",
+                                "display": "1.800 mg bis unter 2.000 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.mc",
+                                "display": "1.920 mg bis unter 2.080 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.nb",
+                                "display": "1.944 mg bis unter 2.106 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.d0",
+                                "display": "10 mg bis unter 25 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-004.e0",
+                                "display": "10,0 mg bis unter 17,5 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-002.b3",
+                                "display": "100 mg bis unter 125 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.e1",
+                                "display": "100 mg bis unter 150 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-004.e5",
+                                "display": "100,0 mg bis unter 150,0 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.d4",
+                                "display": "120 mg bis unter 160 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-002.b4",
+                                "display": "125 mg bis unter 150 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-002.b5",
+                                "display": "150 mg bis unter 200 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.e2",
+                                "display": "150 mg bis unter 200 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-004.e6",
+                                "display": "150,0 mg bis unter 200,0 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.d5",
+                                "display": "160 mg bis unter 200 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.n0",
+                                "display": "162 mg bis unter 324 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-004.e1",
+                                "display": "17,5 mg bis unter 25,0 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.eg",
+                                "display": "2.000 mg oder mehr",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.me",
+                                "display": "2.080 mg bis unter 2.400 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.nc",
+                                "display": "2.106 mg bis unter 2.268 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.nd",
+                                "display": "2.268 mg oder mehr",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.mf",
+                                "display": "2.400 mg bis unter 2.720 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.mg",
+                                "display": "2.720 mg bis unter 3.040 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.d6",
+                                "display": "200 mg bis unter 240 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-002.b6",
+                                "display": "200 mg bis unter 250 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.e3",
+                                "display": "200 mg bis unter 300 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.m1",
+                                "display": "200 mg bis unter 320 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-004.e7",
+                                "display": "200,0 mg bis unter 250,0 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.d7",
+                                "display": "240 mg bis unter 280 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.d1",
+                                "display": "25 mg bis unter 40 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-002.b0",
+                                "display": "25 mg bis unter 50 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-004.e2",
+                                "display": "25,0 mg bis unter 50,0 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-002.b7",
+                                "display": "250 mg bis unter 300 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-004.e8",
+                                "display": "250,0 mg bis unter 325,0 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.d8",
+                                "display": "280 mg bis unter 320 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.mh",
+                                "display": "3.040 mg bis unter 3.360 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.mj",
+                                "display": "3.360 mg bis unter 3.680 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.mk",
+                                "display": "3.680 mg bis unter 4.000 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.e4",
+                                "display": "300 mg bis unter 400 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-002.b8",
+                                "display": "300 mg oder mehr",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.d9",
+                                "display": "320 mg bis unter 360 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.m2",
+                                "display": "320 mg bis unter 480 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.n1",
+                                "display": "324 mg bis unter 486 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-004.e9",
+                                "display": "325,0 mg bis unter 400,0 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.da",
+                                "display": "360 mg bis unter 400 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.mn",
+                                "display": "4.000 mg bis unter 4.640 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.mp",
+                                "display": "4.640 mg bis unter 5.280 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.d2",
+                                "display": "40 mg bis unter 80 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.db",
+                                "display": "400 mg bis unter 440 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.e5",
+                                "display": "400 mg bis unter 500 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-004.ea",
+                                "display": "400,0 mg bis unter 475,0 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.dc",
+                                "display": "440 mg oder mehr",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-004.eb",
+                                "display": "475,0 mg bis unter 550,0 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.m3",
+                                "display": "480 mg bis unter 640 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.n2",
+                                "display": "486 mg bis unter 648 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.mq",
+                                "display": "5.280 mg bis unter 5.920 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.mr",
+                                "display": "5.920 mg bis unter 6.560 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.e0",
+                                "display": "50 mg bis unter 100 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-002.b1",
+                                "display": "50 mg bis unter 75 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-004.e3",
+                                "display": "50,0 mg bis unter 75,0 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.e6",
+                                "display": "500 mg bis unter 600 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-004.ec",
+                                "display": "550,0 mg oder mehr",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.ms",
+                                "display": "6.560 mg bis unter 7.200 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.e7",
+                                "display": "600 mg bis unter 700 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.m4",
+                                "display": "640 mg bis unter 800 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.n3",
+                                "display": "648 mg bis unter 810 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.mt",
+                                "display": "7.200 mg bis unter 7.840 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.mu",
+                                "display": "7.840 mg bis unter 8.480 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.e8",
+                                "display": "700 mg bis unter 800 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-002.b2",
+                                "display": "75 mg bis unter 100 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-004.e4",
+                                "display": "75,0 mg bis unter 100,0 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.mv",
+                                "display": "8.480 mg oder mehr",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.d3",
+                                "display": "80 mg bis unter 120 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.m0",
+                                "display": "80 mg bis unter 200 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.e9",
+                                "display": "800 mg bis unter 900 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.m5",
+                                "display": "800 mg bis unter 960 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.n4",
+                                "display": "810 mg bis unter 972 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-001.ea",
+                                "display": "900 mg bis unter 1.000 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.m6",
+                                "display": "960 mg bis unter 1.120 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.n5",
+                                "display": "972 mg bis unter 1.134 mg",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
                                 "code": "N02B",
                                 "display": "ANDERE ANALGETIKA UND ANTIPYRETIKA",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
@@ -21945,8 +22689,40 @@
                         {
                             "children": [],
                             "termCode": {
+                                "code": "J06BC",
+                                "display": "Andere Immunglobuline",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "J06BC10",
+                                "display": "Andere Immunglobuline",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
                                 "code": "N02BE",
                                 "display": "Anilide",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "J06BB19",
+                                "display": "Anthrax-Immunglobulin",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "J06BB01",
+                                "display": "Anti-D(rh)-Immunglobulin",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
                             }
                         },
@@ -22073,6 +22849,14 @@
                         {
                             "children": [],
                             "termCode": {
+                                "code": "J06BB21",
+                                "display": "Bezlotoxumab",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
                                 "code": "N02BP01",
                                 "display": "Blauer Eisenhut",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
@@ -22185,6 +22969,14 @@
                         {
                             "children": [],
                             "termCode": {
+                                "code": "6-006.7",
+                                "display": "Canakinumab, parenteral",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
                                 "code": "N02BG10",
                                 "display": "Cannabinoide",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
@@ -22220,6 +23012,14 @@
                                 "code": "L04AB05",
                                 "display": "Certolizumab pegol",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.7",
+                                "display": "Certolizumab, parenteral",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
                             }
                         },
                         {
@@ -22321,6 +23121,14 @@
                         {
                             "children": [],
                             "termCode": {
+                                "code": "J06BB09",
+                                "display": "Cytomegalievirus-Immunglobulin",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
                                 "code": "L04AC01",
                                 "display": "Daclizumab",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
@@ -22403,6 +23211,14 @@
                             "termCode": {
                                 "code": "N02BA11",
                                 "display": "Diflunisal",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "J06BB10",
+                                "display": "Diphtherie-Immunglobulin",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
                             }
                         },
@@ -22499,6 +23315,22 @@
                             "termCode": {
                                 "code": "L01XE10",
                                 "display": "Everolimus",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-005.8",
+                                "display": "Everolimus, oral",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "J06BB12",
+                                "display": "FSME-Immunglobulin",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
                             }
                         },
@@ -22665,6 +23497,14 @@
                         {
                             "children": [],
                             "termCode": {
+                                "code": "6-005.2",
+                                "display": "Golimumab, parenteral",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
                                 "code": "N02BA14",
                                 "display": "Guacetisal",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
@@ -22675,6 +23515,22 @@
                             "termCode": {
                                 "code": "L04AC16",
                                 "display": "Guselkumab",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "J06BB11",
+                                "display": "Hepatitis-A-Immunglobulin",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "J06BB04",
+                                "display": "Hepatitis-B-Immunglobulin",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
                             }
                         },
@@ -22713,6 +23569,14 @@
                         {
                             "children": [],
                             "termCode": {
+                                "code": "J06B",
+                                "display": "IMMUNGLOBULINE",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
                                 "code": "G01BF",
                                 "display": "Imidazol-Derivate und Corticosteroide",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
@@ -22731,6 +23595,30 @@
                             "termCode": {
                                 "code": "N02BA16",
                                 "display": "Imidazolsalicylat",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "J06BA",
+                                "display": "Immunglobuline, normal human",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "J06BA01",
+                                "display": "Immunglobuline, normal human, zur extravasalen Anwendung",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "J06BA02",
+                                "display": "Immunglobuline, normal human, zur intravasalen Anwendung",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
                             }
                         },
@@ -22929,6 +23817,22 @@
                         {
                             "children": [],
                             "termCode": {
+                                "code": "J06BB30",
+                                "display": "Kombinationen",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "J06BB07",
+                                "display": "Kuhpocken-Immunglobulin",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
                                 "code": "N02BP02",
                                 "display": "Lindenbl\u00fcten",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
@@ -22947,6 +23851,14 @@
                             "termCode": {
                                 "code": "N02BA13",
                                 "display": "Lysin-Acetylsalicylat",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "J06BB14",
+                                "display": "Masern-Immunglobulin",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
                             }
                         },
@@ -23049,6 +23961,22 @@
                         {
                             "children": [],
                             "termCode": {
+                                "code": "J06BB17",
+                                "display": "Motavizumab",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "J06BB15",
+                                "display": "Mumps-Immunglobulin",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
                                 "code": "H02C",
                                 "display": "NEBENNIERENHEMMSTOFFE",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
@@ -23065,6 +23993,14 @@
                         {
                             "children": [],
                             "termCode": {
+                                "code": "J06BC01",
+                                "display": "Nebacumab",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
                                 "code": "N02BG06",
                                 "display": "Nefopam",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
@@ -23075,6 +24011,14 @@
                             "termCode": {
                                 "code": "N02BB05",
                                 "display": "Nifenazon",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "J06BB22",
+                                "display": "Obiltoxaximab",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
                             }
                         },
@@ -23115,6 +24059,14 @@
                             "termCode": {
                                 "code": "M01BA05",
                                 "display": "Oxyphenbutazon und Corticosteroide",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "J06BB16",
+                                "display": "Palivizumab",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
                             }
                         },
@@ -23195,6 +24147,14 @@
                             "termCode": {
                                 "code": "L03AB13",
                                 "display": "Peginterferon beta-1a",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "J06BB13",
+                                "display": "Pertussis-Immunglobulin",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
                             }
                         },
@@ -23377,6 +24337,14 @@
                         {
                             "children": [],
                             "termCode": {
+                                "code": "J06BB18",
+                                "display": "Raxibacumab",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
                                 "code": "R03AK05",
                                 "display": "Reproterol und Cromoglicins\u00e4ure, Dinatriumsalz",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
@@ -23435,6 +24403,22 @@
                             "termCode": {
                                 "code": "L01XE18",
                                 "display": "Ruxolitinib",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "6-009.4",
+                                "display": "Ruxolitinib, oral",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "J06BB06",
+                                "display": "R\u00f6teln-Immunglobulin",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
                             }
                         },
@@ -23537,6 +24521,14 @@
                         {
                             "children": [],
                             "termCode": {
+                                "code": "6-00a.g",
+                                "display": "Sarilumab, parenteral",
+                                "system": "http://fhir.de/CodeSystem/dimdi/ops"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
                                 "code": "L04AC10",
                                 "display": "Secukinumab",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
@@ -23563,6 +24555,22 @@
                             "termCode": {
                                 "code": "L04AC15",
                                 "display": "Sirukumab",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "J06BB",
+                                "display": "Spezifische Immunglobuline",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "J06BB08",
+                                "display": "Staphylococcus-Immunglobulin",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
                             }
                         },
@@ -23617,6 +24625,14 @@
                         {
                             "children": [],
                             "termCode": {
+                                "code": "J06BB02",
+                                "display": "Tetanus-Immunglobulin",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
                                 "code": "L04AC17",
                                 "display": "Tildrakizumab",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
@@ -23627,6 +24643,14 @@
                             "termCode": {
                                 "code": "L04AC07",
                                 "display": "Tocilizumab",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "J06BB05",
+                                "display": "Tollwut-Immunglobulin",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
                             }
                         },
@@ -23675,6 +24699,14 @@
                             "termCode": {
                                 "code": "L04AC05",
                                 "display": "Ustekinumab",
+                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
+                            }
+                        },
+                        {
+                            "children": [],
+                            "termCode": {
+                                "code": "J06BB03",
+                                "display": "Varicella/Zoster-Immunglobulin",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
                             }
                         },
@@ -23779,246 +24811,6 @@
                             "termCode": {
                                 "code": "A12CB01",
                                 "display": "Zinksulfat",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BC",
-                                "display": "Andere Immunglobuline",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BC10",
-                                "display": "Andere Immunglobuline",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BB19",
-                                "display": "Anthrax-Immunglobulin",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BB01",
-                                "display": "Anti-D(rh)-Immunglobulin",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BB21",
-                                "display": "Bezlotoxumab",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BB09",
-                                "display": "Cytomegalievirus-Immunglobulin",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BB10",
-                                "display": "Diphtherie-Immunglobulin",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BB12",
-                                "display": "FSME-Immunglobulin",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BB11",
-                                "display": "Hepatitis-A-Immunglobulin",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BB04",
-                                "display": "Hepatitis-B-Immunglobulin",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06B",
-                                "display": "IMMUNGLOBULINE",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BA",
-                                "display": "Immunglobuline, normal human",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BA01",
-                                "display": "Immunglobuline, normal human, zur extravasalen Anwendung",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BA02",
-                                "display": "Immunglobuline, normal human, zur intravasalen Anwendung",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BB30",
-                                "display": "Kombinationen",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BB07",
-                                "display": "Kuhpocken-Immunglobulin",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BB14",
-                                "display": "Masern-Immunglobulin",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BB17",
-                                "display": "Motavizumab",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BB15",
-                                "display": "Mumps-Immunglobulin",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BC01",
-                                "display": "Nebacumab",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BB22",
-                                "display": "Obiltoxaximab",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BB16",
-                                "display": "Palivizumab",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BB13",
-                                "display": "Pertussis-Immunglobulin",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BB18",
-                                "display": "Raxibacumab",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BB06",
-                                "display": "R\u00f6teln-Immunglobulin",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BB",
-                                "display": "Spezifische Immunglobuline",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BB08",
-                                "display": "Staphylococcus-Immunglobulin",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BB02",
-                                "display": "Tetanus-Immunglobulin",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BB05",
-                                "display": "Tollwut-Immunglobulin",
-                                "system": "http://fhir.de/CodeSystem/dimdi/atc"
-                            }
-                        },
-                        {
-                            "children": [],
-                            "termCode": {
-                                "code": "J06BB03",
-                                "display": "Varicella/Zoster-Immunglobulin",
                                 "system": "http://fhir.de/CodeSystem/dimdi/atc"
                             }
                         }

@@ -31,8 +31,8 @@ services:
       DSF_ORGANIZATION_ID: "Test_ZARS"
     volumes:
       - ${CODEX_FEASIBILITY_BACKEND_UI_PROFILES_PATH:-../ontology/ui_profiles}:/opt/codex-feasibility-backend/ontology/ui_profiles
-      - ${CODEX_FEASIBILITY_BACKEND_CONCEPT_TREE_PATH:-../ontology/conceptTree.json}:/opt/codex-feasibility-backend/ontology/conceptTree.json
-      - ${CODEX_FEASIBILITY_BACKEND_TERM_CODE_MAPPING_PATH:-../ontology/termCodeMapping.json}:/opt/codex-feasibility-backend/ontology/termCodeMapping.json
+      - ${CODEX_FEASIBILITY_BACKEND_CONCEPT_TREE_PATH:-../ontology/codex-code-tree.json}:/opt/codex-feasibility-backend/ontology/conceptTree.json
+      - ${CODEX_FEASIBILITY_BACKEND_TERM_CODE_MAPPING_PATH:-../ontology/codex-term-code-mapping.json}:/opt/codex-feasibility-backend/ontology/termCodeMapping.json
       - ${CODEX_FEASIBILITY_BACKEND_CERTS_PATH:-../dsf-broker/certs}:/opt/codex-feasibility-security
 
   zars-feasibility-db:

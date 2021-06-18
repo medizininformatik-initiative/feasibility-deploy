@@ -25,16 +25,20 @@
       "timerestriction": false
     },
     "extra": {
-      "displayvaluefiltericon": false
+      "displayvaluefiltericon": false,
+      "showoptionspage": false
     }
   },
   "options": {
     "pollingtimeinseconds": 10,
-    "pollingintervallinseconds": 1
+    "pollingintervallinseconds": 1,
+    "lowerboundarypatientresult": 10
   },
   "mock": {
     "terminology": false,
     "query": false,
     "result": false
-  }
+  },
+  "stylesheet": "codexTheme",
+  "fhirport": "8082"
 }
