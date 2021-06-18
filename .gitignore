@@ -1,0 +1,7 @@
+num-node/auth/*.pem
+num-node/auth/.htpasswd
+num-node/dsf-client/bpe/app/last_event/time.file
+zars/auth/*.pem
+zars/dsf-broker/bpe/app/last_event/time.file
+test/testdata
+
