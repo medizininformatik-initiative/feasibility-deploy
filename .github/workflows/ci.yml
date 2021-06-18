@@ -58,6 +58,7 @@ jobs:
         CODEX_DSF_DIC_BPE_APP_JVM_ARGS: -Xmx500m
         CODEX_DSF_ZARS_FHIR_APP_JVM_ARGS: -Xmx1g
         CODEX_DSF_ZARS_BPE_APP_JVM_ARGS: -Xmx500m
+        CODEX_FEASIBILITY_BACKEND_API_BASE_URL: http://localhost:8091/api/
       run: ./start-zars-and-num-node.sh --disable-result-obfuscation
 
     - name: Wait for FHIR Server Running
