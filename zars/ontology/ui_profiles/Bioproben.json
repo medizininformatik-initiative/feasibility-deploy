@@ -1,0 +1,197 @@
+{
+    "children": [
+        {
+            "children": [],
+            "display": "Blut",
+            "id": "5d337f70-ba1c-4624-85f0-e85b7bbf0c4a",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "119297000",
+                "display": "Blood specimen (specimen)|",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [],
+            "display": "Serum",
+            "id": "173d5cb0-de6f-47a7-a25d-7e40690363e9",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "119364003",
+                "display": "Serum specimen (specimen)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [],
+            "display": "Buffy coat",
+            "id": "024acff9-8e13-4bdc-a27e-92c369eb9ea8",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "258587000",
+                "display": "Buffy coat (specimen)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [],
+            "display": "Plasma",
+            "id": "8ae87272-bd6e-42b1-a09c-5c4f5e6529f7",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "119361006",
+                "display": "Plasma specimen (specimen)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [],
+            "display": "EDTA-Plasma",
+            "id": "0f7cc8d7-98de-4df3-83af-b88492896cc1",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "708049000",
+                "display": "Plasma specimen with ethylenediamine tetraacetic acid (specimen)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [],
+            "display": "Citrat-Plasma",
+            "id": "ac4e9bb7-040c-4a65-88ec-8a04e672d42e",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "708048008",
+                "display": "Plasma specimen with citrate (specimen)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [],
+            "display": "PBMCs",
+            "id": "9a094044-891a-4894-81eb-02c1631a24b2",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "404798000",
+                "display": "Peripheral blood mononuclear cell (cell)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [],
+            "display": "Nasen/Rachen-Abstrich",
+            "id": "b390b43c-dcf8-43cf-9391-2f17c8c8c860",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "472881004",
+                "display": "Swab from pharynx (specimen)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [],
+            "display": "Urin (\u00dcberstand)",
+            "id": "9129c1e9-a7bd-4b4f-adba-9c82b233850a",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "122575003",
+                "display": "Urine specimen (specimen)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [],
+            "display": "Urin (Sediment)",
+            "id": "80d4fa40-93bb-42b1-9d2e-0313cbae8199",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "122567009",
+                "display": "Urine sediment specimen (specimen)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [],
+            "display": "Endotrachealsekret",
+            "id": "d9ddce04-55f8-458f-b8d1-fadf74088821",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "119307008",
+                "display": "Specimen from endotracheal tube (specimen)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [],
+            "display": "Bronchoalveolar lavage",
+            "id": "85766651-a302-49f6-9d2b-86fb987144e3",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "258607008",
+                "display": "Bronchoalveolar lavage fluid sample (specimen)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        },
+        {
+            "children": [],
+            "display": "Saliva",
+            "id": "8261af19-0142-470b-abfe-cfa06c126fce",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "119342007",
+                "display": "Saliva specimen (specimen)",
+                "system": "http://snomed.info/sct"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": []
+        }
+    ],
+    "display": "Bioproben",
+    "id": "6b11d01c-1771-48c5-8d2a-f144c43347f1",
+    "leaf": false,
+    "selectable": false,
+    "termCode": {
+        "code": "Bioproben",
+        "display": "Bioproben",
+        "system": "num.codex"
+    },
+    "timeRestrictionAllowed": false,
+    "valueDefinitions": []
+}

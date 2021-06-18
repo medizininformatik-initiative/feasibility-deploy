@@ -1,0 +1,303 @@
+{
+    "children": [
+        {
+            "children": [],
+            "display": "Erhebung, Verarbeitung und wissenschaftliche Nutzung (Punkte 1.1 - 1.3)",
+            "id": "470dee11-2ddb-4028-aea5-89c489583e29",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "2.16.840.1.113883.3.1937.777.24.5.1.1",
+                "display": "gee_erhebung_verarbeitung",
+                "system": "urn:oid:2.16.840.1.113883.3.1937.777.24.5.1"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": [
+                {
+                    "allowedUnits": [],
+                    "precision": 1,
+                    "selectableConcepts": [
+                        {
+                            "code": "permit",
+                            "display": "permit",
+                            "system": "http://hl7.org/fhir/consent-provision-type"
+                        },
+                        {
+                            "code": "deny",
+                            "display": "deny",
+                            "system": "http://hl7.org/fhir/consent-provision-type"
+                        }
+                    ],
+                    "type": "concept"
+                }
+            ]
+        },
+        {
+            "children": [],
+            "display": "Krankenkassendaten: R\u00fcckwirkend f\u00fcr die Daten der vergangenen 5 Kalenderjahre (Punkt 2.1)",
+            "id": "e80a7231-1d4d-48f4-8aca-861662054b1f",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "2.16.840.1.113883.3.1937.777.24.5.1.7",
+                "display": "gee_krankenkassendaten_retro",
+                "system": "urn:oid:2.16.840.1.113883.3.1937.777.24.5.1"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": [
+                {
+                    "allowedUnits": [],
+                    "precision": 1,
+                    "selectableConcepts": [
+                        {
+                            "code": "permit",
+                            "display": "permit",
+                            "system": "http://hl7.org/fhir/consent-provision-type"
+                        },
+                        {
+                            "code": "deny",
+                            "display": "deny",
+                            "system": "http://hl7.org/fhir/consent-provision-type"
+                        }
+                    ],
+                    "type": "concept"
+                }
+            ]
+        },
+        {
+            "children": [],
+            "display": "Krankenkassendaten: Ab dem Datum der Unterschrift \u00fcber einen Zeitraum von 5 Jahren (Punkt 2.2)",
+            "id": "366cbaac-4bdd-4762-b73e-a36023dfa12f",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "2.16.840.1.113883.3.1937.777.24.5.1.10",
+                "display": "gee_krankenkassendaten_pro",
+                "system": "urn:oid:2.16.840.1.113883.3.1937.777.24.5.1"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": [
+                {
+                    "allowedUnits": [],
+                    "precision": 1,
+                    "selectableConcepts": [
+                        {
+                            "code": "permit",
+                            "display": "permit",
+                            "system": "http://hl7.org/fhir/consent-provision-type"
+                        },
+                        {
+                            "code": "deny",
+                            "display": "deny",
+                            "system": "http://hl7.org/fhir/consent-provision-type"
+                        }
+                    ],
+                    "type": "concept"
+                }
+            ]
+        },
+        {
+            "children": [],
+            "display": "Biomaterialien: Einwilligung in die Gewinnung, Lagerung und wissenschaftliche Nutzung (Punkte 3.1 - 3.3)",
+            "id": "82f8a87a-133a-49a9-a50e-376081ada811",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "2.16.840.1.113883.3.1937.777.24.5.1.14",
+                "display": "gee_biomaterialien",
+                "system": "urn:oid:2.16.840.1.113883.3.1937.777.24.5.1"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": [
+                {
+                    "allowedUnits": [],
+                    "precision": 1,
+                    "selectableConcepts": [
+                        {
+                            "code": "permit",
+                            "display": "permit",
+                            "system": "http://hl7.org/fhir/consent-provision-type"
+                        },
+                        {
+                            "code": "deny",
+                            "display": "deny",
+                            "system": "http://hl7.org/fhir/consent-provision-type"
+                        }
+                    ],
+                    "type": "concept"
+                }
+            ]
+        },
+        {
+            "children": [],
+            "display": "Biomaterialien: Entnahme geringer zus\u00e4tzlicher Mengen (Punkt 3.2)",
+            "id": "dd1ef9ea-468e-49a7-aeaf-ea0b79e8dec2",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "2.16.840.1.113883.3.1937.777.24.5.1.31",
+                "display": "gee_biomaterialien_zusaetzlich",
+                "system": "urn:oid:2.16.840.1.113883.3.1937.777.24.5.1"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": [
+                {
+                    "allowedUnits": [],
+                    "precision": 1,
+                    "selectableConcepts": [
+                        {
+                            "code": "permit",
+                            "display": "permit",
+                            "system": "http://hl7.org/fhir/consent-provision-type"
+                        },
+                        {
+                            "code": "deny",
+                            "display": "deny",
+                            "system": "http://hl7.org/fhir/consent-provision-type"
+                        }
+                    ],
+                    "type": "concept"
+                }
+            ]
+        },
+        {
+            "children": [],
+            "display": "Erneute Kontaktaufnahme: Zus\u00e4tzliche wissenschaftliche Fragen, neue Forschungsvorhaben/Studien, Verkn\u00fcpfung mit anderen Datenbanken (Punkt 4.1)",
+            "id": "00fe7707-a908-49a1-9274-b03f0ce23250",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "2.16.840.1.113883.3.1937.777.24.5.1.19",
+                "display": "gee_kontaktaufnahme",
+                "system": "urn:oid:2.16.840.1.113883.3.1937.777.24.5.1"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": [
+                {
+                    "allowedUnits": [],
+                    "precision": 1,
+                    "selectableConcepts": [
+                        {
+                            "code": "permit",
+                            "display": "permit",
+                            "system": "http://hl7.org/fhir/consent-provision-type"
+                        },
+                        {
+                            "code": "deny",
+                            "display": "deny",
+                            "system": "http://hl7.org/fhir/consent-provision-type"
+                        }
+                    ],
+                    "type": "concept"
+                }
+            ]
+        },
+        {
+            "children": [],
+            "display": "Erneute Kontaktaufnahme: Information \u00fcber medizinische Zusatzbefunde (Punkt 4.2)",
+            "id": "6989f875-439f-4b58-9513-abdf9b8cdfbc",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "2.16.840.1.113883.3.1937.777.24.5.1.23",
+                "display": "gee_kontaktaufnahme_zusatzbefunde",
+                "system": "urn:oid:2.16.840.1.113883.3.1937.777.24.5.1"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": [
+                {
+                    "allowedUnits": [],
+                    "precision": 1,
+                    "selectableConcepts": [
+                        {
+                            "code": "permit",
+                            "display": "permit",
+                            "system": "http://hl7.org/fhir/consent-provision-type"
+                        },
+                        {
+                            "code": "deny",
+                            "display": "deny",
+                            "system": "http://hl7.org/fhir/consent-provision-type"
+                        }
+                    ],
+                    "type": "concept"
+                }
+            ]
+        },
+        {
+            "children": [],
+            "display": "Nutzung im Rahmen von NUM-CODEX: Nutzung auf der zentralen Datenplattform (Punkt Z1)",
+            "id": "67261c46-7424-4db9-b499-b33d1c78d6b5",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "2.16.840.1.113883.3.1937.777.24.5.1.34",
+                "display": "gee_projekt_codex",
+                "system": "urn:oid:2.16.840.1.113883.3.1937.777.24.5.1"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": [
+                {
+                    "allowedUnits": [],
+                    "precision": 1,
+                    "selectableConcepts": [
+                        {
+                            "code": "permit",
+                            "display": "permit",
+                            "system": "http://hl7.org/fhir/consent-provision-type"
+                        },
+                        {
+                            "code": "deny",
+                            "display": "deny",
+                            "system": "http://hl7.org/fhir/consent-provision-type"
+                        }
+                    ],
+                    "type": "concept"
+                }
+            ]
+        },
+        {
+            "children": [],
+            "display": "Nutzung im Rahmen von NUM-CODEX: Weitergabe in L\u00e4nder ohne angemessenes Datenschutzniveau (Punkt Z1.1)",
+            "id": "1802558f-33a4-4723-915a-74d0d69edb83",
+            "leaf": true,
+            "selectable": true,
+            "termCode": {
+                "code": "2.16.840.1.113883.3.1937.777.24.5.1.37",
+                "display": "gee_projekt_codex_zusatz",
+                "system": "urn:oid:2.16.840.1.113883.3.1937.777.24.5.1"
+            },
+            "timeRestrictionAllowed": false,
+            "valueDefinitions": [
+                {
+                    "allowedUnits": [],
+                    "precision": 1,
+                    "selectableConcepts": [
+                        {
+                            "code": "permit",
+                            "display": "permit",
+                            "system": "http://hl7.org/fhir/consent-provision-type"
+                        },
+                        {
+                            "code": "deny",
+                            "display": "deny",
+                            "system": "http://hl7.org/fhir/consent-provision-type"
+                        }
+                    ],
+                    "type": "concept"
+                }
+            ]
+        }
+    ],
+    "display": "Einwilligung",
+    "id": "025c5b71-8016-422c-9766-29a871189e59",
+    "leaf": false,
+    "selectable": false,
+    "termCode": {
+        "code": "Einwilligung",
+        "display": "Einwilligung",
+        "system": "num.codex"
+    },
+    "timeRestrictionAllowed": false,
+    "valueDefinitions": []
+}
