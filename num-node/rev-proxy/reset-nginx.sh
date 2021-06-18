@@ -1,7 +1,14 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 export COMPOSE_IGNORE_ORPHANS=True
-export COMPOSE_PROJECT=num-knoten
+COMPOSE_PROJECT=codex-deploy
 
-docker-compose -p $COMPOSE_PROJECT -f node-rev-proxy/docker-compose.yml down
-docker-compose -p $COMPOSE_PROJECT -f node-rev-proxy/docker-compose.yml up -d
+readlink "$0" >/dev/null
+if [ $? -ne 0 ]; then
+  BASE_DIR=$(dirname "$0")
+else
+  BASE_DIR=$(dirname "$(readlink "$0")")
+fi
+
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/docker-compose.yml down
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/docker-compose.yml up -d

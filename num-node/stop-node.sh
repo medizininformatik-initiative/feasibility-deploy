@@ -1,16 +1,17 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
-export COMPOSE_PROJECT=codex-deploy
+COMPOSE_PROJECT=codex-deploy
 
+readlink "$0" >/dev/null
+if [ $? -ne 0 ]; then
+  BASE_DIR=$(dirname "$0")
+else
+  BASE_DIR=$(dirname "$(readlink "$0")")
+fi
 
-cd aktin-client
-docker-compose -p $COMPOSE_PROJECT stop
-
-cd ../flare
-docker-compose -p $COMPOSE_PROJECT stop
-
-cd ../fhir-server/blaze-server
-docker-compose -p $COMPOSE_PROJECT stop
-
-cd ../../rev-proxy
-docker-compose -p $COMPOSE_PROJECT stop
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/aktin-client/docker-compose.yml stop
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/flare/docker-compose.yml stop
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/fhir-server/blaze-server/docker-compose.yml stop
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/fhir-server/hapi-fhir-server/docker-compose.yml stop
+docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/rev-proxy/docker-compose.yml stop
+sh $BASE_DIR/dsf-client/stop.sh $COMPOSE_PROJECT

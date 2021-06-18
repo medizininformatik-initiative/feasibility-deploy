@@ -1,6 +1,11 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
-export COMPOSE_PROJECT=codex-deploy
+readlink "$0" >/dev/null
+if [ $? -ne 0 ]; then
+  BASE_DIR=$(dirname "$0")
+else
+  BASE_DIR=$(dirname "$(readlink "$0")")
+fi
 
 if [ -z "$1" ] && [ -z "$2" ]; then
   echo "please provide a username and password"
@@ -9,7 +14,5 @@ if [ -z "$1" ] && [ -z "$2" ]; then
 fi
 
 cd num-node
-bash setup-base-auth.sh $1 $2
-
-cd ../zars
-bash setup-base-auth.sh
+sh $BASE_DIR/num-node/setup-base-auth.sh $1 $2
+sh $BASE_DIR/zars/setup-base-auth.sh
