@@ -60,7 +60,7 @@ for opt in "$@"; do
     fi
     shift
     ;;
-  --disable-obfuscation)
+  --disable-result-obfuscation)
     OBFUSCATE=false
     shift
     ;;
