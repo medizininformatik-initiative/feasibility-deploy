@@ -21,7 +21,7 @@ echo "DONE"
 # BPE -------------------------------------------------------------------------
 
 echo -n "Setting permissions for ZARS BPE app..."
-chmod a+w -R bpe/app/last_event
+chmod a+w -R $BASE_DIR/bpe/app/last_event
 echo "DONE"
 
 echo "Starting ZARS BPE app..."
