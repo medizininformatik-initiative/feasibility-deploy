@@ -8,12 +8,7 @@
 #
 #fi
 if [ -z "$BASE_DIR" ]; then
-  readlink "$0" >/dev/null
-  if [ $? -ne 0 ]; then
-    BASE_DIR=$(dirname "$0")
-  else
-    BASE_DIR=$(dirname "$(readlink "$0")")
-  fi
+  BASE_DIR=$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )
 fi
 
 if [ -z "$1" ] && [ -z "$2" ]; then
