@@ -9,11 +9,17 @@ It can however be installed by itself in order to test the feasibility query set
 
 ## Setting up the Num-Node for Feasibility Overview
 
-Please be aware that you have to set up the individual components on the same VM.
+This setup is configured to install the so called "feasibility triangle" on one VM, which combines the minimum neccessary components to load data into a FHIR store and connect to a central feasibility query platform.
+
+<figure class="image">
+  <img src="../img/codex-feasibility-deploy-overview.png">
+  <figcaption>Figure 1 - Overview Num Node Feasibility Triangle</figcaption>
+</figure>
 
 We will describe the setup process for all components on the same VM inside the same docker network here and then describe all components in more detail including the configuration variables and their purpose within the Num-Node.
 
 The Num-Node parts here are only part of the Num-Node components to be deployed and can be later configured to work with the ETL Num_Node components described as part of the [Num-Node V2](https://github.com/num-codex/num-knoten).
+
 
 ## Setting up the Num-Node on one VM
 
