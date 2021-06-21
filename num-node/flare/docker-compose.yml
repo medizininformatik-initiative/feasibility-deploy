@@ -4,7 +4,7 @@ services:
   node-flare:
     image: ghcr.io/num-codex/codex-flare:0.0.5
     ports:
-      - ${PORT_FLARE:-127.0.0.1:5000}:5000
+      - ${NUM_NODE_PORT_FLARE:-127.0.0.1:5000}:5000
     environment:
       FHIR_BASE_URL: ${FHIR_BASE_URL:-http://fhir-server:8080/fhir}
     restart: always
