@@ -3,7 +3,7 @@
         {
             "children": [],
             "display": "Blut",
-            "id": "5d337f70-ba1c-4624-85f0-e85b7bbf0c4a",
+            "id": "f5539869-4987-fd2e-210a-58dcf9a604c0",
             "leaf": true,
             "selectable": true,
             "termCode": {
@@ -17,7 +17,7 @@
         {
             "children": [],
             "display": "Serum",
-            "id": "173d5cb0-de6f-47a7-a25d-7e40690363e9",
+            "id": "d1b9fc41-e30a-b421-4b7f-03c8c54cbd86",
             "leaf": true,
             "selectable": true,
             "termCode": {
@@ -31,7 +31,7 @@
         {
             "children": [],
             "display": "Buffy coat",
-            "id": "024acff9-8e13-4bdc-a27e-92c369eb9ea8",
+            "id": "f6b103d4-b1b5-08ed-ac26-6f1065915e54",
             "leaf": true,
             "selectable": true,
             "termCode": {
@@ -45,7 +45,7 @@
         {
             "children": [],
             "display": "Plasma",
-            "id": "8ae87272-bd6e-42b1-a09c-5c4f5e6529f7",
+            "id": "7fe06f56-c983-5c90-df3c-9a330c1983e3",
             "leaf": true,
             "selectable": true,
             "termCode": {
@@ -59,7 +59,7 @@
         {
             "children": [],
             "display": "EDTA-Plasma",
-            "id": "0f7cc8d7-98de-4df3-83af-b88492896cc1",
+            "id": "0ef2eca6-ecaa-32d5-5798-c66f2fb86453",
             "leaf": true,
             "selectable": true,
             "termCode": {
@@ -73,7 +73,7 @@
         {
             "children": [],
             "display": "Citrat-Plasma",
-            "id": "ac4e9bb7-040c-4a65-88ec-8a04e672d42e",
+            "id": "617a188b-2358-f39f-2ad9-614be64e483f",
             "leaf": true,
             "selectable": true,
             "termCode": {
@@ -87,7 +87,7 @@
         {
             "children": [],
             "display": "PBMCs",
-            "id": "9a094044-891a-4894-81eb-02c1631a24b2",
+            "id": "8ca6c2ac-5b2a-c889-3dcb-691fc684eafc",
             "leaf": true,
             "selectable": true,
             "termCode": {
@@ -101,7 +101,7 @@
         {
             "children": [],
             "display": "Nasen/Rachen-Abstrich",
-            "id": "b390b43c-dcf8-43cf-9391-2f17c8c8c860",
+            "id": "63d47593-96b3-40c0-c9bc-af0a8691bfdf",
             "leaf": true,
             "selectable": true,
             "termCode": {
@@ -115,7 +115,7 @@
         {
             "children": [],
             "display": "Urin (\u00dcberstand)",
-            "id": "9129c1e9-a7bd-4b4f-adba-9c82b233850a",
+            "id": "3871f4ed-f582-71a3-ec3a-034e19ee4cf3",
             "leaf": true,
             "selectable": true,
             "termCode": {
@@ -129,7 +129,7 @@
         {
             "children": [],
             "display": "Urin (Sediment)",
-            "id": "80d4fa40-93bb-42b1-9d2e-0313cbae8199",
+            "id": "dd4bbb9d-9b2c-a5b6-ffc2-b14a14d09048",
             "leaf": true,
             "selectable": true,
             "termCode": {
@@ -143,7 +143,7 @@
         {
             "children": [],
             "display": "Endotrachealsekret",
-            "id": "d9ddce04-55f8-458f-b8d1-fadf74088821",
+            "id": "fa09276b-73ce-736b-052c-c9179ba215be",
             "leaf": true,
             "selectable": true,
             "termCode": {
@@ -157,7 +157,7 @@
         {
             "children": [],
             "display": "Bronchoalveolar lavage",
-            "id": "85766651-a302-49f6-9d2b-86fb987144e3",
+            "id": "ead38c7b-470a-e97d-c6d6-cb22d7fa98bf",
             "leaf": true,
             "selectable": true,
             "termCode": {
@@ -171,7 +171,7 @@
         {
             "children": [],
             "display": "Saliva",
-            "id": "8261af19-0142-470b-abfe-cfa06c126fce",
+            "id": "9263fef3-8702-a1f9-de14-7f1b9b054534",
             "leaf": true,
             "selectable": true,
             "termCode": {
@@ -184,7 +184,7 @@
         }
     ],
     "display": "Bioproben",
-    "id": "6b11d01c-1771-48c5-8d2a-f144c43347f1",
+    "id": "9f6a9878-2138-fe83-570b-d05e25a0bea9",
     "leaf": false,
     "selectable": false,
     "termCode": {
