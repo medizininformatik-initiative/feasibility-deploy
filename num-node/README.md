@@ -80,9 +80,19 @@ For example for the FHIR Server: ssh -L 8081:127.0.0.1:8081 your-username@your-s
 
 ### Step 6 - Init Testdata (Optional)
 
-If you would like to test your setup you can initialise the testdata provided with this repository
+If you would like to test your setup you can initialise the testdata provided with this repository.
 
 `bash init-testdata.sh`
+
+Alternatively if you are part of the CODEX project, please download the  testdata here:
+
+https://confluence.imi.med.fau.de/download/attachments/156379181/gecco-feasibility-testdata.zip?version=1&modificationDate=1624281356939&api=v2
+
+remove the current testdata and unzip the file in the testdata directory of this projects num-node folder.
+
+`rm -f testdata/* && unzip gecco-feasibility-testdata.zip -d testdata`
+
+then execute `bash init-testdata.sh` to load the testdata in your FHIR server
 
 ## Change Certificate
 
