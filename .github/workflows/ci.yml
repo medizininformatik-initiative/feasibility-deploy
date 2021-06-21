@@ -48,8 +48,6 @@ jobs:
       run: python main.py
 
     - name: Setup Base Auth
-      env:
-        BASE_DIR: ${{ github.workspace }}/num-node
       run: bash num-node/setup-base-auth.sh codex-developer "${{ env.AUTH_PASSWORD }}"
 
     - name: Build the stack
