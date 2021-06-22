@@ -37,7 +37,7 @@ This creates a cert.pem and key.pem file in the `auth` directory, which will be 
 
 We do however recommend that you use your own certificates and a domain of your choosing. The certificates can be changed at any time later on - see "Change Certificate" below.
 
-### Step 3 - Confgiure your Num-Node
+### Step 3 - Configure your Num-Node
 
 To configure the Num-Node to work with the central feasibility platform the only part that needs to be configured for a test setup is the `aktin-client`.
 

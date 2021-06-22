@@ -9,4 +9,4 @@ docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/aktin-client/docker-compose.yml 
 docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/flare/docker-compose.yml up -d
 docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/fhir-server/blaze-server/docker-compose.yml up -d
 docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/rev-proxy/docker-compose.yml up -d
-sh $BASE_DIR/dsf-client/start.sh $COMPOSE_PROJECT
+# sh $BASE_DIR/dsf-client/start.sh $COMPOSE_PROJECT
