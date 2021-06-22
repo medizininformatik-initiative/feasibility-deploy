@@ -39,7 +39,7 @@ We do however recommend that you use your own certificates and a domain of your 
 
 Set the rights of the cert.pem and key.pem files to 655.
 
-`chmod 655 um-node/auth/*`
+`chmod 655 auth/*`
 
 ### Step 3 - Configure your Num-Node
 
