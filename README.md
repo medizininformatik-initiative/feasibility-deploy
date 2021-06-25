@@ -18,30 +18,25 @@ A "Num-Node" part, which provides a deployment for the decenctralized components
 
 ### Step 1 - Initialise certificates
 
-Use the `setup-all-base-auth.sh <username> <password>` to initialise the deployment with self signed certificates and setup basic auth for the num node.The `setup-all-base-auth.sh` requires two arguments. First the username, second the password for the user. 
+Use the `setup-all-base-auth.sh <username> <password>` to initialise the deployment with self signed certificates and setup basic auth for the num node.The `setup-all-base-auth.sh` requires two arguments. First the username, second the password for the user.
 This sets up a user and basic auth authentication for the FHIR server of the num-node and creates two sets of self signed certificates (cert.pem, key.pem) in the `num-node/auth` and `zars/auth`folders.
 
 
-### Step 2 - Set up rights for certificates
-
-Set the rights of the cert.pem and key.pem files to 655.
-
-`chmod 655 zars/auth/* num-node/auth/*`
-
-### Step 3 - Start Zars and Num-Node
+### Step 2 - Start Zars and Num-Node
 
 Use the `start-zars-and-num-node.sh` to start up the ZARS and num node.
 
-Additional flags are explained when running `start-zars-and-num-node.sh -h`. 
+Additional flags are explained when running `start-zars-and-num-node.sh -h`.
 
 
-### Step 4 - Restrict rights for certificates 
+### Step 3 - Restrict rights for certificates
 
 Once keycloak has successfully started up, set the rights of the certificate files to 600.
 
 `chmod 600 zars/auth/* num-node/auth/*`
 
-### Step 5 - Initialise test data (optional)
+
+### Step 4 - Initialise test data (optional)
 
 If you would like to test your setup you can initialise the testdata provided with this repository
 
@@ -102,7 +97,7 @@ It will take a couple of seconds, but should the user interface should then retu
 
 ## Sending a feasibility request via REST
 
-You can also send a request to the UI backend via REST. 
+You can also send a request to the UI backend via REST.
 
 
 ``` bash
