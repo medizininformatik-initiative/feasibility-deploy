@@ -11,8 +11,9 @@ on:
     - main
 
 env:
-  TEST_DATA_REF: v0.1.1
+  TEST_DATA_REF: v0.2.0
   TEST_DATA_PATH: test/data-to-sq
+  AUTH_USERNAME: "codex-developer"
   AUTH_PASSWORD: "codex"
 
 jobs:
@@ -48,7 +49,7 @@ jobs:
       run: python main.py
 
     - name: Setup Base Auth
-      run: bash num-node/setup-base-auth.sh codex-developer "${{ env.AUTH_PASSWORD }}"
+      run: bash num-node/setup-base-auth.sh "${{ env.AUTH_USERNAME }}" "${{ env.AUTH_PASSWORD }}"
 
     - name: Build the stack
       env:
@@ -71,4 +72,6 @@ jobs:
     - name: Run tests
       env:
         TERM: "xterm"
+        QUERY_ENDPOINT_URL: "http://localhost:8091/api/v1/query-handler/run-query"
+        AUTH_TOKEN_REQUEST_URL: "https://localhost:8443/auth/realms/codex-develop/protocol/openid-connect/token"
       run: test/run_tests.sh
