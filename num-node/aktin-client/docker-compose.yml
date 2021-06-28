@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   aktin-client:
-    image: ghcr.io/num-codex/aktin-client:1.3.0
+    image: ghcr.io/num-codex/aktin-client:1.3.2
     environment:
       BROKER_REQUEST_MEDIATYPE: ${CODEX_FEASIBILITY_AKTIN_CLIENT_BROKER_REQUEST_MEDIATYPE:-application/sq+json}
       BROKER_RESULT_MEDIATYPE: ${CODEX_FEASIBILITY_AKTIN_CLIENT_BROKER_RESULT_MEDIATYPE:-application/json}
