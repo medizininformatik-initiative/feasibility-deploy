@@ -1,3 +1,5 @@
+![CI](https://github.com/num-codex/codex-deploy/actions/workflows/ci.yml/badge.svg)
+
 # codex-deploy
 
 This codex deployment Repo offers an example deployment repository using Docker-compose and official codex images to setup an example environment.
