@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   aktin-client:
-    image: ghcr.io/num-codex/aktin-client:1.3.2
+    image: ghcr.io/num-codex/aktin-client:1.3.3
     environment:
       BROKER_REQUEST_MEDIATYPE: ${CODEX_FEASIBILITY_AKTIN_CLIENT_BROKER_REQUEST_MEDIATYPE:-application/sq+json}
       BROKER_RESULT_MEDIATYPE: ${CODEX_FEASIBILITY_AKTIN_CLIENT_BROKER_RESULT_MEDIATYPE:-application/json}
@@ -15,6 +15,7 @@ services:
       PROCESS_ARGS: ${CODEX_FEASIBILITY_AKTIN_CLIENT_PROCESS_ARGS:-10}
       FLARE_BASE_URL: ${CODEX_FEASIBILITY_AKTIN_CLIENT_FLARE_BASE_URL:-http://node-flare:5000}
       CLIENT_OBFUSCATE: ${CODEX_FEASIBILITY_AKTIN_CLIENT_OBFUSCATE:-true}
+      JAVA_OPTS: $JAVA_OPTS
     volumes:
       - ./client-exec-scripts/echo.sh:/opt/aktin/echo.sh
       - ./client-exec-scripts/call-cql.sh:/opt/aktin/call-cql.sh
