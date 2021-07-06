@@ -3,7 +3,7 @@ version: "3.7"
 services:
   fhir-server:
     container_name: fhir-server
-    image: hapiproject/hapi:v5.4.0
+    image: hapiproject/hapi:v5.4.1
     restart: always
     ports:
       - ${PORT_HAPI_FHIR:-127.0.0.1:8081}:8080
