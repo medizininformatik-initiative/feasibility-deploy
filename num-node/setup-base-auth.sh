@@ -17,9 +17,9 @@ if [ -z "$1" ] && [ -z "$2" ]; then
   exit
 fi
 
-echo "Generating default certificate..."
-docker run --rm -v $BASE_DIR/auth:/export --entrypoint openssl alpine/openssl req -nodes -subj '/CN=localhost' -x509 -newkey rsa:4096 -keyout /export/key.pem -out /export/cert.pem -days 99999
-docker run --rm -v $BASE_DIR/auth:/export alpine chmod 655 /export/*
+#echo "Generating default certificate..."
+#docker run --rm -v $BASE_DIR/auth:/export --entrypoint openssl alpine/openssl req -nodes -subj '/CN=localhost' -x509 -newkey rsa:4096 -keyout /export/key.pem -out /export/cert.pem -days 99999
+#docker run --rm -v $BASE_DIR/auth:/export alpine chmod 655 /export/*
 
 echo "generating user: $1 , with password: $2"
 docker run --rm --entrypoint htpasswd registry:2.7.0 -nb $1 $2 > $BASE_DIR/auth/.htpasswd

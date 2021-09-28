@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   node-flare:
-    image: ghcr.io/num-codex/codex-flare:0.0.5
+    image: ghcr.io/num-codex/codex-flare:0.0.7
     ports:
       - ${NUM_NODE_PORT_FLARE:-127.0.0.1:5000}:5000
     environment:

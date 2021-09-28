@@ -4,4 +4,5 @@ num-node/dsf-client/bpe/app/last_event/time.file
 zars/auth/*.pem
 zars/dsf-broker/bpe/app/last_event/time.file
 test/testdata
-
+num-node/testdata
+!num-node/testdata/test-patient-all.json
