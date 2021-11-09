@@ -4,6 +4,8 @@ services:
   # ZARS FHIR -----------------------------------------------------------------
   dsf-zars-fhir-proxy:
     image: ghcr.io/highmed/fhir_proxy:0.4.0
+    ports:
+      - "448:443"
     volumes:
     - type: bind
       source: ./fhir/proxy/ssl
