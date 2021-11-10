@@ -17,6 +17,8 @@ services:
       read_only: true
     environment:
       TZ: Europe/Berlin
+    depends_on:
+      - dsf-dic-fhir-app
 
   dsf-dic-fhir-app:
     image: ghcr.io/highmed/fhir:0.5.2
@@ -24,7 +26,7 @@ services:
     volumes:
     - type: bind
       source: ./fhir/app/conf/bundle.xml
-      target: /opt/fhir/init/bundle.xml
+      target: /opt/fhir/conf/bundle.xml
     secrets:
     - db_liquibase.password
     - db_fhir_dic_1_user.password
@@ -76,9 +78,6 @@ services:
     secrets:
     - db_liquibase.password
 
-  # DIC BPE -------------------------------------------------------------------
-
-    # DIC1 BPE ------------------------------------------------------------------
   dsf-dic-bpe-app:
     image: ghcr.io/highmed/bpe:0.5.2
     restart: on-failure
@@ -90,6 +89,9 @@ services:
       - type: bind
         source: ./bpe/app/last_event
         target: /opt/bpe/last_event
+      - type: bind
+        source: ../../assets/hapi-fhir-client-5.1.0.jar
+        target: /opt/bpe/plugin/hapi-fhir-client-5.1.0.jar
     secrets:
     - db_liquibase.password
     - db_dic_1_bpe_user.password
@@ -99,7 +101,7 @@ services:
     - app_dic_1_client_certificate_private_key.pem
     - app_client_certificate_private_key.pem.password
     environment:
-        ORG_HIGHMED_DSF_BPE_DB_LIQUIBASE_PASSWORD_FILE: /run/secrets/db_liquibase.password
+      ORG_HIGHMED_DSF_BPE_DB_LIQUIBASE_PASSWORD_FILE: /run/secrets/db_liquibase.password
       ORG_HIGHMED_DSF_BPE_DB_USER_PASSWORD_FILE: /run/secrets/db_dic_1_bpe_user.password
       ORG_HIGHMED_DSF_BPE_DB_USER_CAMUNDA_PASSWORD_FILE: /run/secrets/db_dic_1_bpe_user_camunda.password
       ORG_HIGHMED_DSF_BPE_FHIR_CLIENT_TRUST_CERTIFICATES: /run/secrets/app_client_trust_certificates.pem
@@ -144,59 +146,45 @@ services:
 
 secrets:
   proxy_certificate_and_int_cas.pem:
-    file:../../secrets/proxy_certificate_and_int_cas.pem
+    file: ../../secrets/proxy_certificate_and_int_cas.pem
   proxy_certificate_private_key.pem:
-    file:../../secrets/proxy_certificate_private_key.pem
+    file: ../../secrets/proxy_certificate_private_key.pem
   proxy_trusted_client_cas.pem:
-    file:../../secrets/proxy_trusted_client_cas.pem
+    file: ../../secrets/proxy_trusted_client_cas.pem
 
   app_client_trust_certificates.pem:
-    file:../../secrets/app_client_trust_certificates.pem
+    file: ../../secrets/app_client_trust_certificates.pem
   app_client_certificate_private_key.pem.password:
-    file:../../secrets/app_client_certificate_private_key.pem.password
+    file: ../../secrets/app_client_certificate_private_key.pem.password
 
   db_liquibase.password:
-    file:../../secrets/db_liquibase.password
+    file: ../../secrets/db_liquibase.password
 
   db_zars_bpe_user.password:
-    file: secrets/db_zars_bpe_user.password
+    file: ../../secrets/db_zars_bpe_user.password
   db_zars_bpe_user_camunda.password:
-    file: secrets/db_zars_bpe_user_camunda.password
+    file: ../../secrets/db_zars_bpe_user_camunda.password
   app_zars_client_certificate.pem:
-    file:../../secrets/app_zars_client_certificate.pem
+    file: ../../secrets/app_zars_client_certificate.pem
   app_zars_client_certificate_private_key.pem:
-    file:../../secrets/app_zars_client_certificate_private_key.pem
+    file: ../../secrets/app_zars_client_certificate_private_key.pem
   db_fhir_zars_user.password:
-    file:../../secrets/db_fhir_zars_user.password
+    file: ../../secrets/db_fhir_zars_user.password
   db_fhir_zars_user_permanent_delete.password:
-    file:../../secrets/db_fhir_zars_user_permanent_delete.password
+    file: ../../secrets/db_fhir_zars_user_permanent_delete.password
 
   db_dic_1_bpe_user.password:
-    file: secrets/db_dic_1_bpe_user.password
+    file: ../../secrets/db_dic_1_bpe_user.password
   db_dic_1_bpe_user_camunda.password:
-    file: secrets/db_dic_1_bpe_user_camunda.password
+    file: ../../secrets/db_dic_1_bpe_user_camunda.password
   app_dic_1_client_certificate.pem:
-    file:../../secrets/app_dic_1_client_certificate.pem
+    file: ../../secrets/app_dic_1_client_certificate.pem
   app_dic_1_client_certificate_private_key.pem:
-    file:../../secrets/app_dic_1_client_certificate_private_key.pem
+    file: ../../secrets/app_dic_1_client_certificate_private_key.pem
   db_fhir_dic_1_user.password:
-    file:../../secrets/db_fhir_dic_1_user.password
+    file: ../../secrets/db_fhir_dic_1_user.password
   db_fhir_dic_1_user_permanent_delete.password:
-    file:../../secrets/db_fhir_dic_1_user_permanent_delete.password
-
-  db_dic_2_bpe_user.password:
-    file: secrets/db_dic_2_bpe_user.password
-  db_dic_2_bpe_user_camunda.password:
-    file: secrets/db_dic_2_bpe_user_camunda.password
-  app_dic_2_client_certificate.pem:
-    file:../../secrets/app_dic_2_client_certificate.pem
-  app_dic_2_client_certificate_private_key.pem:
-    file:../../secrets/app_dic_2_client_certificate_private_key.pem
-  db_fhir_dic_2_user.password:
-    file:../../secrets/db_fhir_dic_2_user.password
-  db_fhir_dic_2_user_permanent_delete.password:
-    file:../../secrets/db_fhir_dic_2_user_permanent_delete.password
-    file: ./bpe/db/conf/postgres_password
+    file: ../../secrets/db_fhir_dic_1_user_permanent_delete.password
 
 volumes:
   dsf-dic-fhir-db-data:
