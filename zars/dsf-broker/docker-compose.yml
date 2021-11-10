@@ -1,46 +1,65 @@
 version: '3.7'
 
 services:
-  # ZARS FHIR -----------------------------------------------------------------
+
+  # ---- Proxy ----------------------------------------------------------------
   dsf-zars-fhir-proxy:
-    image: ghcr.io/highmed/fhir_proxy:0.4.0
+    image: nginx:1.21
+    restart: on-failure
     ports:
-      - "448:443"
+    - "127.0.0.1:443:443"
+    secrets:
+    - proxy_certificate_and_int_cas.pem
+    - proxy_certificate_private_key.pem
+    - proxy_trusted_client_cas.pem
     volumes:
     - type: bind
-      source: ./fhir/proxy/ssl
-      target: /usr/local/apache2/ssl
+      source: ./proxy/conf.d
+      target: /etc/nginx/conf.d
+      read_only: true
+    - type: bind
+      source: ./proxy/nginx.conf
+      target: /etc/nginx/nginx.conf
+      read_only: true
     environment:
-      HTTPS_SERVER_NAME_PORT: dsf-zars-fhir-proxy:443
-      APP_SERVER_IP: dsf-zars-fhir-app
-    depends_on:
-    - dsf-zars-fhir-app
+      TZ: Europe/Berlin
 
   dsf-zars-fhir-app:
-    image: ghcr.io/num-codex/codex-processes-ap2/fhir:0.1.0-rc5
+    image: ghcr.io/highmed/fhir:0.5.2
     restart: on-failure
     volumes:
     - type: bind
-      source: ./fhir/app/conf/dsf-zars-fhir-proxy-client_certificate.p12
-      target: /opt/fhir/certs/dsf-zars-fhir-proxy-client_certificate.p12
-    - type: bind
       source: ./fhir/app/conf/bundle.xml
       target: /opt/fhir/init/bundle.xml
+    secrets:
+      - db_liquibase.password
+      - db_fhir_zars_user.password
+      - db_fhir_zars_user_permanent_delete.password
+      - app_client_trust_certificates.pem
+      - app_zars_client_certificate.pem
+      - app_zars_client_certificate_private_key.pem
+      - app_client_certificate_private_key.pem.password
     environment:
+      ORG_HIGHMED_DSF_FHIR_DB_LIQUIBASE_PASSWORD_FILE: /run/secrets/db_liquibase.password
+      ORG_HIGHMED_DSF_FHIR_DB_USER_PASSWORD_FILE: /run/secrets/db_fhir_zars_user.password
+      ORG_HIGHMED_DSF_FHIR_DB_USER_PERMANENT_DELETE_PASSWORD_FILE: /run/secrets/db_fhir_zars_user_permanent_delete.password
+      ORG_HIGHMED_DSF_FHIR_CLIENT_TRUST_CERTIFICATES: /run/secrets/app_client_trust_certificates.pem
+      ORG_HIGHMED_DSF_FHIR_CLIENT_CERTIFICATE: /run/secrets/app_zars_client_certificate.pem
+      ORG_HIGHMED_DSF_FHIR_CLIENT_CERTIFICATE_PRIVATE_KEY: /run/secrets/app_zars_client_certificate_private_key.pem
+      ORG_HIGHMED_DSF_FHIR_CLIENT_CERTIFICATE_PRIVATE_KEY_PASSWORD_FILE: /run/secrets/app_client_certificate_private_key.pem.password
+      ORG_HIGHMED_DSF_FHIR_DB_URL: "jdbc:postgresql://dsf-zars-fhir-db/fhir"
+      ORG_HIGHMED_DSF_FHIR_DB_USER_GROUP: zars_fhir_users
+      ORG_HIGHMED_DSF_FHIR_DB_USER_USERNAME: zars_fhir_server_user
+      ORG_HIGHMED_DSF_FHIR_DB_USER_PERMANENT_DELETE_GROUP: zars_fhir_permanent_delete_users
+      ORG_HIGHMED_DSF_FHIR_DB_USER_PERMANENT_DELETE_USERNAME: zars_fhir_server_permanent_delete_user
+      ORG_HIGHMED_DSF_FHIR_SERVER_BASE_URL: "https://dsf-zars-fhir-proxy/fhir"
+      ORG_HIGHMED_DSF_FHIR_SERVER_ORGANIZATION_IDENTIFIER_VALUE: Test_ZARS
+      ORG_HIGHMED_DSF_FHIR_SERVER_USER_THUMBPRINTS: ${ZARS_USER_THUMBPRINTS}
+      ORG_HIGHMED_DSF_FHIR_SERVER_USER_THUMBPRINTS_PERMANENT_DELETE: ${ZARS_USER_THUMBPRINTS_PERMANENT_DELETE}
       EXTRA_JVM_ARGS: ${CODEX_DSF_ZARS_FHIR_APP_JVM_ARGS}
       TZ: Europe/Berlin
-      DB_URL: "jdbc:postgresql://dsf-zars-fhir-db/fhir"
-      DB_LIQUIBASE_USER: "liquibase_user"
-      DB_LIQUIBASE_USER_PASSWORD: "2e385c84-9a3c-4820-b251-5903fd1475e8"
-      DB_SERVER_USER_PASSWORD: "jzrMLm6sKjkwCemEuwn98cjH2X3dV2LY"
-      CORS_ORIGINS: "http://zars-feasibility-gui-backend"
-      ORGANIZATION_IDENTIFIER: "Test_ZARS"
-      ORGANIZATION_TYPE: "MeDIC"
-      WEBSERVICE_BASE_URL: "https://dsf-zars-fhir-proxy/fhir"
-      WEBSERVICE_P12_CERTIFICATE: "/opt/fhir/certs/dsf-zars-fhir-proxy-client_certificate.p12"
-      WEBSERVICE_P12_CERTIFICATE_PASSWORD: "password"
-      FHIR_INIT_BUNDLE: "/opt/fhir/init/bundle.xml"
-      USER_THUMBPRINTS: "70ecc86c9a5c945ac57a2a495fa24828bdece23b19f59ba3466617a86f778b71c33273b6b44aee0bc5a38c1ff63a756dca70e440376bac9adcc9f84be20c4e7a,159db26fbecf96002256ff9f7bd3e53368c4d94b36a12c1714aceaa53207d620946c3675a4971f34f39b42284fee993637cc63cc375f5e6fd2cf93e767a9f1ef"
+      #CORS_ORIGINS: "http://zars-feasibility-gui-backend"
+      # ORGANIZATION_TYPE: "MeDIC"  - needs to be put into the fhir resource organisation
     depends_on:
     - dsf-zars-fhir-db
 
@@ -53,7 +72,7 @@ services:
       timeout: 5s
       retries: 5
     environment:
-      POSTGRES_PASSWORD_FILE: /run/secrets/dsf-zars-fhir-postgres_password
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_liquibase.password
       POSTGRES_USER: liquibase_user
       POSTGRES_DB: fhir
     volumes:
@@ -61,35 +80,46 @@ services:
       source: dsf-zars-fhir-db-data
       target: /var/lib/postgresql/data
     secrets:
-    - dsf-zars-fhir-postgres_password
+    - db_liquibase.password
 
   # ZARS BPE ------------------------------------------------------------------
   dsf-zars-bpe-app:
-    image: ghcr.io/num-codex/codex-processes-ap2/bpe:0.1.0-rc5
+    image: ghcr.io/highmed/bpe:0.5.2
     restart: on-failure
     volumes:
-    - type: bind
-      source: ./bpe/app/last_event
-      target: /opt/bpe/last_event
-    - type: bind
-      source: ./bpe/app/conf/dsf-zars-fhir-proxy-client_certificate.p12
-      target: /opt/bpe/certs/dsf-zars-fhir-proxy-client_certificate.p12
+      - type: bind
+        source: ../../assets/codex-process-feasibility-0.1.0-RC6.jar
+        target: /opt/bpe/process/codex-process-feasibility-0.1.0-RC6.jar
+        read_only: true
+      - type: bind
+        source: ./bpe/app/last_event
+        target: /opt/bpe/last_event
+    secrets:
+      - db_liquibase.password
+      - db_zars_bpe_user.password
+      - db_zars_bpe_user_camunda.password
+      - app_client_trust_certificates.pem
+      - app_zars_client_certificate.pem
+      - app_zars_client_certificate_private_key.pem
+      - app_client_certificate_private_key.pem.password
     environment:
+      ORG_HIGHMED_DSF_BPE_DB_LIQUIBASE_PASSWORD_FILE: /run/secrets/db_liquibase.password
+      ORG_HIGHMED_DSF_BPE_DB_USER_PASSWORD_FILE: /run/secrets/dsf-zars-bpe-postgres_password
+      ORG_HIGHMED_DSF_BPE_DB_USER_CAMUNDA_PASSWORD_FILE: /run/secrets/db_zars_bpe_user_camunda.password
+      ORG_HIGHMED_DSF_BPE_FHIR_CLIENT_TRUST_CERTIFICATES: /run/secrets/app_client_trust_certificates.pem
+      ORG_HIGHMED_DSF_BPE_FHIR_CLIENT_CERTIFICATE: /run/secrets/app_zars_client_certificate.pem
+      ORG_HIGHMED_DSF_BPE_FHIR_CLIENT_CERTIFICATE_PRIVATE_KEY: /run/secrets/app_zars_client_certificate_private_key.pem
+      ORG_HIGHMED_DSF_BPE_FHIR_CLIENT_CERTIFICATE_PRIVATE_KEY_PASSWORD_FILE: /run/secrets/app_client_certificate_private_key.pem.password
+      ORG_HIGHMED_DSF_BPE_DB_URL: jdbc:postgresql://dsf-zars-bpe-db/bpe
+      ORG_HIGHMED_DSF_BPE_DB_USER_GROUP: zars_bpe_users
+      ORG_HIGHMED_DSF_BPE_DB_USER_USERNAME: zars_bpe_server_user
+      ORG_HIGHMED_DSF_BPE_DB_USER_CAMUNDA_GROUP: zars_camunda_users
+      ORG_HIGHMED_DSF_BPE_DB_USER_CAMUNDA_USERNAME: zars_camunda_server_user
+      ORG_HIGHMED_DSF_BPE_FHIR_SERVER_ORGANIZATION_IDENTIFIER_VALUE: Test_ZARS
+      ORG_HIGHMED_DSF_BPE_FHIR_SERVER_BASE_URL: "https://dsf-zars-fhir-proxy/fhir"
       EXTRA_JVM_ARGS: ${CODEX_DSF_ZARS_BPE_APP_JVM_ARGS}
       TZ: "Europe/Berlin"
-      DB_URL: "jdbc:postgresql://dsf-zars-bpe-db/bpe"
-      DB_LIQUIBASE_USER: "liquibase_user"
-      DB_LIQUIBASE_USER_PASSWORD: "c325ce47-2f98-47e4-8fa7-13d8091761d7"
-      DB_SERVER_USER_PASSWORD: "8s4cGYqY41mrWqTmwhZ3beVQcz6wc3Yr"
-      DB_CAMUNDA_USER_PASSWORD: "dcPa7a9wTCaTxFk7BdjmCuQp8k29e2eL"
-      ORGANIZATION_IDENTIFIER: "Test_ZARS"
-      WEBSERVICE_BASE_URL: "https://dsf-zars-fhir-proxy/fhir"
-      WEBSERVICE_P12_CERTIFICATE: "/opt/bpe/certs/dsf-zars-fhir-proxy-client_certificate.p12"
-      WEBSERVICE_P12_CERTIFICATE_PASSWORD: "password"
-      WEBSOCKET_URL: "wss://dsf-zars-fhir-proxy/fhir/ws"
-      WEBSOCKET_P12_CERTIFICATE: "/opt/bpe/certs/dsf-zars-fhir-proxy-client_certificate.p12"
-      WEBSOCKET_P12_CERTIFICATE_PASSWORD: "password"
-      PROCESS_STORE_URL: "http://zars-store:8080/fhir"
+      # WEBSOCKET_URL: "wss://dsf-zars-fhir-proxy/fhir/ws"
     depends_on:
     - dsf-zars-bpe-db
     - dsf-zars-fhir-proxy
@@ -103,7 +133,7 @@ services:
       timeout: 5s
       retries: 5
     environment:
-      POSTGRES_PASSWORD_FILE: /run/secrets/dsf-zars-bpe-postgres_password
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_liquibase.password
       POSTGRES_USER: liquibase_user
       POSTGRES_DB: bpe
     volumes:
@@ -111,13 +141,62 @@ services:
       source: dsf-zars-bpe-db-data
       target: /var/lib/postgresql/data
     secrets:
-    - dsf-zars-bpe-postgres_password
+    - db_liquibase.password
 
 secrets:
-  dsf-zars-fhir-postgres_password:
-    file: ./fhir/db/conf/postgres_password
-  dsf-zars-bpe-postgres_password:
-    file: ./bpe/db/conf/postgres_password
+  proxy_certificate_and_int_cas.pem:
+    file:../../secrets/proxy_certificate_and_int_cas.pem
+  proxy_certificate_private_key.pem:
+    file:../../secrets/proxy_certificate_private_key.pem
+  proxy_trusted_client_cas.pem:
+    file:../../secrets/proxy_trusted_client_cas.pem
+
+  app_client_trust_certificates.pem:
+    file:../../secrets/app_client_trust_certificates.pem
+  app_client_certificate_private_key.pem.password:
+    file:../../secrets/app_client_certificate_private_key.pem.password
+
+  db_liquibase.password:
+    file:../../secrets/db_liquibase.password
+
+  db_zars_bpe_user.password:
+    file: secrets/db_zars_bpe_user.password
+  db_zars_bpe_user_camunda.password:
+    file: secrets/db_zars_bpe_user_camunda.password
+  app_zars_client_certificate.pem:
+    file:../../secrets/app_zars_client_certificate.pem
+  app_zars_client_certificate_private_key.pem:
+    file:../../secrets/app_zars_client_certificate_private_key.pem
+  db_fhir_zars_user.password:
+    file:../../secrets/db_fhir_zars_user.password
+  db_fhir_zars_user_permanent_delete.password:
+    file:../../secrets/db_fhir_zars_user_permanent_delete.password
+
+  db_dic_1_bpe_user.password:
+    file: secrets/db_dic_1_bpe_user.password
+  db_dic_1_bpe_user_camunda.password:
+    file: secrets/db_dic_1_bpe_user_camunda.password
+  app_dic_1_client_certificate.pem:
+    file:../../secrets/app_dic_1_client_certificate.pem
+  app_dic_1_client_certificate_private_key.pem:
+    file:../../secrets/app_dic_1_client_certificate_private_key.pem
+  db_fhir_dic_1_user.password:
+    file:../../secrets/db_fhir_dic_1_user.password
+  db_fhir_dic_1_user_permanent_delete.password:
+    file:../../secrets/db_fhir_dic_1_user_permanent_delete.password
+
+  db_dic_2_bpe_user.password:
+    file: secrets/db_dic_2_bpe_user.password
+  db_dic_2_bpe_user_camunda.password:
+    file: secrets/db_dic_2_bpe_user_camunda.password
+  app_dic_2_client_certificate.pem:
+    file:../../secrets/app_dic_2_client_certificate.pem
+  app_dic_2_client_certificate_private_key.pem:
+    file:../../secrets/app_dic_2_client_certificate_private_key.pem
+  db_fhir_dic_2_user.password:
+    file:../../secrets/db_fhir_dic_2_user.password
+  db_fhir_dic_2_user_permanent_delete.password:
+    file:../../secrets/db_fhir_dic_2_user_permanent_delete.password
 
 volumes:
   dsf-zars-fhir-db-data:
