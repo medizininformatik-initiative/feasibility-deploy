@@ -12,7 +12,7 @@
                </tag>
             </meta>
             <extension url="http://highmed.org/fhir/StructureDefinition/extension-certificate-thumbprint">
-               <valueString value="c63bf99d9c3460f217c5e7218d23574f31e01264e287287d50df197766f893fdaa6069aaf22d93c67c9d565a4becfaa6bf4cf3e3ff9676c571a54a99215cafc0"></valueString>
+               <valueString value="ef6c1570be859f7a6b8c606da0769b38bf6655ff1c85466ef5aa5fb836f6c1808fc5369602b7c217dd23b70bb40e655a9f352232a77b81be8cc6d1a515ffae82"></valueString>
             </extension>
             <identifier>
                <system value="http://highmed.org/sid/organization-identifier"></system>
@@ -50,7 +50,7 @@
                </tag>
             </meta>
             <extension url="http://highmed.org/fhir/StructureDefinition/extension-certificate-thumbprint">
-               <valueString value="0f11b966823ec15189f17d4fc0df9eb4a7cb576f1de73cb8d7449af35f1285c47e96e1ffc1ecf3aba928617ed7fd06e9f33751d795a9b4d4bb8c8e6c7559d848"></valueString>
+               <valueString value="27995733026b00ea3ec04531372ddda8613ae28bbd8575728623a5bb7dfa2985af7055dc6f4fcf660770d6508c4b90523c676323a067645ef6a7e92448e34fa3"></valueString>
             </extension>
             <identifier>
                <system value="http://highmed.org/sid/organization-identifier"></system>
@@ -174,7 +174,7 @@
                <value value="netzwerk-universitaetsmedizin.de"></value>
             </identifier>
             <active value="true"></active>
-            <name value="Netzwerk Universit&#xe4;tsmedizin"></name>
+            <name value="Netzwerk Universitätsmedizin"></name>
          </Organization>
       </resource>
       <request>
