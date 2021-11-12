@@ -25,6 +25,8 @@ services:
   dsf-zars-fhir-app:
     image: ghcr.io/highmed/fhir:0.5.2
     restart: on-failure
+    ports:
+    - "127.0.0.1:11345:8080"
     volumes:
     - type: bind
       source: ./fhir/app/conf/bundle.xml
@@ -45,15 +47,15 @@ services:
       ORG_HIGHMED_DSF_FHIR_CLIENT_CERTIFICATE: /run/secrets/app_zars_client_certificate.pem
       ORG_HIGHMED_DSF_FHIR_CLIENT_CERTIFICATE_PRIVATE_KEY: /run/secrets/app_zars_client_certificate_private_key.pem
       ORG_HIGHMED_DSF_FHIR_CLIENT_CERTIFICATE_PRIVATE_KEY_PASSWORD_FILE: /run/secrets/app_client_certificate_private_key.pem.password
-      ORG_HIGHMED_DSF_FHIR_DB_URL: "jdbc:postgresql://dsf-zars-fhir-db/fhir"
+      ORG_HIGHMED_DSF_FHIR_DB_URL: jdbc:postgresql://dsf-zars-fhir-db/fhir
       ORG_HIGHMED_DSF_FHIR_DB_USER_GROUP: zars_fhir_users
       ORG_HIGHMED_DSF_FHIR_DB_USER_USERNAME: zars_fhir_server_user
       ORG_HIGHMED_DSF_FHIR_DB_USER_PERMANENT_DELETE_GROUP: zars_fhir_permanent_delete_users
       ORG_HIGHMED_DSF_FHIR_DB_USER_PERMANENT_DELETE_USERNAME: zars_fhir_server_permanent_delete_user
-      ORG_HIGHMED_DSF_FHIR_SERVER_BASE_URL: "https://dsf-zars-fhir-proxy/fhir"
+      ORG_HIGHMED_DSF_FHIR_SERVER_BASE_URL: https://dsf-zars-fhir-proxy/fhir
       ORG_HIGHMED_DSF_FHIR_SERVER_ORGANIZATION_IDENTIFIER_VALUE: Test_ZARS
-      ORG_HIGHMED_DSF_FHIR_SERVER_USER_THUMBPRINTS: ${ZARS_USER_THUMBPRINTS}
-      ORG_HIGHMED_DSF_FHIR_SERVER_USER_THUMBPRINTS_PERMANENT_DELETE: ${ZARS_USER_THUMBPRINTS_PERMANENT_DELETE}
+      ORG_HIGHMED_DSF_FHIR_SERVER_USER_THUMBPRINTS: "d134d0ba1c925703ab2ed3b7a243bd95934e313337640c98399d703d423707a5c6635cf884f4b240b2bc6634a0e770f0d565410016b71ce237c1952118f9295d,d2e7338c3e9fc96a081b1a8983a847028859a68e5e318cb79cd6d0b2e9508e91698c373bbcdf56f774d6a9997e4a83a28fb6046ec80f8551ae38de49fe03b202"
+      ORG_HIGHMED_DSF_FHIR_SERVER_USER_THUMBPRINTS_PERMANENT_DELETE: "d134d0ba1c925703ab2ed3b7a243bd95934e313337640c98399d703d423707a5c6635cf884f4b240b2bc6634a0e770f0d565410016b71ce237c1952118f9295d,d2e7338c3e9fc96a081b1a8983a847028859a68e5e318cb79cd6d0b2e9508e91698c373bbcdf56f774d6a9997e4a83a28fb6046ec80f8551ae38de49fe03b202"
       EXTRA_JVM_ARGS: ${CODEX_DSF_ZARS_FHIR_APP_JVM_ARGS}
       TZ: Europe/Berlin
       #CORS_ORIGINS: "http://zars-feasibility-gui-backend"
@@ -117,7 +119,7 @@ services:
       ORG_HIGHMED_DSF_BPE_DB_USER_CAMUNDA_GROUP: zars_camunda_users
       ORG_HIGHMED_DSF_BPE_DB_USER_CAMUNDA_USERNAME: zars_camunda_server_user
       ORG_HIGHMED_DSF_BPE_FHIR_SERVER_ORGANIZATION_IDENTIFIER_VALUE: Test_ZARS
-      ORG_HIGHMED_DSF_BPE_FHIR_SERVER_BASE_URL: "https://dsf-zars-fhir-proxy/fhir"
+      ORG_HIGHMED_DSF_BPE_FHIR_SERVER_BASE_URL: https://dsf-zars-fhir-proxy/fhir
       EXTRA_JVM_ARGS: ${CODEX_DSF_ZARS_BPE_APP_JVM_ARGS}
       TZ: "Europe/Berlin"
       # WEBSOCKET_URL: "wss://dsf-zars-fhir-proxy/fhir/ws"
@@ -172,19 +174,6 @@ secrets:
     file: ../../secrets/db_fhir_zars_user.password
   db_fhir_zars_user_permanent_delete.password:
     file: ../../secrets/db_fhir_zars_user_permanent_delete.password
-
-  db_dic_1_bpe_user.password:
-    file: ../../secrets/db_dic_1_bpe_user.password
-  db_dic_1_bpe_user_camunda.password:
-    file: ../../secrets/db_dic_1_bpe_user_camunda.password
-  app_dic_1_client_certificate.pem:
-    file: ../../secrets/app_dic_1_client_certificate.pem
-  app_dic_1_client_certificate_private_key.pem:
-    file: ../../secrets/app_dic_1_client_certificate_private_key.pem
-  db_fhir_dic_1_user.password:
-    file: ../../secrets/db_fhir_dic_1_user.password
-  db_fhir_dic_1_user_permanent_delete.password:
-    file: ../../secrets/db_fhir_dic_1_user_permanent_delete.password
 
 volumes:
   dsf-zars-fhir-db-data:

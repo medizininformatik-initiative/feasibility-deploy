@@ -43,15 +43,15 @@ services:
       ORG_HIGHMED_DSF_FHIR_CLIENT_CERTIFICATE: /run/secrets/app_dic_1_client_certificate.pem
       ORG_HIGHMED_DSF_FHIR_CLIENT_CERTIFICATE_PRIVATE_KEY: /run/secrets/app_dic_1_client_certificate_private_key.pem
       ORG_HIGHMED_DSF_FHIR_CLIENT_CERTIFICATE_PRIVATE_KEY_PASSWORD_FILE: /run/secrets/app_client_certificate_private_key.pem.password
-      ORG_HIGHMED_DSF_FHIR_DB_URL: "jdbc:postgresql://dsf-dic-fhir-db/fhir"
+      ORG_HIGHMED_DSF_FHIR_DB_URL: jdbc:postgresql://dsf-dic-fhir-db/fhir
       ORG_HIGHMED_DSF_FHIR_DB_USER_GROUP: dic_1_fhir_users
       ORG_HIGHMED_DSF_FHIR_DB_USER_USERNAME: dic_1_fhir_server_user
       ORG_HIGHMED_DSF_FHIR_DB_USER_PERMANENT_DELETE_GROUP: dic_1_fhir_permanent_delete_users
       ORG_HIGHMED_DSF_FHIR_DB_USER_PERMANENT_DELETE_USERNAME: dic_1_fhir_server_permanent_delete_user
-      ORG_HIGHMED_DSF_FHIR_SERVER_BASE_URL: "https://dsf-dic-fhir-proxy/fhir"
+      ORG_HIGHMED_DSF_FHIR_SERVER_BASE_URL: https://dsf-dic-fhir-proxy/fhir
       ORG_HIGHMED_DSF_FHIR_SERVER_ORGANIZATION_IDENTIFIER_VALUE: Test_DIC_1
-      ORG_HIGHMED_DSF_FHIR_SERVER_USER_THUMBPRINTS: ${DIC_1_USER_THUMBPRINTS}
-      ORG_HIGHMED_DSF_FHIR_SERVER_USER_THUMBPRINTS_PERMANENT_DELETE: ${DIC_1_USER_THUMBPRINTS_PERMANENT_DELETE}
+      ORG_HIGHMED_DSF_FHIR_SERVER_USER_THUMBPRINTS: "e2b39f27f51553a9f51a4dbda11cf7ac36339778af0d38a51cc85538dfde8b04837acc1dc8ec0a401cbe7867dbc9e1ba82e950fea4ca304aa3909541ad49fd16,d2e7338c3e9fc96a081b1a8983a847028859a68e5e318cb79cd6d0b2e9508e91698c373bbcdf56f774d6a9997e4a83a28fb6046ec80f8551ae38de49fe03b202"
+      ORG_HIGHMED_DSF_FHIR_SERVER_USER_THUMBPRINTS_PERMANENT_DELETE: "e2b39f27f51553a9f51a4dbda11cf7ac36339778af0d38a51cc85538dfde8b04837acc1dc8ec0a401cbe7867dbc9e1ba82e950fea4ca304aa3909541ad49fd16,d2e7338c3e9fc96a081b1a8983a847028859a68e5e318cb79cd6d0b2e9508e91698c373bbcdf56f774d6a9997e4a83a28fb6046ec80f8551ae38de49fe03b202"
       EXTRA_JVM_ARGS: ${CODEX_DSF_ZARS_FHIR_APP_JVM_ARGS}
       TZ: Europe/Berlin
       #CORS_ORIGINS: "http://dsf-zars-bpe-app"
@@ -92,6 +92,7 @@ services:
       - type: bind
         source: ../../assets/hapi-fhir-client-5.1.0.jar
         target: /opt/bpe/plugin/hapi-fhir-client-5.1.0.jar
+        read_only: true
     secrets:
     - db_liquibase.password
     - db_dic_1_bpe_user.password
@@ -108,13 +109,13 @@ services:
       ORG_HIGHMED_DSF_BPE_FHIR_CLIENT_CERTIFICATE: /run/secrets/app_dic_1_client_certificate.pem
       ORG_HIGHMED_DSF_BPE_FHIR_CLIENT_CERTIFICATE_PRIVATE_KEY: /run/secrets/app_dic_1_client_certificate_private_key.pem
       ORG_HIGHMED_DSF_BPE_FHIR_CLIENT_CERTIFICATE_PRIVATE_KEY_PASSWORD_FILE: /run/secrets/app_client_certificate_private_key.pem.password
-      ORG_HIGHMED_DSF_BPE_DB_URL: "jdbc:postgresql://dsf-dic-bpe-db/bpe"
+      ORG_HIGHMED_DSF_BPE_DB_URL: jdbc:postgresql://dsf-dic-bpe-db/bpe
       ORG_HIGHMED_DSF_BPE_DB_USER_GROUP: dic_1_bpe_users
       ORG_HIGHMED_DSF_BPE_DB_USER_USERNAME: dic_1_bpe_server_user
       ORG_HIGHMED_DSF_BPE_DB_USER_CAMUNDA_GROUP: dic_1_camunda_users
       ORG_HIGHMED_DSF_BPE_DB_USER_CAMUNDA_USERNAME: dic_1_camunda_server_user
       ORG_HIGHMED_DSF_BPE_FHIR_SERVER_ORGANIZATION_IDENTIFIER_VALUE: Test_DIC_1
-      ORG_HIGHMED_DSF_BPE_FHIR_SERVER_BASE_URL: "https://dsf-dic-fhir-proxy/fhir"
+      ORG_HIGHMED_DSF_BPE_FHIR_SERVER_BASE_URL: https://dsf-dic-fhir-proxy/fhir
       DE_NETZWERK_UNIVERSITAETSMEDIZIN_CODEX_PROCESSES_FEASIBILITY_FLARE_WEBSERVICE_BASEURL: http://node-flare:5000/
       DE_NETZWERK_UNIVERSITAETSMEDIZIN_CODEX_PROCESSES_FEASIBILITY_FLARE_WEBSERVICE_CONNECTTIMEOUT: 2000
       DE_NETZWERK_UNIVERSITAETSMEDIZIN_CODEX_PROCESSES_FEASIBILITY_EVALUATION_STRATEGY: structured-query
@@ -159,19 +160,6 @@ secrets:
 
   db_liquibase.password:
     file: ../../secrets/db_liquibase.password
-
-  db_zars_bpe_user.password:
-    file: ../../secrets/db_zars_bpe_user.password
-  db_zars_bpe_user_camunda.password:
-    file: ../../secrets/db_zars_bpe_user_camunda.password
-  app_zars_client_certificate.pem:
-    file: ../../secrets/app_zars_client_certificate.pem
-  app_zars_client_certificate_private_key.pem:
-    file: ../../secrets/app_zars_client_certificate_private_key.pem
-  db_fhir_zars_user.password:
-    file: ../../secrets/db_fhir_zars_user.password
-  db_fhir_zars_user_permanent_delete.password:
-    file: ../../secrets/db_fhir_zars_user_permanent_delete.password
 
   db_dic_1_bpe_user.password:
     file: ../../secrets/db_dic_1_bpe_user.password

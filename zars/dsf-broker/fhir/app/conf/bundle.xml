@@ -12,7 +12,7 @@
                </tag>
             </meta>
             <extension url="http://highmed.org/fhir/StructureDefinition/extension-certificate-thumbprint">
-               <valueString value="ef6c1570be859f7a6b8c606da0769b38bf6655ff1c85466ef5aa5fb836f6c1808fc5369602b7c217dd23b70bb40e655a9f352232a77b81be8cc6d1a515ffae82"></valueString>
+               <valueString value="d134d0ba1c925703ab2ed3b7a243bd95934e313337640c98399d703d423707a5c6635cf884f4b240b2bc6634a0e770f0d565410016b71ce237c1952118f9295d"></valueString>
             </extension>
             <identifier>
                <system value="http://highmed.org/sid/organization-identifier"></system>
@@ -50,7 +50,7 @@
                </tag>
             </meta>
             <extension url="http://highmed.org/fhir/StructureDefinition/extension-certificate-thumbprint">
-               <valueString value="27995733026b00ea3ec04531372ddda8613ae28bbd8575728623a5bb7dfa2985af7055dc6f4fcf660770d6508c4b90523c676323a067645ef6a7e92448e34fa3"></valueString>
+               <valueString value="e2b39f27f51553a9f51a4dbda11cf7ac36339778af0d38a51cc85538dfde8b04837acc1dc8ec0a401cbe7867dbc9e1ba82e950fea4ca304aa3909541ad49fd16"></valueString>
             </extension>
             <identifier>
                <system value="http://highmed.org/sid/organization-identifier"></system>
