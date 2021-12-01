@@ -149,7 +149,7 @@
             </payloadType>
             <payloadMimeType value="application/fhir+json"></payloadMimeType>
             <payloadMimeType value="application/fhir+xml"></payloadMimeType>
-            <address value="https://dic-1/fhir"></address>
+            <address value="https://dsf-dic-fhir-proxy/fhir"></address>
          </Endpoint>
       </resource>
       <request>
