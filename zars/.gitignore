@@ -1,3 +1,4 @@
 auth/*.pem
 
 dsf-broker/bpe/app/last_event/time.file
+keycloak/data
