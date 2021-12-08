@@ -9,7 +9,7 @@ BASE_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 COMPOSE_PROJECT=codex-deploy
 
 # Option Defaults
-MIDDLEWARE_TYPE=AKTIN
+MIDDLEWARE_TYPE=DSF
 FHIR_SERVER_TYPE=BLAZE
 QUERY_FORMAT=STRUCTURED
 OBFUSCATE=true
@@ -66,6 +66,9 @@ for opt in "$@"; do
   *) shift ;;
   esac
 done
+
+
+echo $MIDDLEWARE_TYPE
 
 # Configuration ---------------------------------------------------------------
 if [ "$QUERY_FORMAT" = "CQL" ]; then
