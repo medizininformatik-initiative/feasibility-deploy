@@ -1,6 +1,6 @@
 {
   "env": {
-    "name": "deploy"
+    "name": "dev-test"
   },
   "api": {
     "baseUrl": "/api"
@@ -19,10 +19,10 @@
   },
   "features": {
     "v2": {
-      "multiplevaluedefinitions": false,
+      "multiplevaluedefinitions": true,
       "multiplegroups": false,
       "dependentgroups": false,
-      "timerestriction": false
+      "timerestriction": true
     },
     "extra": {
       "displayvaluefiltericon": false,
@@ -39,6 +39,8 @@
     "query": false,
     "result": false
   },
-  "stylesheet": "codexTheme",
-  "fhirport": "8082"
+  "stylesheet": "abideTheme",
+  "fhirport": "8082",
+  "dataset": "codex",
+  "queryVersion": "v2"
 }

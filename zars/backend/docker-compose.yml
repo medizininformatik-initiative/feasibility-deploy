@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   zars-feasibility-gui-backend:
-    image: ghcr.io/num-codex/codex-feasibility-backend:0.0.9
+    image: ghcr.io/num-codex/codex-feasibility-backend:0.2.0-RC6
     ports:
     - ${CODEX_FEASIBILITY_BACKEND_PORT:-127.0.0.1:8091}:8090
     depends_on:
@@ -20,6 +20,7 @@ services:
       FLARE_WEBSERVICE_BASE_URL: ${CODEX_FEASIBILITY_BACKEND_FLARE_WEBSERVICE_BASE_URL:-http://zars-flare:5000}
       API_BASE_URL: ${CODEX_FEASIBILITY_BACKEND_API_BASE_URL:-https://localhost/api/}
       # ---- Aktin
+      BROKER_CLIENT_AKTIN_ENABLED: ${CODEX_FEASIBILITY_BACKEND_AKTIN_ENABLED:-false}
       AKTIN_BROKER_BASE_URL: ${CODEX_FEASIBILITY_BACKEND_AKTIN_BROKER_BASE_URL:-http://aktin-broker:8080/broker/}
       AKTIN_BROKER_API_KEY: ${CODEX_FEASIBILITY_BACKEND_AKTIN_BROKER_API_KEY:-xxxApiKeyAdmin123}
       # ---- DSF
@@ -37,6 +38,8 @@ services:
 
   zars-feasibility-db:
     image: 'postgres:13.1-alpine'
+    ports:
+    - ${CODEX_FEASIBILITY_BACKEND_DB_PORT:-127.0.0.1:5432}:5432
     environment:
       - POSTGRES_USER=codex-postgres
       - POSTGRES_PASSWORD=codex-password

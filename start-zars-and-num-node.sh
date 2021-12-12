@@ -9,7 +9,7 @@ BASE_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 COMPOSE_PROJECT=codex-deploy
 
 # Option Defaults
-MIDDLEWARE_TYPE=DSF
+MIDDLEWARE_TYPE=AKTIN
 FHIR_SERVER_TYPE=BLAZE
 QUERY_FORMAT=STRUCTURED
 OBFUSCATE=true
@@ -103,6 +103,7 @@ printf "Startup ZARS components ..."
 docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/zars/keycloak/docker-compose.yml up -d
 
 if [ "$MIDDLEWARE_TYPE" = "AKTIN" ]; then
+  export CODEX_FEASIBILITY_BACKEND_AKTIN_ENABLED=true
   docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/zars/aktin-broker/docker-compose.yml up -d
 else
   sh $BASE_DIR/zars/dsf-broker/start.sh $COMPOSE_PROJECT
