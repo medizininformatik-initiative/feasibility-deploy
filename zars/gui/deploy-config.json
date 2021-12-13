@@ -32,7 +32,7 @@
   "options": {
     "pollingtimeinseconds": 10,
     "pollingintervallinseconds": 1,
-    "lowerboundarypatientresult": 10
+    "lowerboundarypatientresult": 0
   },
   "mock": {
     "terminology": false,
