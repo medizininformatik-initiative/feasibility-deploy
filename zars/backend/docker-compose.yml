@@ -42,6 +42,6 @@ services:
     ports:
     - ${CODEX_FEASIBILITY_BACKEND_DB_PORT:-127.0.0.1:5432}:5432
     environment:
-      - POSTGRES_USER=codex-postgres
-      - POSTGRES_PASSWORD=codex-password
-      - POSTGRES_DB=codex_ui
+      POSTGRES_USER: ${CODEX_FEASIBILITY_BACKEND_DATASOURCE_USERNAME:-codex-postgres}
+      POSTGRES_PASSWORD: ${CODEX_FEASIBILITY_BACKEND_DATASOURCE_PASSWORD:-codex-password}
+      POSTGRES_DB: codex_ui

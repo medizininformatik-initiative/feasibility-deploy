@@ -27,7 +27,7 @@ services:
       DB_PASSWORD: postgres
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: admin
-      KEYCLOAK_FRONTEND_URL: https://localhost/auth
+      KEYCLOAK_FRONTEND_URL: ${FEASIBILITY_KEYCLOAK_BASE_URL:-https://localhost/auth}
       PROXY_ADDRESS_FORWARDING: "true"
     volumes:
       - ../auth/cert.pem:/etc/x509/https/tls.crt

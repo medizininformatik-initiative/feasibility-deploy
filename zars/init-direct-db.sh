@@ -1,0 +1,1 @@
+docker exec codex-deploy_zars-feasibility-db_1 bash -c "psql -U codex-postgres -d codex_ui -c \"INSERT INTO codex.site VALUES(1, 'DIRECT DIZ', '', '');\""
