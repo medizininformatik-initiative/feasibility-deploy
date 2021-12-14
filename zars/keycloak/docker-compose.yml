@@ -10,14 +10,12 @@ services:
       POSTGRES_DB: keycloak
       POSTGRES_USER: keycloak
     volumes:
-      - ./data/postgres:/var/lib/postgresql/data:z
+      - "db:/var/lib/postgresql/data"
 
-  zars-keycloak:
+  keycloak:
     container_name: codexkeycloak
+    image: jboss/keycloak:15.0.2
     restart: unless-stopped
-    image: ghcr.io/num-codex/codex-keycloak:0.0.2
-    ports:
-      - 127.0.0.1:8443:8443
     environment:
       DB_VENDOR: POSTGRES
       DB_ADDR: db
@@ -26,10 +24,12 @@ services:
       DB_SCHEMA: public
       DB_PASSWORD: postgres
       KEYCLOAK_USER: admin
-      KEYCLOAK_PASSWORD: admin
-      KEYCLOAK_FRONTEND_URL: ${FEASIBILITY_KEYCLOAK_BASE_URL:-https://localhost/auth}
+      KEYCLOAK_PASSWORD: ${FEASIBILITY_KEYCLOAK_ADMIN_PW:-admin}
       PROXY_ADDRESS_FORWARDING: "true"
+      KEYCLOAK_IMPORT: /tmp/initial-realm.json
+      KEYCLOAK_FRONTEND_URL: ${FEASIBILITY_KEYCLOAK_BASE_URL:-https://localhost/auth}
     volumes:
+      - ${KEYCLOAKIMPORTFILE:-./init/initial-realm-prod.json}:/tmp/initial-realm.json
       - ../auth/cert.pem:/etc/x509/https/tls.crt
       - ../auth/key.pem:/etc/x509/https/tls.key
     depends_on:
