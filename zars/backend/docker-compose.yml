@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   zars-feasibility-gui-backend:
-    image: ghcr.io/num-codex/codex-feasibility-backend:0.2.0-RC7
+    image: ghcr.io/num-codex/codex-feasibility-backend:0.2.0-RC8
     ports:
     - ${CODEX_FEASIBILITY_BACKEND_PORT:-127.0.0.1:8091}:8090
     depends_on:
