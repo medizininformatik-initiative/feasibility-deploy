@@ -22,3 +22,4 @@ services:
       - ./client-exec-scripts/call-cql.sh:/opt/aktin/call-cql.sh
       - ./client-exec-scripts/execute-cql.sh:/opt/aktin/execute-cql.sh
       - ./client-exec-scripts/call-flare.sh:/opt/aktin/call-flare.sh
+      - ./aktin-requests.log:/opt/aktin/aktin-requests.log
