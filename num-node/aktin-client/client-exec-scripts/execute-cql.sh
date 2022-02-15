@@ -1,4 +1,4 @@
-#/bin/bash 
+#/bin/sh 
 
 BASE=${FHIR_BASE_URL:-"http://fhir-server:8080/fhir"}
 
@@ -68,12 +68,12 @@ cat <<END
 END
 }
 
-create-library() {
+createlibrary() {
   library | jq -cM ".url = \"urn:uuid:$1\" | .content[0].data = \"$2\""
 }
 
 
-create-measure() {
+createmeasure() {
   measure | jq -cM ".url = \"urn:uuid:$1\" | .library[0] = \"urn:uuid:$2\" | .subjectCodeableConcept.coding[0].code = \"$3\""
 }
 
@@ -81,8 +81,8 @@ post() {
   curl -sH "Content-Type: application/fhir+json" -d @- "${BASE}/$1"
 }
 
-evaluate-measure() {
-  curl -s "${BASE}/Measure/$1/\$evaluate-measure?periodStart=2000&periodEnd=2019"
+evaluatemeasure() {
+  curl -s "${BASE}/Measure/$1/\$evaluate-measure?periodStart=2000&periodEnd=2099"
 }
 
 TYPE="Patient"
@@ -91,10 +91,10 @@ DATA=$( echo "$1" | base64 | tr -d '\n')
 LIBRARY_URI=$(uuidgen | tr '[:upper:]' '[:lower:]')
 MEASURE_URI=$(uuidgen | tr '[:upper:]' '[:lower:]')
 
-create-library ${LIBRARY_URI} ${DATA} | post "Library" > /dev/null
+createlibrary ${LIBRARY_URI} ${DATA} | post "Library" > /dev/null
 
-MEASURE_ID=$(create-measure ${MEASURE_URI} ${LIBRARY_URI} ${TYPE} | post "Measure" | jq -r .id)
+MEASURE_ID=$(createmeasure ${MEASURE_URI} ${LIBRARY_URI} ${TYPE} | post "Measure" | jq -r .id)
 
-COUNT=$(evaluate-measure ${MEASURE_ID} | jq ".group[0].population[0].count")
+COUNT=$(evaluatemeasure ${MEASURE_ID} | jq ".group[0].population[0].count")
 
 printf "${COUNT}"
