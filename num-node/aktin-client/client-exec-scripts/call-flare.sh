@@ -1,4 +1,4 @@
-#/bin/bash 
+#!/bin/sh 
 
 FLARE_BASE_URL=${FLARE_BASE_URL:-"http://flare:8080"}
 CLIENT_OBFUSCATE=${CLIENT_OBFUSCATE:-true}
@@ -10,9 +10,8 @@ echo "----BEGIN REQUEST----" >> aktin-requests.log
 echo $QUERY_INPUT >> aktin-requests.log
 echo "----END REQUEST----" >> aktin-requests.log
 
-RESP=$(curl --location --request POST "$FLARE_BASE_URL/flare/query/execute" \
---header 'Accept-Encoding: CSQ' \
---header 'Content-Type: application/json' \
+RESP=$(curl --location --request POST "$FLARE_BASE_URL/query/execute" \
+--header 'Content-Type: application/sq+json' \
 --data-raw "$QUERY_INPUT")
 
 if [ $CLIENT_OBFUSCATE = true ]; then
