@@ -1,4 +1,4 @@
-#/bin/bash 
+#!/bin/sh 
 
 QUERY_INPUT=`cat`
 CLIENT_OBFUSCATE=${CLIENT_OBFUSCATE:-true}
@@ -11,7 +11,9 @@ echo "----END REQUEST----" >> aktin-requests.log
 RESP=$(sh execute-cql.sh "$QUERY_INPUT")
 
 if [ $CLIENT_OBFUSCATE = true ]; then
-  RESP=$(($RESP - ($RESP % 10) + 10))
+  if [ $RESP != 0 ];then
+    RESP=$(($RESP - ($RESP % 10) + 10))
+  fi
 fi
 
 echo "----BEGIN RESPONSE----" >> aktin-requests.log

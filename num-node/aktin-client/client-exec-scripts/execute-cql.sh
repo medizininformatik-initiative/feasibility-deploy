@@ -1,6 +1,8 @@
-#/bin/sh 
+#!/bin/sh 
 
 BASE=${FHIR_BASE_URL:-"http://fhir-server:8080/fhir"}
+BASIC_AUTH_64=$(printf "$AUTH_USER:$AUTH_PW" | base64)
+BASIC_AUTH="Authorization: Basic $BASIC_AUTH_64"
 
 library() {
 cat <<END
@@ -78,11 +80,22 @@ createmeasure() {
 }
 
 post() {
-  curl -sH "Content-Type: application/fhir+json" -d @- "${BASE}/$1"
+  if [[ ! -z "$AUTH_USER" && ! -z "$AUTH_PW" ]];
+  then
+    curl -sH "Content-Type: application/fhir+json" -H "$BASIC_AUTH" -d @- "${BASE}/$1"
+  else 
+    curl -sH "Content-Type: application/fhir+json" -d @- "${BASE}/$1"
+  fi
 }
 
 evaluatemeasure() {
-  curl -s "${BASE}/Measure/$1/\$evaluate-measure?periodStart=2000&periodEnd=2099"
+  if [[ ! -z "$AUTH_USER" && ! -z "$AUTH_PW" ]];
+  then
+    curl -s -H "$BASIC_AUTH" "${BASE}/Measure/$1/\$evaluate-measure?periodStart=2000&periodEnd=2099"
+  else 
+    curl -s "${BASE}/Measure/$1/\$evaluate-measure?periodStart=2000&periodEnd=2099"
+  fi
+  
 }
 
 TYPE="Patient"

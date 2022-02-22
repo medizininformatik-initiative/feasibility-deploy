@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   node-flare:
-    image: ghcr.io/rwth-imi/flare-query:1.0-rc6
+    image: ghcr.io/rwth-imi/flare-query:1.0-rc8
     ports:
       - ${NUM_NODE_PORT_FLARE:-127.0.0.1:8084}:8080
     environment:

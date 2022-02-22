@@ -17,6 +17,9 @@ services:
       FLARE_BASE_URL: ${CODEX_FEASIBILITY_AKTIN_CLIENT_FLARE_BASE_URL:-http://node-flare:8080}
       CLIENT_OBFUSCATE: ${CODEX_FEASIBILITY_AKTIN_CLIENT_OBFUSCATE:-true}
       JAVA_OPTS: $JAVA_OPTS
+      AUTH_USER:  ${AKTIN_CLIENT_AUTH_USER:-}
+      AUTH_PW:  ${AKTIN_CLIENT_AUTH_PW:-}
+      FHIR_BASE_URL: ${AKTIN_FHIR_BASE_URL:-http://fhir-server:8080/fhir}
     volumes:
       - ./client-exec-scripts/echo.sh:/opt/aktin/echo.sh
       - ./client-exec-scripts/call-cql.sh:/opt/aktin/call-cql.sh
