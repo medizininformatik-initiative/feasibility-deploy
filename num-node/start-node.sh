@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-COMPOSE_PROJECT=codex-deploy
+COMPOSE_PROJECT=abide-deploy
 export PORT_NUM_NODE_REV_PROXY=444
 
 BASE_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"

@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-COMPOSE_PROJECT=codex-deploy
+COMPOSE_PROJECT=abide-deploy
 
 export FEASIBILITY_KEYCLOAK_ADMIN_PW=${FEASIBILITY_KEYCLOAK_ADMIN_PW:-admin}
 FEASIBILITY_BASE_URL=${FEASIBILITY_BASE_URL:-https://localhost}

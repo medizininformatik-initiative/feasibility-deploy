@@ -1,7 +1,6 @@
 version: '3.7'
 services:
   fhir-server:
-    container_name: fhir-server
     image: ghcr.io/num-codex/blaze:0.16
     environment:
       BASE_URL: "http://fhir-server:8080"
