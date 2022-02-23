@@ -19,16 +19,6 @@ elif [ "$FHIR_SERVER" = "hapi" ]; then
     docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/fhir-server/hapi-fhir-server/docker-compose.yml up -d
 fi
 
-if [ "$FHIR_SERVER" = "blaze" ]; then
-    echo "Starting up FHIR-Server: Blaze"
-    docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/fhir-server/blaze-server/docker-compose.yml up -d
-elif [ "$FHIR_SERVER" = "hapi" ]; then
-    echo "Starting up FHIR-Server: HAPI"
-    docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/fhir-server/hapi-fhir-server/docker-compose.yml up -d
-fi
-
-
-
 if [ -f "$CERT_FILE" ] && [ -f "$KEY_FILE" ]; then
     echo "Auth files cert: $CERT_FILE and key: $KEY_FILE exist => starting NGINX reverse proxy on port $PORT_NUM_NODE_REV_PROXY"
     docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/rev-proxy/docker-compose.yml up -d
