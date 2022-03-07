@@ -7,6 +7,8 @@ services:
       - ${NUM_NODE_PORT_FLARE:-127.0.0.1:8084}:8080
     environment:
       FLARE_FHIR_SERVER_URL: ${FLARE_FHIR_SERVER_URL:-http://fhir-server:8080/fhir/}
+      FLARE_FHIR_USER: ${FLARE_FHIR_USER:-}
+      FLARE_FHIR_PW: ${FLARE_FHIR_PW:-}
       MAPPINGS_FILE: ${FLARE_ONTOLOGY_FILES_FOLDER:-/opt/flare/ontology}/codex-term-code-mapping.json
       CONCEPT_TREE_FILE: ${FLARE_ONTOLOGY_FILES_FOLDER:-/opt/flare/ontology}/codex-code-tree.json
     volumes:
