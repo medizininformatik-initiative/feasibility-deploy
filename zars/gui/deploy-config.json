@@ -1,6 +1,6 @@
 {
   "env": {
-    "name": "deploy"
+    "name": "dev-test"
   },
   "api": {
     "baseUrl": "/api"
@@ -19,10 +19,10 @@
   },
   "features": {
     "v2": {
-      "multiplevaluedefinitions": false,
+      "multiplevaluedefinitions": true,
       "multiplegroups": false,
       "dependentgroups": false,
-      "timerestriction": false
+      "timerestriction": true
     },
     "extra": {
       "displayvaluefiltericon": false,
@@ -32,13 +32,15 @@
   "options": {
     "pollingtimeinseconds": 10,
     "pollingintervallinseconds": 1,
-    "lowerboundarypatientresult": 10
+    "lowerboundarypatientresult": 0
   },
   "mock": {
     "terminology": false,
     "query": false,
     "result": false
   },
-  "stylesheet": "codexTheme",
-  "fhirport": "8082"
+  "stylesheet": "abideTheme",
+  "fhirport": "8082",
+  "dataset": "codex",
+  "queryVersion": "v2"
 }

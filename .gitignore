@@ -6,3 +6,4 @@ zars/dsf-broker/bpe/app/last_event/time.file
 test/testdata
 num-node/testdata
 !num-node/testdata/test-patient-all.json
+start-zars-and-num-node-all.sh
