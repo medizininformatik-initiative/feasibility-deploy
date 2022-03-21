@@ -1,17 +1,27 @@
-#/bin/bash 
+#!/bin/sh 
 
-FLARE_BASE_URL=${FLARE_BASE_URL:-"http://flare:5000"}
+FLARE_BASE_URL=${FLARE_BASE_URL:-"http://flare:8080"}
 CLIENT_OBFUSCATE=${CLIENT_OBFUSCATE:-true}
 
 QUERY_INPUT=`cat`
 
-RESP=$(curl --location --request POST "$FLARE_BASE_URL/query-sync" \
---header 'Content-Type: codex/json' \
---header 'Accept: internal/json' \
+echo "##### INCOMING REQUEST at $(date) #####" >> aktin-requests.log
+echo "----BEGIN REQUEST----" >> aktin-requests.log
+echo $QUERY_INPUT >> aktin-requests.log
+echo "----END REQUEST----" >> aktin-requests.log
+
+RESP=$(curl --location --request POST "$FLARE_BASE_URL/query/execute" \
+--header 'Content-Type: application/sq+json' \
 --data-raw "$QUERY_INPUT")
 
 if [ $CLIENT_OBFUSCATE = true ]; then
-  RESP=$(($RESP - ($RESP % 10) + 10))
+  if [ $RESP != 0 ];then
+    RESP=$(($RESP - ($RESP % 10) + 10))
+  fi
 fi
+
+echo "----BEGIN RESPONSE----" >> aktin-requests.log
+echo $RESP >> aktin-requests.log
+echo "----END RESPONSE----" >> aktin-requests.log
 
 printf "$RESP"

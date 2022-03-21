@@ -9,17 +9,18 @@ BASE_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 COMPOSE_PROJECT=codex-deploy
 
 # Option Defaults
-MIDDLEWARE_TYPE=DSF
+MIDDLEWARE_TYPE=AKTIN
 FHIR_SERVER_TYPE=BLAZE
 QUERY_FORMAT=STRUCTURED
 OBFUSCATE=true
+
 
 usage() {
   cat <<USAGE
 usage: $(basename $0) [flags]
 
 The following flags are available:
-    --with-middleware-type=AKTIN     the middleware type to use (AKTIN or DSF)
+    --with-middleware-type=AKTIN     the middleware type to use (AKTIN or DSF or DIRECT)
     --with-fhir-server-type=BLAZE    the FHIR server to use (BLAZE or HAPI)
     --with-query-format=STRUCTURED   format used for the queries (STRUCTURED or CQL)
     --disable-result-obfuscation     disabled the result obfuscation
@@ -30,7 +31,7 @@ for opt in "$@"; do
   case $opt in
   --with-middleware-type=*)
     MIDDLEWARE_TYPE=$(echo "${opt#*=}" | tr '[:lower:]' '[:upper:]')
-    if [ "$MIDDLEWARE_TYPE" != "AKTIN" ] && [ "$MIDDLEWARE_TYPE" != "DSF" ]; then
+    if [ "$MIDDLEWARE_TYPE" != "AKTIN" ] && [ "$MIDDLEWARE_TYPE" != "DSF" ] && [ "$MIDDLEWARE_TYPE" != "DIRECT" ]; then
       echo "Unknown middleware type: $MIDDLEWARE_TYPE".
       usage
       exit 1
@@ -103,18 +104,22 @@ printf "Startup ZARS components ..."
 docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/zars/keycloak/docker-compose.yml up -d
 
 if [ "$MIDDLEWARE_TYPE" = "AKTIN" ]; then
+  export CODEX_FEASIBILITY_BACKEND_AKTIN_ENABLED=true
   docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/zars/aktin-broker/docker-compose.yml up -d
+elif [ "$MIDDLEWARE_TYPE" = "DIRECT" ]; then
+  export CODEX_FEASIBILITY_BACKEND_API_BASE_URL=
+  export CODEX_FEASIBILITY_BACKEND_FLARE_WEBSERVICE_BASE_URL=http://node-flare:8080/flare
+  export CODEX_FEASIBILITY_BACKEND_DIRECT_ENABLED=true
 else
   sh $BASE_DIR/zars/dsf-broker/start.sh $COMPOSE_PROJECT
 fi
 
-docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/zars/flare/docker-compose.yml up -d
 docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/zars/backend//docker-compose.yml up -d
 docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/zars/gui//docker-compose.yml up -d
 
 printf "Startup Num-Node components"
 
-if [ "$MIDDLEWARE_TYPE" = "AKTIN" ] || { [ "$MIDDLEWARE_TYPE" = "DSF" ] && [ "$QUERY_FORMAT" = "STRUCTURED" ]; }; then
+if [ "$MIDDLEWARE_TYPE" = "DIRECT" ] || [ "$MIDDLEWARE_TYPE" = "AKTIN" ] || { [ "$MIDDLEWARE_TYPE" = "DSF" ] && [ "$QUERY_FORMAT" = "STRUCTURED" ]; }; then
   docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/num-node/flare/docker-compose.yml up -d
 fi
 
@@ -128,6 +133,6 @@ docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/num-node/rev-proxy/docker-compos
 
 if [ "$CODEX_FEASIBILITY_BACKEND_BROKER_CLIENT_TYPE" = "AKTIN" ]; then
   docker-compose -p $COMPOSE_PROJECT -f $BASE_DIR/num-node/aktin-client/docker-compose.yml up -d
-else
+elif [ "$CODEX_FEASIBILITY_BACKEND_BROKER_CLIENT_TYPE" = "DSF" ]; then
   sh $BASE_DIR/num-node/dsf-client/start.sh $COMPOSE_PROJECT
 fi

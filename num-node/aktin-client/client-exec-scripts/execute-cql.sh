@@ -1,6 +1,8 @@
-#/bin/bash 
+#!/bin/sh 
 
 BASE=${FHIR_BASE_URL:-"http://fhir-server:8080/fhir"}
+BASIC_AUTH_64=$(printf "$AUTH_USER:$AUTH_PW" | base64)
+BASIC_AUTH="Authorization: Basic $BASIC_AUTH_64"
 
 library() {
 cat <<END
@@ -68,21 +70,32 @@ cat <<END
 END
 }
 
-create-library() {
+createlibrary() {
   library | jq -cM ".url = \"urn:uuid:$1\" | .content[0].data = \"$2\""
 }
 
 
-create-measure() {
+createmeasure() {
   measure | jq -cM ".url = \"urn:uuid:$1\" | .library[0] = \"urn:uuid:$2\" | .subjectCodeableConcept.coding[0].code = \"$3\""
 }
 
 post() {
-  curl -sH "Content-Type: application/fhir+json" -d @- "${BASE}/$1"
+  if [[ ! -z "$AUTH_USER" && ! -z "$AUTH_PW" ]];
+  then
+    curl -sH "Content-Type: application/fhir+json" -H "$BASIC_AUTH" -d @- "${BASE}/$1"
+  else 
+    curl -sH "Content-Type: application/fhir+json" -d @- "${BASE}/$1"
+  fi
 }
 
-evaluate-measure() {
-  curl -s "${BASE}/Measure/$1/\$evaluate-measure?periodStart=2000&periodEnd=2019"
+evaluatemeasure() {
+  if [[ ! -z "$AUTH_USER" && ! -z "$AUTH_PW" ]];
+  then
+    curl -s -H "$BASIC_AUTH" "${BASE}/Measure/$1/\$evaluate-measure?periodStart=2000&periodEnd=2099"
+  else 
+    curl -s "${BASE}/Measure/$1/\$evaluate-measure?periodStart=2000&periodEnd=2099"
+  fi
+  
 }
 
 TYPE="Patient"
@@ -91,10 +104,10 @@ DATA=$( echo "$1" | base64 | tr -d '\n')
 LIBRARY_URI=$(uuidgen | tr '[:upper:]' '[:lower:]')
 MEASURE_URI=$(uuidgen | tr '[:upper:]' '[:lower:]')
 
-create-library ${LIBRARY_URI} ${DATA} | post "Library" > /dev/null
+createlibrary ${LIBRARY_URI} ${DATA} | post "Library" > /dev/null
 
-MEASURE_ID=$(create-measure ${MEASURE_URI} ${LIBRARY_URI} ${TYPE} | post "Measure" | jq -r .id)
+MEASURE_ID=$(createmeasure ${MEASURE_URI} ${LIBRARY_URI} ${TYPE} | post "Measure" | jq -r .id)
 
-COUNT=$(evaluate-measure ${MEASURE_ID} | jq ".group[0].population[0].count")
+COUNT=$(evaluatemeasure ${MEASURE_ID} | jq ".group[0].population[0].count")
 
 printf "${COUNT}"
