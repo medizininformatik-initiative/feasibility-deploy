@@ -1,18 +1,22 @@
 version: "3.7"
 
 services:
-  node-flare:
+  flare:
     image: ghcr.io/rwth-imi/flare-query:1.0-rc11
     ports:
-      - ${NUM_NODE_PORT_FLARE:-127.0.0.1:8084}:8080
+      - ${FEASIBILITY_FLARE_PORT:-127.0.0.1:8084}:8080
     environment:
       FLARE_FHIR_SERVER_URL: ${FLARE_FHIR_SERVER_URL:-http://fhir-server:8080/fhir/}
       FLARE_FHIR_USER: ${FLARE_FHIR_USER:-}
       FLARE_FHIR_PW: ${FLARE_FHIR_PW:-}
+      FLARE_FHIR_PAGE_COUNT: ${FLARE_FHIR_PAGE_COUNT:-500}
+      FLARE_EXEC_CORE_POOL_SIZE: ${FLARE_EXEC_CORE_POOL_SIZE:-4}
+      FLARE_EXEC_MAX_POOL_SIZE: ${FLARE_EXEC_MAX_POOL_SIZE:-16}
+      FLARE_EXEC_KEEP_ALIVE_TIME_SECONDS: ${FLARE_EXEC_KEEP_ALIVE_TIME_SECONDS:-10}
+      LOG_LEVEL: ${FLARE_LOG_LEVEL:-warn}
       MAPPINGS_FILE: ${FLARE_ONTOLOGY_FILES_FOLDER:-/opt/flare/ontology}/codex-term-code-mapping.json
       CONCEPT_TREE_FILE: ${FLARE_ONTOLOGY_FILES_FOLDER:-/opt/flare/ontology}/codex-code-tree.json
     restart: unless-stopped
     volumes:
       - ${FLARE_LOCAL_CONCEPT_TREE_PATH:-../ontology/codex-code-tree.json}:${FLARE_ONTOLOGY_FILES_FOLDER:-/opt/flare/ontology}/codex-code-tree.json
       - ${FLARE_LOCAL_TERM_CODE_MAPPING_PATH:-../ontology/codex-term-code-mapping.json}:${FLARE_ONTOLOGY_FILES_FOLDER:-/opt/flare/ontology}/codex-term-code-mapping.json
-
