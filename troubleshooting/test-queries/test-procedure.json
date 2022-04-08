@@ -1,0 +1,20 @@
+{
+  "version": "http://to_be_decided.com/draft-1/schema#",
+  "display": "",
+  "inclusionCriteria": [
+    [
+      {
+        "termCodes": [
+          {
+            "code": "3-990",
+            "system": "http://fhir.de/CodeSystem/bfarm/ops",
+            "version": "2021",
+            "display": "Computergestützte Bilddatenanalyse mit 3D-Auswertung"
+          }
+        ],
+        "attributeFilters": [],
+        "timeRestriction": {}
+      }
+    ]
+  ]
+}
