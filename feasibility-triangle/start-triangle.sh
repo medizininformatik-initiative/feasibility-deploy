@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 
-COMPOSE_PROJECT=${COMPOSE_PROJECT:-feasibility-deploy}
+COMPOSE_PROJECT=${FEASIBILITY_COMPOSE_PROJECT:-feasibility-deploy}
 
 BASE_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 FHIR_SERVER=${FHIR_SERVER:-blaze}
