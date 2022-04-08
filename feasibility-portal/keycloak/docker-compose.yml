@@ -1,7 +1,7 @@
 version: "3.7"
 
 services:
-  db:
+  auth-db:
     container_name: codexkeycloakdb
     image: postgres:14-alpine
     restart: unless-stopped
@@ -18,7 +18,7 @@ services:
     restart: unless-stopped
     environment:
       DB_VENDOR: POSTGRES
-      DB_ADDR: db
+      DB_ADDR: auth-db
       DB_DATABASE: keycloak
       DB_USER: keycloak
       DB_SCHEMA: public
@@ -33,7 +33,7 @@ services:
       - ../auth/cert.pem:/etc/x509/https/tls.crt
       - ../auth/key.pem:/etc/x509/https/tls.key
     depends_on:
-      - db
+      - auth-db
 
 volumes:
-  db:
+  auth-db:

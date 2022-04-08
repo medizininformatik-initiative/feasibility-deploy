@@ -1,13 +1,14 @@
 version: '3.7'
 services:
   fhir-server:
-    image: ghcr.io/num-codex/blaze:0.16
+    image: ghcr.io/medizininformatik-initiative/blaze:0.16
     environment:
       BASE_URL: "http://fhir-server:8080"
       JAVA_TOOL_OPTIONS: ${CODEX_FHIR_SERVER_JVM_ARGS:--Xmx4g}
       LOG_LEVEL: debug
     ports:
     - ${PORT_BLAZE_FHIR:-127.0.0.1:8081}:8080
+    restart: unless-stopped
     volumes:
     - "blaze-data:/app/data"
 

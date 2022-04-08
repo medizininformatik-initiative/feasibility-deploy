@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   zars-feasibility-gui-backend:
-    image: ghcr.io/num-codex/codex-feasibility-backend:1.0.4-RC8
+    image: ghcr.io/medizininformatik-initiative/feasibility-backend:1.0.4
     ports:
     - ${CODEX_FEASIBILITY_BACKEND_PORT:-127.0.0.1:8091}:8090
     depends_on:
@@ -31,6 +31,7 @@ services:
       DSF_WEBSERVICE_BASE_URL: "https://dsf-zars-fhir-proxy/fhir"
       DSF_WEBSOCKET_URL: "wss://dsf-zars-fhir-proxy:443/fhir/ws"
       DSF_ORGANIZATION_ID: "Test_ZARS"
+    restart: unless-stopped
     volumes:
       - ${CODEX_FEASIBILITY_BACKEND_UI_PROFILES_PATH:-../ontology/ui_profiles}:/opt/codex-feasibility-backend/ontology/ui_profiles
       - ${CODEX_FEASIBILITY_BACKEND_CONCEPT_TREE_PATH:-../ontology/codex-code-tree.json}:/opt/codex-feasibility-backend/ontology/conceptTree.json
@@ -45,3 +46,4 @@ services:
       POSTGRES_USER: ${CODEX_FEASIBILITY_BACKEND_DATASOURCE_USERNAME:-codex-postgres}
       POSTGRES_PASSWORD: ${CODEX_FEASIBILITY_BACKEND_DATASOURCE_PASSWORD:-codex-password}
       POSTGRES_DB: codex_ui
+    restart: unless-stopped

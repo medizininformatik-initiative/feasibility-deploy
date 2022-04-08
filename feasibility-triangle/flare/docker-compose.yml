@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   node-flare:
-    image: ghcr.io/rwth-imi/flare-query:1.0-rc8
+    image: ghcr.io/rwth-imi/flare-query:1.0-rc11
     ports:
       - ${NUM_NODE_PORT_FLARE:-127.0.0.1:8084}:8080
     environment:
@@ -11,6 +11,7 @@ services:
       FLARE_FHIR_PW: ${FLARE_FHIR_PW:-}
       MAPPINGS_FILE: ${FLARE_ONTOLOGY_FILES_FOLDER:-/opt/flare/ontology}/codex-term-code-mapping.json
       CONCEPT_TREE_FILE: ${FLARE_ONTOLOGY_FILES_FOLDER:-/opt/flare/ontology}/codex-code-tree.json
+    restart: unless-stopped
     volumes:
       - ${FLARE_LOCAL_CONCEPT_TREE_PATH:-../ontology/codex-code-tree.json}:${FLARE_ONTOLOGY_FILES_FOLDER:-/opt/flare/ontology}/codex-code-tree.json
       - ${FLARE_LOCAL_TERM_CODE_MAPPING_PATH:-../ontology/codex-term-code-mapping.json}:${FLARE_ONTOLOGY_FILES_FOLDER:-/opt/flare/ontology}/codex-term-code-mapping.json

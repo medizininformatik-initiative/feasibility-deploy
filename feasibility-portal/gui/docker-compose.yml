@@ -1,8 +1,9 @@
 services:
   zars-feasibility-gui:
-    image: ghcr.io/num-codex/codex-feasibility-gui:0.2.0_RC9
+    image: ghcr.io/medizininformatik-initiative/feasibility-gui:0.2.0_RC10
     ports:
     - "443:8443"
+    restart: unless-stopped
     volumes:
       - ../auth/cert.pem:/etc/nginx/conf.d/cert.pem
       - ../auth/key.pem:/etc/nginx/conf.d/key.pem
