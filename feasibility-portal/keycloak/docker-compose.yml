@@ -2,30 +2,28 @@ version: "3.7"
 
 services:
   auth-db:
-    container_name: codexkeycloakdb
     image: postgres:14-alpine
     restart: unless-stopped
     environment:
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: keycloak
-      POSTGRES_USER: keycloak
+      POSTGRES_DB: ${FEASIBILITY_KEYCLOAK_DB:-keycloakdb}
+      POSTGRES_USER: ${FEASIBILITY_KEYCLOAK_DB_USER:-keycloakdbuser}
+      POSTGRES_PASSWORD: ${FEASIBILITY_KEYCLOAK_DB_PW:-keycloakdbpw}
     volumes:
-      - "db:/var/lib/postgresql/data"
+      - "feasibility-auth-db:/var/lib/postgresql/data"
 
-  keycloak:
-    container_name: codexkeycloak
+  auth:
     image: jboss/keycloak:15.0.2
     restart: unless-stopped
     environment:
       DB_VENDOR: POSTGRES
       DB_ADDR: auth-db
-      DB_DATABASE: keycloak
-      DB_USER: keycloak
+      DB_DATABASE: ${FEASIBILITY_KEYCLOAK_DB:-keycloakdb}
+      DB_USER: ${FEASIBILITY_KEYCLOAK_DB_USER:-keycloakdbuser}
       DB_SCHEMA: public
-      DB_PASSWORD: postgres
-      KEYCLOAK_USER: admin
-      KEYCLOAK_PASSWORD: ${FEASIBILITY_KEYCLOAK_ADMIN_PW:-admin}
-      PROXY_ADDRESS_FORWARDING: "true"
+      DB_PASSWORD: ${FEASIBILITY_KEYCLOAK_DB_PW:-keycloakdbpw}
+      KEYCLOAK_USER: ${FEASIBILITY_KEYCLOAK_ADMIN_USER:-admin}
+      KEYCLOAK_PASSWORD: ${FEASIBILITY_KEYCLOAK_ADMIN_PW:-adminpw}
+      PROXY_ADDRESS_FORWARDING: ${FEASIBILITY_KEYCLOAK_PROXY_ADDR_FORWARDING:-true}
       KEYCLOAK_IMPORT: /tmp/initial-realm.json
       KEYCLOAK_FRONTEND_URL: ${FEASIBILITY_KEYCLOAK_BASE_URL:-https://localhost/auth}
     volumes:
@@ -36,4 +34,4 @@ services:
       - auth-db
 
 volumes:
-  auth-db:
+  feasibility-auth-db:

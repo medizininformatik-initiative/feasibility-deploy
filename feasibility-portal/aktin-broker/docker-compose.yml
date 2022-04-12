@@ -1,8 +1,9 @@
 version: '3.7'
 services:
   aktin-broker:
-    image: ghcr.io/aktin/aktin-broker:1.3.2
+    image: ghcr.io/aktin/aktin-broker:1.3.4
     environment:
+      LOG_LEVEL: ${AKTIN_BROKER_LOG_LEVEL:-INFO}
       PASSWORD: ${AKTIN_ADMIN_PW:-changeme}
       HOST_AND_PORT: ${AKTIN_BROKER_HOST_AND_PORT:-0.0.0.0:8080}
     volumes:

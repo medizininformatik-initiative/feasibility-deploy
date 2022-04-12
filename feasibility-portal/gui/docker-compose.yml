@@ -1,5 +1,5 @@
 services:
-  zars-feasibility-gui:
+  feasibility-gui:
     image: ghcr.io/medizininformatik-initiative/feasibility-gui:0.2.0_RC10
     ports:
     - "443:8443"
