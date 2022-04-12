@@ -110,8 +110,8 @@ These are the URLs for access to the webclients via nginx:
 
 | Component   | URL                              | User             | Password         |
 |-------------|----------------------------------|------------------|------------------|
-| Flare       | <https://your-domain/flare>      | chosen in step 2 | chosen in step 2 |
-| FHIR Server | <https://your-domain/fhir>       | chosen in step 2 | chosen in step 2 |
+| Flare       | <https://your-domain/flare>      | chosen in step 3 | chosen in step 3 |
+| FHIR Server | <https://your-domain/fhir>       | chosen in step 3 | chosen in step 3 |
 
 Accessible service via localhost:
 
