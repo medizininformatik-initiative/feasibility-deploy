@@ -1,12 +1,13 @@
 version: '3.7'
 services:
   feasibility-gui-backend:
-    image: ghcr.io/medizininformatik-initiative/feasibility-backend:1.0.4
+    image: ghcr.io/medizininformatik-initiative/feasibility-backend:1.0.5-rc2
     ports:
     - ${FEASIBILITY_BACKEND_PORT:-127.0.0.1:8091}:8090
     depends_on:
       - feasibility-gui-backend-db
     environment:
+      LOG_LEVEL: ${FEASIBILITY_BACKEND_LOG_LEVEL:-warn}
       FEASIBILITY_DATABASE_HOST: ${FEASIBILITY_BACKEND_DATASOURCE_HOST:-feasibility-gui-backend-db}
       FEASIBILITY_DATABASE_PORT: ${FEASIBILITY_BACKEND_DATASOURCE_PORT:-5432}
       FEASIBILITY_DATABASE_USER: ${FEASIBILITY_BACKEND_DATASOURCE_USERNAME:-guidbuser}
