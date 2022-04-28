@@ -9,3 +9,5 @@ num-node/testdata
 start-zars-and-num-node-all.sh
 .env
 deploy-config.json
+*.pem
+.htpasswd
