@@ -19,7 +19,13 @@ Navigate to the directory and clone this repository: `git clone https://github.c
 Navigate to the feasibility-triangle folder of the repository: `cd /opt/feasibility-deploy/feasibility-portal`
 Checkout the version (git tag) of the feasibility triangle you would like to install: `git checkout tags/<your-tag-name-here>`
 
-### Step 3 - Set Up ssl certificates
+### Step 3 - Initialise .env files
+
+The feasibility portal requires .env files for the docker-compose setup. If you are setting up the project new and have not done so yet execute the `initialise-portal-env-files.sh`.
+
+If you have set up the portal before compare the .env to the .env.default env files of each component and copy the additional params as appropriate
+
+### Step 4 - Set Up ssl certificates
 
 Running this setup safely at your site, requires a valid certificate and domain. Please contact the responsible body of your institution to recieve both a domain and certificate.
 You will require two .pem files: a cert.pem (certificate) and key.pem (private key).
@@ -29,7 +35,7 @@ Set the rights for all files of the auth folder to 655 `chmod 655 /opt/feasibili
 
 - Not providing the certificate files is not an option.
 
-### Step 4 - Load the ontology mapping files
+### Step 5 - Load the ontology mapping files
 
 If used, (see "Overview") The FLARE component requires a mapping file and ontology tree file to translate an incoming feasibility query into FHIR Search queries.
 Both can be downloaded here: https://confluence.imi.med.fau.de/display/ABIDEMI/Ontologie
@@ -48,7 +54,7 @@ cd ../ui_profiles
 cp * /opt/feasibility-deploy/feasibility-portal/ontology/ui_profiles
 ```
 
-### Step 6 - Configure your feasibility triangle
+### Step 6 - Configure your feasibility portal
 
 If you use the default local feasibility portal setup you will only have to change the following environment variables:
 

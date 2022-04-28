@@ -41,12 +41,18 @@ Navigate to the directory and clone this repository: `git clone https://github.c
 Navigate to the feasibility-triangle folder of the repository: `cd /opt/feasibility-deploy/feasibility-triangle`
 Checkout the version (git tag) of the feasibility triangle you would like to install: `git checkout tags/<your-tag-name-here>`
 
-### Step 3 - Set Up basic auth
+### Step 3 - Initialise .env files
+
+The feasibility portal requires .env files for the docker-compose setup. If you are setting up the project new and have not done so yet execute the `initialise-triangle-env-files.sh`.
+
+If you have set up the portal before compare the .env to the .env.default env files of each component and copy the additional params as appropriate
+
+### Step 4 - Set Up basic auth
 
 To set up basic auth you can execute the `setup-base-auth.sh <username> <password>` to add a simple .htpasswd to protect your FHIR Server and FLARE component with basic authentication.
 This creates a .htpasswd file in the `auth` directory, which will be mounted to the nginx, which is part of this deployment repository.
 
-### Step 4 - Set Up ssl certificates
+### Step 5 - Set Up ssl certificates
 
 Running this setup safely at your site, requires a valid certificate and domain. Please contact the responsible body of your institution to recieve both a domain and certificate.
 You will require two .pem files: a cert.pem (certificate) and key.pem (private key).
@@ -58,7 +64,7 @@ Set the rights for all files of the auth folder to 655 `chmod 655 /opt/feasibili
 - The rest of the feasibility triangle will still work, as it does create a connection to the outside without the need to make itself accessible. 
 - However, if you would for example load data into the FHIR server from an ETL job on another VM you will need to expose the FHIR server via a reverse proxy, which will require the certificates above.
 
-### Step 5 - Load the ontology mapping files
+### Step 6 - Load the ontology mapping files
 
 If used, (see "Overview") The FLARE component requires a mapping file and ontology tree file to translate an incoming feasibility query into FHIR Search queries.
 Both can be downloaded here: https://confluence.imi.med.fau.de/display/ABIDEMI/Ontologie
@@ -74,7 +80,7 @@ cd mapping
 cp * /opt/feasibility-deploy/feasibility-triangle/ontology
 ```
 
-### Step 6 - Configure your feasibility triangle
+### Step 7 - Configure your feasibility triangle
 
 If you use the default triangle setup you only have to configure the AKTIN client to connect to the central feasibility portal as the rest of the setup will already be correctly configured for you.
 
@@ -84,7 +90,7 @@ To configure the AKTIN client in the default setup, change the following environ
 - FEASIBILITY_AKTIN_CLIENT_AUTH_PARAM
 - FEASIBILITY_AKTIN_CLIENT_WEBSOCKET_PING_SECONDS
 
-### Step 7 - Start the feasibility triangle
+### Step 8 - Start the feasibility triangle
 
 To start the triangle navigate to `/opt/feasibility-deploy/feasibility-triangle` and
 execute `bash start-triangle.sh`.
@@ -102,7 +108,7 @@ navigating to the respective components folder and executing:
 `docker-compose -p $FEASIBILITY_COMPOSE_PROJECT up -d`
 
 
-### Step 8 - Access the Triangle
+### Step 9 - Access the Triangle
 
 In the default coniguration and given that you have set up a ssl certifcate in step 4 the setup will expose the following services:
 
@@ -124,7 +130,7 @@ Please be aware, that if you would like to access the services on localhost with
 
 For example for the FHIR Server: ssh -L 8081:127.0.0.1:8081 your-username@your-server-ip
 
-### Step 9 - Init Testdata (Optional)
+### Step 10 - Init Testdata (Optional)
 
 TODO - add description of testdata initialisation here.
 
