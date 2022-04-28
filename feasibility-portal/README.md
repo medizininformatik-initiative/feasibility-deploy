@@ -66,6 +66,7 @@ If you use the default local feasibility portal setup you will only have to chan
 |backend/.env|FEASIBILITY_BACKEND_DIRECT_ENABLED|true|
 |backend/.env|FEASIBILITY_BACKEND_API_BASE_URL|base-url-of-your-local-feasibility-portal/api|
 |backend/.env|FLARE_WEBSERVICE_BASE_URL|http://flare:8080|
+|backend/.env|FEASIBILITY_BACKEND_ALLOWED_ORIGINS|base-url-of-your-local-feasibility-portal|
 
 For more details on the environment variables see the paragraph **Configurable environment variables** of this README.
 
@@ -133,6 +134,7 @@ After a few moments you should see the results to your query in the **Number of 
 |FEASIBILITY_BACKEND_API_BASE_URL|the api url of the backend. If using an nginx this url should be the url of the nginx, which forwards to the backend|https://localhost/api/||BACKEND|
 |FEASIBILITY_BACKEND_DIRECT_ENABLED|enables the direct broker. This connects the backend directly to flare and is only meant to be used for a local installation|false||BACKEND|
 |FEASIBILITY_BACKEND_FLARE_WEBSERVICE_BASE_URL|the url of the flare component the backend should connect to when using the direct broker|http://flare:8080||BACKEND|
+|FEASIBILITY_BACKEND_ALLOWED_ORIGINS|base-url-of-your-local-feasibility-portal |https://localhost||BACKEND|
 |FEASIBILITY_BACKEND_AKTIN_ENABLED|enables the aktin broker|false||BACKEND|
 |FEASIBILITY_BACKEND_AKTIN_BROKER_BASE_URL|aktin broker base url|http://aktin-broker:8080/broker/||BACKEND|
 |FEASIBILITY_BACKEND_AKTIN_BROKER_API_KEY|aktin broker admin api key. The backend needs admin access as it requires permission to post new queries to the broker|xxxApiKeyAdmin123||BACKEND|
