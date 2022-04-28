@@ -132,8 +132,10 @@ For example for the FHIR Server: ssh -L 8081:127.0.0.1:8081 your-username@your-s
 
 ### Step 10 - Init Testdata (Optional)
 
-TODO - add description of testdata initialisation here.
+To initialise testdata execute the `get-mii-testdata.sh`. This will download MII core dataset conformant testdata from <https://github.com/medizininformatik-initiative/kerndatensatz-testdaten>
+unpack it and save them to the testdata folder of this repository.
 
+You can then load the data into your FHIR Server using the `upload-testdata.sh` script.
 
 ### Configurable environment variables
 
