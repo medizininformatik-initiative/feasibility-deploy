@@ -5,7 +5,7 @@ services:
     environment:
       LOG_LEVEL: ${AKTIN_BROKER_LOG_LEVEL:-INFO}
       PASSWORD: ${AKTIN_ADMIN_PW:-changeme}
-      HOST_AND_PORT: ${AKTIN_BROKER_HOST_AND_PORT:-127.0.0.0:8080}
+      HOST_AND_PORT: ${AKTIN_BROKER_HOST_AND_PORT:-0.0.0.0:8080}
     volumes:
     - ./api-keys.properties:/opt/aktin/api-keys.properties
     ports:

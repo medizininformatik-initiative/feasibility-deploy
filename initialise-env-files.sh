@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cp feasibility-portal/gui/deploy-config.default.json feasibility-portal/dsf-broker/deploy-config.json
+cp feasibility-portal/gui/deploy-config.default.json feasibility-portal/gui/deploy-config.json
 cp feasibility-portal/backend/.env.default feasibility-portal/backend/.env
 cp feasibility-portal/dsf-broker/.env.default feasibility-portal/dsf-broker/.env
 cp feasibility-portal/keycloak/.env.default feasibility-portal/keycloak/.env
