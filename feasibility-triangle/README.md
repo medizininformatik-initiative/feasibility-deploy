@@ -90,6 +90,9 @@ To configure the AKTIN client in the default setup, change the following environ
 - FEASIBILITY_AKTIN_CLIENT_AUTH_PARAM
 - FEASIBILITY_AKTIN_CLIENT_WEBSOCKET_PING_SECONDS
 
+If you are using AKTIN, as in the default setup you have to adjust the rights of the aktin-requests.log file to allow the AKTIN container user to write the logs as follows:
+`chown 10001:10001 aktin-client/atkin-requests.log`
+
 ### Step 8 - Start the feasibility triangle
 
 To start the triangle navigate to `/opt/feasibility-deploy/feasibility-triangle` and
