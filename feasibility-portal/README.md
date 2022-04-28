@@ -66,12 +66,15 @@ If you use the default local feasibility portal setup you will only have to chan
 |backend/.env|FEASIBILITY_BACKEND_DIRECT_ENABLED|true|
 |backend/.env|FEASIBILITY_BACKEND_API_BASE_URL|base-url-of-your-local-feasibility-portal/api|
 |backend/.env|FLARE_WEBSERVICE_BASE_URL|http://flare:8080|
+|backend/.env|FEASIBILITY_BACKEND_ALLOWED_ORIGINS|base-url-of-your-local-feasibility-portal|
+|gui/deploy-config.json|uiBackendApi > baseUrl |base-url-of-your-local-feasibility-portal/api/v1|
+|gui/deploy-config.json|auth > baseUrl |base-url-of-your-local-feasibility-portal|
 
 For more details on the environment variables see the paragraph **Configurable environment variables** of this README.
 
 ### Step 7 - Start the feasibility portal
 
-To start the portal navigate to `/opt/feasibility-deploy/feasibility-portal/start-feasibility-portal-local.sh` and
+To start the portal navigate to `/opt/feasibility-deploy/feasibility-portal` and
 execute `bash start-feasibility-portal-local.sh`.
 
 This starts the following default local feasibility portal, with the following components:
@@ -85,7 +88,7 @@ This starts the following default local feasibility portal, with the following c
 ### Step 8 - Configure keycloak and add a user for the user interface
 
 Navigate with your browser to https://my-fesibility-domain/auth
-and log in to keyloak using the admin password set in step 6 (FEASIBILITY_KEYCLOAK_ADMIN_PW).
+click on "Administration Console" and log in to keyloak using the admin password set in step 6 (FEASIBILITY_KEYCLOAK_ADMIN_PW).
 User: admin
 Pw: my password set in step 6
 
@@ -99,9 +102,11 @@ from
 from: https://feasibility.forschen-fuer-gesundheit.de
 to: https://your-feasibility-domain/*
 
+Save the changes by clicking the "save" button.
+
 2. Add a user for to your feasibility user interface:
-Click on `Users > Add User` and fill in the field **Username** with a username of your choice and add the user under **Groups** to the group **/codex-develop**. 
-Click on **Credentials** and type a password of your choice and confirm it.
+Click on `Users > Add User` and fill in the field **Username** with a username of your choice and add the user under **Groups** to the group **/codex-develop** and save the user by clicking on `save`.
+Click on **Credentials** and fill the `Password` and `Password Confirmation` fields with a password of your choice and save the changes by clicking `set password`
 
 ### Step 9 - Access the user interface and send first query
 
@@ -133,6 +138,7 @@ After a few moments you should see the results to your query in the **Number of 
 |FEASIBILITY_BACKEND_API_BASE_URL|the api url of the backend. If using an nginx this url should be the url of the nginx, which forwards to the backend|https://localhost/api/||BACKEND|
 |FEASIBILITY_BACKEND_DIRECT_ENABLED|enables the direct broker. This connects the backend directly to flare and is only meant to be used for a local installation|false||BACKEND|
 |FEASIBILITY_BACKEND_FLARE_WEBSERVICE_BASE_URL|the url of the flare component the backend should connect to when using the direct broker|http://flare:8080||BACKEND|
+|FEASIBILITY_BACKEND_ALLOWED_ORIGINS|base-url-of-your-local-feasibility-portal |https://localhost||BACKEND|
 |FEASIBILITY_BACKEND_AKTIN_ENABLED|enables the aktin broker|false||BACKEND|
 |FEASIBILITY_BACKEND_AKTIN_BROKER_BASE_URL|aktin broker base url|http://aktin-broker:8080/broker/||BACKEND|
 |FEASIBILITY_BACKEND_AKTIN_BROKER_API_KEY|aktin broker admin api key. The backend needs admin access as it requires permission to post new queries to the broker|xxxApiKeyAdmin123||BACKEND|

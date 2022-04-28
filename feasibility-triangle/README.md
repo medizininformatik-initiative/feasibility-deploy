@@ -90,6 +90,9 @@ To configure the AKTIN client in the default setup, change the following environ
 - FEASIBILITY_AKTIN_CLIENT_AUTH_PARAM
 - FEASIBILITY_AKTIN_CLIENT_WEBSOCKET_PING_SECONDS
 
+If you are using AKTIN, as in the default setup you have to adjust the rights of the aktin-requests.log file to allow the AKTIN container user to write the logs as follows:
+`chown 10001:10001 /opt/feasibility-deploy/feasibility-triangle/aktin-client/aktin-requests.log`
+
 ### Step 8 - Start the feasibility triangle
 
 To start the triangle navigate to `/opt/feasibility-deploy/feasibility-triangle` and
@@ -132,8 +135,10 @@ For example for the FHIR Server: ssh -L 8081:127.0.0.1:8081 your-username@your-s
 
 ### Step 10 - Init Testdata (Optional)
 
-TODO - add description of testdata initialisation here.
+To initialise testdata execute the `get-mii-testdata.sh`. This will download MII core dataset conformant testdata from <https://github.com/medizininformatik-initiative/kerndatensatz-testdaten>
+unpack it and save them to the testdata folder of this repository.
 
+You can then load the data into your FHIR Server using the `upload-testdata.sh` script.
 
 ### Configurable environment variables
 
