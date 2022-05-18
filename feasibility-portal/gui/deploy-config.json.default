@@ -11,7 +11,8 @@
   "auth": {
     "baseUrl": "https://localhost",
     "realm": "codex-develop",
-    "clientId": "feasibility-gui"
+    "clientId": "feasibility-gui",
+    "roles": ["CODEX_USER"]
   },
   "legal": {
     "version": "0.9.0",
@@ -26,7 +27,8 @@
     },
     "extra": {
       "displayvaluefiltericon": false,
-      "showoptionspage": false
+      "showoptionspage": false,
+      "optionpageroles": ["CODEX_USER"]
     }
   },
   "options": {
@@ -38,7 +40,8 @@
   "mock": {
     "terminology": false,
     "query": false,
-    "result": false
+    "result": false,
+    "loadnsave": false
   },
   "stylesheet": "abideTheme",
   "fhirport": "8082",

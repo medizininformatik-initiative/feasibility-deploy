@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   feasibility-gui-backend:
-    image: ghcr.io/medizininformatik-initiative/feasibility-backend:1.0.5-rc4
+    image: ghcr.io/medizininformatik-initiative/feasibility-backend:2.0.0-rc1
     ports:
     - ${FEASIBILITY_BACKEND_PORT:-127.0.0.1:8091}:8090
     depends_on:
