@@ -48,7 +48,7 @@
 "realm": [
 {
 "id": "234d9488-fd72-47ff-aaaa-9182cf4e9c94",
-"name": "CODEX_USER",
+"name": "FEASIBILITY_USER",
 "description": "this is for development purposes only and allows full access to all features",
 "composite": false,
 "clientRole": false,
@@ -416,7 +416,7 @@
 "path": "/codex-develop",
 "attributes": {},
 "realmRoles": [
-"CODEX_USER"
+"FEASIBILITY_USER"
 ],
 "clientRoles": {},
 "subGroups": []
@@ -565,7 +565,7 @@
 {
 "client": "feasibility-gui",
 "roles": [
-"CODEX_USER"
+"FEASIBILITY_USER"
 ]
 },
 {
