@@ -6,25 +6,31 @@ The Feasibility Triangle part of this Repository provides a site (data integrati
 
 ## Overview
 
-The Feasibility Triangle is composed of three components:
+The Feasibility Triangle is composed of four components:
 
 1. A Middleware Client (AKTIN or DSF)
 2. A Feasibility Analysis Request Executor (FLARE)
 3. A FHIR Server (Blaze)
 4. Reverse Proxy (NGINX)
 
-The Feasibility Triangle also comes with a reverse proxy, which provides a basic auth for the FHIR Server and the FLARE component, so that they can be integrated into a sites multi server infrastructure.
-The triangle can be set up in different ways depending on which components and whether FHIR Search or CQL is to be used.
-This leads to the following setup Options:
+The reverse proxy allows for integration into a site's multi-server infrastructure. It also provides basic auth capability for FHIR server and FLARE components.
 
-AKTIN - FLARE (FHIR Search) - FHIR Server (not CQL ready)
-AKTIN - FHIR Server (CQL ready)
-DSF - FLARE (FHIR Search) - FHIR Server (not CQL ready)
-DSF - FHIR Server (CQL ready)
+### CQL Support
 
-The components all work with defined interfaces and can be exchanged if a component with equivalent capabilities is provided by the site.
-In this manner the FHIR Server provided here (Blaze) can be exchanged for a FHIR server of choice, which either offers CQL or the required FHIR Search capabilities.
+[CQL](https://cql.hl7.org) is supported. If your FHIR server **does not** support CQL itself then the FLARE component must be used as a kind of translation mediator.
 
+### Component Interchangeability
+
+All components work with well-defined interfaces making them interchangeable. Thus, there are different middleware clients and FHIR servers to chose from.
+
+This leads to the following setup options:
+
+- AKTIN - FLARE (FHIR Search) - FHIR Server (not CQL ready)
+- AKTIN - FHIR Server (CQL ready)
+- DSF - FLARE (FHIR Search) - FHIR Server (not CQL ready)
+- DSF - FHIR Server (CQL ready)
+
+**_When choosing a FHIR server, make sure it supports either CQL or the required FHIR search capabilities._**
 
 ## Setting up the Feasibility Triangle
 
