@@ -60,7 +60,6 @@ If you use the default local feasibility portal setup you will only have to chan
 
 | file | environment variable | value for local setup |
 |--|--|--|
-|keycloak/.env|FEASIBILITY_KEYCLOAK_BASE_URL| base-url-of-your-local-feasibility-portal/auth |
 |keycloak/.env|FEASIBILITY_KEYCLOAK_ADMIN_PW| choose a secure password here e.g. Ykc2PINWatNqL5Wq,OIxFz1Sv3dzmQ2|
 |backend/.env|FEASIBILITY_BACKEND_AKTIN_ENABLED|false|
 |backend/.env|FEASIBILITY_BACKEND_DIRECT_ENABLED|true|
