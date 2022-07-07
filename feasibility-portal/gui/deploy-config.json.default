@@ -10,13 +10,13 @@
   },
   "auth": {
     "baseUrl": "https://localhost",
-    "realm": "codex-develop",
+    "realm": "feasibility",
     "clientId": "feasibility-gui",
-    "roles": ["CODEX_USER"]
+    "roles": ["FEASIBILITY_USER"]
   },
   "legal": {
     "version": "0.9.0",
-    "copyrightOwner": "CODEX Team"
+    "copyrightOwner": "MII Team"
   },
   "features": {
     "v2": {
@@ -28,7 +28,7 @@
     "extra": {
       "displayvaluefiltericon": false,
       "showoptionspage": false,
-      "optionpageroles": ["CODEX_USER"]
+      "optionpageroles": ["FEASIBILITY_USER"]
     }
   },
   "options": {
