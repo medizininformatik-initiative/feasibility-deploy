@@ -15,15 +15,14 @@ RESP=$(curl --location --request POST "$FLARE_BASE_URL/query/execute" \
 --data-raw "$QUERY_INPUT")
 
 if [ $CLIENT_OBFUSCATE = true ]; then
-  OBFUSCATION_INTEGER=$(grep -m1 -ao '[1-5]' /dev/random | head -n1)
-  OBFUSCATION_SIGN=$(grep -m1 -ao '[-+]' /dev/random)
-  RESP=$(($RESP $OBFUSCATION_SIGN $OBFUSCATION_INTEGER))
-  
   if [ $RESP -lt 5 ]; then
       RESP=0
+  else
+      OBFUSCATION_INTEGER=$(grep -m1 -ao '[0-10]' /dev/random | head -n1)
+      OBFUSCATION_SIGN=$(grep -m1 -ao '[-+]' /dev/random)
+      RESP=$(($RESP $OBFUSCATION_SIGN $OBFUSCATION_INTEGER - 5))
   fi
 fi
-
 
 echo "----BEGIN RESPONSE----" >> aktin-requests.log
 echo $RESP >> aktin-requests.log
