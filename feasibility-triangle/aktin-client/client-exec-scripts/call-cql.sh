@@ -20,8 +20,6 @@ if [ $CLIENT_OBFUSCATE = true ]; then
   fi
 fi
 
-
-echo "Response after obfuscation $RESP"
 echo "----BEGIN RESPONSE----" >> aktin-requests.log
 echo $RESP >> aktin-requests.log
 echo "----END RESPONSE----" >> aktin-requests.log
