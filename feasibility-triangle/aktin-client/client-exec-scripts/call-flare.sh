@@ -14,13 +14,22 @@ RESP=$(curl --location --request POST "$FLARE_BASE_URL/query/execute" \
 --header 'Content-Type: application/sq+json' \
 --data-raw "$QUERY_INPUT")
 
-if [ $CLIENT_OBFUSCATE = true ]; then
+getObfuscatedResp() {
+    OBFUSCATION_INTEGER=$(grep -m1 -ao '[0-5]' /dev/random | head -n1)
+    OBFUSCATION_SIGN=$(grep -m1 -ao '[-+]' /dev/random)
+
+    if [ $OBFUSCATION_INTEGER -eq 0 ] && [ $OBFUSCATION_SIGN == '-' ]; then
+        getObfuscatedResp $1
+    else
+       echo $(($1 $OBFUSCATION_SIGN $OBFUSCATION_INTEGER))
+    fi
+
+}
+
+if [ $CLIENT_OBFUSCATE == true ]; then
+  RESP=$(getObfuscatedResp ${RESP})
   if [ $RESP -lt 5 ]; then
-      RESP=0
-  else
-      OBFUSCATION_INTEGER=$(grep -m1 -ao '[0-10]' /dev/random | head -n1)
-      OBFUSCATION_SIGN=$(grep -m1 -ao '[-+]' /dev/random)
-      RESP=$(($RESP $OBFUSCATION_SIGN $OBFUSCATION_INTEGER - 5))
+      RESP=""
   fi
 fi
 
