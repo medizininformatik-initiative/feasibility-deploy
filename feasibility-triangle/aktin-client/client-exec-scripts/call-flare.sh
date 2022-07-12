@@ -14,9 +14,11 @@ RESP=$(curl --location --request POST "$FLARE_BASE_URL/query/execute" \
 --header 'Content-Type: application/sq+json' \
 --data-raw "$QUERY_INPUT")
 
-if [ $CLIENT_OBFUSCATE = true ]; then
-  if [ $RESP != 0 ];then
-    RESP=$(($RESP - ($RESP % 10) + 10))
+if [ "$CLIENT_OBFUSCATE" = true ]; then
+  OBFUSCATION_INTEGER=$(($RANDOM % 11 - 5))
+  RESP=$(($RESP + $OBFUSCATION_INTEGER))
+  if [ $RESP -lt 5 ]; then
+      RESP=0
   fi
 fi
 
