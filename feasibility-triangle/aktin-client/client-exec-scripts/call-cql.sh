@@ -10,24 +10,11 @@ echo "----END REQUEST----" >> aktin-requests.log
 
 RESP=$(sh execute-cql.sh "$QUERY_INPUT")
 
-echo $RESP >> aktin-requests.log
-
-getObfuscatedResp() {
-    OBFUSCATION_INTEGER=$(grep -m1 -ao '[0-5]' /dev/random | head -n1)
-    OBFUSCATION_SIGN=$(grep -m1 -ao '[-+]' /dev/random)
-
-    if [ $OBFUSCATION_INTEGER -eq 0 ] && [ $OBFUSCATION_SIGN == '-' ]; then
-        getObfuscatedResp $1
-    else
-       echo $(($1 $OBFUSCATION_SIGN $OBFUSCATION_INTEGER))
-    fi
-
-}
-
-if [ $CLIENT_OBFUSCATE == true ]; then
-  RESP=$(getObfuscatedResp ${RESP})
+if [ "$CLIENT_OBFUSCATE" = true ]; then
+  OBFUSCATION_INTEGER=$(($RANDOM % 11 - 5))
+  RESP=$(($RESP + $OBFUSCATION_INTEGER))
   if [ $RESP -lt 5 ]; then
-      RESP=""
+      RESP=0
   fi
 fi
 
