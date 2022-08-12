@@ -7,7 +7,7 @@ QUERY_INPUT=`cat`
 
 echo "##### INCOMING REQUEST at $(date) #####" >> aktin-requests.log
 echo "----BEGIN REQUEST----" >> aktin-requests.log
-echo $QUERY_INPUT >> aktin-requests.log
+echo "$QUERY_INPUT" >> aktin-requests.log
 echo "----END REQUEST----" >> aktin-requests.log
 
 RESP=$(curl --location --request POST "$FLARE_BASE_URL/query/execute" \
@@ -23,7 +23,7 @@ if [ "$CLIENT_OBFUSCATE" = true ]; then
 fi
 
 echo "----BEGIN RESPONSE----" >> aktin-requests.log
-echo $RESP >> aktin-requests.log
+echo "$RESP" >> aktin-requests.log
 echo "----END RESPONSE----" >> aktin-requests.log
 
 printf "$RESP"
