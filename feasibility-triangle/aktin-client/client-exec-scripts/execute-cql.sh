@@ -1,7 +1,7 @@
-#!/bin/sh 
+#!/bin/bash
 
 BASE=${FHIR_BASE_URL:-"http://fhir-server:8080/fhir"}
-BASIC_AUTH_64=$(printf "$AUTH_USER:$AUTH_PW" | base64)
+BASIC_AUTH_64=$(echo -n "$AUTH_USER:$AUTH_PW" | base64)
 BASIC_AUTH="Authorization: Basic $BASIC_AUTH_64"
 
 library() {
@@ -80,22 +80,21 @@ createmeasure() {
 }
 
 post() {
-  if [[ ! -z "$AUTH_USER" && ! -z "$AUTH_PW" ]];
+  if [[ -n "$AUTH_USER" && -n "$AUTH_PW" ]];
   then
     curl -sH "Content-Type: application/fhir+json" -H "$BASIC_AUTH" -d @- "${BASE}/$1"
-  else 
+  else
     curl -sH "Content-Type: application/fhir+json" -d @- "${BASE}/$1"
   fi
 }
 
 evaluatemeasure() {
-  if [[ ! -z "$AUTH_USER" && ! -z "$AUTH_PW" ]];
+  if [[ -n "$AUTH_USER" && -n "$AUTH_PW" ]];
   then
     curl -s -H "$BASIC_AUTH" "${BASE}/Measure/$1/\$evaluate-measure?periodStart=2000&periodEnd=2099"
-  else 
+  else
     curl -s "${BASE}/Measure/$1/\$evaluate-measure?periodStart=2000&periodEnd=2099"
   fi
-  
 }
 
 TYPE="Patient"
@@ -104,10 +103,10 @@ DATA=$( echo "$1" | base64 | tr -d '\n')
 LIBRARY_URI=$(uuidgen | tr '[:upper:]' '[:lower:]')
 MEASURE_URI=$(uuidgen | tr '[:upper:]' '[:lower:]')
 
-createlibrary ${LIBRARY_URI} ${DATA} | post "Library" > /dev/null
+createlibrary "${LIBRARY_URI}" "${DATA}" | post "Library" > /dev/null
 
-MEASURE_ID=$(createmeasure ${MEASURE_URI} ${LIBRARY_URI} ${TYPE} | post "Measure" | jq -r .id)
+MEASURE_ID=$(createmeasure "${MEASURE_URI}" "${LIBRARY_URI}" "${TYPE}" | post "Measure" | jq -r .id)
 
-COUNT=$(evaluatemeasure ${MEASURE_ID} | jq ".group[0].population[0].count")
+COUNT=$(evaluatemeasure "${MEASURE_ID}" | jq ".group[0].population[0].count")
 
-printf "${COUNT}"
+echo -n "${COUNT}"

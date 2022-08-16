@@ -8,11 +8,11 @@
 #
 #fi
 
-BASE_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+BASE_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit 1 ; pwd -P )"
 
 echo "Generating default certificate..."
-docker run --rm -v $BASE_DIR/auth:/export --entrypoint openssl alpine/openssl req -nodes -subj '/CN=localhost' -x509 -newkey rsa:4096 -keyout /export/key.pem -out /export/cert.pem -days 99999
-docker run --rm -v $BASE_DIR/auth:/export alpine chmod 655 /export/*
+docker run --rm -v "$BASE_DIR"/auth:/export --entrypoint openssl alpine/openssl req -nodes -subj '/CN=localhost' -x509 -newkey rsa:4096 -keyout /export/key.pem -out /export/cert.pem -days 99999
+docker run --rm -v "$BASE_DIR"/auth:/export alpine chmod 655 /export/*
 
 #echo "generating user: $1 , with password: $2"
 #docker run --rm --entrypoint htpasswd registry:2.7.0 -nb $1 $2 > .htpasswd
