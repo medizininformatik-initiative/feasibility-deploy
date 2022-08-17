@@ -62,7 +62,7 @@ jobs:
       run: python main.py
 
     - name: Setup Base Auth
-      run: bash num-node/setup-base-auth.sh "${{ env.AUTH_USERNAME }}" "${{ env.AUTH_PASSWORD }}"
+      run: bash feasibility-portal/setup-base-auth.sh "${{ env.AUTH_USERNAME }}" "${{ env.AUTH_PASSWORD }}"
 
     - name: Build the stack
       env:
