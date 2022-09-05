@@ -18,8 +18,21 @@ env:
 
 jobs:
 
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Check shell scripts
+      uses: ludeeus/action-shellcheck@master
+
   test:
     runs-on: ubuntu-latest
+
+    needs: lint
 
     steps:
     - name: Checkout Deploy Repo
@@ -49,7 +62,7 @@ jobs:
       run: python main.py
 
     - name: Setup Base Auth
-      run: bash num-node/setup-base-auth.sh "${{ env.AUTH_USERNAME }}" "${{ env.AUTH_PASSWORD }}"
+      run: bash feasibility-portal/setup-base-auth.sh "${{ env.AUTH_USERNAME }}" "${{ env.AUTH_PASSWORD }}"
 
     - name: Build the stack
       env:
