@@ -51,9 +51,9 @@ if $missing; then
   exit 1
 fi
 
-files=$(ls $TEST_DATA_PATH/testCases/*.json)
-ignored_files=$(cat $TEST_DATA_PATH/testCaseIgnoreList.txt)
-case_total=$(ls $files | wc -l)
+mapfile -t files < <(ls "$TEST_DATA_PATH"/testCases/*.json)
+ignored_files=$(cat "$TEST_DATA_PATH"/testCaseIgnoreList.txt)
+case_total="${#files[@]}"
 case_execute=0
 case_fail=0
 case_ignore=0
@@ -61,20 +61,20 @@ pad=${#case_total}
 delay=${TEST_RETRY_DELAY:-2}
 i=0
 
-for f in $files; do
+for f in "${files[@]}"; do
   filename="$(basename "$f")"
   title="$(echo "$filename" | sed -r 's/\.json//')"
-  if check_ignored $filename; then
+  if check_ignored "$filename"; then
     continue
   fi
   case_execute=$((case_execute+1))
 done
 
-for f in $files; do
+for f in "${files[@]}"; do
   filename="$(basename "$f")"
   title="$(echo "$filename" | sed -r 's/\.json//')"
 
-  if check_ignored $filename; then
+  if check_ignored "$filename"; then
     case_ignore=$((case_ignore+1))
     continue
   fi
@@ -95,7 +95,6 @@ for f in $files; do
     continue
   fi
   auth_token="$(jq -rn --argjson auth "$auth_token" '$auth | .access_token')"
-  query="$(jq -r "." $f)"
   result_location="$(curl -ksS --location --request POST\
                                  --header 'Content-Type: application/json' \
                                  --header 'Accept: application/json' \
@@ -103,16 +102,16 @@ for f in $files; do
                                  --data "@$f" \
                                  "$QUERY_ENDPOINT_URL")"
   if ! jq -ne --argjson result "$result_location" '$result | .location != null' 1> /dev/null 2>&1; then
-    print_fail "Error" "${RED}Query response does not conform to expected format${RESET}" "Query" "$(jq '.' $t)" "Response" "$result_location"
+    print_fail "Error" "${RED}Query response does not conform to expected format${RESET}" "Query File" "$f" "Response" "$result_location"
     continue
   fi
   result_location="$(jq -rn --argjson result "$result_location" '$result | .location')"
-  print_success
+  print_success "Send Query" "Success"
 
   echo -n "  Retrieving Result  "
   retries=${TEST_RETRY_COUNT:-5}
   failed=true
-  while [ $retries -gt 0 ]; do
+  while [ "$retries" -gt 0 ]; do
     result="$(curl -ksS --location \
                          --header "Authorization: Bearer $auth_token" \
                          --header 'Accept: application/json' \
@@ -125,7 +124,7 @@ for f in $files; do
       failed=false
       break
     fi
-    sleep $delay
+    sleep "$delay"
     retries=$((retries-1))
   done
 
@@ -138,7 +137,7 @@ for f in $files; do
     print_fail "Expected Result" "1" "Actual Result" "$(jq -n --argjson result "$result" '$result | .totalNumberOfPatients')"
     continue
   else
-    print_success
+    print_success "Query Result" "Success"
   fi
 done
 
