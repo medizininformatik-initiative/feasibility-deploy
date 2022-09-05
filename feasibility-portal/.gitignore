@@ -5,3 +5,4 @@ keycloak/data
 
 /ontology/*.json
 /ontology/ui_profiles/*.json
+/ontology/migration/*.sql

@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   feasibility-gui-backend:
-    image: ghcr.io/medizininformatik-initiative/feasibility-backend:2.1.0-rc1
+    image: ghcr.io/medizininformatik-initiative/feasibility-backend:2.1.0-rc8
     ports:
     - ${FEASIBILITY_BACKEND_PORT:-127.0.0.1:8091}:8090
     depends_on:
@@ -12,7 +12,6 @@ services:
       FEASIBILITY_DATABASE_PORT: ${FEASIBILITY_BACKEND_DATASOURCE_PORT:-5432}
       FEASIBILITY_DATABASE_USER: ${FEASIBILITY_BACKEND_DATASOURCE_USERNAME:-guidbuser}
       FEASIBILITY_DATABASE_PASSWORD: ${FEASIBILITY_BACKEND_DATASOURCE_PASSWORD:-guidbpw}
-      BROKER_CLIENT_TYPE: ${FEASIBILITY_BACKEND_BROKER_CLIENT_TYPE:-AKTIN}
       KEYCLOAK_ENABLED: ${FEASIBILITY_BACKEND_KEYCLOAK_ENABLED:-true}
       KEYCLOAK_ALLOWED_ROLE: ${FEASIBILITY_BACKEND_KEYCLOAK_ALLOWED_ROLE:-FEASIBILITY_USER}
       KEYCLOAK_ADMIN_ROLE: ${FEASIBILITY_BACKEND_KEYCLOAK_ADMIN_ROLE:-FEASIBILITY_ADMIN}
@@ -43,6 +42,7 @@ services:
       - ${FEASIBILITY_BACKEND_UI_PROFILES_PATH:-../ontology/ui_profiles}:/opt/codex-feasibility-backend/ontology/ui_profiles
       - ${FEASIBILITY_BACKEND_CONCEPT_TREE_PATH:-../ontology/codex-code-tree.json}:/opt/codex-feasibility-backend/ontology/codex-code-tree.json
       - ${FEASIBILITY_BACKEND_TERM_CODE_MAPPING_PATH:-../ontology/codex-term-code-mapping.json}:/opt/codex-feasibility-backend/ontology/codex-term-code-mapping.json
+      - ${FEASIBILITY_BACKEND_MIGRATION_PATH:-../ontology/migration/R__Load_latest_ui_profile.sql}:/opt/codex-feasibility-backend/ontology/migration/R__Load_latest_ui_profile.sql
       - ${FEASIBILITY_BACKEND_CERTS_PATH:-../dsf-broker/certs}:/opt/codex-feasibility-security
 
   feasibility-gui-backend-db:

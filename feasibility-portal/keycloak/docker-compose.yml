@@ -12,7 +12,7 @@ services:
       - "feasibility-auth-db:/var/lib/postgresql/data"
 
   auth:
-    image: jboss/keycloak:15.0.2
+    image: jboss/keycloak:16.1.1
     restart: unless-stopped
     environment:
       DB_VENDOR: POSTGRES
