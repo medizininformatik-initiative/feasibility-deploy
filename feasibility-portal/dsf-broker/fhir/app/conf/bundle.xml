@@ -171,16 +171,16 @@
             </meta>
             <identifier>
                <system value="http://highmed.org/sid/organization-identifier"></system>
-               <value value="netzwerk-universitaetsmedizin.de"></value>
+               <value value="medizininformatik-initiative.de"></value>
             </identifier>
             <active value="true"></active>
-            <name value="Netzwerk Universitätsmedizin"></name>
+            <name value="Medizininformatik-Initiative"></name>
          </Organization>
       </resource>
       <request>
          <method value="POST"></method>
          <url value="Organization"></url>
-         <ifNoneExist value="identifier=http://highmed.org/sid/organization-identifier|netzwerk-universitaetsmedizin.de"></ifNoneExist>
+         <ifNoneExist value="identifier=http://highmed.org/sid/organization-identifier|medizininformatik-initiative.de"></ifNoneExist>
       </request>
    </entry>
    <entry>
@@ -218,7 +218,7 @@
       <request>
          <method value="POST"></method>
          <url value="OrganizationAffiliation"></url>
-         <ifNoneExist value="primary-organization:identifier=http://highmed.org/sid/organization-identifier|netzwerk-universitaetsmedizin.de&amp;participating-organization:identifier=http://highmed.org/sid/organization-identifier|Test_ZARS"></ifNoneExist>
+         <ifNoneExist value="primary-organization:identifier=http://highmed.org/sid/organization-identifier|medizininformatik-initiative.de&amp;participating-organization:identifier=http://highmed.org/sid/organization-identifier|Test_ZARS"></ifNoneExist>
       </request>
    </entry>
    <entry>
@@ -256,7 +256,7 @@
       <request>
          <method value="POST"></method>
          <url value="OrganizationAffiliation"></url>
-         <ifNoneExist value="primary-organization:identifier=http://highmed.org/sid/organization-identifier|netzwerk-universitaetsmedizin.de&amp;participating-organization:identifier=http://highmed.org/sid/organization-identifier|Test_DIC_1"></ifNoneExist>
+         <ifNoneExist value="primary-organization:identifier=http://highmed.org/sid/organization-identifier|medizininformatik-initiative.de&amp;participating-organization:identifier=http://highmed.org/sid/organization-identifier|Test_DIC_1"></ifNoneExist>
       </request>
    </entry>
 </Bundle>
