@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 FLARE_BASE_URL=${FLARE_BASE_URL:-"http://flare:8080"}
 CLIENT_OBFUSCATE=${CLIENT_OBFUSCATE:-true}

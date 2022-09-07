@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 QUERY_INPUT=$(cat)
 CLIENT_OBFUSCATE=${CLIENT_OBFUSCATE:-true}
