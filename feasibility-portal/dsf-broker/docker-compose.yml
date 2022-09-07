@@ -7,7 +7,7 @@ services:
     image: nginx:1.21
     restart: on-failure
     ports:
-    - "127.0.0.1:443:443"
+    - "127.0.0.1:445:443"
     secrets:
     - proxy_certificate_and_int_cas.pem
     - proxy_certificate_private_key.pem
