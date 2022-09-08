@@ -254,7 +254,12 @@ Existing mapping files should be replaced.
 To start the triangle navigate to `/opt/feasibility-deploy/feasibility-triangle` and
 execute `bash start-triangle.sh`.
 
-### Step 6 - Log in to the central feasibility portal and test your connection
+### Step 6 - Update your DSF
+
+If you are using the DSF to connect to the central feasibility portal, plese follow the instructions here:
+https://github.com/medizininformatik-initiative/feasibility-deploy/wiki/DSF-Middleware-Setup
+
+### Step 7 - Log in to the central feasibility portal and test your connection
 
 Ask for the Url of the central portal at the FDPG or check Confluence for the correct address.
 
