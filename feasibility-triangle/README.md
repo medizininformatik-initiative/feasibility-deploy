@@ -75,7 +75,7 @@ Set the rights for all files of the auth folder to 655 `chmod 655 /opt/feasibili
 If used, (see "Overview") The FLARE component requires a mapping file and ontology tree file to translate an incoming feasibility query into FHIR Search queries.
 Both can be downloaded here: https://confluence.imi.med.fau.de/display/ABIDEMI/Ontologie
 
-Upload the ontology .zip files to your server, unpack them and copy the ontology files to your 
+Upload the  mapping_*.zip file to your server, unpack it and copy the ontology files to your triangle ontology folder
 
 ```bash
 sudo -s
@@ -207,3 +207,81 @@ You can then load the data into your FHIR Server using the `upload-testdata.sh` 
 | FEASIBILITY_DSF_CLIENT_PROCESS_EVALUATION_OBFUSCATE                   | Defines whether the feasibility evaluation result shall be obfuscated.                                                                                                       |                                                    | Boolean                                            | DSF       |
 | FEASIBILITY_DSF_CLIENT_PROCESS_ORGANIZATION_IDENTIFIER                | Identifier of this organization.                                                                                                                                             | Test_DIC_1                                         | String                                             | DSF       |
 | FEASIBILITY_DSF_CLIENT_PROCESS_FLARE_WEBSERVICE_BASE_URL              | Base URL to a FLARE instance. Only required if evaluation strategy is set to structured-query.                                                                               | http://node-flare:5000/                            | URL                                                | DSF       |
+
+
+
+## Updating the Feasibility Triangle
+
+If you have already installed the feasibility triangle and just want to update it, follow these steps:
+
+
+### Step 1 - Stop your triangle
+
+`cd /opt/feasibility-deploy && bash stop-triangle.sh`
+
+### Step 2 - Update repository and check out new tag
+
+`cd /opt/feasibility-deploy && git pull`
+`git checkout <new-tag>`
+
+### Step 3 - transfer the new env variables
+
+Compare the .env and .env.default files for each component and add any new variables from the .env.default file to the .env file.
+Keep the existing configuration as is.
+
+### Step 4 - Update your ontology
+
+If used, (see "Overview") The FLARE component requires a mapping file and ontology tree file to translate an incoming feasibility query into FHIR Search queries.
+Both can be downloaded here: https://confluence.imi.med.fau.de/display/ABIDEMI/Ontologie.
+
+Make sure that you use the newest version.
+
+Upload the  mapping_*.zip file to your server, unpack it and copy the ontology files to your triangle ontology folder.
+
+```bash
+sudo -s
+mkdir /<path>/<to>/<folder>/<of>/<choice>
+cd /<path>/<to>/<folder>/<of>/<choice>
+unzip mapping_*.zip
+cd mapping
+cp * /opt/feasibility-deploy/feasibility-triangle/ontology
+```
+
+Existing mapping files should be replaced.
+
+### Step 5 - Start your triangle
+
+To start the triangle navigate to `/opt/feasibility-deploy/feasibility-triangle` and
+execute `bash start-triangle.sh`.
+
+### Step 6 - Log in to the central feasibility portal and test your connection
+
+Ask for the Url of the central portal at the FDPG or check Confluence for the correct address.
+
+Log in to the portal and send a request with the Inclusion Criterion chosen from the Inclusion criteria tree (folder sign under Inclusion Criteria) 
+"Person > PatientIn > Geschlecht: Female,Male"
+
+and press "send".
+
+Check your triangle aktin client logs:
+`cat /opt/feasibility-deploy/feasibility-triangle/aktin-client/aktin-requests.log`
+
+you should see output similar to:
+```
+##### INCOMING REQUEST at Thu Sep  8 11:49:08 UTC 2022 #####
+----BEGIN REQUEST----
+{"version":"http://to_be_decided.com/draft-1/schema#","inclusionCriteria":[[{"termCodes":[{"code":"gender","system":"mii.abide","display":"Geschlecht"}],"attributeFilters":[{"type":"concept","selectedConcepts":[{"code":"female","system":"http://hl7.org/fhir/administrative-gender","display":"Female"},{"code":"male","system":"http://hl7.org/fhir/administrative-gender","display":"Male"}],"attributeCode":{"code":"gender","system":"mii.abide","display":"Geschlecht"}}]}]]}
+----END REQUEST----
+----BEGIN RESPONSE----
+65
+----END RESPONSE----
+```
+
+
+
+
+
+
+
+
+
