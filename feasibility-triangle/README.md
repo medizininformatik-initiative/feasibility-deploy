@@ -217,11 +217,11 @@ If you have already installed the feasibility triangle and just want to update i
 
 ### Step 1 - Stop your triangle
 
-`cd /opt/feasibility-deploy && bash stop-triangle.sh`
+`cd /opt/feasibility-deploy/feasibility-triangle && bash stop-triangle.sh`
 
 ### Step 2 - Update repository and check out new tag
 
-`cd /opt/feasibility-deploy && git pull`
+`cd /opt/feasibility-deploy/feasibility-triangle && git pull`
 `git checkout <new-tag>`
 
 ### Step 3 - transfer the new env variables

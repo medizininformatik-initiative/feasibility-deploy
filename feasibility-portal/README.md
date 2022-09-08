@@ -165,3 +165,62 @@ After a few moments you should see the results to your query in the **Number of 
 | FEASIBILITY_KEYCLOAK_BASE_URL                          | the base url used by keyloak. This has to be configured to the nginx url which forwards to keycloak if an nginx is used                                                      | https://localhost/auth                        |                 | KEYCLOAK  |
 | FEASIBILITY_DSF_BROKER_PROCESS_ORGANIZATION_IDENTIFIER | Identifier of this organization.                                                                                                                                             | Test_ZARS                                     | String          | DSF       |
 | FEASIBILITY_DSF_BROKER_PROCESS_FHIR_SERVER_BASE_URL    | Base URL to a FHIR server or proxy for feasibility evaluation. This can also be the base URL of a reverse proxy if used. Only required if evaluation strategy is set to cql. | https://dsf-zars-fhir-proxy/fhir              | URL             | DSF       |
+
+
+
+## Updating your local feasibility portal
+
+If you have already installed the local feasibility portal and just want to update it, follow these steps:
+
+
+### Step 1 - Stop your portal
+
+`cd /opt/feasibility-deploy/feasibility-triangle && bash stop-feasibility-portal.sh`
+
+### Step 2 - Update repository and check out new tag
+
+`cd /opt/feasibility-deploy && git pull`
+`git checkout <new-tag>`
+
+### Step 3 - transfer the new env variables
+
+Compare the .env and .env.default files for each component and add any new variables from the .env.default file to the .env file.
+Keep the existing configuration as is.
+
+### Step 4 - Update your ontology
+
+If used, (see "Overview") The FLARE component requires a mapping file and ontology tree file to translate an incoming feasibility query into FHIR Search queries.
+Both can be downloaded here: https://confluence.imi.med.fau.de/display/ABIDEMI/Ontologie
+
+Upload the ontology .zip files to your server, unpack them and copy the ontology files to your feasibility portal ontology folder.
+
+```bash
+sudo -s
+mkdir /<path>/<to>/<folder>/<of>/<choice>
+cd /<path>/<to>/<folder>/<of>/<choice>
+unzip mapping_*.zip
+unzip ui_profiles_*.zip
+unzip db_migration_*.zip
+cd mapping
+cp * /opt/feasibility-deploy/feasibility-portal/ontology
+cd ../ui_profiles
+cp * /opt/feasibility-deploy/feasibility-portal/ontology/ui_profiles
+cd ../db_migration
+cp * /opt/feasibility-deploy/feasibility-portal/ontology/migration
+```
+
+Existing files should be replaced.
+
+### Step 5 - Start your triangle
+
+To start the portal navigate to `/opt/feasibility-deploy/feasibility-portal` and
+execute `bash start-feasibility-portal-local.sh`.
+
+### Step 6 - Log in to the local feasibility portal and test your connection
+
+Ask for the Url of the central portal at the FDPG or check Confluence for the correct address.
+
+Log in to the portal and send a request with the Inclusion Criterion chosen from the Inclusion criteria tree (folder sign under Inclusion Criteria) 
+"Person > PatientIn > Geschlecht: Female,Male"
+
+and press "send".
