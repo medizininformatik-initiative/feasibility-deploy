@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   flare:
-    image: ghcr.io/rwth-imi/flare-query:1.0-rc11
+    image: ghcr.io/rwth-imi/flare-query:1.0.0
     ports:
       - ${FEASIBILITY_FLARE_PORT:-127.0.0.1:8084}:8080
     environment:
@@ -16,6 +16,11 @@ services:
       LOG_LEVEL: ${FLARE_LOG_LEVEL:-warn}
       MAPPINGS_FILE: ${FLARE_ONTOLOGY_FILES_FOLDER:-/opt/flare/ontology}/codex-term-code-mapping.json
       CONCEPT_TREE_FILE: ${FLARE_ONTOLOGY_FILES_FOLDER:-/opt/flare/ontology}/codex-code-tree.json
+      FLARE_CACHE_CLEAN_CYCLE_MINUTES: ${FLARE_CACHE_CLEAN_CYCLE_MINUTES:-1440}
+      FLARE_CACHE_ENTRY_LIFETIME_HOURS: ${FLARE_CACHE_ENTRY_LIFETIME_HOURS:-168}
+      FLARE_CACHE_SIZE_THOUSANDS_ENTRIES: ${FLARE_CACHE_SIZE_THOUSANDS_ENTRIES:-8}
+      FLARE_CACHE_ENTRY_EXPIRATION_UPDATED_AT_ACCESS: ${FLARE_CACHE_ENTRY_EXPIRATION_UPDATED_AT_ACCESS:-false}
+      FLARE_CACHE_COMPLETE_DELETE_ON_CLEAN: ${FLARE_CACHE_COMPLETE_DELETE_ON_CLEAN:-false}
     restart: unless-stopped
     volumes:
       - ${FLARE_LOCAL_CONCEPT_TREE_PATH:-../ontology/codex-code-tree.json}:${FLARE_ONTOLOGY_FILES_FOLDER:-/opt/flare/ontology}/codex-code-tree.json

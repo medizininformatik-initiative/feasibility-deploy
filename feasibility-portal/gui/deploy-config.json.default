@@ -6,7 +6,7 @@
     "baseUrl": "/api"
   },
   "uiBackendApi": {
-    "baseUrl": "https://localhost/api/v1"
+    "baseUrl": "https://localhost/api/v2"
   },
   "auth": {
     "baseUrl": "https://localhost",
