@@ -97,6 +97,7 @@ To configure the AKTIN client in the default setup, change the following environ
 - FEASIBILITY_AKTIN_CLIENT_BROKER_ENDPOINT_URI
 - FEASIBILITY_AKTIN_CLIENT_AUTH_PARAM
 - FEASIBILITY_AKTIN_CLIENT_WEBSOCKET_PING_SECONDS
+- FEASIBILITY_AKTIN_PROCESS_EXECUTOR_THREADS
 
 If you are using AKTIN, as in the default setup you have to adjust the rights of the aktin-requests.log file to allow the AKTIN container user to write the logs as follows:
 `chown 10001:10001 /opt/feasibility-deploy/feasibility-triangle/aktin-client/aktin-requests.log`
@@ -163,6 +164,7 @@ You can then load the data into your FHIR Server using the `upload-testdata.sh` 
 | FEASIBILITY_AKTIN_CLIENT_PROCESS_TIMEOUT_SECONDS                      | The timeout within which a process has to return before the client sends a "failed" message to the AKTIN broker                                                              | 60                                                 | Integer (seconds)                                  | AKTIN     |
 | FEASIBILITY_AKTIN_CLIENT_PROCESS_COMMAND                              | The command to be executed on recieving a feasibility query. Allows one to switch between flare and cql execution                                                            | /opt/aktin/call-flare.sh                           | /opt/aktin/call-flare.sh, /opt/aktin/call-cql.sh   | AKTIN     |
 | FEASIBILITY_AKTIN_CLIENT_PROCESS_ARGS                                 || 10                                                                                                                                                                           | Integer (seconds)                                  | AKTIN                                              |
+| FEASIBILITY_AKTIN_PROCESS_EXECUTOR_THREADS                                 |configures how many parallel threads AKTIN will use to process requests simultaniously| 2 | Integer (number of threads)                                  | AKTIN                                              |
 | FEASIBILITY_AKTIN_CLIENT_FLARE_BASE_URL                               | the URL of the FLARE component if used                                                                                                                                       | http://flare:8080                                  | URL                                                | AKTIN     |
 | FEASIBILITY_AKTIN_CLIENT_OBFUSCATE                                    | Sets whether the AKTIN Client should obfuscate the results (response) of a feasibility query                                                                                 | TRUE                                               | true or false                                      | AKTIN     |
 | FEASIBILITY_AKTIN_JAVA_OPTS                                           | Provides Java options to the AKTIN client - can be used to configure proxy use. For example : " Dhttps.proxyHost=squid -Dhttps.proxyPort=3128"                               || valid java options                                 | AKTIN                                              |

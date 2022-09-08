@@ -48,10 +48,13 @@ mkdir /<path>/<to>/<folder>/<of>/<choice>
 cd /<path>/<to>/<folder>/<of>/<choice>
 unzip mapping_*.zip
 unzip ui_profiles_*.zip
+unzip db_migration_*.zip
 cd mapping
 cp * /opt/feasibility-deploy/feasibility-portal/ontology
 cd ../ui_profiles
 cp * /opt/feasibility-deploy/feasibility-portal/ontology/ui_profiles
+cd ../db_migration
+cp * /opt/feasibility-deploy/feasibility-portal/ontology/migration
 ```
 
 ### Step 6 - Configure your feasibility portal
@@ -60,13 +63,14 @@ If you use the default local feasibility portal setup you will only have to chan
 
 | file | environment variable | value for local setup |
 |--|--|--|
+|keycloak/.env|FEASIBILITY_KEYCLOAK_BASE_URL| base-url-of-your-local-feasibility-portal/auth |
 |keycloak/.env|FEASIBILITY_KEYCLOAK_ADMIN_PW| choose a secure password here e.g. Ykc2PINWatNqL5Wq,OIxFz1Sv3dzmQ2|
 |backend/.env|FEASIBILITY_BACKEND_AKTIN_ENABLED|false|
 |backend/.env|FEASIBILITY_BACKEND_DIRECT_ENABLED|true|
 |backend/.env|FEASIBILITY_BACKEND_API_BASE_URL|base-url-of-your-local-feasibility-portal/api|
 |backend/.env|FLARE_WEBSERVICE_BASE_URL|http://flare:8080|
 |backend/.env|FEASIBILITY_BACKEND_ALLOWED_ORIGINS|base-url-of-your-local-feasibility-portal|
-|gui/deploy-config.json|uiBackendApi > baseUrl |base-url-of-your-local-feasibility-portal/api/v1|
+|gui/deploy-config.json|uiBackendApi > baseUrl |base-url-of-your-local-feasibility-portal/api/v2|
 |gui/deploy-config.json|auth > baseUrl |base-url-of-your-local-feasibility-portal|
 
 For more details on the environment variables see the paragraph **Configurable environment variables** of this README.
