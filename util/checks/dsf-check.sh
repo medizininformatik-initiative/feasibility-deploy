@@ -63,8 +63,9 @@ while test $# -gt 0; do
         fi
         shift
         ;;
-    *)              echo "${USAGE}"; exit 1;;
     help|--help|-h) echo "${USAGE}";;
+    *)              echo "${USAGE}"; exit 1;;
+
   esac
 done
 
@@ -169,12 +170,13 @@ while test $# -gt 0; do
         fi
         shift
         ;;
+    help|--help|-h) echo "${USAGE}";;
     --*)            echo "${USAGE}"; exit 1;;
     *)
       BUSINESS_KEY=$1
       shift
       ;;
-    help|--help|-h) echo "${USAGE}";;
+    
   esac
 done
 
@@ -245,8 +247,8 @@ EOF
   case "$1" in
       fdpg-connection) fdpg_connection "${@:2}";;
       result)          result "${@:2}";;
-      *)               echo "${USAGE}"; exit 1;;
       help|--help|-h)  echo "${USAGE}";;
+      *)               echo "${USAGE}"; exit 1;;
   esac
 }
 
