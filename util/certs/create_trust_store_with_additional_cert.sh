@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BASE_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+BASE_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || pwd -P )"
 
 docker build -t feasibility-deploy-create-trust-store "${BASE_DIR}"/
 docker run  --name create-trust-store --rm \
