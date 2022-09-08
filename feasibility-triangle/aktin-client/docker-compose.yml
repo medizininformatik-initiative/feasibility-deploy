@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   aktin-client:
-    image: ghcr.io/medizininformatik-initiative/feasibility-aktin-client:1.6.0
+    image: ghcr.io/medizininformatik-initiative/feasibility-aktin-client:1.7.0
     environment:
       BROKER_REQUEST_MEDIATYPE: ${FEASIBILITY_AKTIN_CLIENT_BROKER_REQUEST_MEDIATYPE:-application/sq+json}
       BROKER_RESULT_MEDIATYPE: ${FEASIBILITY_AKTIN_CLIENT_BROKER_RESULT_MEDIATYPE:-application/json}

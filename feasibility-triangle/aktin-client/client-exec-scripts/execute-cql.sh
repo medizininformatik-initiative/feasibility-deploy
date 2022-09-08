@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 BASE=${FHIR_BASE_URL:-"http://fhir-server:8080/fhir"}
 BASIC_AUTH_64=$(echo -n "$AUTH_USER:$AUTH_PW" | base64)
