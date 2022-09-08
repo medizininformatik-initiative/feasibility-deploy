@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function fdpg_connection {
-read -d '' USAGE << EOF
+read -dr '' USAGE << EOF
 Checks whether the connection to the FDPG can be established.
 
 Usage: ./dsf-check fdpg-connection --cacert <PATH> --cert <PATH> --key <PATH> --connect-to <URL>
@@ -69,20 +69,20 @@ while test $# -gt 0; do
 done
 
 COMMAND_FLAGS=""
-if [[ ! -z "${CACERT}" ]]; then
+if [[ -n "${CACERT}" ]]; then
   COMMAND_FLAGS="${COMMAND_FLAGS} --cacert ${CACERT}"
 fi
-if [[ ! -z "${CERT}" ]]; then
+if [[ -n "${CERT}" ]]; then
   COMMAND_FLAGS="${COMMAND_FLAGS} --cert ${CERT}"
 fi
-if [[ ! -z "${KEY}" ]]; then
+if [[ -n "${KEY}" ]]; then
   COMMAND_FLAGS="${COMMAND_FLAGS} --key ${KEY}"
 fi
 if [[ ! "${CONNECT_TO}" == */ ]]; then
   CONNECT_TO="${CONNECT_TO}/"
 fi
 
-STATUS_CODE=$(curl -s --write-out "%{http_code}" -H "Accept: application/fhir+json" ${COMMAND_FLAGS} ${CONNECT_TO}metadata)
+STATUS_CODE=$(curl -s --write-out "%{http_code}" -H "Accept: application/fhir+json" "${COMMAND_FLAGS}" "${CONNECT_TO}"metadata)
 if [[ ${STATUS_CODE} -ne 200 ]]; then
   echo "FAILED"
   exit 1
@@ -93,7 +93,7 @@ fi
 
 
 function result {
-read -d '' USAGE << EOF
+read -dr '' USAGE << EOF
 Gets the result of a specific query run from the FHIR inbox of a site (DIC). The query is uniquely identified by
 the specified business key.
 
@@ -185,39 +185,39 @@ if [[ -z "${DIC_IDENTIFIER}" ]]; then
 fi
 
 COMMAND_FLAGS=""
-if [[ ! -z "${CACERT}" ]]; then
+if [[ -n "${CACERT}" ]]; then
   COMMAND_FLAGS="${COMMAND_FLAGS} --cacert ${CACERT}"
 fi
-if [[ ! -z "${CERT}" ]]; then
+if [[ -n "${CERT}" ]]; then
   COMMAND_FLAGS="${COMMAND_FLAGS} --cert ${CERT}"
 fi
-if [[ ! -z "${KEY}" ]]; then
+if [[ -n "${KEY}" ]]; then
   COMMAND_FLAGS="${COMMAND_FLAGS} --key ${KEY}"
 fi
 if [[ ! "${CONNECT_TO}" == */ ]]; then
   CONNECT_TO="${CONNECT_TO}/"
 fi
 
-CORRELATING_TASK_URL=$(curl -s -H "Accept: application/fhir+json" ${COMMAND_FLAGS} ${CONNECT_TO}Task?_sort=-_lastUpdated | jq --arg bkey "${BUSINESS_KEY}" --arg dicid "${DIC_IDENTIFIER}" -r '.entry[] | select(.resource | .input[] | .type.coding[0].code == "business-key" and .valueString == $bkey) | select(.resource.requester.identifier.value == $dicid) | .fullUrl')
+CORRELATING_TASK_URL=$(curl -s -H "Accept: application/fhir+json" "${COMMAND_FLAGS}" "${CONNECT_TO}Task?_sort=-_lastUpdated" | jq --arg bkey "${BUSINESS_KEY}" --arg dicid "${DIC_IDENTIFIER}" -r '.entry[] | select(.resource | .input[] | .type.coding[0].code == "business-key" and .valueString == $bkey) | select(.resource.requester.identifier.value == $dicid) | .fullUrl')
 
 if [[ -z "${CORRELATING_TASK_URL}" ]]; then
   echo "Could not find a corresponding task."
   exit 2
 fi
 
-CORRELATING_TASK=$(curl -s -H "Accept: application/fhir+json" ${COMMAND_FLAGS} ${CORRELATING_TASK_URL})
-TASK_ID=$(echo ${CORRELATING_TASK} | jq -r .id)
-TASK_STATUS=$(echo ${CORRELATING_TASK} | jq -r .status)
-MEASURE_REPORT_REF=$(echo ${CORRELATING_TASK} | jq -r 'select(.input[] | .type.coding[0].code == "message-name" and .valueString == "feasibilitySingleDicResultMessage") | .input[] | select(.type.coding[0].code == "measure-report-reference") | .valueReference.reference')
+CORRELATING_TASK=$(curl -s -H "Accept: application/fhir+json" "${COMMAND_FLAGS}" "${CORRELATING_TASK_URL}")
+TASK_ID=$(echo "${CORRELATING_TASK}" | jq -r .id)
+TASK_STATUS=$(echo "${CORRELATING_TASK}" | jq -r .status)
+MEASURE_REPORT_REF=$(echo "${CORRELATING_TASK}" | jq -r 'select(.input[] | .type.coding[0].code == "message-name" and .valueString == "feasibilitySingleDicResultMessage") | .input[] | select(.type.coding[0].code == "measure-report-reference") | .valueReference.reference')
 
 if [[ -z "${MEASURE_REPORT_REF}" ]]; then
   echo "Could not find a corresponding measure report."
   exit 2
 fi
 
-MEASURE_REPORT=$(curl -s -H "Accept: application/fhir+json" ${COMMAND_FLAGS} ${MEASURE_REPORT_REF})
-MEASURE_REPORT_ID=$(echo ${MEASURE_REPORT} | jq -r .id)
-MEASURE_REPORT_POPULATION_COUNT=$(echo ${MEASURE_REPORT} | jq -r '.group[] | select(has("population")) | .population[] | select(.code.coding[0].code == "initial-population") | .count')
+MEASURE_REPORT=$(curl -s -H "Accept: application/fhir+json" "${COMMAND_FLAGS}" "${MEASURE_REPORT_REF}")
+MEASURE_REPORT_ID=$(echo "${MEASURE_REPORT}" | jq -r .id)
+MEASURE_REPORT_POPULATION_COUNT=$(echo "${MEASURE_REPORT}" | jq -r '.group[] | select(has("population")) | .population[] | select(.code.coding[0].code == "initial-population") | .count')
 
 echo -e "Task ID: \t\t${TASK_ID}"
 echo -e "Task Status: \t\t${TASK_STATUS}"
@@ -228,7 +228,7 @@ echo -e "Population Count: \t${MEASURE_REPORT_POPULATION_COUNT}"
 
 # The main entrypoint of this script.
 function entrypoint() {
-read -d '' USAGE << EOF
+read -rd '' USAGE << EOF
 Command line utility to check a DSF installation.
 
 Dependencies:
@@ -243,11 +243,11 @@ Commands are
 EOF
 
   case "$1" in
-      fdpg-connection) fdpg_connection ${@:2};;
-      result)          result ${@:2};;
+      fdpg-connection) fdpg_connection "${@:2}";;
+      result)          result "${@:2}";;
       *)               echo "${USAGE}"; exit 1;;
       help|--help|-h)  echo "${USAGE}";;
   esac
 }
 
-entrypoint ${@:1}
+entrypoint "${@:1}"
