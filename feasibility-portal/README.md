@@ -111,6 +111,10 @@ Save the changes by clicking the "save" button.
 Click on `Users > Add User` and fill in the field **Username** with a username of your choice and add the user under **Groups** to the group **/codex-develop** and save the user by clicking on `save`.
 Click on **Credentials** and fill the `Password` and `Password Confirmation` fields with a password of your choice and save the changes by clicking `set password`
 
+3. Add Mapper from Realm-Role to Group for UI
+
+Click on `Clients > feasibility-gui > Mappers` then click on `Add Builtin` select the mapper with name  `groups` and click `Add selected`
+
 ### Step 9 - Access the user interface and send first query
 
 Access your user interface under <https://your-feasibility-domain> and log in with the user set in step 8.
