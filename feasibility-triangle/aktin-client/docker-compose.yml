@@ -21,6 +21,7 @@ services:
       AUTH_PW:  ${FEASIBILITY_AKTIN_CLIENT_FHIR_AUTH_PW:-}
       FHIR_BASE_URL: ${FEASIBILITY_AKTIN_FHIR_BASE_URL:-http://fhir-server:8080/fhir}
       PROCESS_EXECUTOR_THREADS: ${FEASIBILITY_AKTIN_PROCESS_EXECUTOR_THREADS:-2}
+    restart: unless-stopped
     volumes:
       - ./client-exec-scripts/echo.sh:/opt/aktin/echo.sh
       - ./client-exec-scripts/call-cql.sh:/opt/aktin/call-cql.sh
