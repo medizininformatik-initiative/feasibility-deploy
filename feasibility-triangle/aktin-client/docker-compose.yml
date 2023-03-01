@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   aktin-client:
-    image: ghcr.io/medizininformatik-initiative/feasibility-aktin-client:1.7.0
+    image: ghcr.io/medizininformatik-initiative/feasibility-aktin-client:1.4-RC4
     environment:
       BROKER_REQUEST_MEDIATYPE: ${FEASIBILITY_AKTIN_CLIENT_BROKER_REQUEST_MEDIATYPE:-application/sq+json}
       BROKER_RESULT_MEDIATYPE: ${FEASIBILITY_AKTIN_CLIENT_BROKER_RESULT_MEDIATYPE:-application/json}
@@ -12,18 +12,14 @@ services:
       CLIENT_WEBSOCKET_RECONNECT_SECONDS: ${FEASIBILITY_AKTIN_CLIENT_WEBSOCKET_RECONNECT_SECONDS:-10}
       CLIENT_WEBSOCKET_RECONNECT_POLLING: ${FEASIBILITY_AKTIN_CLIENT_WEBSOCKET_RECONNECT_POLLING:-true}
       PROCESS_TIMEOUT_SECONDS: ${FEASIBILITY_AKTIN_CLIENT_PROCESS_TIMEOUT_SECONDS:-60}
-      PROCESS_COMMAND: ${FEASIBILITY_AKTIN_CLIENT_PROCESS_COMMAND:-/opt/aktin/call-flare.sh}
-      PROCESS_ARGS: ${FEASIBILITY_AKTIN_CLIENT_PROCESS_ARGS:-10}
-      FLARE_BASE_URL: ${FEASIBILITY_AKTIN_CLIENT_FLARE_BASE_URL:-http://node-flare:8080}
       CLIENT_OBFUSCATE: ${FEASIBILITY_AKTIN_CLIENT_OBFUSCATE:-true}
-      JAVA_OPTS: $FEASIBILITY_AKTIN_JAVA_OPTS
-      AUTH_USER:  ${FEASIBILITY_AKTIN_CLIENT_FHIR_AUTH_USER:-}
-      AUTH_PW:  ${FEASIBILITY_AKTIN_CLIENT_FHIR_AUTH_PW:-}
-      FHIR_BASE_URL: ${FEASIBILITY_AKTIN_FHIR_BASE_URL:-http://fhir-server:8080/fhir}
-      PROCESS_EXECUTOR_THREADS: ${FEASIBILITY_AKTIN_PROCESS_EXECUTOR_THREADS:-2}
-    volumes:
-      - ./client-exec-scripts/echo.sh:/opt/aktin/echo.sh
-      - ./client-exec-scripts/call-cql.sh:/opt/aktin/call-cql.sh
-      - ./client-exec-scripts/execute-cql.sh:/opt/aktin/execute-cql.sh
-      - ./client-exec-scripts/call-flare.sh:/opt/aktin/call-flare.sh
-      - ./aktin-requests.log:/opt/aktin/aktin-requests.log
+      JAVA_OPTS: ${FEASIBILITY_AKTIN_JAVA_OPTS}
+      PROCESS_EXECUTOR_THREADS: ${FEASIBILITY_AKTIN_PROCESS_EXECUTOR_THREADS:-1}
+      CQL_FHIR_BASE_URL: ${FEASIBILITY_AKTIN_CQL_FHIR_BASE_URL}
+      CQL_FHIR_USER: ${FEASIBILITY_AKTIN_CQL_FHIR_USER}
+      CQL_FHIR_PW: ${FEASIBILITY_AKTIN_CQL_FHIR_PW}
+      FLARE_URL: ${FEASIBILITY_AKTIN_FLARE_URL:-http://flare:8080/query/execute}
+      FLARE_USER: ${FEASIBILITY_AKTIN_FLARE_USER}
+      FLARE_PW: ${FEASIBILITY_AKTIN_FLARE_PW}
+      LOG_LEVEL: ${FEASIBILITY_AKTIN_LOG_LEVEL:-INFO}
+      LOG_LEVEL_FEASIBILITY: ${FEASIBILITY_AKTIN_LOG_LEVEL_FEASIBILITY:-FINE}
