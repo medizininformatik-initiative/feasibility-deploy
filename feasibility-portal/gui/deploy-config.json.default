@@ -43,7 +43,7 @@
     "result": false,
     "loadnsave": false
   },
-  "stylesheet": "abideTheme",
+  "stylesheet": "FDPGTheme",
   "fhirport": "8082",
   "dataset": "codex",
   "queryVersion": "v2"
