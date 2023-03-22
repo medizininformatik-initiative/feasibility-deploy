@@ -2,13 +2,14 @@ version: "3.7"
 
 services:
   flare:
-    image: ghcr.io/medizininformatik-initiative/flare:main
+    image: ghcr.io/medizininformatik-initiative/flare:0.1
     ports:
       - ${FEASIBILITY_FLARE_PORT:-127.0.0.1:8084}:8080
     environment:
       FLARE_FHIR_SERVER: ${FLARE_FHIR_SERVER_URL:-http://fhir-server:8080/fhir/}
       FLARE_FHIR_USER: ${FLARE_FHIR_USER:-}
       FLARE_FHIR_PASSWORD: ${FLARE_FHIR_PW:-}
+      FLARE_FHIR_MAXCONNECTIONS: ${FLARE_FHIR_MAXCONNECTIONS:-32}
       FLARE_FHIR_PAGE_COUNT: ${FLARE_FHIR_PAGE_COUNT:-500}
       LOG_LEVEL: ${FLARE_LOG_LEVEL:-warn}
       FLARE_MAPPING_MAPPINGSFILE: ${FLARE_ONTOLOGY_FILES_FOLDER:-/opt/flare/ontology}/codex-term-code-mapping.json
@@ -18,6 +19,7 @@ services:
       FLARE_CACHE_MEM_REFRESH: ${FLARE_CACHE_MEM_REFRESH:-PT24H}
       FLARE_CACHE_DISK_PATH: ${FLARE_CACHE_DISK_PATH:-cache}
       FLARE_CACHE_DISK_EXPIRE: ${FLARE_CACHE_DISK_EXPIRE:-P7D}
+      JAVA_TOOL_OPTIONS: ${FLARE_JAVA_TOOL_OPTIONS:--Xmx4g}
     restart: unless-stopped
     volumes:
       - ${FLARE_LOCAL_CONCEPT_TREE_PATH:-../ontology/codex-code-tree.json}:${FLARE_ONTOLOGY_FILES_FOLDER:-/opt/flare/ontology}/codex-code-tree.json

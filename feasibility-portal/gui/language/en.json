@@ -1,0 +1,237 @@
+{
+  "DASHBOARD": {
+    "CODEXTHEME": {
+      "HEADLINE": "Welcome to the CODEX Feasibility Platform!",
+      "PARAGRAPH1": "Die CODEX Feasibility Plattform ist ein Angebot für Wissenschaftler:innen, die für ihre Forschung nach COVID-19 spezifischen Daten suchen.",
+      "PARAGRAPH2": "Auf dieser Plattform steht hierfür ein frei zugängliches Suchtool zur Verfügung, das eine erste, unverbindliche Machbarkeitsabfrage ermöglicht. Auf diesem Weg kann festgestellt werden, wie viele Daten an den angeschlossenen CODEX-Standorten zur Verfügung stehen.",
+      "PARAGRAPH3_1": "Anhand dieser Information können dann in einem nächsten Schritt konkrete Anfragen an die entsprechenden Standorte gestellt werden.",
+      "PARAGRAPH3_2":"",
+      "PARAGRAPH3_3": "",
+      "PARAGRAPH3_4": "",
+      "PARAGRAPH3_LINK":"",
+      "PARAGRAPH4_1":"",
+      "PARAGRAPH4_2":"",
+      "PARAGRAPH4_3": "",
+      "PARAGRAPH5_1": "",
+      "PARAGRAPH5_2": "",
+      "PARAGRAPH5_3": ""
+    },
+    "ABIDETHEME": {
+      "HEADLINE": "Welcome to the ABIDE Feasibility Platform!",
+      "PARAGRAPH1": "Die ABIDE Feasibility Plattform ist ein Unterstützungsangebot für Wissenschaftler und Wissenschaftlerinnen bei der Umsetzung ihrer Forschungsvorhaben.",
+      "PARAGRAPH2": "Mit einer Machbarkeitsanfrage (Feasibility) erfahren Forschende, wie viele Fälle für ihre Suchkriterien (Ein- und Ausschlusskriterien) in den Datenintegrationszentren der universitätsmedizinischen Standorte bundesweit vorhanden sind und für medizinische Forschungszwecke beantragt werden können.",
+      "PARAGRAPH3_1": "Zur Formulierung der Abfrage stehen aktuell der Kerndatensatz der Medizininformatikinitiative und der COVID-19 spezifische Datensatz GECCO zur Verfügung.",
+      "PARAGRAPH3_2":"",
+      "PARAGRAPH3_3": "",
+      "PARAGRAPH3_4": "",
+      "PARAGRAPH3_LINK":"",
+      "PARAGRAPH4_1":"",
+      "PARAGRAPH4_2":"",
+      "PARAGRAPH4_3": "",
+      "PARAGRAPH5_1": "",
+      "PARAGRAPH5_2": "",
+      "PARAGRAPH5_3": ""
+    },
+    "FDPGTHEME": {
+      "HEADLINE": "Welcome to the „Find data and biospecimens“ service of the German Research Data Portal for Health",
+      "PARAGRAPH1": "This is a support service for scientists to assist you in realizing your research project. By submitting a feasibility request, you can find out how many data sets for your search criteria are available at university hospitals nationwide. Based on inclusion and exclusion criteria, the availability of health data for medical research purposes can be estimated.",
+      "PARAGRAPH2": "",
+      "PARAGRAPH3_1": "With ",
+      "PARAGRAPH3_2": "New Query",
+      "PARAGRAPH3_3": " you have the possibility to formulate and send a new query based on the ",
+      "PARAGRAPH3_4": " to get an overview of the available patient data records.",
+      "PARAGRAPH3_LINK": "core data set of the MII",
+      "PARAGRAPH4_1":"You can view and further edit saved queries or saved drafts via ",
+      "PARAGRAPH4_2":"My Queries",
+      "PARAGRAPH4_3": ".",
+      "PARAGRAPH5_1": "Once you have all the relevant information for your research project, you can submit an application for data use in the application portal of the German Research Data Portal for Health via ",
+      "PARAGRAPH5_2": "Submit Application",
+      "PARAGRAPH5_3": "."
+    },
+    "NEWQUERY": {
+      "HEADLINE": "New Query",
+      "TEXT": "Perform a search based on your inclusion and exclusion criteria"
+    },
+    "MYQUERY": {
+      "HEADLINE": "My Queries",
+      "TEXT": "Get an overview of the searches you have already performed"
+    },
+    "FEASPORTAL": {
+      "HEADLINE": "Submit Application",
+      "TEXT": "Make a request for data use in the application portal"
+    }
+  },
+  "LANGUAGE": {
+    "GERMAN": "German",
+    "ENGLISH": "English",
+    "LABEL": "Select language"
+  },
+  "APPLAYOUT": {
+    "SIDENAV": {
+      "LABEL": "Sidenav"
+    },
+    "TOGGLE": {
+      "LABEL": "Toggle sidenav"
+    }
+  },
+  "NAVIGATION": {
+    "DASHBOARD": "Home",
+    "QUERYBUILDER_EDITOR": "New query",
+    "QUERYBUILDER_OVERVIEW": "My queries",
+    "OPTIONS": "Options",
+    "SIGNOUT": "Sign out"
+  },
+  "OPTIONSPAGE": {
+    "MULTIPLEVALUEDEFINITIONS": "Multiple values per criteria",
+    "MULTIPLEGROUPS": "Multiple groups",
+    "DEPENDENTGROUPS": "Dependent groups",
+    "TIMERESTRICTION": "Time restricted criteria",
+    "DISPLAYVALUEFILTERICON": "Use icons for comparator symbols",
+    "POLLINGTIME": "Polling Time",
+    "POLLINGINTERVALL": "Polling Intervall",
+    "FHIRPORT": "FHIR Port"
+  },
+  "QUERYBUILDER": {
+    "SEARCH": {
+      "INCLUSION": "Inclusion criteria",
+      "EXCLUSION": "Exclusion criteria",
+      "LABEL": "enter code or display",
+      "ALL": "All",
+      "CATEGORY_FILTER": "Filter by",
+      "CONSENT_HEADER": "Art der Datennutzung.",
+      "CONSENT_CENTRAL": " is assumed (Data will centrally merged)",
+      "CONSENT_CENTRAL_LINK": "„Broad Consent“ of MII",
+      "CONSENT_DISTRIBUTED": "No „Broad Consent“ required (Data will only used for „Distributed analysis“)"
+    },
+    "SWITCH": {
+      "LABEL_AND": "AND",
+      "LABEL_OR": "OR"
+    },
+    "DISPLAY": {
+      "LABEL": "Selected criteria",
+      "ONE_OF": "",
+      "MORE": "more",
+      "BETWEEN": "between {{ min }} and {{ max }} {{ unit }}",
+      "COMPARATOR": "{{ comparator }} {{ value }} {{ unit }}",
+      "TIMERESTRICTION": {
+        "LATEST": "(latest)",
+        "BOTH": "between {{ from }} and {{ to }}",
+        "FROM": "later than {{ from }}",
+        "TO": "before {{ to }}",
+        "NONE": "no time restriction"
+      },
+      "GROUPS": {
+        "LINKEDGROUPS": "groups are linked",
+        "SHOW_CONNECTION": "show connection",
+        "NEW_GROUP": "New Group",
+        "HINT_NOT_MOVED": "Could not move group",
+        "HINT_NOT_DELETABLE_LINKED_GROUP": "Groups linked with subgroups cannot be deleted"
+      }
+    },
+    "OVERVIEW": {
+      "TITLE_LABEL": "Title",
+      "COMMENT_LABEL": "Comment",
+      "SAVE_HEADER": "Save the current query",
+      "LOAD_HEADER": "Previous Queries",
+      "IMPORT_HEADER": "Import Queries",
+      "SAVE_WITH_QUERY": "Save for Feasibility Portal",
+      "SAVE_TEMPLATE": "Save as template",
+      "DOWNLOAD_SQ": "Save as file",
+      "FILENAME": "File name",
+      "SAVED_QUERIES": "Saved Queries (with result)",
+      "SAVED_TEMPLATES": "Saved Templates"
+    },
+    "EDIT": {
+      "HEADER": "Restrictions of selected concepts",
+      "HEADER_FILTER_QUANTITY": "Choose a value restriction:",
+      "HEADER_FILTER_QUANTITY_FOR_DISPLAY": "Choose a value restriction ({{ label }}):",
+      "HEADER_FILTER_CONCEPT_OPTIONAL": "Choose one or more valid values:",
+      "HEADER_FILTER_CONCEPT_MANDATORY": "Choose one or more valid values:",
+      "HEADER_FILTER_CONCEPT_FOR_DISPLAY": "Choose one or more valid values ({{ label }}):",
+      "CHOOSE_GROUP":"Choose a group",
+      "MANDATORY_HINT": "Mandatory field",
+      "UNIT": "Unit",
+      "MIN": "Min",
+      "MAX": "Max",
+      "VALUE": "Value",
+      "OPERATOR": "Operator",
+      "AND": "and",
+      "EQUAL": "equals",
+      "LESS_THAN": "less than",
+      "GREATER_THAN": "more than",
+      "BETWEEN": "between",
+      "TIMERESTRICTION": {
+        "LABEL": "Date",
+        "EVER": "All occurrences in",
+        "LATEST": "Latest occurrence in",
+        "FROM": "from",
+        "TO": "to",
+        "AT": "at",
+        "NOT_AT": "not at",
+        "BEFORE": "before",
+        "BEFORE_OR_AT": "before or at",
+        "AFTER": "after",
+        "AFTER_OR_AT": "after or at",
+        "BETWEEN": "between",
+        "TITLE": "Time constraint (optional)"
+      },
+      "GROUPS": {
+        "HEADER_LINKED_GROUPS": "Relation between linked groups",
+        "OPTION_PARENT_EVER": "all occurrences",
+        "OPTION_PARENT_FIRST": "first occurrence",
+        "OPTION_PARENT_LATEST": "latest occurrence",
+        "GROUP_PARENT_1": "of group",
+        "GROUP_PARENT_2": "occurred",
+        "OPTION_DEPENDENT_EVER": "all occurrences",
+        "OPTION_DEPENDENT_FIRST": "first occurrence",
+        "OPTION_DEPENDENT_LATEST": "latest occurrence",
+        "GROUP_DEPENDENT_1": "of group",
+        "GROUP_DEPENDENT_2": "",
+        "TILL": "till",
+        "FROM": "from",
+        "BEFORE": "before",
+        "AFTER": "after",
+        "DAY": "day(s)",
+        "MONTH": "month(s)",
+        "YEAR": "year(s)",
+        "LABEL_UNIT": "Unit",
+        "LABEL_VALUE": "Value",
+        "LABEL_PREPOSITION": "Preposition"
+      }
+    },
+    "HINT": {
+      "NO_VALUE_SELECTED": "Choose at least one value",
+      "MINIMUM_GREATER_MAXIMUM": "Minimal value must be greater than maximal value",
+      "MINIMUM_EXCEEDED": "Value must be at least {{ min }}",
+      "MAXIMUM_EXCEEDED": "Value must be at most {{ max }}",
+      "SEARCH_TEXT_NO_INPUT": "Enter a search criteria or open the category tree view",
+      "NO_CRITERIA_SELECTED": "Choose at least one inclusion criteria"
+    }
+  },
+  "RESULT": {
+    "PATIENT_NUMBER": "Number of patients",
+    "TOTAL": "Total",
+    "SITE": "Site",
+    "MESSAGE429": "You reached your maximum request limit.",
+    "DETAILS_TOOLTIP": "The number shows how many views of the detailed result view you have already used - will be reset daily"
+  },
+  "LEGAL": {
+    "DISCLOSURE": "Disclosure",
+    "DATAPROTECTION": "Data Protection"
+  },
+  "BUTTON": {
+    "SAVE": "Save",
+    "CANCEL": "Cancel",
+    "CLOSE": "Close",
+    "ADD": "Add",
+    "ADD_TOOLTIP": "restrict criteria",
+    "ADDALL": "Add all",
+    "SEND": "Send",
+    "RESET": "Reset",
+    "RESULTDETAILS": "Details",
+    "SAVEQUERY": "Save query",
+    "VALIDATE": "Validate",
+    "IMPORT": "Load query",
+    "IMPORT_FROM_FILE": "choose file"
+  }
+}

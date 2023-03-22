@@ -1,0 +1,237 @@
+{
+  "DASHBOARD": {
+    "CODEXTHEME": {
+      "HEADLINE": "Willkommen auf der CODEX Feasibility Plattform!",
+      "PARAGRAPH1": "Die CODEX Feasibility Plattform ist ein Angebot für Wissenschaftler:innen, die für ihre Forschung nach COVID-19 spezifischen Daten suchen.",
+      "PARAGRAPH2": "Auf dieser Plattform steht hierfür ein frei zugängliches Suchtool zur Verfügung, das eine erste, unverbindliche Machbarkeitsabfrage ermöglicht. Auf diesem Weg kann festgestellt werden, wie viele Daten an den angeschlossenen CODEX-Standorten zur Verfügung stehen.",
+      "PARAGRAPH3_1": "Anhand dieser Information können dann in einem nächsten Schritt konkrete Anfragen an die entsprechenden Standorte gestellt werden.",
+      "PARAGRAPH3_2":"",
+      "PARAGRAPH3_3":"",
+      "PARAGRAPH3_4":"",
+      "PARAGRAPH3_LINK":"",
+      "PARAGRAPH4_1":"",
+      "PARAGRAPH4_2":"",
+      "PARAGRAPH4_3":"",
+      "PARAGRAPH5_1": "",
+      "PARAGRAPH5_2": "",
+      "PARAGRAPH5_3":""
+    },
+    "ABIDETHEME": {
+      "HEADLINE": "Willkommen auf der ABIDE Feasibility Plattform!",
+      "PARAGRAPH1": "Die ABIDE Feasibility Plattform ist ein Unterstützungsangebot für Wissenschaftler und Wissenschaftlerinnen bei der Umsetzung ihrer Forschungsvorhaben.",
+      "PARAGRAPH2": "Mit einer Machbarkeitsanfrage (Feasibility) erfahren Forschende, wie viele Fälle für ihre Suchkriterien (Ein- und Ausschlusskriterien) in den Datenintegrationszentren der universitätsmedizinischen Standorte bundesweit vorhanden sind und für medizinische Forschungszwecke beantragt werden können.",
+      "PARAGRAPH3_1": "Zur Formulierung der Abfrage stehen aktuell der Kerndatensatz der Medizininformatikinitiative und der COVID-19 spezifische Datensatz GECCO zur Verfügung.",
+      "PARAGRAPH3_2":"",
+      "PARAGRAPH3_3":"",
+      "PARAGRAPH3_4":"",
+      "PARAGRAPH3_LINK":"",
+      "PARAGRAPH4_1":"",
+      "PARAGRAPH4_2":"",
+      "PARAGRAPH4_3":"",
+      "PARAGRAPH5_1": "",
+      "PARAGRAPH5_2": "",
+      "PARAGRAPH5_3":""
+    },
+    "FDPGTHEME": {
+      "HEADLINE": "Willkommen im Bereich „Daten und Bioproben finden“ des Forschungsdatenportals für Gesundheit",
+      "PARAGRAPH1": "Hier finden Sie ein Unterstützungsangebot für Wissenschaftlerinnen und Wissenschaftler zur Umsetzung Ihres Forschungsvorhabens.",
+      "PARAGRAPH2": "Mit einer Machbarkeitsanfrage erfahren Sie, wie viele Datensätze für Ihre Suchkriterien in den Universitätskliniken bundesweit vorhanden sind. Anhand von Ein- und Ausschlusskriterien kann die Verfügbarkeit von Gesundheitsdaten für medizinische Forschungszwecke abgeschätzt werden.",
+      "PARAGRAPH3_1": "Über ",
+      "PARAGRAPH3_2": "Neue Abfrage",
+      "PARAGRAPH3_3": " haben Sie die Möglichkeit, eine neue Suchanfrage auf Basis des ",
+      "PARAGRAPH3_4": " zu formulieren und abzuschicken, um einen Überblick über die verfügbaren Datensätze zu erhalten.",
+      "PARAGRAPH3_LINK": "Kerndatensatzes der MII",
+      "PARAGRAPH4_1":"Gespeicherte Abfragen oder gespeicherte Entwürfe können Sie über ",
+      "PARAGRAPH4_2":"Meine Abfragen",
+      "PARAGRAPH4_3": " einsehen und weiter bearbeiten.",
+      "PARAGRAPH5_1": "Sobald Ihnen alle relevanten Informationen für Ihr Forschungsvorhaben zur Verfügung stehen, können Sie über ",
+      "PARAGRAPH5_2": "Antrag stellen",
+      "PARAGRAPH5_3": " einen Antrag zur Datennutzung im Antragsportal des Forschungsdatenportals für Gesundheit stellen."
+    },
+    "NEWQUERY": {
+      "HEADLINE": "Neue Abfrage",
+      "TEXT": "Führen Sie eine Suche anhand Ihrer Ein- und Ausschlusskriterien durch"
+    },
+    "MYQUERY": {
+      "HEADLINE": "Meine Abfragen",
+      "TEXT": "Erhalten Sie eine Übersicht über Ihre bereits durchgeführten Suchanfragen"
+    },
+    "FEASPORTAL": {
+      "HEADLINE": "Antrag stellen",
+      "TEXT": "Stellen Sie einen Antrag zur Datennutzung im Antragsportal"
+    }
+  },
+  "LANGUAGE": {
+    "GERMAN": "Deutsch",
+    "ENGLISH": "Englisch",
+    "LABEL": "Sprache auswählen"
+  },
+  "APPLAYOUT": {
+    "SIDENAV": {
+      "LABEL": "Seitennavigation"
+    },
+    "TOGGLE": {
+      "LABEL": "Seitennavigation umschalten"
+    }
+  },
+  "NAVIGATION": {
+    "DASHBOARD": "Startseite",
+    "QUERYBUILDER_EDITOR": "Neue Abfrage",
+    "QUERYBUILDER_OVERVIEW": "Meine Abfragen",
+    "OPTIONS": "Einstellungen",
+    "SIGNOUT": "Abmelden"
+  },
+  "OPTIONSPAGE": {
+    "MULTIPLEVALUEDEFINITIONS": "mehrere Einschränkungen pro Kriterium",
+    "MULTIPLEGROUPS": "mehrere Gruppen",
+    "DEPENDENTGROUPS": "abhängige Gruppen",
+    "TIMERESTRICTION": "zeitabhängige Kriterien",
+    "DISPLAYVALUEFILTERICON": "nutze Icons für Vergleichsoperatoren",
+    "POLLINGTIME": "Polling Time",
+    "POLLINGINTERVALL": "Polling Intervall",
+    "FHIRPORT": "FHIR Port"
+  },
+  "QUERYBUILDER": {
+    "SEARCH": {
+      "INCLUSION": "Einschlusskriterien",
+      "EXCLUSION": "Ausschlusskriterien",
+      "LABEL": "Code oder Suchbegriff eingeben",
+      "ALL": "Alle",
+      "CATEGORY_FILTER": "Filtern nach",
+      "CONSENT_HEADER": "Art der Datennutzung",
+      "CONSENT_CENTRAL": " voraussetzen (Daten können zentral zusammengeführt werden)",
+      "CONSENT_CENTRAL_LINK": "„Broad Consent“ der MII",
+      "CONSENT_DISTRIBUTED": "Kein „Broad Consent“ voraussetzen (Daten stehen nur für „Verteilte Analysen“ zur Verfügung)"
+    },
+    "SWITCH": {
+      "LABEL_AND": "UND",
+      "LABEL_OR": "ODER"
+    },
+    "DISPLAY": {
+      "LABEL": "Ausgewählte Merkmale",
+      "ONE_OF": "",
+      "MORE": "weitere",
+      "BETWEEN": "zwischen {{ min }} und {{ max }} {{ unit }}",
+      "COMPARATOR": "{{ comparator }} {{ value }} {{ unit }}",
+      "TIMERESTRICTION": {
+        "LATEST": "(aktuellstes)",
+        "BOTH": "zwischen {{ from }} und {{ to }}",
+        "FROM": "nach {{ from }}",
+        "TO": "vor {{ to }}",
+        "NONE": "keine zeitliche Einschränkung"
+      },
+      "GROUPS": {
+        "LINKEDGROUPS": "Gruppen sind verbunden",
+        "SHOW_CONNECTION": "Beziehung anzeigen",
+        "NEW_GROUP": "Neue Gruppe",
+        "HINT_NOT_MOVED": "Gruppe konnte nicht verschoben werden",
+        "HINT_NOT_DELETABLE_LINKED_GROUP": "Gruppen mit verbundener Untergruppe können nicht gelöscht werden"
+      }
+    },
+    "OVERVIEW": {
+      "TITLE_LABEL": "Titel",
+      "COMMENT_LABEL": "Kommentar",
+      "SAVE_HEADER": "Abspeichern der aktuellen Suchanfrage",
+      "LOAD_HEADER": "Bisherige Suchanfragen",
+      "IMPORT_HEADER": "Suchanfragen importieren",
+      "SAVE_WITH_QUERY": "für Machbarkeitsanfrage speichern",
+      "SAVE_TEMPLATE": "als Vorlage speichern",
+      "DOWNLOAD_SQ": "als Datei speichern",
+      "FILENAME": "Dateiname",
+      "SAVED_QUERIES": "Gespeicherte Abfragen (mit Ergebnis)",
+      "SAVED_TEMPLATES": "Gespeicherte Vorlagen"
+    },
+    "EDIT": {
+      "HEADER": "Einschränkungen der ausgewählten Merkmale",
+      "HEADER_FILTER_QUANTITY": "Geben Sie einen Wertebereich ein:",
+      "HEADER_FILTER_QUANTITY_FOR_DISPLAY": "Geben Sie einen Wertebereich ein ({{ label }}):",
+      "HEADER_FILTER_CONCEPT_OPTIONAL": "Wählen Sie einen oder mehrere zulässige Werte:",
+      "HEADER_FILTER_CONCEPT_MANDATORY": "Geben Sie einen oder mehrere zulässige Werte an:",
+      "HEADER_FILTER_CONCEPT_FOR_DISPLAY": "Geben Sie einen oder mehrere zulässige Werte an ({{ label }}):",
+      "CHOOSE_GROUP":"Gruppe auswählen",
+      "MANDATORY_HINT": "Pflichtfeld",
+      "UNIT": "Einheit",
+      "MIN": "Min",
+      "MAX": "Max",
+      "VALUE": "Wert",
+      "OPERATOR": "Operator",
+      "AND": "und",
+      "EQUAL": "gleich",
+      "LESS_THAN": "kleiner",
+      "GREATER_THAN": "größer",
+      "BETWEEN": "zwischen",
+      "TIMERESTRICTION": {
+        "LABEL": "Datum",
+        "EVER": "Alle Ereignisse liegen im Zeitraum",
+        "LATEST": "Aktuellstes Ereignis liegt im Zeitraum",
+        "FROM": "von",
+        "TO": "bis",
+        "AT": "am",
+        "NOT_AT": "nicht am",
+        "BEFORE": "vor",
+        "BEFORE_OR_AT": "vor oder am",
+        "AFTER": "nach",
+        "AFTER_OR_AT": "nach oder am",
+        "BETWEEN": "zwischen",
+        "TITLE": "Zeitraum (optional)"
+      },
+      "GROUPS": {
+        "HEADER_LINKED_GROUPS": "Beziehung zwischen Gruppen",
+        "OPTION_PARENT_EVER": "Jedes Merkmal",
+        "OPTION_PARENT_FIRST": "Erstes Merkmal",
+        "OPTION_PARENT_LATEST": "Aktuellstes Merkmal",
+        "GROUP_PARENT_1": "der Gruppe",
+        "GROUP_PARENT_2": "fand",
+        "OPTION_DEPENDENT_EVER": "jedem Merkmal",
+        "OPTION_DEPENDENT_FIRST": "dem ersten Merkmal",
+        "OPTION_DEPENDENT_LATEST": "dem aktuellsten Merkmal",
+        "GROUP_DEPENDENT_1": "der Gruppe",
+        "GROUP_DEPENDENT_2": "statt",
+        "TILL": "bis",
+        "FROM": "von",
+        "BEFORE": "vor",
+        "AFTER": "nach",
+        "DAY": "Tag(e)",
+        "MONTH": "Monat(e)",
+        "YEAR": "Jahr(e)",
+        "LABEL_UNIT": "Einheit",
+        "LABEL_VALUE": "Wert",
+        "LABEL_PREPOSITION": "Präposition"
+      }
+    },
+    "HINT": {
+      "NO_VALUE_SELECTED": "Wählen Sie mindestens einen Wert",
+      "MINIMUM_GREATER_MAXIMUM": "Der minimale Wert muss kleiner als der maximale Wert sein",
+      "MINIMUM_EXCEEDED": "Wert muss mindestens {{ min }} sein",
+      "MAXIMUM_EXCEEDED": "Wert darf höchstens {{ max }} sein",
+      "SEARCH_TEXT_NO_INPUT": "Geben Sie ein Suchkriterium ein oder öffnen sie die Übersicht der Kategorien",
+      "NO_CRITERIA_SELECTED": "es muss mindestens ein Einschlusskriterium ausgewählt sein"
+    }
+  },
+  "RESULT": {
+    "PATIENT_NUMBER": "Anzahl der Patienten",
+    "TOTAL": "Gesamt",
+    "SITE": "Standort",
+    "MESSAGE429": "Sie haben die maximale Anzahl an Abrufen für die Standortaufschlüsselung erreicht.",
+    "DETAILS_TOOLTIP": "Die Zahl zeigt Ihnen wieviele Ihrere Detailergebnisaufrufe Sie verbraucht haben - wird täglich zurückgesetzt"
+  },
+  "LEGAL": {
+    "DISCLOSURE": "Impressum",
+    "DATAPROTECTION": "Datenschutz"
+  },
+  "BUTTON": {
+    "SAVE": "Speichern",
+    "CANCEL": "Abbrechen",
+    "CLOSE": "Schließen",
+    "ADD": "Auswählen",
+    "ADD_TOOLTIP": "Merkmal einschränken",
+    "ADDALL": "Alle hinzufügen",
+    "SEND": "Abfrage starten",
+    "RESET": "Zurücksetzen",
+    "RESULTDETAILS": "Details",
+    "SAVEQUERY": "Abfrage speichern",
+    "VALIDATE": "Validieren",
+    "IMPORT": "Query laden",
+    "IMPORT_FROM_FILE": "Datei auswählen"
+  }
+}
