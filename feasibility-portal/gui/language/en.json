@@ -44,21 +44,21 @@
       "PARAGRAPH4_1":"You can view and further edit saved queries or saved drafts via ",
       "PARAGRAPH4_2":"My Queries",
       "PARAGRAPH4_3": ".",
-      "PARAGRAPH5_1": "Once you have all the relevant information for your research project, you can submit an application for data use in the application portal of the German Research Data Portal for Health via ",
+      "PARAGRAPH5_1": "Once you have all the relevant information for your research project, you can submit an application for data use in the proposal portal of the German Research Data Portal for Health via",
       "PARAGRAPH5_2": "Submit Application",
       "PARAGRAPH5_3": "."
     },
     "NEWQUERY": {
       "HEADLINE": "New Query",
-      "TEXT": "Perform a search based on your inclusion and exclusion criteria"
+      "TEXT": "Perform a request based on your inclusion and exclusion criteria"
     },
     "MYQUERY": {
       "HEADLINE": "My Queries",
-      "TEXT": "Get an overview of the searches you have already performed"
+      "TEXT": "Get an overview of the requests you have already performed"
     },
     "FEASPORTAL": {
       "HEADLINE": "Submit Application",
-      "TEXT": "Make a request for data use in the application portal"
+      "TEXT": "Make a request for data use in the proposal portal"
     }
   },
   "LANGUAGE": {
@@ -98,10 +98,10 @@
       "LABEL": "enter code or display",
       "ALL": "All",
       "CATEGORY_FILTER": "Filter by",
-      "CONSENT_HEADER": "Art der Datennutzung.",
-      "CONSENT_CENTRAL": " is assumed (Data will centrally merged)",
-      "CONSENT_CENTRAL_LINK": "„Broad Consent“ of MII",
-      "CONSENT_DISTRIBUTED": "No „Broad Consent“ required (Data will only used for „Distributed analysis“)"
+      "CONSENT_HEADER": "Type of data use",
+      "CONSENT_CENTRAL": " is assumed (Data consolidated centrally)",
+      "CONSENT_CENTRAL_LINK": "„Broad Consent“ (MII or compatible with MII)",
+      "CONSENT_DISTRIBUTED": "No „Broad Consent“ requested (data available for „federated analysis“)"
     },
     "SWITCH": {
       "LABEL_AND": "AND",
@@ -213,7 +213,7 @@
     "TOTAL": "Total",
     "SITE": "Site",
     "MESSAGE429": "You reached your maximum request limit.",
-    "DETAILS_TOOLTIP": "The number shows how many views of the detailed result view you have already used - will be reset daily"
+    "DETAILS_TOOLTIP": "The number shows many views of the detailed result view you have already used - will be reset daily"
   },
   "LEGAL": {
     "DISCLOSURE": "Disclosure",

@@ -100,7 +100,7 @@
       "CATEGORY_FILTER": "Filtern nach",
       "CONSENT_HEADER": "Art der Datennutzung",
       "CONSENT_CENTRAL": " voraussetzen (Daten können zentral zusammengeführt werden)",
-      "CONSENT_CENTRAL_LINK": "„Broad Consent“ der MII",
+      "CONSENT_CENTRAL_LINK": "„Broad Consent (der MII oder MII-kompatibel)",
       "CONSENT_DISTRIBUTED": "Kein „Broad Consent“ voraussetzen (Daten stehen nur für „Verteilte Analysen“ zur Verfügung)"
     },
     "SWITCH": {
