@@ -99,6 +99,8 @@
       "ALL": "Alle",
       "CATEGORY_FILTER": "Filtern nach",
       "CONSENT_HEADER": "Art der Datennutzung",
+      "CONSENT_CENTRAL_TOOLTIP": "Bei der zentralen Analyse erhalten Sie von der MII pseudonymisierte Daten zu den Patienten, die zu Ihrem Forschungsprojekt passen. Pseudonyme Daten (die durch die Pseudonyme automatisch einen Bezug zu den Patienten ermöglichen) können aber nur genutzt werden, wenn die Patienten ihre Einwilligung in die Nutzung erteilt haben. Die Forschenden bekommen die pseudonymisierten Daten zum Download zur Verfügung gestellt und können darin ihre Analysen mit großer Flexibilität und Tiefe sowie häufig mit größerem Tempo ausführen, als es bei verteilten Analysen der Fall ist. Die Erhebung der Einwilligungen ist an den Standorten in vollem Gange, dennoch ist erwartbar, dass zu den meisten Anfragen weniger Patienten angezeigt werden als bei verteilten Analysen.",
+      "CONSENT_DISTRIBUTED_TOOLTIP": "Bei verteilten Analysen findet die Analyse auf den Daten an den Standorten statt. Die Forschenden erhalten anonyme Ergebnisdaten. An vielen Standorten kann bei verteilten Analysen auf einer anderen Rechtsgrundlage als der Einwilligung der Patienten gerechnet werden. Dadurch wird häufig eine größere Menge an Patienten gefunden, die zu Ihrer Forschungsfrage passen. Bei manchen Standorten erfolgen Machbarkeitsanfragen auch auf Basis der Patienteneinwilligung. Diese Standorte antworten auf Machbarkeitsanfragen mit vergleichsweise geringen Anzahlen. Möglicherweise stehen an diesen Standorten für verteilte Analysen aber höhere Patientenzahlen zur Verfügung. Die tatsächliche Anzahl wird erst nach dem Antragsprozess deutlich.",
       "CONSENT_CENTRAL": " voraussetzen (Daten können zentral zusammengeführt werden)",
       "CONSENT_CENTRAL_LINK": "„Broad Consent (der MII oder MII-kompatibel)",
       "CONSENT_DISTRIBUTED": "Kein „Broad Consent“ voraussetzen (Daten stehen nur für „Verteilte Analysen“ zur Verfügung)"
@@ -134,7 +136,7 @@
       "SAVE_HEADER": "Abspeichern der aktuellen Suchanfrage",
       "LOAD_HEADER": "Bisherige Suchanfragen",
       "IMPORT_HEADER": "Suchanfragen importieren",
-      "SAVE_WITH_QUERY": "für Machbarkeitsanfrage speichern",
+      "SAVE_WITH_QUERY": "für Datennutzungsantrag speichern (muss vorher ausgeführt worden sein)",
       "SAVE_TEMPLATE": "als Vorlage speichern",
       "DOWNLOAD_SQ": "als Datei speichern",
       "FILENAME": "Dateiname",
@@ -210,6 +212,7 @@
   },
   "RESULT": {
     "PATIENT_NUMBER": "Anzahl der Patienten",
+    "PATIENT_NUMBER_TOOLTIP": "Die Machbarkeitsanfragen liefen Näherungsergebnisse zurück. Die Ergebnisse der Anfrage werden anonymisiert. In dem Prozess werden Abweichungen zum exakten Ergebnis bewusst eingeführt. Daher eignen sich die Ergebnisse lediglich für die erste Bewertung einer Machbarkeit Ihres Projekts, sie sollten aber nicht für die wissenschaftliche Arbeit eingesetzt werden. Das Veröffentlichen der Zahlen ist grundsätzlich nicht gestattet. Die tatsächlich erhältliche Patientenzahl lässt sich erst beziffern, wenn Ihr Projekt über einen Datennutzungsantrag angefragt und durch die zuständigen Use & Access Committees begutachtet wurde.",
     "TOTAL": "Gesamt",
     "SITE": "Standort",
     "MESSAGE429": "Sie haben die maximale Anzahl an Abrufen für die Standortaufschlüsselung erreicht.",

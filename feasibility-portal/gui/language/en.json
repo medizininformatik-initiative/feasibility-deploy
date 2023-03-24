@@ -99,6 +99,8 @@
       "ALL": "All",
       "CATEGORY_FILTER": "Filter by",
       "CONSENT_HEADER": "Type of data use",
+      "CONSENT_CENTRAL_TOOLTIP": "For the central analysis you will recieve patient data pseudonymised by the MII, which fit your research project proposal. Pseudonymised data can only be used, if patients have consented to their use.The researches will recieve the pseudonymised data in form of a Download. They will then be able to conduct their analysis with greater flexibility and depths as well as faster speed compared to decentral analyis. The collection of the consent is currently underway across all sites. However it can be expected, that for most queries less patients will be found for central than de-central analysis.",
+      "CONSENT_DISTRIBUTED_TOOLTIP": "  For distributed analyses the analysis is carried out at the sites. The researchers recieve anonymous result data. For many sites a de-central analysis can be based on a different legal other than a consent. This often leads to larger numbers of patients found, which fulfill the requirements for your research proposal. Some sites also require the consent of a patient for feasibility queries. These sites will answer feasibility queries with comparatively lower number. The actual number of patients available from these site for distributed analyses might be higher. The actual number of available patients will not be clear until after the research proposal has been processed..",
       "CONSENT_CENTRAL": " is assumed (Data consolidated centrally)",
       "CONSENT_CENTRAL_LINK": "„Broad Consent“ (MII or compatible with MII)",
       "CONSENT_DISTRIBUTED": "No „Broad Consent“ requested (data available for „federated analysis“)"
@@ -134,7 +136,7 @@
       "SAVE_HEADER": "Save the current query",
       "LOAD_HEADER": "Previous Queries",
       "IMPORT_HEADER": "Import Queries",
-      "SAVE_WITH_QUERY": "Save for Feasibility Portal",
+      "SAVE_WITH_QUERY": "Save for research proposal (must have been executed)",
       "SAVE_TEMPLATE": "Save as template",
       "DOWNLOAD_SQ": "Save as file",
       "FILENAME": "File name",
@@ -210,10 +212,11 @@
   },
   "RESULT": {
     "PATIENT_NUMBER": "Number of patients",
+    "PATIENT_NUMBER_TOOLTIP": "The feasibility queries return approximate results. The results of the query are anaonymised. In this process, deviations from the exact result are deliberately introduced. Therefore, the results are only suitable for the first evaluation of the feasibility of your project and should not be used for scientific work. The publication of the results is generally not permitted. The actual number of patients can only be quantified once your project has been requested via a data use application and reviewed by the relevant Use & Access Committees.",
     "TOTAL": "Total",
     "SITE": "Site",
     "MESSAGE429": "You reached your maximum request limit.",
-    "DETAILS_TOOLTIP": "The number shows many views of the detailed result view you have already used - will be reset daily"
+    "DETAILS_TOOLTIP": "The number shows how many views of the detailed result view you have already used - will be reset daily"
   },
   "LEGAL": {
     "DISCLOSURE": "Disclosure",
