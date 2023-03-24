@@ -28,7 +28,7 @@
     "extra": {
       "displayvaluefiltericon": false,
       "showoptionspage": false,
-      "optionpageroles": ["FEASIBILITY_USER"]
+      "optionpageroles": ["FEASIBILITY_ADMIN"]
     }
   },
   "options": {
