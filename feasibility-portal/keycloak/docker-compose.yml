@@ -15,8 +15,6 @@ services:
     image: keycloak/keycloak:21.0
     command: ["start", "--import-realm"]
     restart: unless-stopped
-    ports:
-      - "8080:8080"
     environment:
       KC_DB: postgres
       KC_DB_URL: "jdbc:postgresql://auth-db:5432/${FEASIBILITY_KC_DB}"
