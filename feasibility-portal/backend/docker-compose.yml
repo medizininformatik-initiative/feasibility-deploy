@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   feasibility-gui-backend:
-    image: ghcr.io/medizininformatik-initiative/feasibility-backend:3.0.0-rc3
+    image: ghcr.io/medizininformatik-initiative/feasibility-backend:3.0.0-rc4
     ports:
     - ${FEASIBILITY_BACKEND_PORT:-127.0.0.1:8091}:8090
     depends_on:
@@ -17,7 +17,8 @@ services:
       KEYCLOAK_ALLOWED_ROLE: ${FEASIBILITY_BACKEND_KEYCLOAK_ALLOWED_ROLE:-FEASIBILITY_USER}
       KEYCLOAK_POWER_ROLE: ${FEASIBILITY_BACKEND_KEYCLOAK_POWER_ROLE:-FEASIBILITY_POWER_USER}
       KEYCLOAK_ADMIN_ROLE: ${FEASIBILITY_BACKEND_KEYCLOAK_ADMIN_ROLE:-FEASIBILITY_ADMIN}
-      KEYCLOAK_BASE_URL: ${FEASIBILITY_BACKEND_KEYCLOAK_BASE_URL:-http://keycloak:8080}
+      KEYCLOAK_BASE_URL_ISSUER: ${FEASIBILITY_BACKEND_KEYCLOAK_BASE_URL_ISSUER:-http://keycloak:8080}
+      KEYCLOAK_BASE_URL_JWK: ${FEASIBILITY_BACKEND_KEYCLOAK_BASE_URL_JWK:-http://auth:8080}
       KEYCLOAK_REALM: ${FEASIBILITY_BACKEND_KEYCLOAK_REALM:-codex-develop}
       # ----- translation
       QUERY_VALIDATION_ENABLED: ${FEASIBILITY_BACKEND_QUERY_VALIDATION_ENABLED:-true}

@@ -1,6 +1,6 @@
 services:
   feasibility-gui:
-    image: ghcr.io/medizininformatik-initiative/feasibility-gui:0.4.0_rc5
+    image: ghcr.io/medizininformatik-initiative/feasibility-gui:0.4.0_rc6
     ports:
     - "443:8443"
     restart: unless-stopped
