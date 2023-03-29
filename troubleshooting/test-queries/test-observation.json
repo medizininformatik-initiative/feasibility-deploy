@@ -11,8 +11,6 @@
             "display": "Hämoglobin"
           }
         ],
-        "attributeFilters": [],
-        "timeRestriction": {},
         "valueFilter": {
           "selectedConcepts": [],
           "type": "quantity-range",

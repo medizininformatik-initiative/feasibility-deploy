@@ -11,9 +11,7 @@
             "version": "2021",
             "display": "Computergestützte Bilddatenanalyse mit 3D-Auswertung"
           }
-        ],
-        "attributeFilters": [],
-        "timeRestriction": {}
+        ]
       }
     ]
   ]

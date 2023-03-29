@@ -73,35 +73,29 @@ curl --location --request POST 'http://localhost:8084/query/execute' \
 --header 'Content-Type: application/sq+json' \
 --data-raw '{
   "version": "http://to_be_decided.com/draft-1/schema#",
+  "display": "",
   "inclusionCriteria": [
-      [
+    [
+      {
+        "termCodes": [
           {
-              "termCodes": [
-                  {
-                      "code": "gender",
-                      "system": "mii.abide",
-                      "display": "Geschlecht"
-                  }
-              ],
-              "attributeFilters": [
-                  {
-                      "type": "concept",
-                      "selectedConcepts": [
-                          {
-                              "code": "female",
-                              "system": "http://hl7.org/fhir/administrative-gender",
-                              "display": "Female"
-                          }
-                      ],
-                      "attributeCode": {
-                          "code": "gender",
-                          "system": "mii.abide",
-                          "display": "Geschlecht"
-                      }
-                  }
-              ]
+            "code": "263495000",
+            "system": "http://snomed.info/sct",
+            "display": "Geschlecht"
           }
-      ]
+        ],
+        "valueFilter": {
+          "selectedConcepts": [
+            {
+              "code": "female",
+              "system": "http://hl7.org/fhir/administrative-gender",
+              "display": "Female"
+            }
+          ],
+          "type": "concept"
+        }
+      }
+    ]
   ]
 }'
 ```
@@ -109,7 +103,7 @@ curl --location --request POST 'http://localhost:8084/query/execute' \
 should give you an output similar to:
 
 ```
-[[["http://fhir-server:8080/fhir/Patient?gender=female"]],[]]
+{"name":"intersection","operands":[{"name":"union","operands":["[base]/Patient?gender=female"]}]}
 ```
 
 The FHIR search string can then be used with your FHIR Server directly, to recieve the response from the server.
