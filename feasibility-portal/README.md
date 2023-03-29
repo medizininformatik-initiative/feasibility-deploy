@@ -128,57 +128,78 @@ After a few moments you should see the results to your query in the **Number of 
 
 | Env Var                                                | Description                                                                                                                                                                  | Default                                       | Possible values | Component |
 |--------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------|-----------------|-----------|
+|### aktin config ###| | | | |
 | AKTIN_BROKER_LOG_LEVEL                                 | Log level of the Aktin broker                                                                                                                                                | INFO                                          |                 | AKTIN     |
 | AKTIN_ADMIN_PW                                         | password for the web admin of the AKTIN broker Admin is accessible via: http://localhost:AKTIN_BROKER_HOST_AND_PORT/admin/html/index.html                                    | changeme                                      |                 | AKTIN     |
 | AKTIN_BROKER_HOST_AND_PORT                             | Aktin broker Docker port                                                                                                                                                     | 127.0.0.1:8080                                |                 | AKTIN     |
-| FEASIBILITY_BACKEND_DATASOURCE_HOST                    | backend database host                                                                                                                                                        | feasibility-gui-backend-db                    |                 | BACKEND   |
-| FEASIBILITY_BACKEND_DATASOURCE_PORT                    | backend database port                                                                                                                                                        | 5432                                          |                 | BACKEND   |
-| FEASIBILITY_BACKEND_DATASOURCE_USERNAME                | backend database username                                                                                                                                                    | guidbuser                                     |                 | BACKEND   |
-| FEASIBILITY_BACKEND_DATASOURCE_PASSWORD                | backend database password                                                                                                                                                    | guidbpw                                       |                 | BACKEND   |
-| FEASIBILITY_BACKEND_KEYCLOAK_ENABLED                   | whether or not keycloak is enabled for the backend                                                                                                                           | true                                          |                 | BACKEND   |
-| KEYCLOAK_ALLOWED_ROLE                                  | The keycloak role required to access the backend                                                                                                                             | FEASIBILITY_USER                              |                 | BACKEND   |
-|FEASIBILITY_BACKEND_KEYCLOAK_POWER_ROLE|The keycloak role required to access the backend as Power user - Power users cannot be blacklisted|FEASIBILITY_POWER_USER||BACKEND|
-|FEASIBILITY_BACKEND_KEYCLOAK_ADMIN_ROLE|The keycloak role required to access the backend as admin|FEASIBILITY_ADMIN||BACKEND|
-| FEASIBILITY_BACKEND_KEYCLOAK_BASE_URL                  | the url the backend uses to access keycloak                                                                                                                                  | http://keycloak:8080                          |                 | BACKEND   |
-| FEASIBILITY_BACKEND_KEYCLOAK_REALM                     | the realm the backend uses within keyloak                                                                                                                                    | codex-develop                                 |                 | BACKEND   |
-| FEASIBILITY_BACKEND_KEYCLOAK_CLIENT_ID                 | the id of the keyloak client for the backend                                                                                                                                 | feasibility-gui                               |                 | BACKEND   |
-| FEASIBILITY_BACKEND_CQL_TRANSLATE_ENABLED              | enables CQL translation                                                                                                                                                      | true                                          |                 | BACKEND   |
-| FEASIBILITY_BACKEND_FHIR_TRANSLATE_ENABLED             | enables FHIR Search translation. This is only required if a site has their own FLARE component it wishes to use                                                              | false                                         |                 | BACKEND   |
-| FEASIBILITY_BACKEND_API_BASE_URL                       | the api url of the backend. If using an nginx this url should be the url of the nginx, which forwards to the backend                                                         | https://localhost/api/                        |                 | BACKEND   |
-| FEASIBILITY_BACKEND_DIRECT_ENABLED                     | enables the direct broker. This connects the backend directly to flare and is only meant to be used for a local installation                                                 | false                                         |                 | BACKEND   |
-| FEASIBILITY_BACKEND_FLARE_WEBSERVICE_BASE_URL          | the url of the flare component the backend should connect to when using the direct broker                                                                                    | http://flare:8080                             |                 | BACKEND   |
-| FEASIBILITY_BACKEND_ALLOWED_ORIGINS                    | base-url-of-your-local-feasibility-portal                                                                                                                                    | https://localhost                             |                 | BACKEND   |
-| FEASIBILITY_BACKEND_AKTIN_ENABLED                      | enables the aktin broker                                                                                                                                                     | false                                         |                 | BACKEND   |
-| FEASIBILITY_BACKEND_AKTIN_BROKER_BASE_URL              | aktin broker base url                                                                                                                                                        | http://aktin-broker:8080/broker/              |                 | BACKEND   |
-| FEASIBILITY_BACKEND_AKTIN_BROKER_API_KEY               | aktin broker admin api key. The backend needs admin access as it requires permission to post new queries to the broker                                                       | xxxApiKeyAdmin123                             |                 | BACKEND   |
-| FEASIBILITY_BACKEND_DSF_ENABLED                        | enables the dsf                                                                                                                                                              | false                                         |                 | BACKEND   |
-| FEASIBILITY_BACKEND_DSF_CACERT                         |                                                                                                                                                                              | /opt/codex-feasibility-security/ca.pem        |                 | BACKEND   |
-| FEASIBILITY_BACKEND_DSF_DSF_SECURITY_KEYSTORE_P12FILE  |                                                                                                                                                                              | /opt/codex-feasibility-security/test-user.p12 |                 | BACKEND   |
-| FEASIBILITY_BACKEND_DSF_SECURITY_KEYSTORE_PASSWORD     |                                                                                                                                                                              | password                                      |                 | BACKEND   |
-| FEASIBILITY_BACKEND_DSF_WEBSERVICE_BASE_URL            |                                                                                                                                                                              | https://dsf-zars-fhir-proxy/fhir              |                 | BACKEND   |
-| FEASIBILITY_BACKEND_DSF_WEBSOCKET_URL                  |                                                                                                                                                                              | wss://dsf-zars-fhir-proxy:443/fhir/ws         |                 | BACKEND   |
-| FEASIBILITY_BACKEND_DSF_ORGANIZATION_ID                |                                                                                                                                                                              | Test_ZARS                                     |                 | BACKEND   |
-| FEASIBILITY_BACKEND_UI_PROFILES_PATH                   | path on host where the backend searches for the ui profiles                                                                                                                  | ../ontology/ui_profiles                       |                 | BACKEND   |
-| FEASIBILITY_BACKEND_CONCEPT_TREE_PATH                  | path on host where the backend looks for the code tree file                                                                                                                  | ../ontology/codex-code-tree.json              |                 | BACKEND   |
-| FEASIBILITY_BACKEND_TERM_CODE_MAPPING_PATH             | path on host where the backend looks for the mapping file                                                                                                                    | ../ontology/codex-term-code-mapping.json      |                 | BACKEND   |
-| FEASIBILITY_BACKEND_CERTS_PATH                         |                                                                                                                                                                              | ../dsf-broker/certs                           |                 | BACKEND   |
-|FEASIBILITY_BACKEND_PRIVACY_QUOTA_SOFT_CREATE_AMOUNT|Set how many queries a user can send in a soft intervall minutes time|3||BACKEND|
-|FEASIBILITY_BACKEND_PRIVACY_QUOTA_SOFT_CREATE_INTERVALMINUTES|Set how many minutes time withini which user can sen soft create amount|1||BACKEND|
-|FEASIBILITY_BACKEND_PRIVACY_QUOTA_HARD_CREATE_AMOUNT|Set how many queries a user can send in a hard intervall minutes time - if exceeed user will be blacklisted|50||BACKEND|
-|FEASIBILITY_BACKEND_PRIVACY_QUOTA_HARD_CREATE_INTERVALMINUTES|Set how many minutes time withini which user can sen hard create amount - if exceeed user will be blacklisted|10080||BACKEND|
-|FEASIBILITY_BACKEND_PRIVACY_QUOTA_READ_SUMMARY_POLLINGINTERVALSECONDS|Set polling interval for summary results - sum of results accross all connected sites|10||BACKEND|
-|FEASIBILITY_BACKEND_PRIVACY_QUOTA_READ_DETAILED_OBFUSCATED_POLLINGINTERVALSECONDS|Set polling interval for detailed obfuscated results - detailed list of results per site - site name obfuscated|10||BACKEND|
-|FEASIBILITY_BACKEND_PRIVACY_QUOTA_READ_DETAILEDOBFUSCATED_AMOUNT|Set how often a user can view detailed obfuscated query results in DETAILEDOBFUSCATED_INTERVALSECONDS seconds|3||BACKEND|
-|FEASIBILITY_BACKEND_PRIVACY_QUOTA_READ_DETAILEDOBFUSCATED_INTERVALSECONDS|Set how many seconds time within which user can view detailed results DETAILEDOBFUSCATED_AMOUNT often|7200||BACKEND|
-|FEASIBILITY_BACKEND_PRIVACY_THRESHOLD_RESULTS|Set results size which has to be exceeded for results to be shown|20||BACKEND|
-|FEASIBILITY_BACKEND_PRIVACY_THRESHOLD_SITES|Set number of sites which have to be exceeded for results to be shown|3||BACKEND|
-| FEASIBILITY_KEYCLOAK_DB                                | keycloak database host                                                                                                                                                       | keycloakdb                                    |                 | KEYCLOAK  |
-| FEASIBILITY_KEYCLOAK_DB_USER                           | keycloak database username                                                                                                                                                   | keycloakdbuser                                |                 | KEYCLOAK  |
-| FEASIBILITY_KEYCLOAK_DB_PW                             | keycloak database password                                                                                                                                                   | keycloakdbpw                                  |                 | KEYCLOAK  |
-| FEASIBILITY_KEYCLOAK_ADMIN_USER                        | keycloak admin username                                                                                                                                                      | admin                                         |                 | KEYCLOAK  |
-| FEASIBILITY_KEYCLOAK_ADMIN_PW                          | keycloak admin password                                                                                                                                                      | adminpw                                       |                 | KEYCLOAK  |
-| FEASIBILITY_KEYCLOAK_PROXY_ADDR_FORWARDING             | enables proxy forwarding in keyloak, which is required if a proxy like nginx is used                                                                                         | true                                          |                 | KEYCLOAK  |
-| FEASIBILITY_KEYCLOAK_BASE_URL                          | the base url used by keyloak. This has to be configured to the nginx url which forwards to keycloak if an nginx is used                                                      | https://localhost/auth                        |                 | KEYCLOAK  |
+|### backend db-config ###| | | | |
+| FEASIBILITY_BACKEND_DATASOURCE_HOST | backend database host | feasibility-gui-backend-db | | BACKEND |
+| FEASIBILITY_BACKEND_DATASOURCE_PORT | backend database port |5432| | BACKEND |
+| FEASIBILITY_BACKEND_DATASOURCE_USERNAME | backend database username | guidbuser | | BACKEND |
+| FEASIBILITY_BACKEND_DATASOURCE_PASSWORD | backend database password | guidbpw | | BACKEND |
+|### backend keycloak ###||| | BACKEND |
+| FEASIBILITY_BACKEND_KEYCLOAK_ENABLED | whether or not keycloak is enabled for the backend | true | | BACKEND |
+|FEASIBILITY_BACKEND_KEYCLOAK_ALLOWED_ROLE| The keycloak role required to access the backend | FEASIBILITY_USER | | BACKEND |
+|FEASIBILITY_BACKEND_KEYCLOAK_POWER_ROLE|The keycloak role required to access the backend as Power user - Power users cannot be blacklisted|FEASIBILITY_POWER_USER| | BACKEND |
+|FEASIBILITY_BACKEND_KEYCLOAK_ADMIN_ROLE|The keycloak role required to access the backend as admin|FEASIBILITY_ADMIN| | BACKEND |
+"|FEASIBILITY_BACKEND_KEYCLOAK_BASE_URL_ISSUER|the url the backend uses to access keycloak to verify the issuer|	http://keycloak:8080| | BACKEND |"
+"|FEASIBILITY_BACKEND_KEYCLOAK_BASE_URL_JWK|the url the backend uses to access keycloak for tokens|	http://keycloak:8080| | BACKEND |"
+| FEASIBILITY_BACKEND_KEYCLOAK_REALM | the realm the backend uses within keyloak | codex-develop | | BACKEND |
+|### backend direct broker ###| | | | BACKEND |
+|FEASIBILITY_BACKEND_BROKER_CLIENT_DIRECT_ENABLED| enables the direct broker. This connects the backend directly to flare and is only meant to be used for a local installation | false | | BACKEND |
+|FEASIBILITY_BACKEND_BROKER_CLIENT_DIRECT_USE_CQL|tells the direct broker to use cql instead of flare for query execution | false | | BACKEND |
+|FEASIBILITY_BACKEND_BROKER_CLIENT_OBFUSCATE_RESULT_COUNT|obfuscate results from the local broker| false | | BACKEND |
+|FEASIBILITY_BACKEND_FLARE_WEBSERVICE_BASE_URL| the url of the flare component the backend should connect to when using the direct broker |http://flare:8080| | BACKEND |
+|FEASIBILITY_BACKEND_CQL_SERVER_BASE_URL| the url of the fhir server the backend should connect to when using the direct broker |http://fhir-server:8080/fhir| | BACKEND |
+|### backend Aktin broker ###| | | | BACKEND |
+| FEASIBILITY_BACKEND_AKTIN_ENABLED | enables the aktin broker | false | | BACKEND |
+| FEASIBILITY_BACKEND_AKTIN_BROKER_BASE_URL | aktin broker base url | http://aktin-broker:8080/broker/ | | BACKEND |
+| FEASIBILITY_BACKEND_AKTIN_BROKER_API_KEY | aktin broker admin api key. The backend needs admin access as it requires permission to post new queries to the broker | xxxApiKeyAdmin123 | | BACKEND |
+|### backend DSF broker ###| | | | BACKEND |
+| FEASIBILITY_BACKEND_DSF_ENABLED | enables the dsf | false | | BACKEND |
+| FEASIBILITY_BACKEND_DSF_CACERT |  | /opt/codex-feasibility-security/ca.pem | | BACKEND |
+| FEASIBILITY_BACKEND_DSF_DSF_SECURITY_KEYSTORE_P12FILE |  | /opt/codex-feasibility-security/test-user.p12 | | BACKEND |
+| FEASIBILITY_BACKEND_DSF_SECURITY_KEYSTORE_PASSWORD |  | password | | BACKEND |
+| FEASIBILITY_BACKEND_DSF_WEBSERVICE_BASE_URL |  | https://dsf-zars-fhir-proxy/fhir | | BACKEND |
+| FEASIBILITY_BACKEND_DSF_WEBSOCKET_URL |  | wss://dsf-zars-fhir-proxy:443/fhir/ws | | BACKEND |
+| FEASIBILITY_BACKEND_DSF_ORGANIZATION_ID |  | Test_ZARS | | BACKEND |
+|### backend privacy ###| | | | BACKEND |
+|FEASIBILITY_BACKEND_PRIVACY_QUOTA_SOFT_CREATE_AMOUNT|Set how many queries a user can send in a soft intervall minutes time|3| | BACKEND |
+|FEASIBILITY_BACKEND_PRIVACY_QUOTA_SOFT_CREATE_INTERVALMINUTES|Set how many minutes time withini which user can sen soft create amount|1| | BACKEND |
+|FEASIBILITY_BACKEND_PRIVACY_QUOTA_HARD_CREATE_AMOUNT|Set how many queries a user can send in a hard intervall minutes time - if exceeed user will be blacklisted|50| | BACKEND |
+|FEASIBILITY_BACKEND_PRIVACY_QUOTA_HARD_CREATE_INTERVALMINUTES|Set how many minutes time withini which user can sen hard create amount - if exceeed user will be blacklisted|10080| | BACKEND |
+|FEASIBILITY_BACKEND_PRIVACY_QUOTA_READ_SUMMARY_POLLINGINTERVALSECONDS|Set polling interval for summary results - sum of results accross all connected sites|10| | BACKEND |
+|FEASIBILITY_BACKEND_PRIVACY_QUOTA_READ_DETAILED_OBFUSCATED_POLLINGINTERVALSECONDS|Set polling interval for detailed obfuscated results - detailed list of results per site - site name obfuscated|10| | BACKEND |
+|FEASIBILITY_BACKEND_PRIVACY_QUOTA_READ_DETAILEDOBFUSCATED_AMOUNT|Set how often a user can view detailed obfuscated query results in DETAILEDOBFUSCATED_INTERVALSECONDS seconds|3| | BACKEND |
+|FEASIBILITY_BACKEND_PRIVACY_QUOTA_READ_DETAILEDOBFUSCATED_INTERVALSECONDS|Set how many seconds time within which user can view detailed results DETAILEDOBFUSCATED_AMOUNT often|7200| | BACKEND |
+|FEASIBILITY_BACKEND_PRIVACY_THRESHOLD_RESULTS|Set results size which has to be exceeded for results to be shown|20| | BACKEND |
+|FEASIBILITY_BACKEND_PRIVACY_THRESHOLD_SITES|Set number of sites which have to be exceeded for results to be shown|3| | BACKEND |
+|FEASIBILITY_BACKEND_CERTS_PATH |path to certificates| ../dsf-broker/certs | | BACKEND |
+|FEASIBILITY_BACKEND_QUERYRESULT_EXPIRY_MINUTES|The time ist takes for query results to expire and be deleted|5| | BACKEND |
+|### backend logging ###| | | | BACKEND |
+|FEASIBILITY_BACKEND_LOG_LEVEL_SQL|log level of the backend for hibernate|info| | BACKEND |
+|FEASIBILITY_BACKEND_LOG_LEVEL|log level of the backend|info| | BACKEND |
+|### backend app ###| | | | BACKEND |
+| FEASIBILITY_BACKEND_CQL_TRANSLATE_ENABLED | enables CQL translation | true | | BACKEND |
+| FEASIBILITY_BACKEND_FHIR_TRANSLATE_ENABLED | enables FHIR Search translation. This is only required if a site has their own FLARE component it wishes to use | false | | BACKEND |
+| FEASIBILITY_BACKEND_API_BASE_URL | the api url of the backend. If using an nginx this url should be the url of the nginx, which forwards to the backend | https://localhost/api/ | | BACKEND |
+| FEASIBILITY_BACKEND_ALLOWED_ORIGINS | base-url-of-your-local-feasibility-portal | https://localhost | | BACKEND |
+| FEASIBILITY_BACKEND_UI_PROFILES_PATH | path on host where the backend searches for the ui profiles | ../ontology/ui_profiles | | BACKEND |
+| FEASIBILITY_BACKEND_CONCEPT_TREE_PATH | path on host where the backend looks for the code tree file | ../ontology/codex-code-tree.json | | BACKEND |
+| FEASIBILITY_BACKEND_TERM_CODE_MAPPING_PATH | path on host where the backend looks for the mapping file | ../ontology/codex-term-code-mapping.json | | BACKEND |
+|FEASIBILITY_BACKEND_MIGRATION_PATH| path on host where the backend looks for migration files |../ontology/migration/R_Load_latest_ui_profile.sql| | BACKEND |
+|### keycloak ###|||||
+|FEASIBILITY_KC_DB|keycloak db name |keycloakdb|| KEYCLOAK |
+|FEASIBILITY_KC_DB_USER| keycloak database username |keycloakdbuser|| KEYCLOAK |
+|FEASIBILITY_KC_DB_PW| keycloak database password |keycloakdbpw|| KEYCLOAK |
+|FEASIBILITY_KC_ADMIN_USER| keycloak admin username |admin|| KEYCLOAK |
+|FEASIBILITY_KC_ADMIN_PW| keycloak admin password |adminpw|| KEYCLOAK |
+|FEASIBILITY_KC_HTTP_RELATIVE_PATH|the relative path keycloak is running under|/auth|| KEYCLOAK |
+|FEASIBILITY_KC_HOSTNAME_URL|the url at which keycloak is exposed|https://localhost/auth|| KEYCLOAK |
+|FEASIBILITY_KC_HOSTNAME_ADMIN_URL|the url of the admin console|https://localhost/auth/keycloakadmin|| KEYCLOAK |
+|FEASIBILITY_KC_LOG_LEVEL|log level|info|| KEYCLOAK |
+|FEASIBILITY_KC_PROXY|type of proxy in front of keycloak to use|edge|| KEYCLOAK |
+|### additional dsf configs ###|||||
 | FEASIBILITY_DSF_BROKER_PROCESS_ORGANIZATION_IDENTIFIER | Identifier of this organization.                                                                                                                                             | Test_ZARS                                     | String          | DSF       |
 | FEASIBILITY_DSF_BROKER_PROCESS_FHIR_SERVER_BASE_URL    | Base URL to a FHIR server or proxy for feasibility evaluation. This can also be the base URL of a reverse proxy if used. Only required if evaluation strategy is set to cql. | https://dsf-zars-fhir-proxy/fhir              | URL             | DSF       |
 

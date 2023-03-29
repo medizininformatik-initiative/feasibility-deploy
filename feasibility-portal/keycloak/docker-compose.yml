@@ -32,6 +32,5 @@ services:
     depends_on:
       - auth-db
 
-
 volumes:
   feasibility-auth-db:

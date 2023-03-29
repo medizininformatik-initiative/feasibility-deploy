@@ -9,9 +9,8 @@ services:
       FLARE_FHIR_SERVER: ${FLARE_FHIR_SERVER_URL:-http://fhir-server:8080/fhir/}
       FLARE_FHIR_USER: ${FLARE_FHIR_USER:-}
       FLARE_FHIR_PASSWORD: ${FLARE_FHIR_PW:-}
-      FLARE_FHIR_MAXCONNECTIONS: ${FLARE_FHIR_MAXCONNECTIONS:-32}
+      FLARE_FHIR_MAX_CONNECTIONS: ${FLARE_FHIR_MAX_CONNECTIONS:-32}
       FLARE_FHIR_PAGE_COUNT: ${FLARE_FHIR_PAGE_COUNT:-500}
-      LOG_LEVEL: ${FLARE_LOG_LEVEL:-warn}
       FLARE_MAPPING_MAPPING_FILE: ${FLARE_ONTOLOGY_FILES_FOLDER:-/opt/flare/ontology}/codex-term-code-mapping.json
       FLARE_MAPPING_CONCEPT_TREE_FILE: ${FLARE_ONTOLOGY_FILES_FOLDER:-/opt/flare/ontology}/codex-code-tree.json
       FLARE_CACHE_MEM_SIZE_MB: ${FLARE_CACHE_MEM_SIZE_MB:-1024}
@@ -21,6 +20,7 @@ services:
       FLARE_CACHE_DISK_THREADS: ${FLARE_CACHE_DISK_THREADS:-4}
       FLARE_CACHE_DISK_EXPIRE: ${FLARE_CACHE_DISK_EXPIRE:-P7D}
       JAVA_TOOL_OPTIONS: ${FLARE_JAVA_TOOL_OPTIONS:--Xmx4g}
+      LOG_LEVEL: ${FLARE_LOG_LEVEL:-info}
     restart: unless-stopped
     volumes:
       - ${FLARE_LOCAL_CONCEPT_TREE_PATH:-../ontology/codex-code-tree.json}:${FLARE_ONTOLOGY_FILES_FOLDER:-/opt/flare/ontology}/codex-code-tree.json

@@ -88,66 +88,67 @@ A JSON schema of the ui ontology tree can be found here: <https://github.com/num
 
 <br/>
 
-### Codex Code Tree
+### Code Tree
 
 This file contains a code tree, which allows the query translators to resolve (find) all the children for a "code" (criterion) inside a vocabulary. This then allows the final search query to search not only for a particular criterion, but also search for all the respective children.
 
 Following the children element of the code tree would for example resolve I09 (<https://www.icd-code.de/suche/icd/code/I09.-.html?sp=SI09>) to I09,I09.0,I09.1,I09.2,I09.8,I09.9
 
-A JSON schema of the Codex Code Tree can be found here: <https://github.com/num-codex/codex-gecco-to-ui-profiles/blob/main/schema/codex-code-tree-schema.json>
+A JSON schema of the code tree can be found here: <https://github.com/medizininformatik-initiative/feasibility-structured-query/blob/structured-query-v2/structured-query/example-json/2021_10_18_StructuredQueryV2Example.json>
 
 <details>
-<summary> Codex Code Tree - Example Excerpt </summary>
+<summary> Code Tree - Example Excerpt </summary>
 
 ```json
 {
-  "children": [
+"children": [
     {
-      "children": [],
-      "termCode": {
-        "code": "I09.0",
-        "display": "Rheumatische Myokarditis",
-        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
-      }
+        "termCode": {
+            "code": "I09.2",
+            "display": "Chronische rheumatische Perikarditis",
+            "system": "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+            "version": "2023"
+        }
     },
     {
-      "children": [],
-      "termCode": {
-        "code": "I09.1",
-        "display": "Rheumatische Krankheiten des Endokards, Herzklappe nicht n\u00e4her bezeichnet",
-        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
-      }
+        "termCode": {
+            "code": "I09.9",
+            "display": "Rheumatische Herzkrankheit, nicht n\u00e4her bezeichnet",
+            "system": "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+            "version": "2023"
+        }
     },
     {
-      "children": [],
-      "termCode": {
-        "code": "I09.2",
-        "display": "Chronische rheumatische Perikarditis",
-        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
-      }
+        "termCode": {
+            "code": "I09.1",
+            "display": "Rheumatische Krankheiten des Endokards, Herzklappe nicht n\u00e4her bezeichnet",
+            "system": "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+            "version": "2023"
+        }
     },
     {
-      "children": [],
-      "termCode": {
-        "code": "I09.8",
-        "display": "Sonstige n\u00e4her bezeichnete rheumatische Herzkrankheiten",
-        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
-      }
+        "termCode": {
+            "code": "I09.0",
+            "display": "Rheumatische Myokarditis",
+            "system": "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+            "version": "2023"
+        }
     },
     {
-      "children": [],
-      "termCode": {
-        "code": "I09.9",
-        "display": "Rheumatische Herzkrankheit, nicht n\u00e4her bezeichnet",
-        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
-      }
+        "termCode": {
+            "code": "I09.8",
+            "display": "Sonstige n\u00e4her bezeichnete rheumatische Herzkrankheiten",
+            "system": "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+            "version": "2023"
+        }
     }
-  ],
-  "termCode": {
+],
+"termCode": {
     "code": "I09",
     "display": "Sonstige rheumatische Herzkrankheiten",
-    "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm"
-  }
+    "system": "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+    "version": "2023"
+}
 }
 ```
 </details>
@@ -156,7 +157,7 @@ A JSON schema of the Codex Code Tree can be found here: <https://github.com/num-
 
 ### Term Code Mapping (FHIR)
 
-This file contains the mappings from the codex criteria to FHIR resources. It is used by the query translators in combination with the StructuredQuery input to convert each criterion into a search string.
+This file contains the mappings from the criteria to FHIR resources. It is used by the query translators in combination with the StructuredQuery input to convert each criterion into a search string.
 Each criterion is identified using the "code" and "system" attributes of the "key" attribute of each json criterion mapping object.
 Each object contains the following elements:
 
@@ -166,6 +167,9 @@ Each object contains the following elements:
 | fixedCriteria | Contains the definition of search parameters that always need to be set during a search | - |
 | termCodeSearchParameter | Contains the search parameter which to use in order to find a criterion by its vocabulary code and system | code |
 | valueSearchParameter | Contains the search parameter which to use in order to apply the allowed value filter of a criterion | value-quantity |
+| valueFhirPath | Contains path to the element which to apply the value filter to for CQL translation of a criterion | value |
+| timeRestrictionParameter | Contains the search parameter which to use in order to apply time restriction of a criterion | date |
+| timeRestrictionPath | Contains path to the element which to apply the time restriction to for CQL translation of a criterion | value |
 
 A JSON schema of the Codex Code Tree can be found here: <https://github.com/num-codex/codex-gecco-to-ui-profiles/blob/main/schema/term-code-mapping-schema.json>
 
@@ -174,17 +178,19 @@ A JSON schema of the Codex Code Tree can be found here: <https://github.com/num-
 <summary> Term Code Mapping - Excerpt Laboratory Value</summary>
 
 ```json
-{
-    "fhirResourceType": "Observation",
-    "fixedCriteria": [],
-    "key": {
-      "code": "76769-9",
-      "display": "Hemoglobin [Mass/volume] in Venous blood by Oximetry",
-      "system": "http://loinc.org"
-    },
-    "termCodeSearchParameter": "code",
-    "valueSearchParameter": "value-quantity"
-  }
+{{
+        "fhirResourceType": "Observation",
+        "key": {
+            "code": "76769-9",
+            "display": "Hemoglobin [Mass/volume] in Venous blood by Oximetry",
+            "system": "http://loinc.org"
+        },
+        "termCodeSearchParameter": "code",
+        "timeRestrictionParameter": "date",
+        "timeRestrictionPath": "effective",
+        "valueFhirPath": "value",
+        "valueSearchParameter": "value-quantity"
+    }
 ```
 </details>
 
@@ -193,28 +199,17 @@ A JSON schema of the Codex Code Tree can be found here: <https://github.com/num-
 
 ```json
 {
-    "fhirResourceType": "Condition",
-    "fixedCriteria": [
-      {
-        "fhirPath": "verificationStatus",
-        "searchParameter": "verification-status",
-        "type": "coding",
-        "value": [
-          {
-            "code": "confirmed",
-            "display": "confirmed",
-            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status"
-          }
-        ]
-      }
-    ],
-    "key": {
-      "code": "J98.4",
-      "display": "Sonstige Ver\u00e4nderungen der Lunge",
-      "system": "urn:oid:1.2.276.0.76.5.409"
-    },
-    "termCodeSearchParameter": "code"
-  }
+        "fhirResourceType": "Condition",
+        "key": {
+            "code": "J98.4",
+            "display": "Sonstige Ver\u00e4nderungen der Lunge",
+            "system": "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+            "version": "2023"
+        },
+        "termCodeSearchParameter": "code",
+        "timeRestrictionParameter": "recorded-date",
+        "timeRestrictionPath": "onset"
+    }
 ```
 </details>
 

@@ -9,10 +9,10 @@
     "baseUrl": "https://localhost/api/v2"
   },
   "auth": {
-    "baseUrl": "https://localhost",
+    "baseUrl": "https://localhost/auth",
     "realm": "feasibility",
-    "clientId": "feasibility-gui",
-    "roles": ["FEASIBILITY_USER"]
+    "clientId": "feasibility-webapp",
+    "roles": ["FeasibilityUser"]
   },
   "legal": {
     "version": "0.9.0",
@@ -27,13 +27,13 @@
     },
     "extra": {
       "displayvaluefiltericon": false,
-      "showoptionspage": false,
-      "optionpageroles": ["FEASIBILITY_ADMIN"]
+      "showoptionspage": true,
+      "optionpageroles": ["FeasibilityAdmin"]
     }
   },
   "options": {
-    "pollingtimeinseconds": 10,
-    "pollingintervallinseconds": 1,
+    "pollingtimeinseconds": 60,
+    "pollingintervallinseconds": 10,
     "lowerboundarypatientresult": 0,
     "lowerboundarylocationresult": 0
   },
