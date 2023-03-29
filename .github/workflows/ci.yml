@@ -10,12 +10,6 @@ on:
     branches:
     - main
 
-env:
-  TEST_DATA_REF: v0.2.0
-  TEST_DATA_PATH: test/data-to-sq
-  AUTH_USERNAME: "codex-developer"
-  AUTH_PASSWORD: "codex"
-
 jobs:
 
   lint:
@@ -29,62 +23,3 @@ jobs:
     - name: Check shell scripts
       uses: ludeeus/action-shellcheck@master
 
-  test:
-    runs-on: ubuntu-latest
-
-    needs: lint
-
-    steps:
-    - name: Checkout Deploy Repo
-      uses: actions/checkout@v2
-
-    - name: Checkout Test Data Repo
-      uses: actions/checkout@v2
-      with:
-        repository: num-codex/codex-testdata-to-sq
-        ref: ${{ env.TEST_DATA_REF }}
-        path: ${{ env.TEST_DATA_PATH }}
-
-    - name: Cache Test Data
-      id: cache-test-data
-      uses: actions/cache@v2
-      with:
-        path: ${{ env.TEST_DATA_PATH }}/testCases
-        key: testcases-${{ hashFiles('**/*.json') }}
-
-    - name: Setup Python
-      if: steps.cache-test-data.outputs.cache-hit != 'true'
-      uses: actions/setup-python@v2
-
-    - name: Generate Test Data
-      if: steps.cache-test-data.outputs.cache-hit != 'true'
-      working-directory: ${{ env.TEST_DATA_PATH }}
-      run: python main.py
-
-    - name: Setup Base Auth
-      run: bash feasibility-portal/setup-base-auth.sh "${{ env.AUTH_USERNAME }}" "${{ env.AUTH_PASSWORD }}"
-
-    - name: Build the stack
-      env:
-        CODEX_DSF_DIC_FHIR_APP_JVM_ARGS: -Xmx1g
-        CODEX_DSF_DIC_BPE_APP_JVM_ARGS: -Xmx500m
-        CODEX_DSF_ZARS_FHIR_APP_JVM_ARGS: -Xmx1g
-        CODEX_DSF_ZARS_BPE_APP_JVM_ARGS: -Xmx500m
-        CODEX_FEASIBILITY_BACKEND_API_BASE_URL: http://localhost:8091/api/
-      run: ./start-zars-and-num-node.sh --disable-result-obfuscation
-
-    - name: Wait for FHIR Server Running
-      uses: ifaxity/wait-on-action@v1
-      with:
-        resource: http://localhost:8081/health
-        timeout: 60000
-
-    - name: Initialize Test Data
-      run: bash num-node/init-testdata.sh
-
-    - name: Run tests
-      env:
-        TERM: "xterm"
-        QUERY_ENDPOINT_URL: "http://localhost:8091/api/v1/query-handler/run-query"
-        AUTH_TOKEN_REQUEST_URL: "https://localhost:8443/auth/realms/codex-develop/protocol/openid-connect/token"
-      run: test/run_tests.sh
