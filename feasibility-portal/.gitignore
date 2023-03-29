@@ -1,0 +1,8 @@
+auth/*.pem
+
+dsf-broker/bpe/app/last_event/time.file
+keycloak/data
+
+/ontology/*.json
+/ontology/ui_profiles/*.json
+/ontology/migration/*.sql

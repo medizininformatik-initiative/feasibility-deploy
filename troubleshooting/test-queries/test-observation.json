@@ -1,0 +1,27 @@
+{
+  "version": "http://to_be_decided.com/draft-1/schema#",
+  "display": "",
+  "inclusionCriteria": [
+    [
+      {
+        "termCodes": [
+          {
+            "code": "718-7",
+            "system": "http://loinc.org",
+            "display": "Hämoglobin"
+          }
+        ],
+        "valueFilter": {
+          "selectedConcepts": [],
+          "type": "quantity-range",
+          "unit": {
+            "code": "g/dL",
+            "display": "g/dL"
+          },
+          "minValue": 0,
+          "maxValue": 20
+        }
+      }
+    ]
+  ]
+}

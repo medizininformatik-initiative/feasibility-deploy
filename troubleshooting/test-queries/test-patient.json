@@ -1,0 +1,27 @@
+{
+  "version": "http://to_be_decided.com/draft-1/schema#",
+  "display": "",
+  "inclusionCriteria": [
+    [
+      {
+        "termCodes": [
+          {
+            "code": "263495000",
+            "system": "http://snomed.info/sct",
+            "display": "Geschlecht"
+          }
+        ],
+        "valueFilter": {
+          "selectedConcepts": [
+            {
+              "code": "female",
+              "system": "http://hl7.org/fhir/administrative-gender",
+              "display": "Female"
+            }
+          ],
+          "type": "concept"
+        }
+      }
+    ]
+  ]
+}

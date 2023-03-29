@@ -1,0 +1,50 @@
+{
+  "env": {
+    "name": "dev-test"
+  },
+  "api": {
+    "baseUrl": "/api"
+  },
+  "uiBackendApi": {
+    "baseUrl": "https://localhost/api/v2"
+  },
+  "auth": {
+    "baseUrl": "https://localhost/auth",
+    "realm": "feasibility",
+    "clientId": "feasibility-webapp",
+    "roles": ["FeasibilityUser"]
+  },
+  "legal": {
+    "version": "0.9.0",
+    "copyrightOwner": "MII Team"
+  },
+  "features": {
+    "v2": {
+      "multiplevaluedefinitions": true,
+      "multiplegroups": false,
+      "dependentgroups": false,
+      "timerestriction": true
+    },
+    "extra": {
+      "displayvaluefiltericon": false,
+      "showoptionspage": true,
+      "optionpageroles": ["FeasibilityAdmin"]
+    }
+  },
+  "options": {
+    "pollingtimeinseconds": 60,
+    "pollingintervallinseconds": 10,
+    "lowerboundarypatientresult": 0,
+    "lowerboundarylocationresult": 0
+  },
+  "mock": {
+    "terminology": false,
+    "query": false,
+    "result": false,
+    "loadnsave": false
+  },
+  "stylesheet": "FDPGTheme",
+  "fhirport": "8082",
+  "dataset": "codex",
+  "queryVersion": "v2"
+}

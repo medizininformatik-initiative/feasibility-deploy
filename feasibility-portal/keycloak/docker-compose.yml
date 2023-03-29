@@ -1,0 +1,36 @@
+version: "3.7"
+
+services:
+  auth-db:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${FEASIBILITY_KC_DB:-keycloakdb}
+      POSTGRES_USER: ${FEASIBILITY_KC_DB_USER:-keycloakdbuser}
+      POSTGRES_PASSWORD: ${FEASIBILITY_KC_DB_PW:-keycloakdbpw}
+    volumes:
+      - "feasibility-auth-db:/var/lib/postgresql/data"
+
+  auth:
+    image: keycloak/keycloak:21.0
+    command: ["start", "--import-realm"]
+    restart: unless-stopped
+    environment:
+      KC_DB: postgres
+      KC_DB_URL: "jdbc:postgresql://auth-db:5432/${FEASIBILITY_KC_DB}"
+      KC_DB_USERNAME: ${FEASIBILITY_KC_DB_USER}
+      KC_DB_PASSWORD: ${FEASIBILITY_KC_DB_PW}
+      KEYCLOAK_ADMIN: ${FEASIBILITY_KC_ADMIN_USER}
+      KEYCLOAK_ADMIN_PASSWORD: ${FEASIBILITY_KC_ADMIN_PW}
+      KC_HTTP_RELATIVE_PATH:  ${FEASIBILITY_KC_HTTP_RELATIVE_PATH:-/auth} 
+      KC_HOSTNAME_URL: ${FEASIBILITY_KC_HOSTNAME_URL:-https://localhost/auth} 
+      KC_HOSTNAME_ADMIN_URL: ${FEASIBILITY_KC_HOSTNAME_ADMIN_URL:-https://localhost/auth/keycloakadmin}
+      KC_LOG_LEVEL: ${FEASIBILITY_KC_LOG_LEVEL:-info}
+      KC_PROXY: ${FEASIBILITY_KC_PROXY:-edge}
+    volumes:
+      - ./init/feasibility-realm.json:/opt/keycloak/data/import/realm.json:ro
+    depends_on:
+      - auth-db
+
+volumes:
+  feasibility-auth-db:

@@ -10,67 +10,16 @@ on:
     branches:
     - main
 
-env:
-  TEST_DATA_REF: v0.1.1
-  TEST_DATA_PATH: test/data-to-sq
-  AUTH_PASSWORD: "codex"
-
 jobs:
 
-  test:
+  lint:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Deploy Repo
+
+    - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Checkout Test Data Repo
-      uses: actions/checkout@v2
-      with:
-        repository: num-codex/codex-testdata-to-sq
-        ref: ${{ env.TEST_DATA_REF }}
-        path: ${{ env.TEST_DATA_PATH }}
+    - name: Check shell scripts
+      uses: ludeeus/action-shellcheck@master
 
-    - name: Cache Test Data
-      id: cache-test-data
-      uses: actions/cache@v2
-      with:
-        path: ${{ env.TEST_DATA_PATH }}/testCases
-        key: testcases-${{ hashFiles('**/*.json') }}
-
-    - name: Setup Python
-      if: steps.cache-test-data.outputs.cache-hit != 'true'
-      uses: actions/setup-python@v2
-
-    - name: Generate Test Data
-      if: steps.cache-test-data.outputs.cache-hit != 'true'
-      working-directory: ${{ env.TEST_DATA_PATH }}
-      run: python main.py
-
-    - name: Setup Base Auth
-      env:
-        BASE_DIR: ${{ github.workspace }}/num-node
-      run: bash num-node/setup-base-auth.sh codex-developer "${{ env.AUTH_PASSWORD }}"
-
-    - name: Build the stack
-      env:
-        CODEX_DSF_DIC_FHIR_APP_JVM_ARGS: -Xmx1g
-        CODEX_DSF_DIC_BPE_APP_JVM_ARGS: -Xmx500m
-        CODEX_DSF_ZARS_FHIR_APP_JVM_ARGS: -Xmx1g
-        CODEX_DSF_ZARS_BPE_APP_JVM_ARGS: -Xmx500m
-        CODEX_FEASIBILITY_BACKEND_API_BASE_URL: http://localhost:8091/api/
-      run: ./start-zars-and-num-node.sh --disable-result-obfuscation
-
-    - name: Wait for FHIR Server Running
-      uses: ifaxity/wait-on-action@v1
-      with:
-        resource: http://localhost:8081/health
-        timeout: 60000
-
-    - name: Initialize Test Data
-      run: bash num-node/init-testdata.sh
-
-    - name: Run tests
-      env:
-        TERM: "xterm"
-      run: test/run_tests.sh
