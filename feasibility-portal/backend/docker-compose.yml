@@ -71,7 +71,7 @@ services:
       - ${FEASIBILITY_BACKEND_CERTS_PATH:-../secrets}:/opt/codex-feasibility-security
 
   feasibility-gui-backend-db:
-    image: 'postgres:13.1-alpine'
+    image: 'postgres:15-alpine'
     ports:
     - ${FEASIBILITY_BACKEND_DB_PORT:-127.0.0.1:5432}:5432
     environment:
