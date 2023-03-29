@@ -2,34 +2,33 @@ version: "3.7"
 
 services:
   auth-db:
-    image: postgres:14-alpine
+    image: postgres:15-alpine
     restart: unless-stopped
     environment:
-      POSTGRES_DB: ${FEASIBILITY_KEYCLOAK_DB:-keycloakdb}
-      POSTGRES_USER: ${FEASIBILITY_KEYCLOAK_DB_USER:-keycloakdbuser}
-      POSTGRES_PASSWORD: ${FEASIBILITY_KEYCLOAK_DB_PW:-keycloakdbpw}
+      POSTGRES_DB: ${FEASIBILITY_KC_DB:-keycloakdb}
+      POSTGRES_USER: ${FEASIBILITY_KC_DB_USER:-keycloakdbuser}
+      POSTGRES_PASSWORD: ${FEASIBILITY_KC_DB_PW:-keycloakdbpw}
     volumes:
       - "feasibility-auth-db:/var/lib/postgresql/data"
 
   auth:
-    image: jboss/keycloak:16.1.1
+    image: keycloak/keycloak:21.0
+    command: ["start", "--import-realm"]
     restart: unless-stopped
     environment:
-      DB_VENDOR: POSTGRES
-      DB_ADDR: auth-db
-      DB_DATABASE: ${FEASIBILITY_KEYCLOAK_DB:-keycloakdb}
-      DB_USER: ${FEASIBILITY_KEYCLOAK_DB_USER:-keycloakdbuser}
-      DB_SCHEMA: public
-      DB_PASSWORD: ${FEASIBILITY_KEYCLOAK_DB_PW:-keycloakdbpw}
-      KEYCLOAK_USER: ${FEASIBILITY_KEYCLOAK_ADMIN_USER:-admin}
-      KEYCLOAK_PASSWORD: ${FEASIBILITY_KEYCLOAK_ADMIN_PW:-adminpw}
-      PROXY_ADDRESS_FORWARDING: ${FEASIBILITY_KEYCLOAK_PROXY_ADDR_FORWARDING:-true}
-      KEYCLOAK_IMPORT: /tmp/initial-realm.json
-      KEYCLOAK_FRONTEND_URL: ${FEASIBILITY_KEYCLOAK_BASE_URL:-https://localhost/auth}
+      KC_DB: postgres
+      KC_DB_URL: "jdbc:postgresql://auth-db:5432/${FEASIBILITY_KC_DB}"
+      KC_DB_USERNAME: ${FEASIBILITY_KC_DB_USER}
+      KC_DB_PASSWORD: ${FEASIBILITY_KC_DB_PW}
+      KEYCLOAK_ADMIN: ${FEASIBILITY_KC_ADMIN_USER}
+      KEYCLOAK_ADMIN_PASSWORD: ${FEASIBILITY_KC_ADMIN_PW}
+      KC_HTTP_RELATIVE_PATH:  ${FEASIBILITY_KC_HTTP_RELATIVE_PATH:-/auth} 
+      KC_HOSTNAME_URL: ${FEASIBILITY_KC_HOSTNAME_URL:-https://localhost/auth} 
+      KC_HOSTNAME_ADMIN_URL: ${FEASIBILITY_KC_HOSTNAME_ADMIN_URL:-https://localhost/auth/keycloakadmin}
+      KC_LOG_LEVEL: ${FEASIBILITY_KC_LOG_LEVEL:-info}
+      KC_PROXY: ${FEASIBILITY_KC_PROXY:-edge}
     volumes:
-      - ${KEYCLOAKIMPORTFILE:-./init/initial-realm-prod.json}:/tmp/initial-realm.json
-      - ../auth/cert.pem:/etc/x509/https/tls.crt
-      - ../auth/key.pem:/etc/x509/https/tls.key
+      - ./init/feasibility-realm.json:/opt/keycloak/data/import/realm.json:ro
     depends_on:
       - auth-db
 

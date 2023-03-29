@@ -6,10 +6,9 @@
       {
         "termCodes": [
           {
-            "code": "I10.0",
-            "system": "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
-            "version": "2021",
-            "display": "Benigne essentielle Hypertonie"
+            "code": "central-consent",
+            "system": "mii.abide",
+            "display": "MDAT wissenschaftlich nutzen - EU DSGVO Niveau"
           }
         ]
       }

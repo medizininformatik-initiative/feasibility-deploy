@@ -109,7 +109,7 @@ execute `bash start-triangle.sh`.
 This starts the following default triangle: 
 AKTIN (Middleware) - FLARE (FHIR Search executor) - BLAZE (FHIR Server)
 
-- AKTIN: Used to connect to the central platform and allow queries from the Zars
+- AKTIN: Used to connect to the central platform and allow queries from the FDPG
 - FLARE: A Rest Service, which is needed to translate, execute and evaluate a feasibility query on a FHIR Server using FHIR Search
 - BLAZE: The FHIR Server which holds the patient data for feasibility queries
 
@@ -157,12 +157,11 @@ You can then load the data into your FHIR Server using the `upload-testdata.sh` 
 | FEASIBILITY_AKTIN_CLIENT_BROKER_ENDPOINT_URI                          | The URL of the AKTIN broker endpoint                                                                                                                                         | http://aktin-broker:8080/broker/                   | URL                                                | AKTIN     |
 | FEASIBILITY_AKTIN_CLIENT_AUTH_CLASS                                   | Type of authentication used by AKTIN                                                                                                                                         | org.aktin.broker.client2.auth.ApiKeyAuthentication | org.aktin.broker.client2.auth.ApiKeyAuthentication | AKTIN     |
 | FEASIBILITY_AKTIN_CLIENT_AUTH_PARAM                                   | The API key of your site                                                                                                                                                     | xxxApiKey123                                       | API key token                                      | AKTIN     |
+| FEASIBILITY_AKTIN_CLIENT_WEBSOCKET_DISABLED                       | enables or disables the websocket - if websocket is disabled the client will poll requests instead - the polling interval is then configured using the env var FEASIBILITY_AKTIN_CLIENT_WEBSOCKET_RECONNECT_SECONDS                                                                  | false                                                 | boolean                                   | AKTIN     |
 | FEASIBILITY_AKTIN_CLIENT_WEBSOCKET_PING_SECONDS                       | The time in which your AKTIN client pings the AKTIN broker to ensure idle websocket conections stay open                                                                     | 60                                                 | Integer (seconds)                                  | AKTIN     |
 | FEASIBILITY_AKTIN_CLIENT_WEBSOCKET_RECONNECT_SECONDS                  || 10                                                                                                                                                                           | Integer (seconds)                                  | AKTIN                                              |
 | FEASIBILITY_AKTIN_CLIENT_WEBSOCKET_RECONNECT_POLLING                  || TRUE                                                                                                                                                                         || AKTIN                                              |
 | FEASIBILITY_AKTIN_CLIENT_PROCESS_TIMEOUT_SECONDS                      | The timeout within which a process has to return before the client sends a "failed" message to the AKTIN broker                                                              | 60                                                 | Integer (seconds)                                  | AKTIN     |
-| FEASIBILITY_AKTIN_CLIENT_PROCESS_COMMAND                              | The command to be executed on recieving a feasibility query. Allows one to switch between flare and cql execution                                                            | /opt/aktin/call-flare.sh                           | /opt/aktin/call-flare.sh, /opt/aktin/call-cql.sh   | AKTIN     |
-| FEASIBILITY_AKTIN_CLIENT_PROCESS_ARGS                                 || 10                                                                                                                                                                           | Integer (seconds)                                  | AKTIN                                              |
 | FEASIBILITY_AKTIN_PROCESS_EXECUTOR_THREADS                                 |configures how many parallel threads AKTIN will use to process requests simultaniously| 2 | Integer (number of threads)                                  | AKTIN                                              |
 | FEASIBILITY_AKTIN_FLARE_URL                               | the URL of the FLARE component if used                                                                                                                                       | http://flare:8080/query/execute                                  | URL                                                | AKTIN     |
 | FEASIBILITY_AKTIN_FLARE_USER                               | the basic auth user for flare if needed                                                                                                                                       |                                   |                                                 | AKTIN     |
@@ -172,7 +171,10 @@ You can then load the data into your FHIR Server using the `upload-testdata.sh` 
 | FEASIBILITY_AKTIN_JAVA_OPTS                                           | Provides Java options to the AKTIN client - can be used to configure proxy use. For example : " Dhttps.proxyHost=squid -Dhttps.proxyPort=3128"                               || valid java options                                 | AKTIN                                              |
 | FEASIBILITY_AKTIN_CQL_FHIR_USER                               | basic auth user to connect to FHIR server if CQL is used                                                                                                                     ||| AKTIN                                              |
 | FEASIBILITY_AKTIN_CQL_FHIR_PW                                 | basic auth password to connect to FHIR server if CQL is used                                                                                                                 ||| AKTIN                                              |
-| FEASIBILITY_AKTIN_CQL_FHIR_BASE_UR                                       | FHIR server base url the AKTIN client is to use to connect to the FHIR server                                                                                                | http://fhir-server:8080/fhir                       || AKTIN                                              |
+| FEASIBILITY_AKTIN_CQL_FHIR_BASE_URL                                       | FHIR server base url the AKTIN client is to use to connect to the FHIR server                                                                                                | http://fhir-server:8080/fhir                       || AKTIN                                              |
+| FEASIBILITY_AKTIN_HARD_RATE_LIMIT_NREQUESTS                                       | Hard Rate limit - if this is breached the application will reject all future requests until it is restarted                                                                                               | 300                       | integer| AKTIN                                              |
+| FEASIBILITY_AKTIN_HARD_RATE_LIMIT_RESET_MINUTES                                       | Time after which the rate limit configured in FEASIBILITY_AKTIN_HARD_RATE_LIMIT_NREQUESTS is reset                                                                                               | 60                       |integer| AKTIN                                              |
+| FEASIBILITY_AKTIN_OBFUSCATOR_EPSILON                                       | Epsilon used in the Result obfuscator to obfuscate the results using a Laplace function                                                                                                | 0.28                       |double| AKTIN                                              |
 | FHIR_SERVER_BASE_URL                                                  | The base URL of the FHIR server the fhir server uses to generate next links                                                                                                  | http://fhir-server:8080                            || BLAZE                                              |
 | FHIR_SERVER_LOG_LEVEL                                                 | log level of the FHIR server                                                                                                                                                 | debug                                              | debug, info, error                                 | BLAZE     |
 | BLAZE_JVM_ARGS                                                        | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md                                                                                    | -Xmx4g                                             || BLAZE                                              |
@@ -185,10 +187,16 @@ You can then load the data into your FHIR Server using the `upload-testdata.sh` 
 | FLARE_FHIR_USER                                                       | basic auth user to connect to FHIR server                                                                                                                                    ||| FLARE                                              |
 | FLARE_FHIR_PW                                                         | basic auth password to connect to FHIR server if CQL is used                                                                                                                 ||| FLARE                                              |
 | FLARE_FHIR_PAGE_COUNT                                                 | The number of resources per page FLARE asks for from the FHIR server                                                                                                         | 500                                                || FLARE                                              |
-| FLARE_EXEC_CORE_POOL_SIZE                                             | The core thread pool size                                                                                                                                                    | 4                                                  | Integer                                            | FLARE     |
-| FLARE_EXEC_MAX_POOL_SIZE                                              | The max thread pool size                                                                                                                                                     | 16                                                 | Integer                                            | FLARE     |
-| FLARE_EXEC_KEEP_ALIVE_TIME_SECONDS                                    | The time threads are kept alive                                                                                                                                              | 10                                                 | Integer                                            | FLARE     |
-| FLARE_LOG_LEVEL                                                       | log level of flare                                                                                                                                                           | debug                                              | off, fatal, error, warn, info, debug, trace        | FLARE     |
+| Env Variable | Description  | Default   | Possible Values  | Component |
+| FLARE_FHIR_MAX_CONNECTIONS | maximum number of connections flare will open to fhir server simultaniously |32 | |FLARE |
+| FLARE_CACHE_MEM_SIZE_MB | in memory cache size in mb | 1024| |FLARE |
+| FLARE_CACHE_MEM_EXPIRE | in memory cache time to expire | PT48H| ISO 8601 time duration|FLARE |
+| FLARE_CACHE_MEM_REFRESH | in memory chache time to refresh - not refresh should be shorter than expire| PT24H| ISO 8601 time duration|FLARE |
+| FLARE_CACHE_DISK_THREADS | number of threads used to write to disk cache| 4| integer |FLARE |
+| FLARE_CACHE_DISK_PATH | disk path for disk cache inside docker container | PT24H| string disk path|FLARE |
+| FLARE_CACHE_DISK_EXPIRE | disk cache time to expire | P7D| ISO 8601 time duration|FLARE |
+| FLARE_JAVA_TOOL_OPTIONS | java tool options passed to the flare container | -Xmx4g| |FLARE |
+| FLARE_LOG_LEVEL | | info| off, fatal, error, warn, info, debug, trace  |FLARE |
 | FEASIBILITY_TRIANGLE_REV_PROXY_PORT                                   | The exposed docker port of the reverse proxy - set to 443 if you want to use standard https and you only have the feasibility triangle installed on your server              | 444                                                | Integer (valid port)                               | REV Proxy |
 | FEASIBILITY_DSF_CLIENT_PROCESS_FORWARD_PROXY_HOST                     | Forward proxy host.                                                                                                                                                          |                                                    | FQDN                                               | DSF       |
 | FEASIBILITY_DSF_CLIENT_PROCESS_FORWARD_PROXY_PORT                     | Forward proxy port.                                                                                                                                                          |                                                    | Integer                                            | DSF       |
@@ -271,17 +279,12 @@ Log in to the portal and send a request with the Inclusion Criterion chosen from
 and press "send".
 
 Check your triangle aktin client logs:
-`cat /opt/feasibility-deploy/feasibility-triangle/aktin-client/aktin-requests.log`
+docker logs -f id-of-the-aktin-client-container
 
 you should see output similar to:
 ```
-##### INCOMING REQUEST at Thu Sep  8 11:49:08 UTC 2022 #####
-----BEGIN REQUEST----
-{"version":"http://to_be_decided.com/draft-1/schema#","inclusionCriteria":[[{"termCodes":[{"code":"gender","system":"mii.abide","display":"Geschlecht"}],"attributeFilters":[{"type":"concept","selectedConcepts":[{"code":"female","system":"http://hl7.org/fhir/administrative-gender","display":"Female"},{"code":"male","system":"http://hl7.org/fhir/administrative-gender","display":"Male"}],"attributeCode":{"code":"gender","system":"mii.abide","display":"Geschlecht"}}]}]]}
-----END REQUEST----
-----BEGIN RESPONSE----
-65
-----END RESPONSE----
+Mar 29, 2023 12:59:57 PM feasibility.FeasibilityExecution doExecution
+FINE: {"version":"http://to_be_decided.com/draft-1/schema#","inclusionCriteria":[[{"termCodes":[{"code":"718-7","system":"http://loinc.org","display":"Hämoglobin"}],"valueFilter":{"type":"quantity-comparator","selectedConcepts":[],"comparator":"gt","unit":{"code":"g/dL","display":"g/dL"},"value":0.0}}]]}
 ```
 
 

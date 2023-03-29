@@ -1,6 +1,6 @@
 services:
   feasibility-gui:
-    image: ghcr.io/medizininformatik-initiative/feasibility-gui:0.3.0
+    image: ghcr.io/medizininformatik-initiative/feasibility-gui:1.0.0
     ports:
     - "443:8443"
     restart: unless-stopped
@@ -10,3 +10,5 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
       - ./mime.types:/etc/nginx/conf.d/mime.types
       - ./deploy-config.json:/usr/share/nginx/html/assets/config/config.deploy.json
+      - ./language/de.json:/usr/share/nginx/html/assets/i18n/de.json
+      - ./language/en.json:/usr/share/nginx/html/assets/i18n/en.json

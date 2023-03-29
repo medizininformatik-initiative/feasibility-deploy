@@ -8,28 +8,10 @@
           {
             "code": "119364003",
             "system": "http://snomed.info/sct",
-            "version": "http://snomed.info/sct/900000000000207008/version/20210731",
-            "display": "Serum specimen (specimen)"
+            "version": "http://snomed.info/sct/900000000000207008/version/20220930",
+            "display": "Serum specimen"
           }
-        ],
-        "attributeFilters": [
-          {
-            "selectedConcepts": [
-              {
-                "code": "available",
-                "system": "http://hl7.org/fhir/specimen-status",
-                "display": "Available"
-              }
-            ],
-            "type": "concept",
-            "attributeCode": {
-              "code": "status",
-              "system": "mii.abide",
-              "display": "Status"
-            }
-          }
-        ],
-        "timeRestriction": {}
+        ]
       }
     ]
   ]
