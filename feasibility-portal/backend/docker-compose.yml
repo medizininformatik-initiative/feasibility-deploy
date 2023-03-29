@@ -68,7 +68,7 @@ services:
       - ${FEASIBILITY_BACKEND_CONCEPT_TREE_PATH:-../ontology/codex-code-tree.json}:/opt/codex-feasibility-backend/ontology/codex-code-tree.json
       - ${FEASIBILITY_BACKEND_TERM_CODE_MAPPING_PATH:-../ontology/codex-term-code-mapping.json}:/opt/codex-feasibility-backend/ontology/codex-term-code-mapping.json
       - ${FEASIBILITY_BACKEND_MIGRATION_PATH:-../ontology/migration/R__Load_latest_ui_profile.sql}:/opt/codex-feasibility-backend/ontology/migration/R__Load_latest_ui_profile.sql
-      - ${FEASIBILITY_BACKEND_CERTS_PATH:-../dsf-broker/certs}:/opt/codex-feasibility-security
+      - ${FEASIBILITY_BACKEND_CERTS_PATH:-../secrets}:/opt/codex-feasibility-security
 
   feasibility-gui-backend-db:
     image: 'postgres:13.1-alpine'
