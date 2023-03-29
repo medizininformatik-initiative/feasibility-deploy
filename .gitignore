@@ -10,4 +10,5 @@ start-zars-and-num-node-all.sh
 .env
 deploy-config.json
 *.pem
+!ca.pem
 .htpasswd
