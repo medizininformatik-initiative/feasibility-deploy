@@ -97,29 +97,24 @@ This starts the following default local feasibility portal, with the following c
 Please note that the keycloak provided here is an example setup and we recommend for each site to adjust the keycloak installation to their local scurity requirements or connect the local feasibility portal to a keycloak already provided at the site.
 
 Navigate with your browser to https://my-fesibility-domain/auth/keycloakadmin/admin
-click on "Administration Console" and log in to keyloak using the admin password set in step 6 (FEASIBILITY_KEYCLOAK_ADMIN_PW).
+click on "Administration Console" and log in to keyloak using the admin user and password set in step 6 (FEASIBILITY_KC_ADMIN_USER, FEASIBILITY_KC_ADMIN_PW).
 User: admin
 Pw: my password set in step 6
 
 1. Set the your domain for your client:
-Click on `Clients > feasibility-gui` and change the fields: Root URL, Base URL and Web Origins
-from: https://feasibility.forschen-fuer-gesundheit.de
+Click on `Clients > feasibility-webapp` and change the fields: Root URL, Base URL and Web Origins
 to: https://your-feasibility-domain
 
 and **Valid Redirect URIs**
-from 
-from: https://feasibility.forschen-fuer-gesundheit.de
 to: https://your-feasibility-domain/*
 
 Save the changes by clicking the "save" button.
 
-2. Add a user for to your feasibility user interface:
-Click on `Users > Add User` and fill in the field **Username** with a username of your choice and add the user under **Groups** to the group **/codex-develop** and save the user by clicking on `save`.
-Click on **Credentials** and fill the `Password` and `Password Confirmation` fields with a password of your choice and save the changes by clicking `set password`
+2. Add a user for your feasibility user interface:
+Click on `Users > Add User` and fill in the field **Username** with a username of your choice.
+Click on **Credentials** > **Set Password** and fill the `Password` and `Password Confirmation` fields with a password of your choice and save the changes by clicking `set password`
+Click on ** Role Mapping > Assign Role **  , select FeasibilityUser and click `Assign`
 
-3. Add Mapper from Realm-Role to Group for UI
-
-Click on `Clients > feasibility-gui > Mappers` then click on `Add Builtin` select the mapper with name  `groups` and click `Add selected`
 
 ### Step 9 - Access the user interface and send first query
 
