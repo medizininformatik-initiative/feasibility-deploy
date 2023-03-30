@@ -63,8 +63,10 @@ If you use the default local feasibility portal setup you will only have to chan
 
 | file | environment variable | value for local setup |
 |--|--|--|
-|keycloak/.env|FEASIBILITY_KEYCLOAK_BASE_URL| base-url-of-your-local-feasibility-portal/auth |
-|keycloak/.env|FEASIBILITY_KEYCLOAK_ADMIN_PW| choose a secure password here e.g. Ykc2PINWatNqL5Wq,OIxFz1Sv3dzmQ2|
+|keycloak/.env|FEASIBILITY_KC_HOSTNAME_URL| base-url-of-your-local-feasibility-portal/auth |
+|keycloak/.env|FEASIBILITY_KC_HOSTNAME_ADMIN_URL| base-url-of-your-local-feasibility-portal/auth/keycloakadmin |
+|keycloak/.env|FEASIBILITY_KC_ADMIN_USER|keycloak admin user name |
+|keycloak/.env|FEASIBILITY_KC_ADMIN_PW| choose a secure password here e.g. Ykc2PINWatNqL5Wq,OIxFz1Sv3dzmQ2|
 |backend/.env|FEASIBILITY_BACKEND_AKTIN_ENABLED|false|
 |backend/.env|FEASIBILITY_BACKEND_DIRECT_ENABLED|true|
 |backend/.env|FEASIBILITY_BACKEND_API_BASE_URL|base-url-of-your-local-feasibility-portal/api|
@@ -72,6 +74,8 @@ If you use the default local feasibility portal setup you will only have to chan
 |backend/.env|FEASIBILITY_BACKEND_ALLOWED_ORIGINS|base-url-of-your-local-feasibility-portal|
 |gui/deploy-config.json|uiBackendApi > baseUrl |base-url-of-your-local-feasibility-portal/api/v2|
 |gui/deploy-config.json|auth > baseUrl |base-url-of-your-local-feasibility-portal|
+
+Please note that all user env variables (variables containing USER) should be changed and and all password variables (variables containing PASSWORD or PW) should be set to secure passwords.
 
 For more details on the environment variables see the paragraph **Configurable environment variables** of this README.
 
@@ -90,7 +94,9 @@ This starts the following default local feasibility portal, with the following c
 
 ### Step 8 - Configure keycloak and add a user for the user interface
 
-Navigate with your browser to https://my-fesibility-domain/auth
+Please note that the keycloak provided here is an example setup and we recommend for each site to adjust the keycloak installation to their local scurity requirements or connect the local feasibility portal to a keycloak already provided at the site.
+
+Navigate with your browser to https://my-fesibility-domain/auth/keycloakadmin/admin
 click on "Administration Console" and log in to keyloak using the admin password set in step 6 (FEASIBILITY_KEYCLOAK_ADMIN_PW).
 User: admin
 Pw: my password set in step 6
@@ -142,8 +148,8 @@ After a few moments you should see the results to your query in the **Number of 
 |FEASIBILITY_BACKEND_KEYCLOAK_ALLOWED_ROLE| The keycloak role required to access the backend | FEASIBILITY_USER | | BACKEND |
 |FEASIBILITY_BACKEND_KEYCLOAK_POWER_ROLE|The keycloak role required to access the backend as Power user - Power users cannot be blacklisted|FEASIBILITY_POWER_USER| | BACKEND |
 |FEASIBILITY_BACKEND_KEYCLOAK_ADMIN_ROLE|The keycloak role required to access the backend as admin|FEASIBILITY_ADMIN| | BACKEND |
-"|FEASIBILITY_BACKEND_KEYCLOAK_BASE_URL_ISSUER|the url the backend uses to access keycloak to verify the issuer|	http://keycloak:8080| | BACKEND |"
-"|FEASIBILITY_BACKEND_KEYCLOAK_BASE_URL_JWK|the url the backend uses to access keycloak for tokens|	http://keycloak:8080| | BACKEND |"
+|FEASIBILITY_BACKEND_KEYCLOAK_BASE_URL_ISSUER|the url the backend uses to access keycloak to verify the issuer|	http://keycloak:8080| | BACKEND |
+|FEASIBILITY_BACKEND_KEYCLOAK_BASE_URL_JWK|the url the backend uses to access keycloak for tokens|	http://keycloak:8080| | BACKEND |
 | FEASIBILITY_BACKEND_KEYCLOAK_REALM | the realm the backend uses within keyloak | codex-develop | | BACKEND |
 |### backend direct broker ###| | | | BACKEND |
 |FEASIBILITY_BACKEND_BROKER_CLIENT_DIRECT_ENABLED| enables the direct broker. This connects the backend directly to flare and is only meant to be used for a local installation | false | | BACKEND |

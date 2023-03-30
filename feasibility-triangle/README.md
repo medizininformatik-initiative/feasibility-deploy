@@ -90,6 +90,8 @@ cp * /opt/feasibility-deploy/feasibility-triangle/ontology
 
 If you use the default triangle setup you only have to configure the AKTIN client to connect to the central feasibility portal as the rest of the setup will already be correctly configured for you.
 
+Please note that all user env variables should be changed and and all password variables should be set to secure passwords.
+
 Follow the [DSF configuration wiki](https://github.com/medizininformatik-initiative/feasibility-deploy/wiki/DSF-Middleware-Setup) if you want to use the DSF middleware instead.
 
 To configure the AKTIN client in the default setup, change the following environment variables in the file `/opt/feasibility-deploy/feasibility-triangle/aktin-client/.env` according to the paragraph **Configurable environment variables** of this README:
@@ -286,12 +288,3 @@ you should see output similar to:
 Mar 29, 2023 12:59:57 PM feasibility.FeasibilityExecution doExecution
 FINE: {"version":"http://to_be_decided.com/draft-1/schema#","inclusionCriteria":[[{"termCodes":[{"code":"718-7","system":"http://loinc.org","display":"Hämoglobin"}],"valueFilter":{"type":"quantity-comparator","selectedConcepts":[],"comparator":"gt","unit":{"code":"g/dL","display":"g/dL"},"value":0.0}}]]}
 ```
-
-
-
-
-
-
-
-
-
