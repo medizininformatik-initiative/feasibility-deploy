@@ -16,8 +16,8 @@ If not already installed on your VM, install using the links provided above.
 ssh to your virtual machine and switch to sudo `sudo -s`.
 Designate a folder for your setup in which to clone the deploy repository, we suggest /opt (`cd /opt`)
 Navigate to the directory and clone this repository: `git clone https://github.com/medizininformatik-initiative/feasibility-deploy.git`
-Navigate to the feasibility-triangle folder of the repository: `cd /opt/feasibility-deploy/feasibility-portal`
-Checkout the version (git tag) of the feasibility triangle you would like to install: `git checkout tags/<your-tag-name-here>`
+Navigate to the feasibility-portal folder of the repository: `cd /opt/feasibility-deploy/feasibility-portal`
+Checkout the version (git tag) of the feasibility portal you would like to install: `git checkout tags/<your-tag-name-here>`
 
 ### Step 3 - Initialise .env files
 
@@ -47,11 +47,11 @@ sudo -s
 mkdir /<path>/<to>/<folder>/<of>/<choice>
 cd /<path>/<to>/<folder>/<of>/<choice>
 unzip mapping_*.zip
-unzip ui_profiles_*.zip
+unzip ui_profile_*.zip
 unzip db_migration_*.zip
 cd mapping
 cp * /opt/feasibility-deploy/feasibility-portal/ontology
-cd ../ui_profiles
+cd ../ui_profile
 cp * /opt/feasibility-deploy/feasibility-portal/ontology/ui_profiles
 cd ../db_migration
 cp * /opt/feasibility-deploy/feasibility-portal/ontology/migration
@@ -72,6 +72,7 @@ If you use the default local feasibility portal setup you will only have to chan
 |backend/.env|FEASIBILITY_BACKEND_API_BASE_URL|base-url-of-your-local-feasibility-portal/api|
 |backend/.env|FLARE_WEBSERVICE_BASE_URL|http://flare:8080|
 |backend/.env|FEASIBILITY_BACKEND_ALLOWED_ORIGINS|base-url-of-your-local-feasibility-portal|
+|backend/.env|FEASIBILITY_BACKEND_KEYCLOAK_BASE_URL_ISSUER|base-url-of-your-local-feasibility-portal/auth|
 |gui/deploy-config.json|uiBackendApi > baseUrl |base-url-of-your-local-feasibility-portal/api/v2|
 |gui/deploy-config.json|auth > baseUrl |base-url-of-your-local-feasibility-portal|
 
@@ -213,7 +214,7 @@ If you have already installed the local feasibility portal and just want to upda
 
 ### Step 1 - Stop your portal
 
-`cd /opt/feasibility-deploy/feasibility-triangle && bash stop-feasibility-portal.sh`
+`cd /opt/feasibility-deploy/feasibility-portal && bash stop-feasibility-portal.sh`
 
 ### Step 2 - Update repository and check out new tag
 
@@ -249,7 +250,7 @@ cp * /opt/feasibility-deploy/feasibility-portal/ontology/migration
 
 Existing files should be replaced.
 
-### Step 5 - Start your triangle
+### Step 5 - Start your portal
 
 To start the portal navigate to `/opt/feasibility-deploy/feasibility-portal` and
 execute `bash start-feasibility-portal-local.sh`.
