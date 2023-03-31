@@ -104,16 +104,20 @@ Pw: my password set in step 6
 
 1. Set the domain for your client:
 Switch to the `feasibility` realm (realm name might be different if you use your own keycloak) by using the realm changer on top of the left navigation bar (should be set to `master` when logging in) 
-Click on `Clients > feasibility-webapp` and change the fields: Root URL, Base URL and Web Origins
+Click on `Clients > feasibility-webapp` and change the fields: Root URL, Home URL and Web Origins
 to: https://your-feasibility-domain  
       
     and **Valid Redirect URIs** to: https://your-feasibility-domain/*  
+
+    and **Valid post logout redirect URIs** to: https://your-feasibility-domain/*
+
+    and leave **Admin URL** empty
 
     Save the changes by clicking the "save" button.
 
 2. Add a user for your feasibility user interface:
 Click on `Users > Create new user` and fill in the field **Username** with a username of your choice.
-Click on **Credentials** > **Set Password** and fill the `Password` and `Password Confirmation` fields with a password of your choice and save the changes by clicking `set password`
+Click on **Credentials** > **Set Password** and fill the `Password` and `Password Confirmation` fields with a password of your choice and save the changes by clicking `set password`.
 Click on ** Role Mapping > Assign Role **  , select FeasibilityUser and click `Assign`
 
 
