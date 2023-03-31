@@ -61,19 +61,20 @@ cp * /opt/feasibility-deploy/feasibility-portal/ontology/migration
 
 If you use the default local feasibility portal setup you will only have to change the following environment variables:
 
-| file                   | environment variable                | value for local setup                                              |
-|------------------------|-------------------------------------|--------------------------------------------------------------------|
-| keycloak/.env          | FEASIBILITY_KC_HOSTNAME_URL         | base-url-of-your-local-feasibility-portal/auth                     |
-| keycloak/.env          | FEASIBILITY_KC_HOSTNAME_ADMIN_URL   | base-url-of-your-local-feasibility-portal/auth/keycloakadmin       |
-| keycloak/.env          | FEASIBILITY_KC_ADMIN_USER           | keycloak admin user name                                           |
-| keycloak/.env          | FEASIBILITY_KC_ADMIN_PW             | choose a secure password here e.g. Ykc2PINWatNqL5Wq,OIxFz1Sv3dzmQ2 |
-| backend/.env           | FEASIBILITY_BACKEND_AKTIN_ENABLED   | false                                                              |
-| backend/.env           | FEASIBILITY_BACKEND_DIRECT_ENABLED  | true                                                               |
-| backend/.env           | FEASIBILITY_BACKEND_API_BASE_URL    | base-url-of-your-local-feasibility-portal/api                      |
-| backend/.env           | FLARE_WEBSERVICE_BASE_URL           | http://flare:8080                                                  |
-| backend/.env           | FEASIBILITY_BACKEND_ALLOWED_ORIGINS | base-url-of-your-local-feasibility-portal                          |
-| gui/deploy-config.json | uiBackendApi > baseUrl              | base-url-of-your-local-feasibility-portal/api/v2                   |
-| gui/deploy-config.json | auth > baseUrl                      | base-url-of-your-local-feasibility-portal                          |
+| file                   | environment variable                       | value for local setup                                              |
+|------------------------|--------------------------------------------|--------------------------------------------------------------------|
+| keycloak/.env          | FEASIBILITY_KC_HOSTNAME_URL                | base-url-of-your-local-feasibility-portal/auth                     |
+| keycloak/.env          | FEASIBILITY_KC_HOSTNAME_ADMIN_URL          | base-url-of-your-local-feasibility-portal/auth/keycloakadmin       |
+| keycloak/.env          | FEASIBILITY_KC_ADMIN_USER                  | keycloak admin user name                                           |
+| keycloak/.env          | FEASIBILITY_KC_ADMIN_PW                    | choose a secure password here e.g. Ykc2PINWatNqL5Wq,OIxFz1Sv3dzmQ2 |
+| backend/.env           | FEASIBILITY_BACKEND_AKTIN_ENABLED          | false                                                              |
+| backend/.env           | FEASIBILITY_BACKEND_DIRECT_ENABLED         | true                                                               |
+| backend/.env           | FEASIBILITY_BACKEND_API_BASE_URL           | base-url-of-your-local-feasibility-portal/api                      |
+| backend/.env           | FLARE_WEBSERVICE_BASE_URL                  | http://flare:8080                                                  |
+| backend/.env           | FEASIBILITY_BACKEND_ALLOWED_ORIGINS        | base-url-of-your-local-feasibility-portal                          |
+|backend/.env            |FEASIBILITY_BACKEND_KEYCLOAK_BASE_URL_ISSUER| base-url-of-your-local-feasibility-portal/auth                     |
+| gui/deploy-config.json | uiBackendApi > baseUrl                     | base-url-of-your-local-feasibility-portal/api/v2                   |
+| gui/deploy-config.json | auth > baseUrl                             | base-url-of-your-local-feasibility-portal                          |
 
 Please note that all user env variables (variables containing USER) should be changed and all password variables (variables containing PASSWORD or PW) should be set to secure passwords.
 
@@ -249,7 +250,7 @@ cp * /opt/feasibility-deploy/feasibility-portal/ontology/migration
 
 Existing files should be replaced.
 
-### Step 5 - Start your triangle
+### Step 5 - Start your portal
 
 To start the portal navigate to `/opt/feasibility-deploy/feasibility-portal` and
 execute `bash start-feasibility-portal-local.sh`.
