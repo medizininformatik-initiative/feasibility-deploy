@@ -8,4 +8,3 @@ docker-compose -p "$COMPOSE_PROJECT" -f "$BASE_DIR"/keycloak/docker-compose.yml 
 docker-compose -p "$COMPOSE_PROJECT" -f "$BASE_DIR"/backend/docker-compose.yml stop
 docker-compose -p "$COMPOSE_PROJECT" -f "$BASE_DIR"/gui/docker-compose.yml stop
 docker-compose -p "$COMPOSE_PROJECT" -f "$BASE_DIR"/aktin-broker/docker-compose.yml stop
-sh "$BASE_DIR"/dsf-broker/stop.sh "$COMPOSE_PROJECT"

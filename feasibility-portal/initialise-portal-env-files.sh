@@ -1,6 +1,6 @@
 #!/bin/bash
 
-envfiles=( "gui/deploy-config.json" "backend/.env" "dsf-broker/.env" "keycloak/.env" "aktin-broker/.env")
+envfiles=( "gui/deploy-config.json" "backend/.env" "keycloak/.env" "aktin-broker/.env")
 
 for file in "${envfiles[@]}"
 do
