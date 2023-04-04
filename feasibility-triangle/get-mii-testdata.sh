@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
 
-MII_TESTDATA_BASE_URL=https://github.com/medizininformatik-initiative/kerndatensatz-testdaten/raw/master/Test_Data/Polar
-MII_TESTDATA_FILES=(POLAR_Testdaten_Original_UKB-UKB-0001-UKB-0015.json.zip POLAR_Testdaten_Original_UKE-UKE-0001-UKE-0020.json.zip POLAR_Testdaten_Original_UKFAU-UKFAU-0001-UKFAU-0011.json.zip POLAR_Testdaten_Original_UKFR-UKFR-0001-UKFR-0010.json.zip POLAR_Testdaten_Original_UKSH-UKSH-0001-UKSH-0005.json.zip)
+MII_TESTDATA_DOWNLOAD_URL="https://health-atlas.de/data_files/594/download?version=1"
 
-for file in "${MII_TESTDATA_FILES[@]}"
+wget -O testdata.zip "$MII_TESTDATA_DOWNLOAD_URL"
+unzip testdata.zip -d testdata-temp
+cd testdata-temp/Vorhofflimmern || exit
+
+for file in *.json.zip
 do
-    wget "$MII_TESTDATA_BASE_URL/$file"
-    unzip -o "$file" -d testdata
-    rm "$file"
+    unzip -o "$file" -d ../../testdata
 done
+
+cd ../../
+rm testdata.zip
+rm -rf testdata-temp
