@@ -8,4 +8,3 @@ docker-compose -p "$COMPOSE_PROJECT" -f "$BASE_DIR"/aktin-client/docker-compose.
 docker-compose -p "$COMPOSE_PROJECT" -f "$BASE_DIR"/flare/docker-compose.yml stop
 docker-compose -p "$COMPOSE_PROJECT" -f "$BASE_DIR"/fhir-server/docker-compose.yml stop
 docker-compose -p "$COMPOSE_PROJECT" -f "$BASE_DIR"/rev-proxy/docker-compose.yml stop
-sh "$BASE_DIR"/dsf-client/stop.sh "$COMPOSE_PROJECT"
