@@ -1,18 +1,20 @@
 version: '3.7'
 services:
   fhir-server:
-    image: ghcr.io/medizininformatik-initiative/blaze:0.20
+    image: samply/blaze:0.21
     environment:
       BASE_URL: ${FHIR_SERVER_BASE_URL:-http://fhir-server:8080}
-      LOG_LEVEL: ${FHIR_SERVER_LOG_LEVEL:-error}
+      LOG_LEVEL: ${FHIR_SERVER_LOG_LEVEL:-info}
       JAVA_TOOL_OPTIONS: ${BLAZE_JVM_ARGS:--Xmx4g}
       DB_BLOCK_CACHE_SIZE: ${BLAZE_BLOCK_CACHE_SIZE:-256}
       DB_RESOURCE_CACHE_SIZE: ${BLAZE_DB_RESOURCE_CACHE_SIZE:-2000000}
       DB_RESOURCE_HANDLE_CACHE_SIZE: ${BLAZE_DB_RESOURCE_HANDLE_CACHE_SIZE:-1000000}
+      DB_SEARCH_PARAM_BUNDLE: "/app/custom-search-parameters.json"
     ports:
     - ${PORT_FHIR_SERVER_LOCALHOST:-127.0.0.1:8081}:8080
     restart: unless-stopped
     volumes:
+    - "./custom-search-parameters.json:/app/custom-search-parameters.json:ro"
     - "blaze-data:/app/data"
 
 volumes:
