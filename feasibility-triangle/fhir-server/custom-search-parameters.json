@@ -1,0 +1,157 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "http://codex.de/age",
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "codex-age",
+        "url": "http://codex.de/age",
+        "version": "0.1.0",
+        "name": "codex-age",
+        "status": "active",
+        "description": "codex age",
+        "code": "codex-age",
+        "base": [
+          "Patient"
+        ],
+        "type": "quantity",
+        "expression": "Patient.extension.where(url='https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/age').extension.where(url='age').value"
+      }
+    },
+    {
+      "fullUrl": "http://codex.de/ethnicity",
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "codex-ethnicity",
+        "url": "http://codex.de/ethnicity",
+        "version": "0.1.0",
+        "name": "codex-ethnicity",
+        "status": "active",
+        "description": "codex ethnicity",
+        "code": "codex-ethnicity",
+        "base": [
+          "Patient"
+        ],
+        "type": "token",
+        "expression": "Patient.extension.where(url='https://www.netzwerk-universitaetsmedizin.de/fhir/StructureDefinition/ethnic-group').value"
+      }
+    },
+    {
+      "fullUrl": "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisioncode",
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-provision-provision-code",
+        "url": "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisioncode",
+        "version": "1.0.3",
+        "name": "MII_SP_Consent_ProvisionCode",
+        "status": "active",
+        "date": "2023-03-08",
+        "description": "Suche im Code der Provison",
+        "code": "mii-provision-provision-code",
+        "base": [
+          "Consent"
+        ],
+        "type": "token",
+        "expression": "Consent.provision.provision.code"
+      }
+    },
+    {
+      "fullUrl": "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisiontype",
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-provision-provision-type",
+        "url": "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisiontype",
+        "version": "1.0.3",
+        "name": "MII_SP_Consent_ProvisionType",
+        "status": "active",
+        "date": "2023-03-08",
+        "description": "Suche im Typ (type) der Provison",
+        "code": "mii-provision-provision-type",
+        "base": [
+          "Consent"
+        ],
+        "type": "token",
+        "expression": "Consent.provision.provision.type"
+      }
+    },
+    {
+      "fullUrl": "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisionperiod",
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-provision-provision-period",
+        "url": "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisionperiod",
+        "version": "1.0.3",
+        "name": "MII_SP_Consent_ProvisionPeriod",
+        "status": "active",
+        "date": "2023-03-08",
+        "description": "Suche im Zeitraum (period) der Provison",
+        "code": "mii-provision-provision-period",
+        "base": [
+          "Consent"
+        ],
+        "type": "date",
+        "expression": "Consent.provision.provision.period"
+      }
+    },
+    {
+      "fullUrl": "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisioncodetype",
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-provision-provision-code-type",
+        "url": "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisioncodetype",
+        "version": "1.0.3",
+        "name": "MII_SP_Consent_ProvisionCodeType",
+        "status": "active",
+        "date": "2023-03-08",
+        "description": "Suche nach Typ (type) einer bestimmten, durch einen Code definierten, Provision",
+        "code": "mii-provision-provision-code-type",
+        "base": [
+          "Consent"
+        ],
+        "type": "composite",
+        "expression": "Consent.provision.provision",
+        "component": [
+          {
+            "definition": "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisioncode",
+            "expression": "code"
+          },
+          {
+            "definition": "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisiontype",
+            "expression": "type"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisioncodeperiod",
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "mii-provision-provision-code-period",
+        "url": "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisioncodeperiod",
+        "version": "1.0.3",
+        "name": "MII_SP_Consent_ProvisionCodePeriod",
+        "status": "active",
+        "date": "2023-03-08",
+        "description": "Suche nach Zeitraum (period) einer bestimmten, durch einen Code definierten, Provision",
+        "code": "mii-provision-provision-code-period",
+        "base": [
+          "Consent"
+        ],
+        "type": "composite",
+        "expression": "Consent.provision.provision",
+        "component": [
+          {
+            "definition": "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisioncode",
+            "expression": "code"
+          },
+          {
+            "definition": "https://www.medizininformatik-initiative.de/fhir/modul-consent/SearchParameter/mii-sp-consent-provisionperiod",
+            "expression": "period"
+          }
+        ]
+      }
+    }
+  ]
+}

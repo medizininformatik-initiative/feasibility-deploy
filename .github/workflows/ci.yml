@@ -9,17 +9,39 @@ on:
   pull_request:
     branches:
     - main
+    - develop
 
 jobs:
-
   lint:
     runs-on: ubuntu-latest
 
     steps:
-
-    - name: Checkout repository
-      uses: actions/checkout@v2
+    - name: Check out Git repository
+      uses: actions/checkout@v3
 
     - name: Check shell scripts
       uses: ludeeus/action-shellcheck@master
+      with:
+        ignore_paths: .github/scripts
 
+  test-feasibility-triangle-fhir-server:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out Git repository
+      uses: actions/checkout@v3
+
+    - name: Install Blazectl
+      run: .github/scripts/install-blazectl.sh
+
+    - name: Start Blaze FHIR Server
+      run: docker-compose -f feasibility-triangle/fhir-server/docker-compose.yml up -d
+
+    - name: Wait for Blaze FHIR Server
+      run: .github/scripts/wait-for-url.sh  http://localhost:8081/health
+
+    - name: Load Data
+      run: blazectl --no-progress --server http://localhost:8081/fhir upload .github/test-data
+
+    - name: Run Test Queries
+      run: .github/scripts/test-consent-queries.sh
