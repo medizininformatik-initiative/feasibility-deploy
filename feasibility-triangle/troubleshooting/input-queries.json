@@ -1,0 +1,297 @@
+{
+  "queries": [
+    {
+      "query-name": "patient-gender",
+      "module": "Patient",
+      "sq": {
+        "version": "http://to_be_decided.com/draft-1/schema#",
+        "display": "",
+        "inclusionCriteria": [
+          [
+            {
+              "termCodes": [
+                {
+                  "code": "263495000",
+                  "system": "http://snomed.info/sct",
+                  "display": "Geschlecht"
+                }
+              ],
+              "valueFilter": {
+                "selectedConcepts": [
+                  {
+                    "code": "female",
+                    "display": "Female",
+                    "system": "http://hl7.org/fhir/administrative-gender"
+                  },
+                  {
+                    "code": "male",
+                    "display": "Male",
+                    "system": "http://hl7.org/fhir/administrative-gender"
+                  }
+                ],
+                "type": "concept"
+              }
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "query-name": "diabetes-any",
+      "module": "Condition",
+      "sq": {
+        "version": "http://to_be_decided.com/draft-1/schema#",
+        "display": "",
+        "inclusionCriteria": [
+          [
+            {
+              "termCodes": [
+                {
+                  "code": "E10-E14",
+                  "system": "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
+                  "version": "2023",
+                  "display": "Diabetes mellitus"
+                }
+              ]
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "query-name": "hemoglobin-718-7",
+      "module": "Laboratory",
+      "sq": {
+        "version": "http://to_be_decided.com/draft-1/schema#",
+        "display": "",
+        "inclusionCriteria": [
+          [
+            {
+              "termCodes": [
+                {
+                  "code": "718-7",
+                  "system": "http://loinc.org",
+                  "display": "Hämoglobin"
+                }
+              ],
+              "valueFilter": {
+                "selectedConcepts": [],
+                "type": "quantity-comparator",
+                "unit": {
+                  "code": "g/dL",
+                  "display": "g/dL"
+                },
+                "value": 0,
+                "comparator": "gt"
+              }
+            },
+            {
+              "termCodes": [
+                {
+                  "code": "17856-6",
+                  "system": "http://loinc.org",
+                  "display": "Hämoglobin A1c"
+                }
+              ],
+              "valueFilter": {
+                "selectedConcepts": [],
+                "type": "quantity-comparator",
+                "unit": {
+                  "code": "%",
+                  "display": "%"
+                },
+                "value": 0,
+                "comparator": "gt"
+              }
+            },
+            {
+              "termCodes": [
+                {
+                  "code": "4548-4",
+                  "system": "http://loinc.org",
+                  "display": "Hämoglobin A1c"
+                }
+              ],
+              "valueFilter": {
+                "selectedConcepts": [],
+                "type": "quantity-comparator",
+                "unit": {
+                  "code": "%",
+                  "display": "%"
+                },
+                "value": 0,
+                "comparator": "gt"
+              }
+            },
+            {
+              "termCodes": [
+                {
+                  "code": "4549-2",
+                  "system": "http://loinc.org",
+                  "display": "Hemoglobin A1c/Hemoglobin.total in Blood by Electrophoresis"
+                }
+              ],
+              "valueFilter": {
+                "selectedConcepts": [],
+                "type": "quantity-comparator",
+                "unit": {
+                  "code": "%",
+                  "display": "%"
+                },
+                "value": 0,
+                "comparator": "gt"
+              }
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "query-name": "procedure-endocronological-function",
+      "module": "Procedure",
+      "sq": {
+        "version": "http://to_be_decided.com/draft-1/schema#",
+        "display": "",
+        "inclusionCriteria": [
+          [
+            {
+              "termCodes": [
+                {
+                  "code": "3-20",
+                  "system": "http://fhir.de/CodeSystem/bfarm/ops",
+                  "version": "2023",
+                  "display": "Computertomographie [CT], nativ"
+                }
+              ]
+            },
+            {
+              "termCodes": [
+                {
+                  "code": "8-19",
+                  "system": "http://fhir.de/CodeSystem/bfarm/ops",
+                  "version": "2023",
+                  "display": "Verbände und Entfernung von erkranktem Gewebe an Haut und Unterhaut"
+                }
+              ]
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "query-name": "central-consent-eudsgvoniveau",
+      "module": "Consent",
+      "sq": {
+        "version": "http://to_be_decided.com/draft-1/schema#",
+        "display": "",
+        "inclusionCriteria": [
+          [
+            {
+              "termCodes": [
+                {
+                  "code": "central-consent",
+                  "system": "mii.abide",
+                  "display": "MDAT wissenschaftlich nutzen - EU DSGVO Niveau"
+                }
+              ]
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "query-name": "medication-administration-antidiab",
+      "module": "Medication",
+      "sq": {
+        "version": "http://to_be_decided.com/draft-1/schema#",
+        "display": "",
+        "inclusionCriteria": [
+          [
+            {
+              "termCodes": [
+                {
+                  "code": "A10",
+                  "system": "http://fhir.de/CodeSystem/bfarm/atc",
+                  "version": "2022",
+                  "display": "Antidiabetika"
+                }
+              ]
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "query-name": "specimen-test",
+      "module": "Specimen",
+      "sq": {
+        "version": "http://to_be_decided.com/draft-1/schema#",
+        "display": "",
+        "inclusionCriteria": [
+          [
+            {
+              "termCodes": [
+                {
+                  "code": "119297000",
+                  "system": "http://snomed.info/sct",
+                  "version": "http://snomed.info/sct/900000000000207008/version/20220930",
+                  "display": "Blood specimen"
+                }
+              ]
+            },
+            {
+              "termCodes": [
+                {
+                  "code": "119361006",
+                  "system": "http://snomed.info/sct",
+                  "version": "http://snomed.info/sct/900000000000207008/version/20220930",
+                  "display": "Plasma specimen"
+                }
+              ]
+            },
+            {
+              "termCodes": [
+                {
+                  "code": "119376003",
+                  "system": "http://snomed.info/sct",
+                  "version": "http://snomed.info/sct/900000000000207008/version/20220930",
+                  "display": "Tissue specimen"
+                }
+              ]
+            },
+            {
+              "termCodes": [
+                {
+                  "code": "441652008",
+                  "system": "http://snomed.info/sct",
+                  "version": "http://snomed.info/sct/900000000000207008/version/20220930",
+                  "display": "Formalin-fixed paraffin-embedded tissue specimen"
+                }
+              ]
+            },
+            {
+              "termCodes": [
+                {
+                  "code": "441479001",
+                  "system": "http://snomed.info/sct",
+                  "version": "http://snomed.info/sct/900000000000207008/version/20220930",
+                  "display": "Fresh tissue specimen"
+                }
+              ]
+            },
+            {
+              "termCodes": [
+                {
+                  "code": "420135007",
+                  "system": "http://snomed.info/sct",
+                  "version": "http://snomed.info/sct/900000000000207008/version/20220930",
+                  "display": "Whole blood"
+                }
+              ]
+            }
+          ]
+        ]
+      }
+    }
+  ]
+}

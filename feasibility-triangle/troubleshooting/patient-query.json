@@ -15,8 +15,13 @@
           "selectedConcepts": [
             {
               "code": "female",
-              "system": "http://hl7.org/fhir/administrative-gender",
-              "display": "Female"
+              "display": "Female",
+              "system": "http://hl7.org/fhir/administrative-gender"
+            },
+            {
+              "code": "male",
+              "display": "Male",
+              "system": "http://hl7.org/fhir/administrative-gender"
             }
           ],
           "type": "concept"
