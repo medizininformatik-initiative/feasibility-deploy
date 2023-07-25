@@ -16,6 +16,17 @@ Please refer to the respective repositories for a more in depth changelog of sin
 |FLARE|<https://github.com/medizininformatik-initiative/flare>|
 |Blaze FHIR server|<https://github.com/medizininformatik-initiative/blaze>|
 
+## [2.1.0] - 2023-07-25
+
+### Overall
+
+- Updated AKTIN Client to 1.6.0: Fix websocket timeout and improve error handling  - <https://github.com/medizininformatik-initiative/feasibility-aktin-plugin/releases/tag/v1.6.0>
+- Updated FLARE to 1.0: Fix Execution Operation - <https://github.com/medizininformatik-initiative/flare/releases/tag/v1.0.0>
+- Updated Blaze to 0.22: implements $everything, adds basic frontend, Support for Custom Search Parameters <https://github.com/samply/blaze/releases/tag/v0.22.0>
+- Added Troubleshooting specific for triangle
+- Update testdata repo from MII
+
+
 ## [2.0.0] - 2023-03-29
 
 ### Overall
