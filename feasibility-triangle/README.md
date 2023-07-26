@@ -73,7 +73,7 @@ Set the rights for all files of the auth folder to 655 `chmod 655 /opt/feasibili
 ### Step 6 - Load the ontology mapping files
 
 If used, (see "Overview") The FLARE component requires a mapping file and ontology tree file to translate an incoming feasibility query into FHIR Search queries.
-Both can be downloaded here: https://confluence.imi.med.fau.de/display/ABIDEMI/Ontologie
+Both can be downloaded here: https://confluence.imi.med.fau.de/display/MIIC/Ontologie
 
 Upload the  mapping_*.zip file to your server, unpack it and copy the ontology files to your triangle ontology folder
 
@@ -244,7 +244,7 @@ Keep the existing configuration as is.
 ### Step 4 - Update your ontology
 
 If used, (see "Overview") The FLARE component requires a mapping file and ontology tree file to translate an incoming feasibility query into FHIR Search queries.
-Both can be downloaded here: https://confluence.imi.med.fau.de/display/ABIDEMI/Ontologie.
+Both can be downloaded here: https://confluence.imi.med.fau.de/display/MIIC/Ontologie.
 
 Make sure that you use the newest version.
 
