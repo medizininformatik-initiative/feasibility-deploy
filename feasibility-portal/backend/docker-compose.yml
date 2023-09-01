@@ -40,8 +40,8 @@ services:
       AKTIN_BROKER_API_KEY: ${FEASIBILITY_BACKEND_AKTIN_BROKER_API_KEY:-xxxApiKeyAdmin123}
       # ---- DSF  broker
       BROKER_CLIENT_DSF_ENABLED: ${FEASIBILITY_BACKEND_DSF_ENABLED:-false}
-      DSF_SECURITY_CACERT: ${FEASIBILITY_BACKEND_DSF_CACERT:-/opt/codex-feasibility-security/ca.pem}
-      DSF_SECURITY_KEYSTORE_P12FILE: ${FEASIBILITY_BACKEND_DSF_DSF_SECURITY_KEYSTORE_P12FILE:-/opt/codex-feasibility-security/test-user.p12}
+      DSF_SECURITY_CACERT: /run/secrets/ca.pem
+      DSF_SECURITY_KEYSTORE_P12FILE: /run/secrets/backend-user.p12
       DSF_SECURITY_KEYSTORE_PASSWORD: ${FEASIBILITY_BACKEND_DSF_SECURITY_KEYSTORE_PASSWORD:-password}
       DSF_PROXY_HOST: ${FEASIBILITY_BACKEND_DSF_PROXY_HOST}
       DSF_PROXY_USERNAME: ${FEASIBILITY_BACKEND_DSF_PROXY_USERNAME}
@@ -64,6 +64,9 @@ services:
       # ---- logging
       LOG_LEVEL_SQL: ${FEASIBILITY_BACKEND_LOG_LEVEL_SQL:-warn}
       LOG_LEVEL: ${FEASIBILITY_BACKEND_LOG_LEVEL:-warn}
+    secrets:
+    - ca.pem
+    - backend-user.p12
     restart: unless-stopped
     volumes:
       - ${FEASIBILITY_BACKEND_CERTS_PATH:-../secrets}:/opt/codex-feasibility-security
@@ -86,3 +89,9 @@ services:
 volumes:
   feas-backend-db-data:
     name: "feas-backend-db-data"
+secrets:
+  ca.pem:
+    file: "${FEASIBILITY_BACKEND_DSF_CACERT:-../secrets/ca.pem}"
+  backend-user.p12:
+    file: "${FEASIBILITY_BACKEND_DSF_DSF_SECURITY_KEYSTORE_P12FILE:-/opt/codex-feasibility-security/backend-user.p12}"
+
