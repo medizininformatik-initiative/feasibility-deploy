@@ -21,17 +21,17 @@ services:
       - dsf-dic-fhir-app
 
   dsf-dic-fhir-app:
-    image: ghcr.io/highmed/fhir:0.9.2
+    image: ghcr.io/datasharingframework/fhir:1.2.0
     restart: on-failure
     healthcheck:
-      test: [ "CMD", "java", "-cp", "dsf_fhir.jar", "org.highmed.dsf.fhir.StatusClient" ]
+      test: [ "CMD-SHELL", "./healthcheck.sh" ]
       interval: 10s
       timeout: 15s
       retries: 5
     volumes:
-    - type: bind
-      source: ./fhir/app/conf/bundle.xml
-      target: /opt/fhir/conf/bundle.xml
+      - type: bind
+        source: ${FEASIBILITY_DSF_FHIR_LOG_FOLDER_PATH:-./fhir/log}
+        target: /opt/fhir/log
     secrets:
     - db_liquibase.password
     - db_fhir_dic_1_user.password
@@ -39,31 +39,46 @@ services:
     - app_client_trust_certificates.pem
     - app_dic_1_client_certificate.pem
     - app_dic_1_client_certificate_private_key.pem
-    - app_client_certificate_private_key.pem.password
+    #- app_client_certificate_private_key.pem.password
     environment:
-      ORG_HIGHMED_DSF_FHIR_DB_LIQUIBASE_PASSWORD_FILE: /run/secrets/db_liquibase.password
-      ORG_HIGHMED_DSF_FHIR_DB_USER_PASSWORD_FILE: /run/secrets/db_fhir_dic_1_user.password
-      ORG_HIGHMED_DSF_FHIR_DB_USER_PERMANENT_DELETE_PASSWORD_FILE: /run/secrets/db_fhir_dic_1_user_permanent_delete.password
-      ORG_HIGHMED_DSF_FHIR_CLIENT_TRUST_CERTIFICATES: /run/secrets/app_client_trust_certificates.pem
-      ORG_HIGHMED_DSF_FHIR_CLIENT_CERTIFICATE: /run/secrets/app_dic_1_client_certificate.pem
-      ORG_HIGHMED_DSF_FHIR_CLIENT_CERTIFICATE_PRIVATE_KEY: /run/secrets/app_dic_1_client_certificate_private_key.pem
-      ORG_HIGHMED_DSF_FHIR_CLIENT_CERTIFICATE_PRIVATE_KEY_PASSWORD_FILE: /run/secrets/app_client_certificate_private_key.pem.password
-      ORG_HIGHMED_DSF_FHIR_DB_URL: jdbc:postgresql://dsf-dic-fhir-db/fhir
-      ORG_HIGHMED_DSF_FHIR_DB_USER_GROUP: dic_1_fhir_users
-      ORG_HIGHMED_DSF_FHIR_DB_USER_USERNAME: dic_1_fhir_server_user
-      ORG_HIGHMED_DSF_FHIR_DB_USER_PERMANENT_DELETE_GROUP: dic_1_fhir_permanent_delete_users
-      ORG_HIGHMED_DSF_FHIR_DB_USER_PERMANENT_DELETE_USERNAME: dic_1_fhir_server_permanent_delete_user
-      ORG_HIGHMED_DSF_FHIR_SERVER_BASE_URL: https://dsf-dic-fhir-proxy/fhir
-      ORG_HIGHMED_DSF_FHIR_SERVER_ORGANIZATION_IDENTIFIER_VALUE: ${FEASIBILITY_DSF_CLIENT_PROCESS_ORGANIZATION_IDENTIFIER}
-      ORG_HIGHMED_DSF_FHIR_SERVER_USER_THUMBPRINTS: ${FEASIBILITY_DSF_CLIENT_PROCESS_USER_THUMBPRINTS}
-      ORG_HIGHMED_DSF_FHIR_SERVER_USER_THUMBPRINTS_PERMANENT_DELETE: ${FEASIBILITY_DSF_CLIENT_PROCESS_USER_THUMBPRINTS_PERMANENT_DELETE}
-      EXTRA_JVM_ARGS: ${CODEX_DSF_ZARS_FHIR_APP_JVM_ARGS}
+      DEV_DSF_SERVER_AUTH_TRUST_CLIENT_CERTIFICATE_CAS: /run/secrets/app_client_trust_certificates.pem
+      DEV_DSF_FHIR_DB_LIQUIBASE_PASSWORD_FILE: /run/secrets/db_liquibase.password
+      DEV_DSF_FHIR_DB_USER_PASSWORD_FILE: /run/secrets/db_fhir_dic_1_user.password
+      DEV_DSF_FHIR_DB_USER_PERMANENT_DELETE_PASSWORD_FILE: /run/secrets/db_fhir_dic_1_user_permanent_delete.password
+      DEV_DSF_FHIR_CLIENT_TRUST_SERVER_CERTIFICATE_CAS: /run/secrets/app_client_trust_certificates.pem
+      DEV_DSF_FHIR_CLIENT_CERTIFICATE: /run/secrets/app_dic_1_client_certificate.pem
+      DEV_DSF_FHIR_CLIENT_CERTIFICATE_PRIVATE_KEY: /run/secrets/app_dic_1_client_certificate_private_key.pem
+      #DEV_DSF_FHIR_CLIENT_CERTIFICATE_PRIVATE_KEY_PASSWORD_FILE: /run/secrets/app_client_certificate_private_key.pem.password
+      DEV_DSF_FHIR_DB_URL: jdbc:postgresql://dsf-dic-fhir-db/fhir
+      DEV_DSF_FHIR_DB_USER_GROUP: dic_1_fhir_users
+      DEV_DSF_FHIR_DB_USER_USERNAME: dic_1_fhir_server_user
+      DEV_DSF_FHIR_DB_USER_PERMANENT_DELETE_GROUP: dic_1_fhir_permanent_delete_users
+      DEV_DSF_FHIR_DB_USER_PERMANENT_DELETE_USERNAME: dic_1_fhir_server_permanent_delete_user
+      DEV_DSF_FHIR_SERVER_BASE_URL: ${FEASIBILITY_DSF_FHIR_SERVER_BASE_URL:-https://dsf-dic-fhir-proxy/fhir}
+      DEV_DSF_FHIR_SERVER_ORGANIZATION_IDENTIFIER_VALUE: ${FEASIBILITY_DSF_CLIENT_PROCESS_ORGANIZATION_IDENTIFIER}
+      DEV_DSF_FHIR_SERVER_ORGANIZATION_THUMBPRINT: ${FEASIBILITY_DSF_FHIR_ORGANIZATION_THUMBPRINT}
+      DEV_DSF_FHIR_SERVER_ROLECONFIG: |
+        - webbrowser_test_user:
+            thumbprint: ${FEASIBILITY_DSF_FHIR_USER_THUMBPRINT}
+            token-role: admin
+            dsf-role:
+              - CREATE
+              - READ
+              - UPDATE
+              - DELETE
+              - SEARCH
+              - HISTORY
+              - PERMANENT_DELETE
+              - WEBSOCKET
+            practitioner-role:
+              - http://dsf.dev/fhir/CodeSystem/practitioner-role|DSF_ADMIN
+      EXTRA_JVM_ARGS: ${FEASIBILITY_DSF_FHIR_APP_JVM_ARGS}
       TZ: Europe/Berlin
     depends_on:
     - dsf-dic-fhir-db
 
   dsf-dic-fhir-db:
-    image: postgres:13
+    image: postgres:15
     restart: on-failure
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U liquibase_user -d fhir" ]
@@ -82,32 +97,27 @@ services:
     - db_liquibase.password
 
   dsf-dic-bpe-app:
-    image: ghcr.io/highmed/bpe:0.9.2
+    image: ghcr.io/datasharingframework/bpe:1.2.0
     restart: on-failure
     healthcheck:
-      test: [ "CMD", "java", "-cp", "dsf_bpe.jar", "org.highmed.dsf.bpe.StatusClient" ]
+      test: [ "CMD-SHELL", "./healthcheck.sh" ]
       interval: 10s
       timeout: 15s
       retries: 5
     volumes:
       - type: bind
-        source: ../../assets/feasibility-dsf-process-0.6.2.jar
-        target: /opt/bpe/process/feasibility-dsf-process-0.6.2.jar
+        source: ${FEASIBILITY_DSF_BPE_PROCESS_PLUGINS_DIRECTORY_PATH:-./process}
+        target: /opt/bpe/process
         read_only: true
       - type: bind
-        source: ./bpe/app/last_event
+        source: ${FEASIBILITY_DSF_BPE_LOG_FOLDER_PATH:-./bpe/log}
+        target: /opt/bpe/log
+      - type: bind
+        source: ${FEASIBILITY_DSF_BPE_LAST_EVENT_FOLDER_PATH:-./bpe/last_event}
         target: /opt/bpe/last_event
       - type: bind
-        source: ./bpe/cache
+        source: ${FEASIBILITY_DSF_BPE_CACHE_FOLDER_PATH:-./bpe/cache}
         target: /opt/bpe/cache
-      - type: bind
-        source: ../../assets/hapi-fhir-client-5.1.0.jar
-        target: /opt/bpe/plugin/hapi-fhir-client-5.1.0.jar
-        read_only: true
-      - type: bind
-        source: ./assets/bucket4j-core-8.2.0.jar
-        target: /opt/bpe/plugin/bucket4j-core-8.2.0.jar
-        read_only: true
       # Use the following settings if you need to.
       # - type: bind
       #   source: <PATH_TO_TRUST_STORE>
@@ -124,24 +134,25 @@ services:
     - app_client_trust_certificates.pem
     - app_dic_1_client_certificate.pem
     - app_dic_1_client_certificate_private_key.pem
-    - app_client_certificate_private_key.pem.password
+    #- app_client_certificate_private_key.pem.password
     environment:
-      ORG_HIGHMED_DSF_BPE_DB_LIQUIBASE_PASSWORD_FILE: /run/secrets/db_liquibase.password
-      ORG_HIGHMED_DSF_BPE_DB_USER_PASSWORD_FILE: /run/secrets/db_dic_1_bpe_user.password
-      ORG_HIGHMED_DSF_BPE_DB_USER_CAMUNDA_PASSWORD_FILE: /run/secrets/db_dic_1_bpe_user_camunda.password
-      ORG_HIGHMED_DSF_BPE_FHIR_CLIENT_TRUST_CERTIFICATES: /run/secrets/app_client_trust_certificates.pem
-      ORG_HIGHMED_DSF_BPE_FHIR_CLIENT_CERTIFICATE: /run/secrets/app_dic_1_client_certificate.pem
-      ORG_HIGHMED_DSF_BPE_FHIR_CLIENT_CERTIFICATE_PRIVATE_KEY: /run/secrets/app_dic_1_client_certificate_private_key.pem
-      ORG_HIGHMED_DSF_BPE_FHIR_CLIENT_CERTIFICATE_PRIVATE_KEY_PASSWORD_FILE: /run/secrets/app_client_certificate_private_key.pem.password
-      ORG_HIGHMED_DSF_BPE_DB_URL: jdbc:postgresql://dsf-dic-bpe-db/bpe
-      ORG_HIGHMED_DSF_BPE_DB_USER_GROUP: dic_1_bpe_users
-      ORG_HIGHMED_DSF_BPE_DB_USER_USERNAME: dic_1_bpe_server_user
-      ORG_HIGHMED_DSF_BPE_DB_USER_CAMUNDA_GROUP: dic_1_camunda_users
-      ORG_HIGHMED_DSF_BPE_DB_USER_CAMUNDA_USERNAME: dic_1_camunda_server_user
-      ORG_HIGHMED_DSF_BPE_FHIR_SERVER_ORGANIZATION_IDENTIFIER_VALUE: ${FEASIBILITY_DSF_CLIENT_PROCESS_ORGANIZATION_IDENTIFIER}
-      ORG_HIGHMED_DSF_BPE_FHIR_SERVER_BASE_URL: https://dsf-dic-fhir-proxy/fhir
-      DE_MEDIZININFORMATIK_INITIATIVE_FEASIBILITY_DSF_PROCESS_CLIENT_FLARE_WEBSERVICE_BASE_URL: ${FEASIBILITY_DSF_CLIENT_PROCESS_FLARE_WEBSERVICE_BASE_URL}
-      DE_MEDIZININFORMATIK_INITIATIVE_FEASIBILITY_DSF_PROCESS_CLIENT_FLARE_WEBSERVICE_CONNECT_TIMEOUT: 2000
+      DEV_DSF_SERVER_AUTH_TRUST_CLIENT_CERTIFICATE_CAS: /run/secrets/app_client_trust_certificates.pem
+      DEV_DSF_BPE_DB_LIQUIBASE_PASSWORD_FILE: /run/secrets/db_liquibase.password
+      DEV_DSF_BPE_DB_USER_PASSWORD_FILE: /run/secrets/db_dic_1_bpe_user.password
+      DEV_DSF_BPE_DB_USER_CAMUNDA_PASSWORD_FILE: /run/secrets/db_dic_1_bpe_user_camunda.password
+      DEV_DSF_BPE_FHIR_CLIENT_TRUST_SERVER_CERTIFICATE_CAS: /run/secrets/app_client_trust_certificates.pem
+      DEV_DSF_BPE_FHIR_CLIENT_CERTIFICATE: /run/secrets/app_dic_1_client_certificate.pem
+      DEV_DSF_BPE_FHIR_CLIENT_CERTIFICATE_PRIVATE_KEY: /run/secrets/app_dic_1_client_certificate_private_key.pem
+      #DEV_DSF_BPE_FHIR_CLIENT_CERTIFICATE_PRIVATE_KEY_PASSWORD_FILE: /run/secrets/app_client_certificate_private_key.pem.password
+      DEV_DSF_BPE_DB_URL: jdbc:postgresql://dsf-dic-bpe-db/bpe
+      DEV_DSF_BPE_DB_USER_GROUP: dic_1_bpe_users
+      DEV_DSF_BPE_DB_USER_USERNAME: dic_1_bpe_server_user
+      DEV_DSF_BPE_DB_USER_CAMUNDA_GROUP: dic_1_camunda_users
+      DEV_DSF_BPE_DB_USER_CAMUNDA_USERNAME: dic_1_camunda_server_user
+      DEV_DSF_BPE_FHIR_SERVER_BASE_URL: ${FEASIBILITY_DSF_FHIR_SERVER_BASE_URL:-https://dsf-dic-fhir-proxy/fhir}
+      DEV_DSF_BPE_PROCESS_EXCLUDED: ${FEASIBILITY_DSF_BPE_PROCESS_EXCLUDED}
+      DE_MEDIZININFORMATIK_INITIATIVE_FEASIBILITY_DSF_PROCESS_CLIENT_FLARE_BASE_URL: ${FEASIBILITY_DSF_CLIENT_PROCESS_FLARE_BASE_URL}
+      DE_MEDIZININFORMATIK_INITIATIVE_FEASIBILITY_DSF_PROCESS_CLIENT_FLARE_CONNECT_TIMEOUT: 2000
       DE_MEDIZININFORMATIK_INITIATIVE_FEASIBILITY_DSF_PROCESS_EVALUATION_STRATEGY: ${FEASIBILITY_DSF_CLIENT_PROCESS_EVALUATION_STRATEGY}
       DE_MEDIZININFORMATIK_INITIATIVE_FEASIBILITY_DSF_PROCESS_EVALUATION_OBFUSCATE: ${FEASIBILITY_DSF_CLIENT_PROCESS_EVALUATION_OBFUSCATE}
       DE_MEDIZININFORMATIK_INITIATIVE_FEASIBILITY_DSF_PROCESS_CLIENT_STORE_BASE_URL: ${FEASIBILITY_DSF_CLIENT_PROCESS_FHIR_SERVER_BASE_URL}
@@ -161,7 +172,6 @@ services:
       # DE_MEDIZININFORMATIK_INITIATIVE_FEASIBILITY_DSF_PROCESS_CLIENT_STORE_TRUST_STORE_PASSWORD: ${FEASIBILITY_DSF_CLIENT_PROCESS_TRUST_STORE_PASSWORD}
       # DE_MEDIZININFORMATIK_INITIATIVE_FEASIBILITY_DSF_PROCESS_CLIENT_STORE_KEY_STORE_PATH: ${FEASIBILITY_DSF_CLIENT_PROCESS_KEY_STORE_PATH}
       # DE_MEDIZININFORMATIK_INITIATIVE_FEASIBILITY_DSF_PROCESS_CLIENT_STORE_KEY_STORE_PASSWORD: ${FEASIBILITY_DSF_CLIENT_PROCESS_KEY_STORE_PASSWORD}
-      # DE_MEDIZININFORMATIK_INITIATIVE_FEASIBILITY_DSF_PROCESS_CLIENT_STORE_BASE_URL: ${FEASIBILITY_DSF_CLIENT_PROCESS_FHIR_SERVER_BASE_URL}
       EXTRA_JVM_ARGS: ${CODEX_DSF_ZARS_BPE_APP_JVM_ARGS}
       TZ: "Europe/Berlin"
     depends_on:
@@ -169,7 +179,7 @@ services:
     - dsf-dic-bpe-db
 
   dsf-dic-bpe-db:
-    image: postgres:13
+    image: postgres:15
     restart: on-failure
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U liquibase_user -d bpe" ]
@@ -189,34 +199,32 @@ services:
 
 secrets:
   proxy_certificate_and_int_cas.pem:
-    file: ../../secrets/proxy_certificate_and_int_cas.pem
+    file: ${FEASIBILITY_DSF_PROXY_CERTIFICATE_AND_INTERMEDIATE_CAS_FILE:-../../secrets/proxy_certificate_and_int_cas.pem}
   proxy_certificate_private_key.pem:
-    file: ../../secrets/proxy_certificate_private_key.pem
+    file: ${FEASIBILITY_DSF_PROXY_CERTIFICATE_PRIVATE_KEY_FILE:-../../secrets/proxy_certificate_private_key.pem}
   proxy_trusted_client_cas.pem:
-    file: ../../secrets/proxy_trusted_client_cas.pem
+    file: ${FEASIBILITY_DSF_PROXY_TRUSTED_CLIENT_CAS_FILE:-../../secrets/proxy_trusted_client_cas.pem}
 
   app_client_trust_certificates.pem:
-    file: ../../secrets/app_client_trust_certificates.pem
-  app_client_certificate_private_key.pem.password:
-    file: ../../secrets/app_client_certificate_private_key.pem.password
+    file: ${FEASIBILITY_DSF_CLIENT_TRUST_CERTIFICATES_FILE:-../../secrets/app_client_trust_certificates.pem}
+  #app_client_certificate_private_key.pem.password:
+  #  file: ${FEASIBILITY_DSF_CLIENT_CERTIFICATE_PRIVATE_KEY_PASSWORD_FILE:-../../secrets/app_client_certificate_private_key.pem.password}
 
   db_liquibase.password:
-    file: ../../secrets/db_liquibase.password
+    file: ${FEASIBILITY_DSF_DB_LIQUIBASE_PASSWORD_FILE:-../../secrets/db_liquibase.password}
 
   db_dic_1_bpe_user.password:
-    file: ../../secrets/db_dic_1_bpe_user.password
+    file: ${FEASIBILITY_DSF_BPE_DB_USER_PASSWORD_FILE:-../../secrets/db_dic_1_bpe_user.password}
   db_dic_1_bpe_user_camunda.password:
-    file: ../../secrets/db_dic_1_bpe_user_camunda.password
+    file: ${FEASIBILITY_DSF_BPE_DB_USER_CAMUNDA_PASSWORD_FILE:-../../secrets/db_dic_1_bpe_user_camunda.password}
   app_dic_1_client_certificate.pem:
-    file: ../../secrets/app_dic_1_client_certificate.pem
+    file: ${FEASIBILITY_DSF_CLIENT_CERTIFICATE_FILE:-../../secrets/app_dic_1_client_certificate.pem}
   app_dic_1_client_certificate_private_key.pem:
-    file: ../../secrets/app_dic_1_client_certificate_private_key.pem
+    file: ${FEASIBILITY_DSF_CLIENT_CERTIFICATE_PRIVATE_KEY_FILE:-../../secrets/app_dic_1_client_certificate_private_key.pem}
   db_fhir_dic_1_user.password:
-    file: ../../secrets/db_fhir_dic_1_user.password
+    file: ${FEASIBILITY_DSF_FHIR_DB_USER_PASSWORD_FILE:-../../secrets/db_fhir_dic_1_user.password}
   db_fhir_dic_1_user_permanent_delete.password:
-    file: ../../secrets/db_fhir_dic_1_user_permanent_delete.password
-
-
+    file: ${FEASIBILITY_DSF_FHIR_DB_USER_PERMANENT_DELETE_PASSWORD_FILE:-../../secrets/db_fhir_dic_1_user_permanent_delete.password}
 
 volumes:
   dsf-dic-fhir-db-data:
