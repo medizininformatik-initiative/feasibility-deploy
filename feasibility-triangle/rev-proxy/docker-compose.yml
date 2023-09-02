@@ -7,9 +7,8 @@ services:
     ports:
       - ${FEASIBILITY_TRIANGLE_REV_PROXY_PORT:-444}:8443
     volumes:
-      - ../auth/cert.pem:/etc/nginx/conf.d/cert.pem
-      - ../auth/key.pem:/etc/nginx/conf.d/key.pem
-      - ../auth/.htpasswd:/etc/nginx/.htpasswd
+      - ${FEASIBILITY_TRIANGLE_REV_PROXY_CERTIFICATE_FILE:-../auth/cert.pem}:/etc/nginx/conf.d/cert.pem
+      - ${FEASIBILITY_TRIANGLE_REV_PROXY_CERTIFICATE_PRIVATE_KEY_FILE:-../auth/key.pem}:/etc/nginx/conf.d/key.pem
+      - ${FEASIBILITY_TRIANGLE_REV_PROXY_HTTP_PASSWORD_FILE:-../auth/.htpasswd}:/etc/nginx/.htpasswd
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
       - ./mime.types:/etc/nginx/conf.d/mime.types
-
