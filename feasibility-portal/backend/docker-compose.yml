@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   feasibility-gui-backend:
-    image: ghcr.io/medizininformatik-initiative/feasibility-backend:3.0.0
+    image: ghcr.io/medizininformatik-initiative/feasibility-backend:4.0.0-alpha1
     ports:
     - ${FEASIBILITY_BACKEND_PORT:-127.0.0.1:8091}:8090
     depends_on:
@@ -64,10 +64,6 @@ services:
       LOG_LEVEL: ${FEASIBILITY_BACKEND_LOG_LEVEL:-warn}
     restart: unless-stopped
     volumes:
-      - ${FEASIBILITY_BACKEND_UI_PROFILES_PATH:-../ontology/ui_profiles}:/opt/codex-feasibility-backend/ontology/ui_profiles
-      - ${FEASIBILITY_BACKEND_CONCEPT_TREE_PATH:-../ontology/codex-code-tree.json}:/opt/codex-feasibility-backend/ontology/codex-code-tree.json
-      - ${FEASIBILITY_BACKEND_TERM_CODE_MAPPING_PATH:-../ontology/codex-term-code-mapping.json}:/opt/codex-feasibility-backend/ontology/codex-term-code-mapping.json
-      - ${FEASIBILITY_BACKEND_MIGRATION_PATH:-../ontology/migration/R__Load_latest_ui_profile.sql}:/opt/codex-feasibility-backend/ontology/migration/R__Load_latest_ui_profile.sql
       - ${FEASIBILITY_BACKEND_CERTS_PATH:-../secrets}:/opt/codex-feasibility-security
 
   feasibility-gui-backend-db:
