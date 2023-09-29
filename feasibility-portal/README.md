@@ -35,27 +35,9 @@ Set the rights for all files of the auth folder to 655 `chmod 655 /opt/feasibili
 
 - Not providing the certificate files is not an option.
 
-### Step 5 - Load the ontology mapping files
+### Step 5 - Load the ontology
 
-If used, (see "Overview") The FLARE component requires a mapping file and ontology tree file to translate an incoming feasibility query into FHIR Search queries.
-Both can be downloaded here: https://confluence.imi.med.fau.de/display/ABIDEMI/Ontologie
-
-Upload the ontology .zip files to your server, unpack them and copy the ontology files to your feasibility portal ontology folder
-
-```bash
-sudo -s
-mkdir /<path>/<to>/<folder>/<of>/<choice>
-cd /<path>/<to>/<folder>/<of>/<choice>
-unzip mapping_*.zip
-unzip ui_profile_*.zip
-unzip db_migration_*.zip
-cd mapping
-cp * /opt/feasibility-deploy/feasibility-portal/ontology
-cd ../ui_profile
-cp * /opt/feasibility-deploy/feasibility-portal/ontology/ui_profiles
-cd ../db_migration
-cp * /opt/feasibility-deploy/feasibility-portal/ontology/migration
-```
+**Note:** The ontology is now part of the image and will not have to be loaded manually.
 
 ### Step 6 - Configure your feasibility portal
 

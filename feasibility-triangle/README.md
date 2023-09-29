@@ -72,19 +72,7 @@ Set the rights for all files of the auth folder to 655 `chmod 655 /opt/feasibili
 
 ### Step 6 - Load the ontology mapping files
 
-If used, (see "Overview") The FLARE component requires a mapping file and ontology tree file to translate an incoming feasibility query into FHIR Search queries.
-Both can be downloaded here: https://confluence.imi.med.fau.de/display/ABIDEMI/Ontologie
-
-Upload the  mapping_*.zip file to your server, unpack it and copy the ontology files to your triangle ontology folder
-
-```bash
-sudo -s
-mkdir /<path>/<to>/<folder>/<of>/<choice>
-cd /<path>/<to>/<folder>/<of>/<choice>
-unzip mapping_*.zip
-cd mapping
-cp * /opt/feasibility-deploy/feasibility-triangle/ontology
-```
+**Note:** The ontology is now part of the FLARE image and will not have to be loaded manually.
 
 ### Step 7 - Configure your feasibility triangle
 
@@ -243,23 +231,7 @@ Keep the existing configuration as is.
 
 ### Step 4 - Update your ontology
 
-If used, (see "Overview") The FLARE component requires a mapping file and ontology tree file to translate an incoming feasibility query into FHIR Search queries.
-Both can be downloaded here: https://confluence.imi.med.fau.de/display/ABIDEMI/Ontologie.
-
-Make sure that you use the newest version.
-
-Upload the  mapping_*.zip file to your server, unpack it and copy the ontology files to your triangle ontology folder.
-
-```bash
-sudo -s
-mkdir /<path>/<to>/<folder>/<of>/<choice>
-cd /<path>/<to>/<folder>/<of>/<choice>
-unzip mapping_*.zip
-cd mapping
-cp * /opt/feasibility-deploy/feasibility-triangle/ontology
-```
-
-Existing mapping files should be replaced.
+**Note:** The ontology is now part of the FLARE image and will not have to be loaded manually.
 
 ### Step 5 - Start your triangle
 
