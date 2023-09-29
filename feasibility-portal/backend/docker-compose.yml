@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   feasibility-gui-backend:
-    image: ghcr.io/medizininformatik-initiative/feasibility-backend:4.0.0-alpha1
+    image: ghcr.io/medizininformatik-initiative/feasibility-backend:4.0.0-alpha2
     ports:
     - ${FEASIBILITY_BACKEND_PORT:-127.0.0.1:8091}:8090
     depends_on:
@@ -66,6 +66,7 @@ services:
     restart: unless-stopped
     volumes:
       - ${FEASIBILITY_BACKEND_CERTS_PATH:-../secrets}:/opt/codex-feasibility-security
+      - ./certs:/opt/codex-feasibility-backend/certs
 
   feasibility-gui-backend-db:
     image: 'postgres:15-alpine'
