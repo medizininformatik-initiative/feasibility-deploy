@@ -5,32 +5,32 @@
       "PARAGRAPH1": "Die CODEX Feasibility Plattform ist ein Angebot für Wissenschaftler:innen, die für ihre Forschung nach COVID-19 spezifischen Daten suchen.",
       "PARAGRAPH2": "Auf dieser Plattform steht hierfür ein frei zugängliches Suchtool zur Verfügung, das eine erste, unverbindliche Machbarkeitsabfrage ermöglicht. Auf diesem Weg kann festgestellt werden, wie viele Daten an den angeschlossenen CODEX-Standorten zur Verfügung stehen.",
       "PARAGRAPH3_1": "Anhand dieser Information können dann in einem nächsten Schritt konkrete Anfragen an die entsprechenden Standorte gestellt werden.",
-      "PARAGRAPH3_2":"",
-      "PARAGRAPH3_3":"",
-      "PARAGRAPH3_4":"",
-      "PARAGRAPH3_LINK":"",
-      "PARAGRAPH4_1":"",
-      "PARAGRAPH4_2":"",
-      "PARAGRAPH4_3":"",
+      "PARAGRAPH3_2": "",
+      "PARAGRAPH3_3": "",
+      "PARAGRAPH3_4": "",
+      "PARAGRAPH3_LINK": "",
+      "PARAGRAPH4_1": "",
+      "PARAGRAPH4_2": "",
+      "PARAGRAPH4_3": "",
       "PARAGRAPH5_1": "",
       "PARAGRAPH5_2": "",
-      "PARAGRAPH5_3":""
+      "PARAGRAPH5_3": ""
     },
     "ABIDETHEME": {
       "HEADLINE": "Willkommen auf der ABIDE Feasibility Plattform!",
       "PARAGRAPH1": "Die ABIDE Feasibility Plattform ist ein Unterstützungsangebot für Wissenschaftler und Wissenschaftlerinnen bei der Umsetzung ihrer Forschungsvorhaben.",
       "PARAGRAPH2": "Mit einer Machbarkeitsanfrage (Feasibility) erfahren Forschende, wie viele Fälle für ihre Suchkriterien (Ein- und Ausschlusskriterien) in den Datenintegrationszentren der universitätsmedizinischen Standorte bundesweit vorhanden sind und für medizinische Forschungszwecke beantragt werden können.",
       "PARAGRAPH3_1": "Zur Formulierung der Abfrage stehen aktuell der Kerndatensatz der Medizininformatikinitiative und der COVID-19 spezifische Datensatz GECCO zur Verfügung.",
-      "PARAGRAPH3_2":"",
-      "PARAGRAPH3_3":"",
-      "PARAGRAPH3_4":"",
-      "PARAGRAPH3_LINK":"",
-      "PARAGRAPH4_1":"",
-      "PARAGRAPH4_2":"",
-      "PARAGRAPH4_3":"",
+      "PARAGRAPH3_2": "",
+      "PARAGRAPH3_3": "",
+      "PARAGRAPH3_4": "",
+      "PARAGRAPH3_LINK": "",
+      "PARAGRAPH4_1": "",
+      "PARAGRAPH4_2": "",
+      "PARAGRAPH4_3": "",
       "PARAGRAPH5_1": "",
       "PARAGRAPH5_2": "",
-      "PARAGRAPH5_3":""
+      "PARAGRAPH5_3": ""
     },
     "FDPGTHEME": {
       "HEADLINE": "Willkommen im Bereich „Daten und Bioproben finden“ des Forschungsdatenportals für Gesundheit",
@@ -41,8 +41,8 @@
       "PARAGRAPH3_3": " haben Sie die Möglichkeit, eine neue Suchanfrage auf Basis des ",
       "PARAGRAPH3_4": " zu formulieren und abzuschicken, um einen Überblick über die verfügbaren Datensätze zu erhalten.",
       "PARAGRAPH3_LINK": "Kerndatensatzes der MII",
-      "PARAGRAPH4_1":"Gespeicherte Abfragen oder gespeicherte Entwürfe können Sie über ",
-      "PARAGRAPH4_2":"Meine Abfragen",
+      "PARAGRAPH4_1": "Gespeicherte Abfragen oder gespeicherte Entwürfe können Sie über ",
+      "PARAGRAPH4_2": "Meine Abfragen",
       "PARAGRAPH4_3": " einsehen und weiter bearbeiten.",
       "PARAGRAPH5_1": "Sobald Ihnen alle relevanten Informationen für Ihr Forschungsvorhaben zur Verfügung stehen, können Sie über ",
       "PARAGRAPH5_2": "Antrag stellen",
@@ -61,6 +61,16 @@
       "TEXT": "Stellen Sie einen Antrag zur Datennutzung im Antragsportal"
     }
   },
+  "DATASELECTION": {
+    "DATASELECTION": "Datenselektion",
+    "SEARCH": {
+      "LABEL": "Code oder Suchbegriff eingeben",
+      "CRITERIA": "Suchkriterien"
+    },
+    "DISPLAY": {
+      "LABEL": "Ausgewählte Merkmale"
+    }
+  },
   "LANGUAGE": {
     "GERMAN": "Deutsch",
     "ENGLISH": "Englisch",
@@ -76,8 +86,9 @@
   },
   "NAVIGATION": {
     "DASHBOARD": "Startseite",
-    "QUERYBUILDER_EDITOR": "Neue Abfrage",
+    "QUERYBUILDER_EDITOR": "Machbarkeitsabfrage",
     "QUERYBUILDER_OVERVIEW": "Meine Abfragen",
+    "DATASELECTION_EDITOR": "Datenselektion",
     "OPTIONS": "Einstellungen",
     "SIGNOUT": "Abmelden"
   },
@@ -150,7 +161,7 @@
       "HEADER_FILTER_CONCEPT_OPTIONAL": "Wählen Sie einen oder mehrere zulässige Werte:",
       "HEADER_FILTER_CONCEPT_MANDATORY": "Geben Sie einen oder mehrere zulässige Werte an:",
       "HEADER_FILTER_CONCEPT_FOR_DISPLAY": "Geben Sie einen oder mehrere zulässige Werte an ({{ label }}):",
-      "CHOOSE_GROUP":"Gruppe auswählen",
+      "CHOOSE_GROUP": "Gruppe auswählen",
       "MANDATORY_HINT": "Pflichtfeld",
       "UNIT": "Einheit",
       "MIN": "Min",
@@ -226,6 +237,7 @@
     "SAVE": "Speichern",
     "CANCEL": "Abbrechen",
     "CLOSE": "Schließen",
+    "DOWNLOAD": "Herunterladen",
     "ADD": "Auswählen",
     "ADD_TOOLTIP": "Merkmal einschränken",
     "ADDALL": "Alle hinzufügen",
@@ -235,6 +247,7 @@
     "SAVEQUERY": "Abfrage speichern",
     "VALIDATE": "Validieren",
     "IMPORT": "Query laden",
-    "IMPORT_FROM_FILE": "Datei auswählen"
+    "IMPORT_FROM_FILE": "Datei auswählen",
+    "IMPORT_DATASELECTION": "Datenselektion laden"
   }
 }

@@ -59,6 +59,7 @@ services:
       PRIVACY_QUOTA_READ_DETAILED_OBFUSCATED_INTERVALSECONDS: ${FEASIBILITY_BACKEND_PRIVACY_QUOTA_READ_DETAILED_OBFUSCATED_INTERVALSECONDS:-7200}
       PRIVACY_THRESHOLD_RESULTS: ${FEASIBILITY_BACKEND_PRIVACY_THRESHOLD_RESULTS:-20}
       PRIVACY_THRESHOLD_SITES: ${FEASIBILITY_BACKEND_PRIVACY_THRESHOLD_SITES:-3}
+      QUERYRESULT_DISABLE_LOG_FILE_ENCRYPTION: "true"
       # ---- logging
       LOG_LEVEL_SQL: ${FEASIBILITY_BACKEND_LOG_LEVEL_SQL:-warn}
       LOG_LEVEL: ${FEASIBILITY_BACKEND_LOG_LEVEL:-warn}
@@ -75,3 +76,11 @@ services:
       POSTGRES_PASSWORD: ${FEASIBILITY_BACKEND_DATASOURCE_PASSWORD:-guidbpw}
       POSTGRES_DB: codex_ui
     restart: unless-stopped
+    volumes:
+    - type: volume
+      source: feas-backend-db-data
+      target: /var/lib/postgresql/data
+
+volumes:
+  feas-backend-db-data:
+    name: "feas-backend-db-data"

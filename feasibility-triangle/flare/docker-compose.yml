@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   flare:
-    image: ghcr.io/medizininformatik-initiative/flare:2.0.0-rc2
+    image: ghcr.io/medizininformatik-initiative/flare:2.0.0-rc3
     ports:
       - ${FEASIBILITY_FLARE_PORT:-127.0.0.1:8084}:8080
     environment:

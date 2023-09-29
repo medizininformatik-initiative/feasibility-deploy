@@ -5,12 +5,12 @@
       "PARAGRAPH1": "Die CODEX Feasibility Plattform ist ein Angebot für Wissenschaftler:innen, die für ihre Forschung nach COVID-19 spezifischen Daten suchen.",
       "PARAGRAPH2": "Auf dieser Plattform steht hierfür ein frei zugängliches Suchtool zur Verfügung, das eine erste, unverbindliche Machbarkeitsabfrage ermöglicht. Auf diesem Weg kann festgestellt werden, wie viele Daten an den angeschlossenen CODEX-Standorten zur Verfügung stehen.",
       "PARAGRAPH3_1": "Anhand dieser Information können dann in einem nächsten Schritt konkrete Anfragen an die entsprechenden Standorte gestellt werden.",
-      "PARAGRAPH3_2":"",
+      "PARAGRAPH3_2": "",
       "PARAGRAPH3_3": "",
       "PARAGRAPH3_4": "",
-      "PARAGRAPH3_LINK":"",
-      "PARAGRAPH4_1":"",
-      "PARAGRAPH4_2":"",
+      "PARAGRAPH3_LINK": "",
+      "PARAGRAPH4_1": "",
+      "PARAGRAPH4_2": "",
       "PARAGRAPH4_3": "",
       "PARAGRAPH5_1": "",
       "PARAGRAPH5_2": "",
@@ -21,12 +21,12 @@
       "PARAGRAPH1": "Die ABIDE Feasibility Plattform ist ein Unterstützungsangebot für Wissenschaftler und Wissenschaftlerinnen bei der Umsetzung ihrer Forschungsvorhaben.",
       "PARAGRAPH2": "Mit einer Machbarkeitsanfrage (Feasibility) erfahren Forschende, wie viele Fälle für ihre Suchkriterien (Ein- und Ausschlusskriterien) in den Datenintegrationszentren der universitätsmedizinischen Standorte bundesweit vorhanden sind und für medizinische Forschungszwecke beantragt werden können.",
       "PARAGRAPH3_1": "Zur Formulierung der Abfrage stehen aktuell der Kerndatensatz der Medizininformatikinitiative und der COVID-19 spezifische Datensatz GECCO zur Verfügung.",
-      "PARAGRAPH3_2":"",
+      "PARAGRAPH3_2": "",
       "PARAGRAPH3_3": "",
       "PARAGRAPH3_4": "",
-      "PARAGRAPH3_LINK":"",
-      "PARAGRAPH4_1":"",
-      "PARAGRAPH4_2":"",
+      "PARAGRAPH3_LINK": "",
+      "PARAGRAPH4_1": "",
+      "PARAGRAPH4_2": "",
       "PARAGRAPH4_3": "",
       "PARAGRAPH5_1": "",
       "PARAGRAPH5_2": "",
@@ -41,8 +41,8 @@
       "PARAGRAPH3_3": " you have the possibility to formulate and send a new query based on the ",
       "PARAGRAPH3_4": " to get an overview of the available patient data records.",
       "PARAGRAPH3_LINK": "core data set of the MII",
-      "PARAGRAPH4_1":"You can view and further edit saved queries or saved drafts via ",
-      "PARAGRAPH4_2":"My Queries",
+      "PARAGRAPH4_1": "You can view and further edit saved queries or saved drafts via ",
+      "PARAGRAPH4_2": "My Queries",
       "PARAGRAPH4_3": ".",
       "PARAGRAPH5_1": "Once you have all the relevant information for your research project, you can submit an application for data use in the proposal portal of the German Research Data Portal for Health via",
       "PARAGRAPH5_2": "Submit Application",
@@ -61,6 +61,16 @@
       "TEXT": "Make a request for data use in the proposal portal"
     }
   },
+  "DATASELECTION": {
+    "DATASELECTION": "Dataselection",
+    "SEARCH": {
+      "LABEL": "Insert code or serach text",
+      "CRITERIA": "Search Criteria"
+    },
+    "DISPLAY": {
+      "LABEL": "Selected Criteria"
+    }
+  },
   "LANGUAGE": {
     "GERMAN": "German",
     "ENGLISH": "English",
@@ -76,8 +86,9 @@
   },
   "NAVIGATION": {
     "DASHBOARD": "Home",
-    "QUERYBUILDER_EDITOR": "New query",
-    "QUERYBUILDER_OVERVIEW": "My queries",
+    "QUERYBUILDER_EDITOR": "Feasibility Query",
+    "QUERYBUILDER_OVERVIEW": "My Queries",
+    "DATASELECTION_EDITOR": "Dataselection",
     "OPTIONS": "Options",
     "SIGNOUT": "Sign out"
   },
@@ -150,7 +161,7 @@
       "HEADER_FILTER_CONCEPT_OPTIONAL": "Choose one or more valid values:",
       "HEADER_FILTER_CONCEPT_MANDATORY": "Choose one or more valid values:",
       "HEADER_FILTER_CONCEPT_FOR_DISPLAY": "Choose one or more valid values ({{ label }}):",
-      "CHOOSE_GROUP":"Choose a group",
+      "CHOOSE_GROUP": "Choose a group",
       "MANDATORY_HINT": "Mandatory field",
       "UNIT": "Unit",
       "MIN": "Min",
@@ -226,6 +237,7 @@
     "SAVE": "Save",
     "CANCEL": "Cancel",
     "CLOSE": "Close",
+    "DOWNLOAD": "Download",
     "ADD": "Add",
     "ADD_TOOLTIP": "restrict criteria",
     "ADDALL": "Add all",
@@ -235,6 +247,7 @@
     "SAVEQUERY": "Save query",
     "VALIDATE": "Validate",
     "IMPORT": "Load query",
-    "IMPORT_FROM_FILE": "choose file"
+    "IMPORT_FROM_FILE": "choose file",
+    "IMPORT_DATASELECTION": "Load Dataselection"
   }
 }
