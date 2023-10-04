@@ -22,3 +22,10 @@ services:
     restart: unless-stopped
     volumes:
       - ${FLARE_SELF_SIGNED_CA_CERT_PATH:-./certs}:/app/certs
+      - type: volume
+        source: feas-flare-cache
+        target: /app/cache
+
+volumes:
+  feas-flare-cache:
+    name: "feas-flare-cache"
