@@ -121,6 +121,7 @@
       "LABEL_OR": "ODER"
     },
     "DISPLAY": {
+      "REFERENCED_CRITERIA": "Referenzierte Kriterien",
       "LABEL": "Ausgewählte Merkmale",
       "ONE_OF": "",
       "MORE": "weitere",

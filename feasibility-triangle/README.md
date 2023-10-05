@@ -25,8 +25,8 @@ All components work with well-defined interfaces making them interchangeable. Th
 
 This leads to the following setup options:
 
-- AKTIN - FLARE (FHIR Search) - FHIR Server (not CQL ready)
-- AKTIN - FHIR Server (CQL ready)
+- AKTIN - FLARE (FHIR Search) - FHIR Server (not CQL ready) - DEPRECATED FROM 31.12.2023
+- AKTIN - FHIR Server (CQL ready) - DEPRECATED FROM 31.12.2023
 - DSF - FLARE (FHIR Search) - FHIR Server (not CQL ready)
 - DSF - FHIR Server (CQL ready)
 
@@ -39,7 +39,7 @@ This leads to the following setup options:
 The installation of the Feasibility Triangle requires Docker (https://docs.docker.com/engine/install/ubuntu/) and docker-compose (https://docs.docker.com/compose/install/).
 If not already installed on your VM, install using the links provided above.
 
-### Step 2 - clone this Repository to your virtual machine
+### Step 2 - Clone this Repository to your virtual machine
 
 ssh to your virtual machine and switch to sudo `sudo -s`.
 Designate a folder for your setup in which to clone the deploy repository, we suggest /opt (`cd /opt`)
@@ -138,6 +138,60 @@ unpack it and save it to the testdata folder of this repository.
 
 You can then load the data into your FHIR Server using the `upload-testdata.sh` script.
 
+
+## Updating the Feasibility Triangle
+
+If you have already installed the feasibility triangle and just want to update it, follow these steps:
+
+
+### Step 1 - Stop your triangle
+
+`cd /opt/feasibility-deploy/feasibility-triangle && bash stop-triangle.sh`
+
+### Step 2 - Update repository and check out new tag
+
+`cd /opt/feasibility-deploy/feasibility-triangle && git pull`
+`git checkout <new-tag>`
+
+### Step 3 - transfer the new env variables
+
+Compare the .env and .env.default files for each component and add any new variables from the .env.default file to the .env file.
+Keep the existing configuration as is.
+
+### Step 4 - Update your ontology
+
+**Note:** The ontology is now part of the FLARE image and will not have to be loaded manually.
+
+### Step 5 - Start your triangle
+
+To start the triangle navigate to `/opt/feasibility-deploy/feasibility-triangle` and
+execute `bash start-triangle.sh`.
+
+### Step 6 - Update your DSF
+
+If you are using the DSF to connect to the central feasibility portal, please follow the instructions here:
+https://github.com/medizininformatik-initiative/feasibility-deploy/wiki/DSF-Middleware-Setup
+
+### Step 7 - Log in to the central feasibility portal and test your connection
+
+Ask for the Url of the central portal at the FDPG or check Confluence for the correct address.
+
+Log in to the portal and send a request with the Inclusion Criterion chosen from the Inclusion criteria tree (folder sign under Inclusion Criteria) 
+"Person > PatientIn > Geschlecht: Female,Male"
+
+and press "send".
+
+Check your triangle aktin client logs:
+docker logs -f id-of-the-aktin-client-container
+
+you should see output similar to:
+```
+Mar 29, 2023 12:59:57 PM feasibility.FeasibilityExecution doExecution
+FINE: {"version":"http://to_be_decided.com/draft-1/schema#","display":"","inclusionCriteria":[[{"termCodes":[{"code":"263495000","system":"http://snomed.info/sct","display":"Geschlecht"}],"context":{"code":"Patient","system":"fdpg.mii.cds","version":"1.0.0","display":"Patient"},"valueFilter":{"selectedConcepts":[{"code":"female","display":"Female","system":"http://hl7.org/fhir/administrative-gender"},{"code":"male","display":"Male","system":"http://hl7.org/fhir/administrative-gender"}],"type":"concept"}}]]}
+```
+
+## Configuration
+
 ### Configurable environment variables
 
 | Env Variable                                                          | Description                                                                                                                                                                                                         | Default                                            | Possible Values                                     | Component |
@@ -209,54 +263,20 @@ You can then load the data into your FHIR Server using the `upload-testdata.sh` 
 | FEASIBILITY_DSF_CLIENT_PROCESS_FLARE_WEBSERVICE_BASE_URL              | Base URL to a FLARE instance. Only required if evaluation strategy is set to structured-query.                                                                                                                      | http://node-flare:5000/                            | URL                                                 | DSF       |
 
 
+### Support for self-singed certificates
 
-## Updating the Feasibility Triangle
+Depending on your setup you might need to use self-singed certificates and the tools will have to accept your CAs.
+For the triangle self-singed certificates are currently supported for the PATH: BPE (DSF) -> FLARE -> FHIR SERVER.
 
-If you have already installed the feasibility triangle and just want to update it, follow these steps:
+#### BPE (DSF)
 
+The DSF Feasibility Plugin supports self-signed certificates - please see [DSF configuration wiki](https://github.com/medizininformatik-initiative/feasibility-deploy/wiki/DSF-Middleware-Setup)
+for details.
 
-### Step 1 - Stop your triangle
+#### FLARE
 
-`cd /opt/feasibility-deploy/feasibility-triangle && bash stop-triangle.sh`
+FLARE supports the use of self-signed certificates from your own CAs. On each startup FLARE will search through the folder /app/certs inside the container , add all found CA *.pem files to a java truststore and start FLARE with this truststore.
 
-### Step 2 - Update repository and check out new tag
+In order to add your own CA files, add your own CA *.pem files to the /app/certs folder of the container.
 
-`cd /opt/feasibility-deploy/feasibility-triangle && git pull`
-`git checkout <new-tag>`
-
-### Step 3 - transfer the new env variables
-
-Compare the .env and .env.default files for each component and add any new variables from the .env.default file to the .env file.
-Keep the existing configuration as is.
-
-### Step 4 - Update your ontology
-
-**Note:** The ontology is now part of the FLARE image and will not have to be loaded manually.
-
-### Step 5 - Start your triangle
-
-To start the triangle navigate to `/opt/feasibility-deploy/feasibility-triangle` and
-execute `bash start-triangle.sh`.
-
-### Step 6 - Update your DSF
-
-If you are using the DSF to connect to the central feasibility portal, please follow the instructions here:
-https://github.com/medizininformatik-initiative/feasibility-deploy/wiki/DSF-Middleware-Setup
-
-### Step 7 - Log in to the central feasibility portal and test your connection
-
-Ask for the Url of the central portal at the FDPG or check Confluence for the correct address.
-
-Log in to the portal and send a request with the Inclusion Criterion chosen from the Inclusion criteria tree (folder sign under Inclusion Criteria) 
-"Person > PatientIn > Geschlecht: Female,Male"
-
-and press "send".
-
-Check your triangle aktin client logs:
-docker logs -f id-of-the-aktin-client-container
-
-you should see output similar to:
-```
-Mar 29, 2023 12:59:57 PM feasibility.FeasibilityExecution doExecution
-FINE: {"version":"http://to_be_decided.com/draft-1/schema#","inclusionCriteria":[[{"termCodes":[{"code":"718-7","system":"http://loinc.org","display":"Hämoglobin"}],"valueFilter":{"type":"quantity-comparator","selectedConcepts":[],"comparator":"gt","unit":{"code":"g/dL","display":"g/dL"},"value":0.0}}]]}
-```
+Using docker-compose mount a folder from your host (e.g.: ./certs) to the /app/certs folder, add your *.pem files (one for each CA you would like to support) to the folder and ensure that they have the .pem extension.
