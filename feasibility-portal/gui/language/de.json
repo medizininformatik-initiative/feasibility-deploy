@@ -162,6 +162,8 @@
       "HEADER_FILTER_CONCEPT_OPTIONAL": "Wählen Sie einen oder mehrere zulässige Werte:",
       "HEADER_FILTER_CONCEPT_MANDATORY": "Geben Sie einen oder mehrere zulässige Werte an:",
       "HEADER_FILTER_CONCEPT_FOR_DISPLAY": "Geben Sie einen oder mehrere zulässige Werte an ({{ label }}):",
+      "HEADER_FILTER_REFERENCE": "Festgestellte Diagnose",
+      "HEADER_FILTER_VALUE": "Wertebereich",
       "CHOOSE_GROUP": "Gruppe auswählen",
       "MANDATORY_HINT": "Pflichtfeld",
       "UNIT": "Einheit",
@@ -170,6 +172,7 @@
       "VALUE": "Wert",
       "OPERATOR": "Operator",
       "AND": "und",
+      "NONE": "kein Filter",
       "EQUAL": "gleich",
       "LESS_THAN": "kleiner",
       "GREATER_THAN": "größer",
@@ -232,7 +235,8 @@
   },
   "LEGAL": {
     "DISCLOSURE": "Impressum",
-    "DATAPROTECTION": "Datenschutz"
+    "DATAPROTECTION": "Datenschutz",
+    "CONTACT": "Kontakt"
   },
   "BUTTON": {
     "SAVE": "Speichern",
