@@ -17,7 +17,7 @@ ssh to your virtual machine and switch to sudo `sudo -s`.
 Designate a folder for your setup in which you clone the deploy repository, we suggest /opt (`cd /opt`)
 Navigate to the directory and clone this repository: `git clone https://github.com/medizininformatik-initiative/feasibility-deploy.git`
 Navigate to the feasibility-portal folder of the repository: `cd /opt/feasibility-deploy/feasibility-portal`
-Checkout the version (git tag) of the feasibility portal you would like to install: `git checkout tags/<your-tag-name-here>`
+Checkout the version (git tag) of the feasibility portal you would like to install: `git checkout <your-tag-name-here>`
 
 ### Step 3 - Initialise .env files
 

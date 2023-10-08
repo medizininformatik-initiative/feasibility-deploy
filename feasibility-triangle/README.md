@@ -25,8 +25,8 @@ All components work with well-defined interfaces making them interchangeable. Th
 
 This leads to the following setup options:
 
-- AKTIN - FLARE (FHIR Search) - FHIR Server (not CQL ready) - DEPRECATED FROM 31.12.2023
-- AKTIN - FHIR Server (CQL ready) - DEPRECATED FROM 31.12.2023
+- AKTIN - FLARE (FHIR Search) - FHIR Server (not CQL ready) - END OF SUPPORT FOR FEASIBILITY 31.12.2023
+- AKTIN - FHIR Server (CQL ready) - END OF SUPPORT FOR FEASIBILITY 31.12.2023
 - DSF - FLARE (FHIR Search) - FHIR Server (not CQL ready)
 - DSF - FHIR Server (CQL ready)
 
@@ -45,7 +45,7 @@ ssh to your virtual machine and switch to sudo `sudo -s`.
 Designate a folder for your setup in which to clone the deploy repository, we suggest /opt (`cd /opt`)
 Navigate to the directory and clone this repository: `git clone https://github.com/medizininformatik-initiative/feasibility-deploy.git`
 Navigate to the feasibility-triangle folder of the repository: `cd /opt/feasibility-deploy/feasibility-triangle`
-Checkout the version (git tag) of the feasibility triangle you would like to install: `git checkout tags/<your-tag-name-here>`
+Checkout the version (git tag) of the feasibility triangle you would like to install: `git checkout <your-tag-name-here>`
 
 ### Step 3 - Initialise .env files
 
