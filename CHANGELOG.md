@@ -9,12 +9,34 @@ Please refer to the respective repositories for a more in depth changelog of sin
 |Component|Link|
 |--|--|
 |UI|<https://github.com/medizininformatik-initiative/feasibility-gui>|
+|Ontology Generation|<https://github.com/medizininformatik-initiative/fhir-ontology-generator>|
 |Backend|<https://github.com/medizininformatik-initiative/feasibility-backend>|
 |AKTIN Broker|<https://github.com/aktin/broker>|
 |AKTIN Feasibility Plugin|<https://github.com/medizininformatik-initiative/feasibility-aktin-plugin>|
 |DSF Feasibility Plugin|<https://github.com/medizininformatik-initiative/feasibility-dsf-process>|
 |FLARE|<https://github.com/medizininformatik-initiative/flare>|
 |Blaze FHIR server|<https://github.com/medizininformatik-initiative/blaze>|
+
+## [3.0.0] - 2023-08-08
+
+### Overall
+
+- Updated all components and underlying libraries to the new versions
+- Updated all components to version compatible with ontology version 2.0
+- Adjusted readme to reflect changes in the underlying components
+
+### Features
+
+| Feature | Affected Components |
+| -- | -- |
+|Added support for referenced criteria|UI, backend, Ontology, Sq2cql, FLARE|
+|Added support for composite search parameters|UI, SQ, Ontology, Sq2cql, FLARE|
+|Updated to new DSF version v1.0.0 compatible with new DSF verison v1.x | Backend, DSF feasibility plugin|
+|Added Dateselection|UI|
+|Update ontology to new ontology generation and added ontology to images directly| Ontology, Backend, FLARE|
+|Added encrypted result logging| Backend|
+|Add support for self-signed certificates| Backend, FLARE, DSF feasibility plugin |
+
 
 ## [2.1.0] - 2023-07-25
 
