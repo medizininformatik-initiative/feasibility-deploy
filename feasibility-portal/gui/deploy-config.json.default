@@ -6,7 +6,7 @@
     "baseUrl": "/api"
   },
   "uiBackendApi": {
-    "baseUrl": "https://localhost/api/v2"
+    "baseUrl": "https://localhost/api/v3"
   },
   "auth": {
     "baseUrl": "https://localhost/auth",
@@ -32,6 +32,7 @@
     }
   },
   "options": {
+    "sendsqcontexttobackend": true,
     "pollingtimeinseconds": 30,
     "pollingintervallinseconds": 10,
     "lowerboundarypatientresult": 0,
