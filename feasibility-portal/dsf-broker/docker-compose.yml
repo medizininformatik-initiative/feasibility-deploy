@@ -24,7 +24,7 @@ services:
 
   # ---- FHIR ------------------------------------------------------------------
   dsf-zars-fhir-app:
-    image: ghcr.io/datasharingframework/fhir:1.2.0
+    image: ghcr.io/datasharingframework/fhir:1.5.0
     restart: on-failure
     healthcheck:
       test: [ "CMD-SHELL", "./healthcheck.sh" ]
@@ -101,7 +101,7 @@ services:
 
   # ---- BPE -------------------------------------------------------------------
   dsf-zars-bpe-app:
-    image: ghcr.io/datasharingframework/bpe:1.2.0
+    image: ghcr.io/datasharingframework/bpe:1.5.0
     restart: on-failure
     healthcheck:
       test: [ "CMD-SHELL", "./healthcheck.sh" ]

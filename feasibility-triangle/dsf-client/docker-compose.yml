@@ -21,7 +21,7 @@ services:
       - dsf-dic-fhir-app
 
   dsf-dic-fhir-app:
-    image: ghcr.io/datasharingframework/fhir:1.2.0
+    image: ghcr.io/datasharingframework/fhir:1.5.0
     restart: on-failure
     healthcheck:
       test: [ "CMD-SHELL", "./healthcheck.sh" ]
@@ -97,7 +97,7 @@ services:
     - db_liquibase.password
 
   dsf-dic-bpe-app:
-    image: ghcr.io/datasharingframework/bpe:1.2.0
+    image: ghcr.io/datasharingframework/bpe:1.5.0
     restart: on-failure
     healthcheck:
       test: [ "CMD-SHELL", "./healthcheck.sh" ]
@@ -175,8 +175,8 @@ services:
       # Report Process
       DE_MEDIZININFORMATIK_INITIATIVE_REPORT_DIC_FHIR_SERVER_BASE_URL: ${FEASIBILITY_DSF_CLIENT_PROCESS_FHIR_SERVER_BASE_URL}
       DE_MEDIZININFORMATIK_INITIATIVE_REPORT_DIC_FHIR_DATALOGGINGENABLED: "false"
-      DE_MEDIZININFORMATIK_INITIATIVE_REPORT_DIC_FHIR_SERVER_TRUST_CERTIFICATES: 
-      
+      DE_MEDIZININFORMATIK_INITIATIVE_REPORT_DIC_FHIR_SERVER_TRUST_CERTIFICATES:
+
       EXTRA_JVM_ARGS: ${CODEX_DSF_ZARS_BPE_APP_JVM_ARGS}
       TZ: "Europe/Berlin"
     depends_on:
