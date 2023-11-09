@@ -10,6 +10,7 @@ Please refer to the respective repositories for a more in depth changelog of sin
 |--|--|
 |UI|<https://github.com/medizininformatik-initiative/feasibility-gui>|
 |Ontology Generation|<https://github.com/medizininformatik-initiative/fhir-ontology-generator>|
+|sq2cql|<https://github.com/medizininformatik-initiative/sq2cql>|
 |Backend|<https://github.com/medizininformatik-initiative/feasibility-backend>|
 |AKTIN Broker|<https://github.com/aktin/broker>|
 |AKTIN Feasibility Plugin|<https://github.com/medizininformatik-initiative/feasibility-aktin-plugin>|
@@ -17,7 +18,28 @@ Please refer to the respective repositories for a more in depth changelog of sin
 |FLARE|<https://github.com/medizininformatik-initiative/flare>|
 |Blaze FHIR server|<https://github.com/medizininformatik-initiative/blaze>|
 
-## [3.0.0] - 2023-08-08
+
+## [3.1.0] - 2023-11-09
+
+### Overall
+
+- Updated all components and underlying libraries to the new versions
+- Adjusted readme to reflect changes in the underlying components
+
+### Features
+
+| Feature | Affected Components |
+| -- | -- |
+|Improved support for referenced criteria|UI, backend, Ontology, sq2cql, FLARE, Blaze|
+|Improved saving and loading of templates and saved queries|UI, backend|
+|Make UI category order configurable|UI, backend|
+|Improved Dataselection: added support for required criteria, allow selecting of any term tree node, |UI|
+|Updated sq2cql to new ontology version|backend, sq2cql, Ontology, Blaze|
+|Allow querying without value filter according to ontology ui_profiles optional attribute|UI, backend, Ontology|
+|Improved error handling|UI, backend|
+
+
+## [3.0.0] - 2023-10-08
 
 ### Overall
 
@@ -29,8 +51,8 @@ Please refer to the respective repositories for a more in depth changelog of sin
 
 | Feature | Affected Components |
 | -- | -- |
-|Added support for referenced criteria|UI, backend, Ontology, Sq2cql, FLARE|
-|Added support for composite search parameters|UI, SQ, Ontology, Sq2cql, FLARE|
+|Added support for referenced criteria|UI, backend, Ontology, sq2cql, FLARE|
+|Added support for composite search parameters|UI, SQ, Ontology, sq2cql, FLARE|
 |Updated to new DSF version v1.0.0 compatible with new DSF verison v1.x | Backend, DSF feasibility plugin|
 |Added Dateselection|UI|
 |Update ontology to new ontology generation and added ontology to images directly| Ontology, Backend, FLARE|
