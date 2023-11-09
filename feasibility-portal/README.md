@@ -17,7 +17,7 @@ ssh to your virtual machine and switch to sudo `sudo -s`.
 Designate a folder for your setup in which you clone the deploy repository, we suggest /opt (`cd /opt`)
 Navigate to the directory and clone this repository: `git clone https://github.com/medizininformatik-initiative/feasibility-deploy.git`
 Navigate to the feasibility-portal folder of the repository: `cd /opt/feasibility-deploy/feasibility-portal`
-Checkout the version (git tag) of the feasibility portal you would like to install: `git checkout tags/<your-tag-name-here>`
+Checkout the version (git tag) of the feasibility portal you would like to install: `git checkout <your-tag-name-here>`
 
 ### Step 3 - Initialise .env files
 
@@ -35,27 +35,9 @@ Set the rights for all files of the auth folder to 655 `chmod 655 /opt/feasibili
 
 - Not providing the certificate files is not an option.
 
-### Step 5 - Load the ontology mapping files
+### Step 5 - Load the ontology
 
-If used, (see "Overview") The FLARE component requires a mapping file and ontology tree file to translate an incoming feasibility query into FHIR Search queries.
-Both can be downloaded here: https://confluence.imi.med.fau.de/display/ABIDEMI/Ontologie
-
-Upload the ontology .zip files to your server, unpack them and copy the ontology files to your feasibility portal ontology folder
-
-```bash
-sudo -s
-mkdir /<path>/<to>/<folder>/<of>/<choice>
-cd /<path>/<to>/<folder>/<of>/<choice>
-unzip mapping_*.zip
-unzip ui_profile_*.zip
-unzip db_migration_*.zip
-cd mapping
-cp * /opt/feasibility-deploy/feasibility-portal/ontology
-cd ../ui_profile
-cp * /opt/feasibility-deploy/feasibility-portal/ontology/ui_profiles
-cd ../db_migration
-cp * /opt/feasibility-deploy/feasibility-portal/ontology/migration
-```
+**Note:** The ontology is now part of the image and will not have to be loaded manually.
 
 ### Step 6 - Configure your feasibility portal
 
@@ -73,7 +55,7 @@ If you use the default local feasibility portal setup you will only have to chan
 | backend/.env           | FLARE_WEBSERVICE_BASE_URL                  | http://flare:8080                                                  |
 | backend/.env           | FEASIBILITY_BACKEND_ALLOWED_ORIGINS        | base-url-of-your-local-feasibility-portal                          |
 |backend/.env            |FEASIBILITY_BACKEND_KEYCLOAK_BASE_URL_ISSUER| base-url-of-your-local-feasibility-portal/auth                     |
-| gui/deploy-config.json | uiBackendApi > baseUrl                     | base-url-of-your-local-feasibility-portal/api/v2                   |
+| gui/deploy-config.json | uiBackendApi > baseUrl                     | base-url-of-your-local-feasibility-portal/api/v3                   |
 | gui/deploy-config.json | auth > baseUrl                             | base-url-of-your-local-feasibility-portal                          |
 
 Please note that all user env variables (variables containing USER) should be changed and all password variables (variables containing PASSWORD or PW) should be set to secure passwords.
@@ -129,7 +111,46 @@ Click on **New query**, create a query and send it using the **send** button.
 After a few moments you should see the results to your query in the **Number of patients** window.
 
 
-## Configurable environment variables
+## Updating your local feasibility portal
+
+If you have already installed the local feasibility portal and just want to update it, follow these steps:
+
+
+### Step 1 - Stop your portal
+
+`cd /opt/feasibility-deploy/feasibility-portal && bash stop-feasibility-portal.sh`
+
+### Step 2 - Update repository and check out new tag
+
+`cd /opt/feasibility-deploy && git pull`
+`git checkout <new-tag>`
+
+### Step 3 - transfer the new env variables
+
+Compare the .env and .env.default files for each component and add any new variables from the .env.default file to the .env file.
+Keep the existing configuration as is.
+
+### Step 4 - Update your ontology
+
+**Note:** The ontology is now part of the image and will not have to be loaded manually.
+
+### Step 5 - Start your portal
+
+To start the portal navigate to `/opt/feasibility-deploy/feasibility-portal` and
+execute `bash start-feasibility-portal-local.sh`.
+
+### Step 6 - Log in to the local feasibility portal and test your connection
+
+Ask for the Url of the central portal at the FDPG or check Confluence for the correct address.
+
+Log in to the portal and send a request with the Inclusion Criterion chosen from the Inclusion criteria tree (folder sign under Inclusion Criteria) 
+"Person > PatientIn > Geschlecht: Female,Male"
+
+and press "send".
+
+## Configuration
+
+### Configurable environment variables
 
 
 | Env Var                                                                           | Description                                                                                                                                                                  | Default                                            | Possible values | Component |
@@ -210,60 +231,15 @@ After a few moments you should see the results to your query in the **Number of 
 | FEASIBILITY_DSF_BROKER_PROCESS_FHIR_SERVER_BASE_URL                               | Base URL to a FHIR server or proxy for feasibility evaluation. This can also be the base URL of a reverse proxy if used. Only required if evaluation strategy is set to cql. | https://dsf-zars-fhir-proxy/fhir                   | URL             | DSF       |
 
 
+### Support for self-signed certificates
 
-## Updating your local feasibility portal
+Depending on your setup you might need to use self-singed certificates and the tools will have to accept your CAs.
+For the portal then only tool for which this is relevant is the backend.
 
-If you have already installed the local feasibility portal and just want to update it, follow these steps:
+#### Feasibility Backend
 
+The feasibility backend supports the use of self-signed certificates from your own CAs. On each startup, the feasibility backend will search through the folder /app/certs inside the container, add all found CA *.pem files to a java truststore and start the application with this truststore.
 
-### Step 1 - Stop your portal
+Using docker-compose, mount a folder from your host (e.g.: ./certs) to the /app/certs folder, add your *.pem files (one for each CA you would like to support) to the folder and ensure that they have the .pem extension.
 
-`cd /opt/feasibility-deploy/feasibility-portal && bash stop-feasibility-portal.sh`
-
-### Step 2 - Update repository and check out new tag
-
-`cd /opt/feasibility-deploy && git pull`
-`git checkout <new-tag>`
-
-### Step 3 - transfer the new env variables
-
-Compare the .env and .env.default files for each component and add any new variables from the .env.default file to the .env file.
-Keep the existing configuration as is.
-
-### Step 4 - Update your ontology
-
-If used, (see "Overview") The FLARE component requires a mapping file and ontology tree file to translate an incoming feasibility query into FHIR Search queries.
-Both can be downloaded here: https://confluence.imi.med.fau.de/display/ABIDEMI/Ontologie
-
-Upload the ontology .zip files to your server, unpack them and copy the ontology files to your feasibility portal ontology folder.
-
-```bash
-sudo -s
-mkdir /<path>/<to>/<folder>/<of>/<choice>
-cd /<path>/<to>/<folder>/<of>/<choice>
-unzip mapping_*.zip
-unzip ui_profile_*.zip
-unzip db_migration_*.zip
-cd mapping
-cp * /opt/feasibility-deploy/feasibility-portal/ontology
-cd ../ui_profile
-cp * /opt/feasibility-deploy/feasibility-portal/ontology/ui_profiles
-cd ../db_migration
-cp * /opt/feasibility-deploy/feasibility-portal/ontology/migration
-```
-
-Existing files should be replaced.
-
-### Step 5 - Start your portal
-
-To start the portal navigate to `/opt/feasibility-deploy/feasibility-portal` and
-execute `bash start-feasibility-portal-local.sh`.
-
-### Step 6 - Log in to the local feasibility portal and test your connection
-
-Ask for the Url of the central portal at the FDPG or check Confluence for the correct address.
-
-Log in to the portal and send a request with the Inclusion Criterion chosen from the Inclusion criteria tree (folder sign under Inclusion Criteria) 
-"Person > PatientIn > Geschlecht: Female,Male"
-
-and press "send".
+In this deployment repository we have prepared this for you. To add your own CA add the respective ca *.pem files to the backend/certs folder.

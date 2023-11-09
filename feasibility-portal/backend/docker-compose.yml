@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   feasibility-gui-backend:
-    image: ghcr.io/medizininformatik-initiative/feasibility-backend:3.0.0
+    image: ghcr.io/medizininformatik-initiative/feasibility-backend:4.1.0
     ports:
     - ${FEASIBILITY_BACKEND_PORT:-127.0.0.1:8091}:8090
     depends_on:
@@ -14,6 +14,8 @@ services:
       API_BASE_URL: ${FEASIBILITY_BACKEND_API_BASE_URL:-https://localhost/api/}
       ALLOWED_ORIGINS: ${FEASIBILITY_BACKEND_ALLOWED_ORIGINS:-https://localhost}
       QUERYRESULT_EXPIRY_MINUTES: ${FEASIBILITY_BACKEND_QUERYRESULT_EXPIRY_MINUTES:-5}
+      ONTOLOGY_ORDER: ${FEASIBILITY_BACKEND_ONTOLOGY_ORDER:-"Diagnose, Prozedur, Person, Laboruntersuchung, Medikamentenverabreichung, Bioprobe, Einwilligung"}
+      MAX_SAVED_QUERIES_PER_USER: ${FEASIBILITY_BACKEND_MAX_SAVED_QUERIES_PER_USER:-100}
       # ---- db config
       FEASIBILITY_DATABASE_HOST: ${FEASIBILITY_BACKEND_DATASOURCE_HOST:-feasibility-gui-backend-db}
       FEASIBILITY_DATABASE_PORT: ${FEASIBILITY_BACKEND_DATASOURCE_PORT:-5432}
@@ -59,16 +61,14 @@ services:
       PRIVACY_QUOTA_READ_DETAILED_OBFUSCATED_INTERVALSECONDS: ${FEASIBILITY_BACKEND_PRIVACY_QUOTA_READ_DETAILED_OBFUSCATED_INTERVALSECONDS:-7200}
       PRIVACY_THRESHOLD_RESULTS: ${FEASIBILITY_BACKEND_PRIVACY_THRESHOLD_RESULTS:-20}
       PRIVACY_THRESHOLD_SITES: ${FEASIBILITY_BACKEND_PRIVACY_THRESHOLD_SITES:-3}
+      QUERYRESULT_DISABLE_LOG_FILE_ENCRYPTION: "true"
       # ---- logging
       LOG_LEVEL_SQL: ${FEASIBILITY_BACKEND_LOG_LEVEL_SQL:-warn}
       LOG_LEVEL: ${FEASIBILITY_BACKEND_LOG_LEVEL:-warn}
     restart: unless-stopped
     volumes:
-      - ${FEASIBILITY_BACKEND_UI_PROFILES_PATH:-../ontology/ui_profiles}:/opt/codex-feasibility-backend/ontology/ui_profiles
-      - ${FEASIBILITY_BACKEND_CONCEPT_TREE_PATH:-../ontology/codex-code-tree.json}:/opt/codex-feasibility-backend/ontology/codex-code-tree.json
-      - ${FEASIBILITY_BACKEND_TERM_CODE_MAPPING_PATH:-../ontology/codex-term-code-mapping.json}:/opt/codex-feasibility-backend/ontology/codex-term-code-mapping.json
-      - ${FEASIBILITY_BACKEND_MIGRATION_PATH:-../ontology/migration/R__Load_latest_ui_profile.sql}:/opt/codex-feasibility-backend/ontology/migration/R__Load_latest_ui_profile.sql
       - ${FEASIBILITY_BACKEND_CERTS_PATH:-../secrets}:/opt/codex-feasibility-security
+      - ./certs:/opt/codex-feasibility-backend/certs
 
   feasibility-gui-backend-db:
     image: 'postgres:15-alpine'
@@ -79,3 +79,11 @@ services:
       POSTGRES_PASSWORD: ${FEASIBILITY_BACKEND_DATASOURCE_PASSWORD:-guidbpw}
       POSTGRES_DB: codex_ui
     restart: unless-stopped
+    volumes:
+    - type: volume
+      source: feas-backend-db-data
+      target: /var/lib/postgresql/data
+
+volumes:
+  feas-backend-db-data:
+    name: "feas-backend-db-data"

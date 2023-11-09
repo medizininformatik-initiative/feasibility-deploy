@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   aktin-client:
-    image: ghcr.io/medizininformatik-initiative/feasibility-aktin-client:1.6.0
+    image: ghcr.io/medizininformatik-initiative/feasibility-aktin-client:2.0.0
     environment:
       BROKER_REQUEST_MEDIATYPE: ${FEASIBILITY_AKTIN_CLIENT_BROKER_REQUEST_MEDIATYPE:-application/sq+json}
       BROKER_RESULT_MEDIATYPE: ${FEASIBILITY_AKTIN_CLIENT_BROKER_RESULT_MEDIATYPE:-application/json}
@@ -18,6 +18,7 @@ services:
       CQL_FHIR_BASE_URL: ${FEASIBILITY_AKTIN_CQL_FHIR_BASE_URL}
       CQL_FHIR_USER: ${FEASIBILITY_AKTIN_CQL_FHIR_USER}
       CQL_FHIR_PW: ${FEASIBILITY_AKTIN_CQL_FHIR_PW}
+      CQL_SOCKET_TIMEOUT_MS: ${FEASIBILITY_AKTIN_CQL_SOCKET_TIMEOUT_MS}
       FLARE_URL: ${FEASIBILITY_AKTIN_FLARE_URL:-http://flare:8080/query/execute}
       FLARE_USER: ${FEASIBILITY_AKTIN_FLARE_USER}
       FLARE_PW: ${FEASIBILITY_AKTIN_FLARE_PW}

@@ -12,7 +12,7 @@ services:
       - "feasibility-auth-db:/var/lib/postgresql/data"
 
   auth:
-    image: keycloak/keycloak:21.0
+    image: keycloak/keycloak:22.0
     command: ["start", "--import-realm"]
     restart: unless-stopped
     environment:

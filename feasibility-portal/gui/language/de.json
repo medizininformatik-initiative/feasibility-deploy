@@ -5,32 +5,32 @@
       "PARAGRAPH1": "Die CODEX Feasibility Plattform ist ein Angebot für Wissenschaftler:innen, die für ihre Forschung nach COVID-19 spezifischen Daten suchen.",
       "PARAGRAPH2": "Auf dieser Plattform steht hierfür ein frei zugängliches Suchtool zur Verfügung, das eine erste, unverbindliche Machbarkeitsabfrage ermöglicht. Auf diesem Weg kann festgestellt werden, wie viele Daten an den angeschlossenen CODEX-Standorten zur Verfügung stehen.",
       "PARAGRAPH3_1": "Anhand dieser Information können dann in einem nächsten Schritt konkrete Anfragen an die entsprechenden Standorte gestellt werden.",
-      "PARAGRAPH3_2":"",
-      "PARAGRAPH3_3":"",
-      "PARAGRAPH3_4":"",
-      "PARAGRAPH3_LINK":"",
-      "PARAGRAPH4_1":"",
-      "PARAGRAPH4_2":"",
-      "PARAGRAPH4_3":"",
+      "PARAGRAPH3_2": "",
+      "PARAGRAPH3_3": "",
+      "PARAGRAPH3_4": "",
+      "PARAGRAPH3_LINK": "",
+      "PARAGRAPH4_1": "",
+      "PARAGRAPH4_2": "",
+      "PARAGRAPH4_3": "",
       "PARAGRAPH5_1": "",
       "PARAGRAPH5_2": "",
-      "PARAGRAPH5_3":""
+      "PARAGRAPH5_3": ""
     },
     "ABIDETHEME": {
       "HEADLINE": "Willkommen auf der ABIDE Feasibility Plattform!",
       "PARAGRAPH1": "Die ABIDE Feasibility Plattform ist ein Unterstützungsangebot für Wissenschaftler und Wissenschaftlerinnen bei der Umsetzung ihrer Forschungsvorhaben.",
       "PARAGRAPH2": "Mit einer Machbarkeitsanfrage (Feasibility) erfahren Forschende, wie viele Fälle für ihre Suchkriterien (Ein- und Ausschlusskriterien) in den Datenintegrationszentren der universitätsmedizinischen Standorte bundesweit vorhanden sind und für medizinische Forschungszwecke beantragt werden können.",
       "PARAGRAPH3_1": "Zur Formulierung der Abfrage stehen aktuell der Kerndatensatz der Medizininformatikinitiative und der COVID-19 spezifische Datensatz GECCO zur Verfügung.",
-      "PARAGRAPH3_2":"",
-      "PARAGRAPH3_3":"",
-      "PARAGRAPH3_4":"",
-      "PARAGRAPH3_LINK":"",
-      "PARAGRAPH4_1":"",
-      "PARAGRAPH4_2":"",
-      "PARAGRAPH4_3":"",
+      "PARAGRAPH3_2": "",
+      "PARAGRAPH3_3": "",
+      "PARAGRAPH3_4": "",
+      "PARAGRAPH3_LINK": "",
+      "PARAGRAPH4_1": "",
+      "PARAGRAPH4_2": "",
+      "PARAGRAPH4_3": "",
       "PARAGRAPH5_1": "",
       "PARAGRAPH5_2": "",
-      "PARAGRAPH5_3":""
+      "PARAGRAPH5_3": ""
     },
     "FDPGTHEME": {
       "HEADLINE": "Willkommen im Bereich „Daten und Bioproben finden“ des Forschungsdatenportals für Gesundheit",
@@ -41,12 +41,15 @@
       "PARAGRAPH3_3": " haben Sie die Möglichkeit, eine neue Suchanfrage auf Basis des ",
       "PARAGRAPH3_4": " zu formulieren und abzuschicken, um einen Überblick über die verfügbaren Datensätze zu erhalten.",
       "PARAGRAPH3_LINK": "Kerndatensatzes der MII",
-      "PARAGRAPH4_1":"Gespeicherte Abfragen oder gespeicherte Entwürfe können Sie über ",
-      "PARAGRAPH4_2":"Meine Abfragen",
+      "PARAGRAPH4_1": "Gespeicherte Abfragen oder gespeicherte Entwürfe können Sie über ",
+      "PARAGRAPH4_2": "Meine Abfragen",
       "PARAGRAPH4_3": " einsehen und weiter bearbeiten.",
       "PARAGRAPH5_1": "Sobald Ihnen alle relevanten Informationen für Ihr Forschungsvorhaben zur Verfügung stehen, können Sie über ",
       "PARAGRAPH5_2": "Antrag stellen",
       "PARAGRAPH5_3": " einen Antrag zur Datennutzung im Antragsportal des Forschungsdatenportals für Gesundheit stellen."
+    },
+    "INFO":{
+      "TEXT": " Wir arbeiten gerade am Machbarkeitsportal, sodass es bei manchen Anfragen zu Verzögerungen und abweichenden Ergebnissen kommen kann."
     },
     "NEWQUERY": {
       "HEADLINE": "Neue Abfrage",
@@ -56,10 +59,23 @@
       "HEADLINE": "Meine Abfragen",
       "TEXT": "Erhalten Sie eine Übersicht über Ihre bereits durchgeführten Suchanfragen"
     },
-    "FEASPORTAL": {
+    "PREPOSALPORTAL": {
       "HEADLINE": "Antrag stellen",
       "TEXT": "Stellen Sie einen Antrag zur Datennutzung im Antragsportal"
     }
+  },
+  "DATASELECTION": {
+    "DATASELECTION": "Datenselektion",
+    "SEARCH": {
+      "LABEL": "Code oder Suchbegriff eingeben",
+      "CRITERIA": "Suchkriterien"
+    },
+    "DISPLAY": {
+      "LABEL": "Ausgewählte Merkmale"
+    },
+    "INFOTEXT": "Bitte wählen Sie unten die Kriterien aus, die Sie exportieren möchten und laden Sie die Datenselektion herunter. Sie können die Datei dann entweder als Teil Ihres Forschungsantrags im Forschungsantragsportal des FDPG hochladen oder eine E-Mail an info@forschen-fuer-gesundheit.de schicken.",
+    "REQUIRED":"Variable muss an allen Standorten vorliegen"
+
   },
   "LANGUAGE": {
     "GERMAN": "Deutsch",
@@ -76,8 +92,9 @@
   },
   "NAVIGATION": {
     "DASHBOARD": "Startseite",
-    "QUERYBUILDER_EDITOR": "Neue Abfrage",
+    "QUERYBUILDER_EDITOR": "Machbarkeitsabfrage",
     "QUERYBUILDER_OVERVIEW": "Meine Abfragen",
+    "DATASELECTION_EDITOR": "Datenselektion",
     "OPTIONS": "Einstellungen",
     "SIGNOUT": "Abmelden"
   },
@@ -110,6 +127,7 @@
       "LABEL_OR": "ODER"
     },
     "DISPLAY": {
+      "REFERENCED_CRITERIA": "Referenzierte Kriterien",
       "LABEL": "Ausgewählte Merkmale",
       "ONE_OF": "",
       "MORE": "weitere",
@@ -141,7 +159,8 @@
       "DOWNLOAD_SQ": "als Datei speichern",
       "FILENAME": "Dateiname",
       "SAVED_QUERIES": "Gespeicherte Abfragen (mit Ergebnis)",
-      "SAVED_TEMPLATES": "Gespeicherte Vorlagen"
+      "SAVED_TEMPLATES": "Gespeicherte Vorlagen",
+      "MAXIMUM_QUERY_SLOT": "Sie haben das maximale Limit an verfügbaren freien Speicherplätzen für Abfragen erreicht"
     },
     "EDIT": {
       "HEADER": "Einschränkungen der ausgewählten Merkmale",
@@ -150,7 +169,9 @@
       "HEADER_FILTER_CONCEPT_OPTIONAL": "Wählen Sie einen oder mehrere zulässige Werte:",
       "HEADER_FILTER_CONCEPT_MANDATORY": "Geben Sie einen oder mehrere zulässige Werte an:",
       "HEADER_FILTER_CONCEPT_FOR_DISPLAY": "Geben Sie einen oder mehrere zulässige Werte an ({{ label }}):",
-      "CHOOSE_GROUP":"Gruppe auswählen",
+      "HEADER_FILTER_REFERENCE": "Festgestellte Diagnose",
+      "HEADER_FILTER_VALUE": "Wertebereich",
+      "CHOOSE_GROUP": "Gruppe auswählen",
       "MANDATORY_HINT": "Pflichtfeld",
       "UNIT": "Einheit",
       "MIN": "Min",
@@ -158,6 +179,7 @@
       "VALUE": "Wert",
       "OPERATOR": "Operator",
       "AND": "und",
+      "NONE": "kein Filter",
       "EQUAL": "gleich",
       "LESS_THAN": "kleiner",
       "GREATER_THAN": "größer",
@@ -220,21 +242,34 @@
   },
   "LEGAL": {
     "DISCLOSURE": "Impressum",
-    "DATAPROTECTION": "Datenschutz"
+    "DATAPROTECTION": "Datenschutz",
+    "CONTACT": "Kontakt"
   },
   "BUTTON": {
-    "SAVE": "Speichern",
-    "CANCEL": "Abbrechen",
-    "CLOSE": "Schließen",
     "ADD": "Auswählen",
     "ADD_TOOLTIP": "Merkmal einschränken",
     "ADDALL": "Alle hinzufügen",
-    "SEND": "Abfrage starten",
+    "CANCEL": "Abbrechen",
+    "CLOSE": "Schließen",
+    "DOWNLOAD": "Herunterladen",
+    "IMPORT": "Query laden",
+    "IMPORT_DATASELECTION":"Dataselektion hochladen",
+    "IMPORT_FROM_FILE": "Datei auswählen",
     "RESET": "Zurücksetzen",
     "RESULTDETAILS": "Details",
+    "SAVE": "Speichern",
+    "SEND": "Abfrage starten",
     "SAVEQUERY": "Abfrage speichern",
-    "VALIDATE": "Validieren",
-    "IMPORT": "Query laden",
-    "IMPORT_FROM_FILE": "Datei auswählen"
+    "VALIDATE": "Validieren"
+  },
+  "ERROR": {
+    "FEAS-10001": "Ihr Benutzer wurde wegen zu vielen Anfragen gesperrt, bitte wenden Sie sich an info@forschen-fuer-gesundheit.de",
+    "FEAS-10005"  :"Die Anzahl der Standorte die geantwortet haben ist zu klein -> Detailergebnis wird nicht angezeigt",
+    "FEAS-10004"  :"Die Ergebnismenge ist zu klein -> Ergebnis wird nicht angezeigt",
+    "FEAS-10002"  :"Sie haben zu viele Anfragen gestellt, bitte warten Sie {{ RETRY_AFTER }} Sekunden und probieren Sie es erneut",
+    "404"         :"Standort wurde nicht gefunden"
+  },
+  "INFO":{
+    "UPDATE_NOTE": "Aufgrund von Updates zentral und an den Standorten wird das Portal zwischen dem 10.11 und dem 13.11 vorraussichtlich nur eingeschränkt nutzbar sein. Machbarkeitsanfragen für die Bewerbung der NUM-MII Förderung können auch ohne Standortergebnis oder bis zum 17.11 nachgereicht werden. Wir bedanken uns für Ihr Verständnis."
   }
 }

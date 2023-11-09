@@ -7,4 +7,3 @@ docker-compose -p "$COMPOSE_PROJECT" -f "$BASE_DIR"/aktin-client/docker-compose.
 docker-compose -p "$COMPOSE_PROJECT" -f "$BASE_DIR"/flare/docker-compose.yml down
 docker-compose -p "$COMPOSE_PROJECT" -f "$BASE_DIR"/fhir-server/docker-compose.yml down -v
 docker-compose -p "$COMPOSE_PROJECT" -f "$BASE_DIR"/rev-proxy/docker-compose.yml down
-sh "$BASE_DIR"/dsf-client/down.sh "$COMPOSE_PROJECT"
