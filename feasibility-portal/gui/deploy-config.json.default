@@ -28,7 +28,10 @@
     "extra": {
       "displayvaluefiltericon": false,
       "showoptionspage": true,
-      "optionpageroles": ["FeasibilityAdmin"]
+      "showdataselectionpage": false,
+      "optionpageroles": ["FeasibilityAdmin"],
+      "displayInfoMessage": true,
+      "displayUpdateInfo": false
     }
   },
   "options": {
@@ -47,5 +50,6 @@
   "stylesheet": "FDPGTheme",
   "fhirport": "8082",
   "dataset": "codex",
-  "queryVersion": "v2"
+  "queryVersion": "v2",
+  "proposalPortalLink": "https://antrag.dev.forschen-fuer-gesundheit.de"
 }

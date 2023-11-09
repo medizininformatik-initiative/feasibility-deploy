@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   feasibility-gui-backend:
-    image: ghcr.io/medizininformatik-initiative/feasibility-backend:4.0.0
+    image: ghcr.io/medizininformatik-initiative/feasibility-backend:4.1.0
     ports:
     - ${FEASIBILITY_BACKEND_PORT:-127.0.0.1:8091}:8090
     depends_on:
@@ -14,6 +14,8 @@ services:
       API_BASE_URL: ${FEASIBILITY_BACKEND_API_BASE_URL:-https://localhost/api/}
       ALLOWED_ORIGINS: ${FEASIBILITY_BACKEND_ALLOWED_ORIGINS:-https://localhost}
       QUERYRESULT_EXPIRY_MINUTES: ${FEASIBILITY_BACKEND_QUERYRESULT_EXPIRY_MINUTES:-5}
+      ONTOLOGY_ORDER: ${FEASIBILITY_BACKEND_ONTOLOGY_ORDER:-"Diagnose, Prozedur, Person, Laboruntersuchung, Medikamentenverabreichung, Bioprobe, Einwilligung"}
+      MAX_SAVED_QUERIES_PER_USER: ${FEASIBILITY_BACKEND_MAX_SAVED_QUERIES_PER_USER:-100}
       # ---- db config
       FEASIBILITY_DATABASE_HOST: ${FEASIBILITY_BACKEND_DATASOURCE_HOST:-feasibility-gui-backend-db}
       FEASIBILITY_DATABASE_PORT: ${FEASIBILITY_BACKEND_DATASOURCE_PORT:-5432}

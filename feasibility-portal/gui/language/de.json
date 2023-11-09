@@ -48,6 +48,9 @@
       "PARAGRAPH5_2": "Antrag stellen",
       "PARAGRAPH5_3": " einen Antrag zur Datennutzung im Antragsportal des Forschungsdatenportals für Gesundheit stellen."
     },
+    "INFO":{
+      "TEXT": " Wir arbeiten gerade am Machbarkeitsportal, sodass es bei manchen Anfragen zu Verzögerungen und abweichenden Ergebnissen kommen kann."
+    },
     "NEWQUERY": {
       "HEADLINE": "Neue Abfrage",
       "TEXT": "Führen Sie eine Suche anhand Ihrer Ein- und Ausschlusskriterien durch"
@@ -56,7 +59,7 @@
       "HEADLINE": "Meine Abfragen",
       "TEXT": "Erhalten Sie eine Übersicht über Ihre bereits durchgeführten Suchanfragen"
     },
-    "FEASPORTAL": {
+    "PREPOSALPORTAL": {
       "HEADLINE": "Antrag stellen",
       "TEXT": "Stellen Sie einen Antrag zur Datennutzung im Antragsportal"
     }
@@ -69,7 +72,10 @@
     },
     "DISPLAY": {
       "LABEL": "Ausgewählte Merkmale"
-    }
+    },
+    "INFOTEXT": "Bitte wählen Sie unten die Kriterien aus, die Sie exportieren möchten und laden Sie die Datenselektion herunter. Sie können die Datei dann entweder als Teil Ihres Forschungsantrags im Forschungsantragsportal des FDPG hochladen oder eine E-Mail an info@forschen-fuer-gesundheit.de schicken.",
+    "REQUIRED":"Variable muss an allen Standorten vorliegen"
+
   },
   "LANGUAGE": {
     "GERMAN": "Deutsch",
@@ -153,7 +159,8 @@
       "DOWNLOAD_SQ": "als Datei speichern",
       "FILENAME": "Dateiname",
       "SAVED_QUERIES": "Gespeicherte Abfragen (mit Ergebnis)",
-      "SAVED_TEMPLATES": "Gespeicherte Vorlagen"
+      "SAVED_TEMPLATES": "Gespeicherte Vorlagen",
+      "MAXIMUM_QUERY_SLOT": "Sie haben das maximale Limit an verfügbaren freien Speicherplätzen für Abfragen erreicht"
     },
     "EDIT": {
       "HEADER": "Einschränkungen der ausgewählten Merkmale",
@@ -239,20 +246,30 @@
     "CONTACT": "Kontakt"
   },
   "BUTTON": {
-    "SAVE": "Speichern",
-    "CANCEL": "Abbrechen",
-    "CLOSE": "Schließen",
-    "DOWNLOAD": "Herunterladen",
     "ADD": "Auswählen",
     "ADD_TOOLTIP": "Merkmal einschränken",
     "ADDALL": "Alle hinzufügen",
-    "SEND": "Abfrage starten",
+    "CANCEL": "Abbrechen",
+    "CLOSE": "Schließen",
+    "DOWNLOAD": "Herunterladen",
+    "IMPORT": "Query laden",
+    "IMPORT_DATASELECTION":"Dataselektion hochladen",
+    "IMPORT_FROM_FILE": "Datei auswählen",
     "RESET": "Zurücksetzen",
     "RESULTDETAILS": "Details",
+    "SAVE": "Speichern",
+    "SEND": "Abfrage starten",
     "SAVEQUERY": "Abfrage speichern",
-    "VALIDATE": "Validieren",
-    "IMPORT": "Query laden",
-    "IMPORT_FROM_FILE": "Datei auswählen",
-    "IMPORT_DATASELECTION": "Datenselektion laden"
+    "VALIDATE": "Validieren"
+  },
+  "ERROR": {
+    "FEAS-10001": "Ihr Benutzer wurde wegen zu vielen Anfragen gesperrt, bitte wenden Sie sich an info@forschen-fuer-gesundheit.de",
+    "FEAS-10005"  :"Die Anzahl der Standorte die geantwortet haben ist zu klein -> Detailergebnis wird nicht angezeigt",
+    "FEAS-10004"  :"Die Ergebnismenge ist zu klein -> Ergebnis wird nicht angezeigt",
+    "FEAS-10002"  :"Sie haben zu viele Anfragen gestellt, bitte warten Sie {{ RETRY_AFTER }} Sekunden und probieren Sie es erneut",
+    "404"         :"Standort wurde nicht gefunden"
+  },
+  "INFO":{
+    "UPDATE_NOTE": "Aufgrund von Updates zentral und an den Standorten wird das Portal zwischen dem 10.11 und dem 13.11 vorraussichtlich nur eingeschränkt nutzbar sein. Machbarkeitsanfragen für die Bewerbung der NUM-MII Förderung können auch ohne Standortergebnis oder bis zum 17.11 nachgereicht werden. Wir bedanken uns für Ihr Verständnis."
   }
 }
