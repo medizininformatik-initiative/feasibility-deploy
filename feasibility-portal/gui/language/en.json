@@ -48,6 +48,9 @@
       "PARAGRAPH5_2": "Submit Application",
       "PARAGRAPH5_3": "."
     },
+    "INFO":{
+      "TEXT": " We are currently working on the feasibility portal. This can lead to slow responses and deviating results for some queries."
+    },
     "NEWQUERY": {
       "HEADLINE": "New Query",
       "TEXT": "Perform a request based on your inclusion and exclusion criteria"
@@ -56,7 +59,7 @@
       "HEADLINE": "My Queries",
       "TEXT": "Get an overview of the requests you have already performed"
     },
-    "FEASPORTAL": {
+    "PREPOSALPORTAL": {
       "HEADLINE": "Submit Application",
       "TEXT": "Make a request for data use in the proposal portal"
     }
@@ -69,7 +72,9 @@
     },
     "DISPLAY": {
       "LABEL": "Selected Criteria"
-    }
+    },
+    "INFOTEXT": "Please select the criteria you would like to export and download your dataselection. You can then either upload the dataselection file as an attachment to your research proposal in the proposal portal or send an email to info@forschen-fuer-gesundheit.de.",
+    "REQUIRED":"required from all sites"
   },
   "LANGUAGE": {
     "GERMAN": "German",
@@ -154,7 +159,8 @@
       "DOWNLOAD_SQ": "Save as file",
       "FILENAME": "File name",
       "SAVED_QUERIES": "Saved Queries (with result)",
-      "SAVED_TEMPLATES": "Saved Templates"
+      "SAVED_TEMPLATES": "Saved Templates",
+      "MAXIMUM_QUERY_SLOT": "You have reached the maximum limit of available free slots for saving queries"
     },
     "EDIT": {
       "HEADER": "Restrictions of selected concepts",
@@ -240,20 +246,31 @@
     "CONTACT": "Contact"
   },
   "BUTTON": {
-    "SAVE": "Save",
+    "ADD": "Add",
+    "ADDALL": "Add all",
+    "ADD_TOOLTIP": "restrict criteria",
     "CANCEL": "Cancel",
     "CLOSE": "Close",
     "DOWNLOAD": "Download",
-    "ADD": "Add",
-    "ADD_TOOLTIP": "restrict criteria",
-    "ADDALL": "Add all",
-    "SEND": "Send",
+    "IMPORT_FROM_FILE": "choose file",
+    "IMPORT_DATASELECTION": "Import Dataselection",
     "RESET": "Reset",
     "RESULTDETAILS": "Details",
+    "SAVE": "Save",
     "SAVEQUERY": "Save query",
     "VALIDATE": "Validate",
-    "IMPORT": "Load query",
+    "IMPORT": "Load query"
+  },
+  "ERROR": {
+    "FEAS-10001": "Your user was blacklisted because you send to many queries, please contact info@forschen-fuer-gesundheit.de",
+    "FEAS-10002": "You sent too many queries, please wait {{RETRY_AFTER}} seconds and try again",
+    "FEAS-10004": "The number of sites which answered is too small -> detailed results are not shown",
+    "FEAS-10005": "The result size is too small -> result will not be shown",
+    "404":        "Site not found",
     "IMPORT_FROM_FILE": "choose file",
     "IMPORT_DATASELECTION": "Load Dataselection"
+  },
+  "INFO":{
+    "UPDATE_NOTE": " Due to updates centrally and at the sites, the portal will presumably be of limited use between 10.11 and 13.11. Feasibility requests for the application of the NUM-MII funding can also be submitted without site results or until 17.11. We thank you for your understanding."
   }
 }
