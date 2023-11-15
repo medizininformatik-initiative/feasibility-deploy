@@ -45,29 +45,30 @@ To get a better understanding of how blaze, the backup and re-indexing process w
 
 1. Backup the custom-search-parameters.json `cp custom-search-parameters.json custom-search-parameters-backup.json`
 2. Delete all entries in the `entry` array of the custom-search-parameters.json
-2. Start your fhir server: `docker-compose up -d`
-3. Load the testdata `cd .. && bash get-mii-testdata.sh && bash upload-testdata.sh`
-4. Once the server has started up execute the following curl request: 
+3. Start your fhir server: `docker-compose up -d`
+4. Load the testdata `cd .. && bash get-mii-testdata.sh && bash upload-testdata.sh`
+5. Once the server has started up execute the following curl request: 
 ```bash
 curl --location 'http://localhost:8081/fhir/Consent?mii-provision-provision-code=2.16.840.1.113883.3.1937.777.24.5.3.8' \
 --header 'Prefer: handling=strict'
 ```
 You should get the following response: The search-param with code `mii-provision-provision-code` and type `Consent` was not found
-5. Restore the initial custom-search-parameters.json `mv custom-search-parameters-backup.json custom-search-parameters.json`
 
-6. stop and start blaze again `docker-compose stop && docker-compose up -d`
-7. Once the server has started up execute the following curl request: 
+6. Restore the initial custom-search-parameters.json `mv custom-search-parameters-backup.json custom-search-parameters.json`
+
+7. stop and start blaze again `docker-compose stop && docker-compose up -d`
+8. Once the server has started up execute the following curl request: 
 ```bash
 curl --location 'http://localhost:8081/fhir/Consent?mii-provision-provision-code=2.16.840.1.113883.3.1937.777.24.5.3.8&_summary=count' \
 --header 'Prefer: handling=strict'
 ```
 You should get a search set with 0 entries - The search parameter is now there, but the existing resources are not re-indexd
 
-8. Trigger the re-indexing by deleting the index and restarting blaze
-- 8.1. `docker exec fhir-server_fhir-server_1 mv /app/data/index /app/data/index-old`
-- 8.2. `docker-compose stop && docker-compose up -d`
+9. Trigger the re-indexing by deleting the index and restarting blaze
+- 9.1. `docker exec fhir-server_fhir-server_1 mv /app/data/index /app/data/index-old`
+- 9.2. `docker-compose stop && docker-compose up -d`
 
-9. Once the server has started up execute the following curl request: 
+10. Once the server has started up execute the following curl request: 
 ```bash
 curl --location 'http://localhost:8081/fhir/Consent?mii-provision-provision-code=2.16.840.1.113883.3.1937.777.24.5.3.8&_summary=count' \
 --header 'Prefer: handling=strict'
