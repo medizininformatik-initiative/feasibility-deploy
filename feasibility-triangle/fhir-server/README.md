@@ -22,8 +22,8 @@ To re-index blaze proceed as follows:
 
 1. Navigate to the fhir-server folder `cd fhir-server`
 2. If you have enough disk space, just rename the index directory into index-old. If not, delete it **assuming you have a backup!**
-2.1 either - Rename the index directory in the container `docker exec feasibility-deploy_fhir-server_1 mv /app/data/index /app/data/index-old`
-2.2 or - Delete the index directory in the container `docker exec feasibility-deploy_fhir-server_1 rm -rf /app/data/index`
+- 2.1 either - Rename the index directory in the container `docker exec feasibility-deploy_fhir-server_1 mv /app/data/index /app/data/index-old`
+- 2.2 or - Delete the index directory in the container `docker exec feasibility-deploy_fhir-server_1 rm -rf /app/data/index`
 3. Stop your blaze `docker-compose -p feasibility-deploy stop`
 4. Start your blaze `docker-compose -p feasibility-deploy up -d`
 5. Blaze will now rebuild all indices, which might take a while (up to 24 hours for larger datasets)
