@@ -18,6 +18,21 @@ Please refer to the respective repositories for a more in depth changelog of sin
 |FLARE|<https://github.com/medizininformatik-initiative/flare>|
 |Blaze FHIR server|<https://github.com/medizininformatik-initiative/blaze>|
 
+## [3.2.0] - 2023-11-17
+
+### Overall
+
+- Updated gui, backend and flare components and underlying libraries to the new versions
+- Adjusted readme to reflect changes in the underlying components and added Info about Blaze re-indexing
+- Updated Ontology to newest version
+
+### Bugfix
+
+| Bug | Affected Components |
+| -- | -- |
+|Fixed consent querying|UI, backend, Ontology, sq2cql, FLARE, Blaze|
+|Fixed CQL large query generation|sq2cql|
+|Added newest missing search params to Blaze in this repository |Blaze|
 
 ## [3.1.0] - 2023-11-09
 
