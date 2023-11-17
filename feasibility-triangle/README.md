@@ -131,13 +131,18 @@ Please be aware that you will need to set up an ssh tunnel to your server and fo
 
 For example for the FHIR Server: ssh -L 8081:127.0.0.1:8081 your-username@your-server-ip
 
-### Step 10 - Init Testdata (Optional)
+
+### Step 10 - Update your Blaze Search indices
+
+If you are using the Blaze server provided in this repository check if new items have been added to the fhir-server/custom-search-parameters.json since your last update.
+If new search parameters have been added follow the "fhir-server/README.md -> Re-indexing for new custom search parameters" section to update your FHIR server indices. 
+
+### Step 11 - Init Testdata (Optional)
 
 To initialise testdata execute `get-mii-testdata.sh`. This will download MII core dataset compliant testdata from <https://github.com/medizininformatik-initiative/kerndatensatz-testdaten>,
 unpack it and save it to the testdata folder of this repository.
 
 You can then load the data into your FHIR Server using the `upload-testdata.sh` script.
-
 
 ## Updating the Feasibility Triangle
 
@@ -189,6 +194,11 @@ you should see output similar to:
 Mar 29, 2023 12:59:57 PM feasibility.FeasibilityExecution doExecution
 FINE: {"version":"http://to_be_decided.com/draft-1/schema#","display":"","inclusionCriteria":[[{"termCodes":[{"code":"263495000","system":"http://snomed.info/sct","display":"Geschlecht"}],"context":{"code":"Patient","system":"fdpg.mii.cds","version":"1.0.0","display":"Patient"},"valueFilter":{"selectedConcepts":[{"code":"female","display":"Female","system":"http://hl7.org/fhir/administrative-gender"},{"code":"male","display":"Male","system":"http://hl7.org/fhir/administrative-gender"}],"type":"concept"}}]]}
 ```
+
+### Step 8 - Update your Blaze Search indices
+
+If you are using the Blaze server provided in this repository check if new items have been added to the fhir-server/custom-search-parameters.json since your last update.
+If new search parameters have been added follow the "fhir-server/README.md -> Re-indexing for new custom search parameters" section to update your FHIR server indices. 
 
 ## Configuration
 
