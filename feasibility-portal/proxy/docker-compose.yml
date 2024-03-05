@@ -1,0 +1,11 @@
+services:
+  dataportal-nginx:
+    restart: unless-stopped
+    image: nginxinc/nginx-unprivileged:1.23-alpine
+    ports:
+      - 443:8443
+    volumes:
+      - ../auth/cert.pem:/etc/nginx/conf.d/cert.pem
+      - ../auth/key.pem:/etc/nginx/conf.d/key.pem
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+
