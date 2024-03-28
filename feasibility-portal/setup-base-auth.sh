@@ -11,8 +11,8 @@
 BASE_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit 1 ; pwd -P )"
 
 echo "Generating default certificate..."
-docker run --rm -v "$BASE_DIR"/auth:/export --entrypoint openssl alpine/openssl req -nodes -subj '/CN=localhost' -addext "subjectAltName = DNS:datenportal.localhost, DNS:auth.datenportal.localhost, DNS:api.datenportal.localhost" -x509 -newkey rsa:4096 -keyout /export/key.pem -out /export/cert.pem -days 99999
-docker run --rm -v "$BASE_DIR"/auth:/export alpine chmod -R 655 /export
+docker run --rm -u "$(id -u):$(id -g)" -v "$BASE_DIR"/auth:/export alpine/openssl req -nodes -subj '/CN=localhost' -addext "subjectAltName = DNS:datenportal.localhost, DNS:auth.datenportal.localhost, DNS:api.datenportal.localhost" -x509 -newkey rsa:4096 -keyout /export/key.pem -out /export/cert.pem -days 99999
+docker run --rm -u "$(id -u):$(id -g)" -v "$BASE_DIR"/auth:/export alpine chmod -R 655 /export/cert.pem /export/key.pem
 
 #echo "generating user: $1 , with password: $2"
 #docker run --rm --entrypoint htpasswd registry:2.7.0 -nb $1 $2 > .htpasswd
