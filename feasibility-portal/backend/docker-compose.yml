@@ -1,4 +1,3 @@
-version: '3.7'
 services:
   feasibility-gui-backend:
     image: ghcr.io/medizininformatik-initiative/feasibility-backend:4.2.0
