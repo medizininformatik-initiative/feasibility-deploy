@@ -1,6 +1,6 @@
 services:
   dataportal-ui:
-    image: ghcr.io/medizininformatik-initiative/feasibility-gui:2.2.0
+    image: ghcr.io/medizininformatik-initiative/feasibility-gui:5.0.0-alpha.1
     ports:
     - "80:80"
     restart: unless-stopped

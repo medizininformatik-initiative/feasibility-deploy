@@ -1,6 +1,6 @@
 {
   "env": {
-    "name": "dev-test"
+    "name": "dev"
   },
   "api": {
     "baseUrl": "/api"
@@ -15,8 +15,8 @@
     "roles": ["FeasibilityUser"]
   },
   "legal": {
-    "version": "0.9.0",
-    "copyrightOwner": "MII Team"
+    "version": "5.0.0-alpha.1",
+    "copyrightOwner": "FDPG+ Team"
   },
   "features": {
     "v2": {
