@@ -6,10 +6,10 @@
     "baseUrl": "/api"
   },
   "uiBackendApi": {
-    "baseUrl": "https://localhost/api/v3"
+    "baseUrl": "https://api.datenportal.localhost/api/v3"
   },
   "auth": {
-    "baseUrl": "https://localhost/auth",
+    "baseUrl": "https://auth.datenportal.localhost",
     "realm": "feasibility",
     "clientId": "feasibility-webapp",
     "roles": ["FeasibilityUser"]
