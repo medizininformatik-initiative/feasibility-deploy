@@ -8,6 +8,9 @@
 #
 #fi
 
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
 BASE_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit 1 ; pwd -P )"
 
 echo "Generating default certificate..."
@@ -18,12 +21,16 @@ if [ -f "$BASE_DIR"/auth/ca-cert.pem ] && [ -f "$BASE_DIR"/auth/cert.pem ]
 then
   echo "Certificate has been generated."
   echo
-  echo "  Import the ca certificate '$BASE_DIR/auth/ca-cert.pem' in your browser's certificate store and trust it with identifying websites."
-  echo "  Add the following line to your hosts file (e.g. '/etc/hosts'):"
+  echo -e "${RED}## IMPORTANT ##${NC}"
+  echo "1. Import the ca certificate '$BASE_DIR/auth/ca-cert.pem' in your browser's certificate store and trust it with"
+  echo "   identifying websites."
+  echo
+  echo "2. Add the following line to your hosts file (e.g. '/etc/hosts'):"
   echo
   echo "    127.0.0.1  datenport.localhost auth.datenportal.localhost api.datenportal.localhost"
   echo
-  echo "  If the portal will not be running on your local computer replace '127.0.0.1' with the actual ip address where the portal will be running."
+  echo "  If the portal will not be running on your local computer replace '127.0.0.1' with the actual ip address where"
+  echo "  the portal will be running."
   echo
 fi
 
