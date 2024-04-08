@@ -6,5 +6,3 @@ services:
     - "8080:8080"
     volumes:
       - ./deploy-config.json:/usr/share/nginx/html/assets/config/config.deploy.json
-      - ./language/de.json:/usr/share/nginx/html/assets/i18n/de.json
-      - ./language/en.json:/usr/share/nginx/html/assets/i18n/en.json
