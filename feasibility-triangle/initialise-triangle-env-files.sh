@@ -1,6 +1,6 @@
 #!/bin/bash
 
-envfiles=( "aktin-client/.env" "fhir-server/.env" "flare/.env" "rev-proxy/.env")
+envfiles=( "fhir-server/.env" "flare/.env" "rev-proxy/.env")
 
 for file in "${envfiles[@]}"
 do

@@ -5,7 +5,6 @@ BASE_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit 1 ; pwd -P )"
 CERT_FILE=${CERT_FILE:-$BASE_DIR/auth/cert.pem}
 KEY_FILE=${KEY_FILE:-$BASE_DIR/auth/key.pem}
 
-docker-compose -p "$COMPOSE_PROJECT" -f "$BASE_DIR"/aktin-client/docker-compose.yml up -d
 docker-compose -p "$COMPOSE_PROJECT" -f "$BASE_DIR"/flare/docker-compose.yml up -d
 docker-compose -p "$COMPOSE_PROJECT" -f "$BASE_DIR"/fhir-server/docker-compose.yml up -d
 
