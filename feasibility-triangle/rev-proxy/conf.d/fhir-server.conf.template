@@ -1,0 +1,32 @@
+map $http_authorization $fhir_upstream {
+    default http://fhir-server-frontend:3000;
+
+    "~Bearer" http://fhir-server:8080;
+}
+
+server {
+    listen       8443 ssl;
+    http2        on;
+    server_name  ${FHIR_SERVER_HOSTNAME};
+
+    # DNS resolver needed for Docker
+    resolver 127.0.0.11 valid=10s;
+
+    proxy_buffer_size       8k;
+    proxy_request_buffering off;
+
+    # redirect server error pages to the static page /50x.html
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+
+    location / {
+        proxy_pass                         $fhir_upstream;
+        proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host  $http_host;
+        proxy_set_header X-Forwarded-Port  $server_port;
+        client_max_body_size               100M;
+    }
+}

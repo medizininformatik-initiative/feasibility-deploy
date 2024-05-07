@@ -58,8 +58,13 @@ This creates a .htpasswd file in the `auth` directory, which will be mounted to 
 
 ### Step 5 - Set Up ssl certificates
 
-Running this setup safely at your site requires a valid certificate and domain. Please contact the responsible body of your institution to receive both a domain and certificate.
-You will require two .pem files: a cert.pem (certificate) and key.pem (private key).
+Running this setup safely at your site requires a valid certificate and domains. Please contact the responsible body of your institution to receive both domains and a certificate containing these domains as subject alternative names (SAN). The following services require a domain each:
+
+- FHIR server
+- FLARE
+- Keycloak (optional, see step 8)
+
+You will require two .pem files: a `cert.pem` (certificate) and `key.pem` (private key).
 
 Once you have the appropriate certificates you should save them under `/opt/feasibility-deploy/feasibility-triangle/auth`.
 Set the rights for all files of the auth folder to 655 `chmod 655 /opt/feasibility-deploy/feasibility-triangle/auth/*`.
@@ -68,43 +73,42 @@ Set the rights for all files of the auth folder to 655 `chmod 655 /opt/feasibili
 - The rest of the feasibility triangle will still work, as it does create a connection to the outside without the need to make itself accessible.
 - However, if you would for example load data into the FHIR server from an ETL job on another VM you will need to expose the FHIR server via a reverse proxy, which will require the certificates above.
 
-### Step 6 - Load the ontology mapping files
+### Step 6 - Create trust store for blaze
 
-**Note:** The ontology is now part of the FLARE image and will not have to be loaded manually.
+Generate a PKCS12 certificate file `/opt/feasibility-deploy/feasibility-triangle/auth/trust-store.p12` containing the `cert.pem`
+(see step 5 above). Running the script `/opt/feasibility-deploy/feasibility-triangle/generate-cert.sh` will generate the PKCS12
+certificate file (and a self-signed `cert.pem` and `key.pem`, if these don't exist).
 
 ### Step 7 - Configure your feasibility triangle
 
 If you use the default triangle setup you only have to configure the DSF middleware to connect to the central feasibility portal. Follow the [DSF configuration wiki][1].
 
-Please note that all user env variables should be changed and all password variables should be set to secure passwords.
+Please note that all user env variables should be changed and all PASSWORD and SECRET variables should be set to secure
+passwords.
 
-
-To configure the AKTIN client in the default setup, change the following environment variables in the file `/opt/feasibility-deploy/feasibility-triangle/aktin-client/.env` according to the paragraph **Configurable environment variables** of this README:
-
-- FEASIBILITY_AKTIN_CLIENT_BROKER_ENDPOINT_URI
-- FEASIBILITY_AKTIN_CLIENT_AUTH_PARAM
-- FEASIBILITY_AKTIN_CLIENT_WEBSOCKET_PING_SECONDS
-- FEASIBILITY_AKTIN_PROCESS_EXECUTOR_THREADS
-
-If you are using AKTIN, the new version of the AKTIN client logs to the STDOUT of the container. You will be responsible for persisting these container logs beyond the stopping and starting of the container.
+Also note that you need to change the hostnames (default `fhir.localhost` and `keycloak.localhost`) in all env variables
+(`/opt/feasibility-deploy/feasibility-triangle/fhir-server/.env` and `/opt/feasibility-deploy/feasibility-triangle/rev-proxy/.env` to the domains
+you received in step 5.
 
 ### Step 8 - Start the feasibility triangle
 
-To start the triangle navigate to `/opt/feasibility-deploy/feasibility-triangle` and
-execute `bash start-triangle.sh`.
+To start the triangle execute `/opt/feasibility-deploy/feasibility-triangle/start-triangle.sh`.
 
 This starts the following default triangle:
-DSF (Middleware) - FLARE (FHIR Search executor) - BLAZE (FHIR Server)
+FLARE (FHIR Search executor) - BLAZE (FHIR Server) - Keycloak (optional)
 
-- DSF: Used to connect to the central platform and allow queries from the FDPG
 - FLARE: A Rest Service, which is needed to translate, execute and evaluate a feasibility query on a FHIR Server using FHIR Search
 - BLAZE: The FHIR Server which holds the patient data for feasibility queries
+- Keycloak (optional): OpenID Connect provider for authorization used by BLAZE components
 
+The start script asks you, if you want to use and start the bundled keycloak service. It is preconfigured
+and you only need to change passwords and secrets in `/opt/feasibility-deploy/feasibility-triangle/fhir-server/.env` before starting
+the service. If you want to use your own OpenID Connect provider you will need to set the correct issuer url and client
+credentials in `/opt/feasibility-deploy/feasibility-triangle/fhir-server/.env`.
 
 If you would like to pick other component combinations you can start each component individually by setting your compose project (`export FEASIBILITY_COMPOSE_PROJECT=feasibility-deploy`)
 navigating to the respective components folder and executing:
-`docker-compose -p $FEASIBILITY_COMPOSE_PROJECT up -d`
-
+`-p $FEASIBILITY_COMPOSE_PROJECT up -d`
 
 ### Step 9 - Access the Triangle
 
@@ -119,10 +123,10 @@ These are the URLs for access to the webclients via nginx:
 
 Accessible service via localhost:
 
-| Component   | URL                              | User             | Password         |
-|-------------|----------------------------------|------------------|------------------|
-| Flare       | <http://localhost:8084>          | None required    | None required    |
-| FHIR Server | <http://localhost:8081>          | None required    | None required    |
+| Component   | URL                              | Authentication Type | Notes                |
+|-------------|----------------------------------|---------------------|----------------------|
+| Flare       | <http://localhost:8084>          | None required       |                      |
+| FHIR Server | <http://localhost:8081>          | Bearer Token        | Configured in step 8 |
 
 Please be aware that you will need to set up an ssh tunnel to your server and forward the respective ports if you would like to access the services on localhost without a password.
 
@@ -200,30 +204,43 @@ If new search parameters have been added follow the "fhir-server/README.md -> Re
 
 ### Configurable environment variables
 
-| Env Variable                        | Description                                                                                                                                                     | Default                       | Possible Values                             | Component |
-|-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------|---------------------------------------------|-----------|
-| FHIR_SERVER_BASE_URL                | The base URL of the FHIR server the fhir server uses to generate next links                                                                                     | http://fhir-server:8080       |                                             | BLAZE     |
-| FHIR_SERVER_LOG_LEVEL               | log level of the FHIR server                                                                                                                                    | debug                         | debug, info, error                          | BLAZE     |
-| BLAZE_JVM_ARGS                      | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md                                                                       | -Xmx4g                        |                                             | BLAZE     |
-| BLAZE_BLOCK_CACHE_SIZE              | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md                                                                       | 256                           |                                             | BLAZE     |
-| BLAZE_DB_RESOURCE_CACHE_SIZE        | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md                                                                       | 2000000                       |                                             | BLAZE     |
-| BLAZE_DB_RESOURCE_HANDLE_CACHE_SIZE | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md                                                                       | 100000                        |                                             | BLAZE     |
-| PORT_FHIR_SERVER_LOCALHOST          | The exposed docker port of the FHIR server                                                                                                                      | 127.0.0.1:8081                | should always include 127.0.0.1             | BLAZE     |
-| FEASIBILITY_FLARE_PORT              | The exposed docker port of the FLARE componenet                                                                                                                 | 127.0.0.1:8084                | should always include 127.0.0.1             | FLARE     |
-| FLARE_FHIR_SERVER_URL               | The Url of the FHIR server FLARE uses to connect to the FHIR server                                                                                             | http://fhir-server:8080/fhir/ | URL                                         | FLARE     |
-| FLARE_FHIR_USER                     | basic auth user to connect to FHIR server                                                                                                                       |                               |                                             | FLARE     |
-| FLARE_FHIR_PW                       | basic auth password to connect to FHIR server if CQL is used                                                                                                    |                               |                                             | FLARE     |
-| FLARE_FHIR_PAGE_COUNT               | The number of resources per page FLARE asks for from the FHIR server                                                                                            | 500                           |                                             | FLARE     |
-| FLARE_FHIR_MAX_CONNECTIONS          | maximum number of connections flare will open to fhir server simultaniously                                                                                     | 32                            |                                             | FLARE     |
-| FLARE_CACHE_MEM_SIZE_MB             | in memory cache size in mb                                                                                                                                      | 1024                          |                                             | FLARE     |
-| FLARE_CACHE_MEM_EXPIRE              | in memory cache time to expire                                                                                                                                  | PT48H                         | ISO 8601 time duration                      | FLARE     |
-| FLARE_CACHE_MEM_REFRESH             | in memory chache time to refresh - not refresh should be shorter than expire                                                                                    | PT24H                         | ISO 8601 time duration                      | FLARE     |
-| FLARE_CACHE_DISK_THREADS            | number of threads used to write to disk cache                                                                                                                   | 4                             | integer                                     | FLARE     |
-| FLARE_CACHE_DISK_PATH               | disk path for disk cache inside docker container                                                                                                                | PT24H                         | string disk path                            | FLARE     |
-| FLARE_CACHE_DISK_EXPIRE             | disk cache time to expire                                                                                                                                       | P7D                           | ISO 8601 time duration                      | FLARE     |
-| FLARE_JAVA_TOOL_OPTIONS             | java tool options passed to the flare container                                                                                                                 | -Xmx4g                        |                                             | FLARE     |
-| FLARE_LOG_LEVEL                     |                                                                                                                                                                 | info                          | off, fatal, error, warn, info, debug, trace | FLARE     |
-| FEASIBILITY_TRIANGLE_REV_PROXY_PORT | The exposed docker port of the reverse proxy - set to 443 if you want to use standard https and you only have the feasibility triangle installed on your server | 444                           | Integer (valid port)                        | REV Proxy |
+| Env Variable                                     | Description                                                                                                                                                     | Default                                       | Possible Values                                           | Component |
+|--------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------|-----------------------------------------------------------|-----------|
+| FHIR_SERVER_BASE_URL                             | The base URL of the FHIR server the fhir server uses to generate next links                                                                                     | `http://fhir-server:8080`                     |                                                           | BLAZE     |
+| FHIR_SERVER_LOG_LEVEL                            | log level of the FHIR server                                                                                                                                    | `debug`                                       | `debug`, `info` , `error`                                 | BLAZE     |
+| BLAZE_JVM_ARGS                                   | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md                                                                       | `-Xmx4g`                                      |                                                           | BLAZE     |
+| BLAZE_BLOCK_CACHE_SIZE                           | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md                                                                       | `256`                                         |                                                           | BLAZE     |
+| BLAZE_DB_RESOURCE_CACHE_SIZE                     | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md                                                                       | `2000000`                                     |                                                           | BLAZE     |
+| PORT_FHIR_SERVER_LOCALHOST                       | The exposed docker port of the FHIR server                                                                                                                      | `127.0.0.1:8081`                              | should always include 127.0.0.1                           | BLAZE     |
+| FHIR_SERVER_OPENID_PROVIDER_URL                  | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md                                                                       | `https://keycloak.localhost:444/realms/blaze` | URL                                                       | BLAZE     |
+| FHIR_SERVER_OPENID_CLIENT_TRUST_STORE_PASS       | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md                                                                       | `insecure`                                    | secure password                                           | BLAZE     |
+| FHIR_SERVER_FRONTEND_ORIGIN                      | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md#frontend                                                              | `https://fhir.localhost:444`                  |                                                           | BLAZE     |
+| FHIR_SERVER_FRONTEND_AUTH_CLIENT_ID              | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md#frontend                                                              | `account`                                     |                                                           | BLAZE     |
+| FHIR_SERVER_FRONTEND_AUTH_CLIENT_SECRET          | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md#frontend                                                              | `insecure`                                    | secure password                                           | BLAZE     |
+| FHIR_SERVER_FRONTEND_AUTH_ISSUER_URL             | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md#frontend                                                              | `https://keycloak.localhost:444/realms/blaze` |                                                           | BLAZE     |
+| FHIR_SERVER_FRONTEND_AUTH_SECRET                 | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md#frontend                                                              | `insecure`                                    | secure password                                           | BLAZE     |
+| FHIR_SERVER_FRONTEND_CA_CERT                     | Certificate PEM file containing the certificate of `cert.pem` or the certificate authority by which the `cert.pem` was signed                                   | `./auth/cert.pem`                             | host path                                                 | BLAZE     |
+| FHIR_SERVER_FRONTEND_KEYCLOAK_ENABLED            | Enable/Disable automatic start of bundled Keycloak service executing `/opt/feasibility-deploy/feasibility-triangle/start-triangle.sh`                           | `true`                                        | `true` or `false`                                         | Keycloak  |
+| FHIR_SERVER_FRONTEND_KEYCLOAK_ADMIN_PASSWORD     | Keycloak admin password                                                                                                                                         | `admin`                                       | secure password                                           | Keycloak  |
+| FHIR_SERVER_FRONTEND_KEYCLOAK_HOSTNAME_URL       | URL for accessing Keycloak via proxy                                                                                                                            | `https://fhir.localhost:444`                  |                                                           | Keycloak  |
+| FHIR_SERVER_FRONTEND_KEYCLOAK_HTTP_RELATIVE_PATH | Relative path of Keycloak http service                                                                                                                          | `/`                                           | URL path                                                  | Keycloak  |
+| FHIR_SERVER_FRONTEND_KEYCLOAK_LOG_LEVEL          | Log level of Keycloak service                                                                                                                                   | `info`, `error`, `warn`, `info`, `debug`      |                                                           | Keycloak  |
+| FEASIBILITY_FLARE_PORT                           | The exposed docker port of the FLARE componenet                                                                                                                 | `127.0.0.1:8084`                              | should always include `127.0.0.1`                         | FLARE     |
+| FLARE_ENABLED                                    | Enable/Disable automatic start of bundled Keycloak service executing `/opt/feasibility-deploy/feasibility-triangle/start-triangle.sh`                           | `true`                                        | `true` or `false`                                         | Keycloak  |
+| FLARE_FHIR_SERVER_URL                            | The URL of the FHIR server FLARE uses to connect to the FHIR server                                                                                             | `http://fhir-server:8080/fhir/`               | URL                                                       | FLARE     |
+| FLARE_FHIR_USER                                  | basic auth user to connect to FHIR server                                                                                                                       |                                               |                                                           | FLARE     |
+| FLARE_FHIR_PW                                    | basic auth password to connect to FHIR server if CQL is used                                                                                                    |                                               |                                                           | FLARE     |
+| FLARE_FHIR_PAGE_COUNT                            | The number of resources per page FLARE asks for from the FHIR server                                                                                            | `500`                                         |                                                           | FLARE     |
+| FLARE_FHIR_MAX_CONNECTIONS                       | maximum number of connections flare will open to fhir server simultaniously                                                                                     | `32`                                          |                                                           | FLARE     |
+| FLARE_CACHE_MEM_SIZE_MB                          | in memory cache size in mb                                                                                                                                      | `1024`                                        |                                                           | FLARE     |
+| FLARE_CACHE_MEM_EXPIRE                           | in memory cache time to expire                                                                                                                                  | `PT48H`                                       | ISO 8601 time duration                                    | FLARE     |
+| FLARE_CACHE_MEM_REFRESH                          | in memory chache time to refresh - not refresh should be shorter than expire                                                                                    | `PT24H`                                       | ISO 8601 time duration                                    | FLARE     |
+| FLARE_CACHE_DISK_THREADS                         | number of threads used to write to disk cache                                                                                                                   | `4`                                           | integer                                                   | FLARE     |
+| FLARE_CACHE_DISK_PATH                            | disk path for disk cache inside docker container                                                                                                                | `PT24H`                                       | string disk path                                          | FLARE     |
+| FLARE_CACHE_DISK_EXPIRE                          | disk cache time to expire                                                                                                                                       | `P7D`                                         | ISO 8601 time duration                                    | FLARE     |
+| FLARE_JAVA_TOOL_OPTIONS                          | java tool options passed to the flare container                                                                                                                 | `-Xmx4g`                                      |                                                           | FLARE     |
+| FLARE_LOG_LEVEL                                  |                                                                                                                                                                 | `info`                                        | `off`, `fatal`, `error`, `warn`, `info`, `debug`, `trace` | FLARE     |
+| FEASIBILITY_TRIANGLE_REV_PROXY_PORT              | The exposed docker port of the reverse proxy - set to 443 if you want to use standard https and you only have the feasibility triangle installed on your server | `444`                                         | Integer (valid port)                                      | REV Proxy |
 
 
 ### Support for self-singed certificates
@@ -238,11 +255,11 @@ for details.
 
 #### FLARE
 
-FLARE supports the use of self-signed certificates from your own CAs. On each startup FLARE will search through the folder /app/certs inside the container , add all found CA *.pem files to a java truststore and start FLARE with this truststore.
+FLARE supports the use of self-signed certificates from your own CAs. On each startup FLARE will search through the folder /app/certs inside the container , add all found CA `*.pem` files to a java truststore and start FLARE with this truststore.
 
-In order to add your own CA files, add your own CA *.pem files to the /app/certs folder of the container.
+In order to add your own CA files, add your own CA `*.pem` files to the `/app/certs` folder of the container.
 
-Using docker-compose mount a folder from your host (e.g.: ./certs) to the /app/certs folder, add your *.pem files (one for each CA you would like to support) to the folder and ensure that they have the .pem extension.
+Using docker-compose mount a folder from your host (e.g.: `./certs`) to the `/app/certs` folder, add your `*.pem` files (one for each CA you would like to support) to the folder and ensure that they have the .pem extension.
 
 
 [1]: https://github.com/medizininformatik-initiative/feasibility-deploy/wiki/DSF-Middleware-Setup

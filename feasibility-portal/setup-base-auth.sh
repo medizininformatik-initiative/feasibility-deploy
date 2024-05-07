@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 #FILE=$PWD/node-rev-proxy/dhparam.pem
 #if [ ! -f "$FILE" ]; then
