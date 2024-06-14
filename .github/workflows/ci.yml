@@ -11,13 +11,16 @@ on:
     - main
     - develop
 
+env:
+  FEASIBILITY_COMPOSE_PROJECT: test
+
 jobs:
   lint:
     runs-on: ubuntu-latest
 
     steps:
     - name: Check out Git repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Check shell scripts
       uses: ludeeus/action-shellcheck@master
@@ -29,19 +32,29 @@ jobs:
 
     steps:
     - name: Check out Git repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Install Blazectl
       run: .github/scripts/install-blazectl.sh
 
-    - name: Start Blaze FHIR Server
-      run: docker-compose -f feasibility-triangle/fhir-server/docker-compose.yml up -d
+    - name: Initialize .env's
+      run: feasibility-triangle/initialise-triangle-env-files.sh
 
-    - name: Wait for Blaze FHIR Server
-      run: .github/scripts/wait-for-url.sh  http://localhost:8081/health
+    - name: Change Flare External Port
+      run: sed -i 's/8084/18084/g' feasibility-triangle/flare/.env
+
+    - name: Generate certificate
+      run: feasibility-triangle/generate-cert.sh
+
+    - name: Start Triangle
+      run: feasibility-triangle/start-triangle.sh
 
     - name: Load Data
-      run: blazectl --no-progress --server http://localhost:8081/fhir upload .github/test-data
+      run: |
+        ACCESS_TOKEN="$(feasibility-triangle/get-fhir-server-access-token.sh)"
+        blazectl --no-progress --server https://fhir.localhost:444/fhir --certificate-authority feasibility-triangle/auth/cert.pem --token "$ACCESS_TOKEN" upload .github/test-data
 
     - name: Run Test Queries
-      run: .github/scripts/test-consent-queries.sh
+      run: |
+        ACCESS_TOKEN="$(feasibility-triangle/get-fhir-server-access-token.sh)"
+        .github/scripts/test-consent-queries.sh https://fhir.localhost:444/fhir "$ACCESS_TOKEN" feasibility-triangle/auth/cert.pem

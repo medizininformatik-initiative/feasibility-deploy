@@ -1,5 +1,3 @@
-version: "3.7"
-
 services:
   flare:
     image: ghcr.io/medizininformatik-initiative/flare:2.1.1
