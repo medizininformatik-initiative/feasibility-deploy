@@ -101,10 +101,12 @@ FLARE (FHIR Search executor) - BLAZE (FHIR Server) - Keycloak (optional)
 - BLAZE: The FHIR Server which holds the patient data for feasibility queries
 - Keycloak (optional): OpenID Connect provider for authorization used by BLAZE components
 
-The start script asks you, if you want to use and start the bundled keycloak service. It is preconfigured
-and you only need to change passwords and secrets in `/opt/feasibility-deploy/feasibility-triangle/fhir-server/.env` before starting
-the service. If you want to use your own OpenID Connect provider you will need to set the correct issuer url and client
-credentials in `/opt/feasibility-deploy/feasibility-triangle/fhir-server/.env`.
+The bundled keycloak service is enabled by default and is preconfigured, so you only need to change passwords and
+secrets in `/opt/feasibility-deploy/feasibility-triangle/fhir-server/.env` before starting the service.
+
+If you want to use your own OpenID Connect provider you will need to set the correct issuer url and client credentials
+in and disable the bundled keycloak service by setting environment variable `FHIR_SERVER_FRONTEND_KEYCLOAK_ENABLED`
+to `false` in `/opt/feasibility-deploy/feasibility-triangle/fhir-server/.env`.
 
 If you would like to pick other component combinations you can start each component individually by setting your compose project (`export FEASIBILITY_COMPOSE_PROJECT=feasibility-deploy`)
 navigating to the respective components folder and executing:
