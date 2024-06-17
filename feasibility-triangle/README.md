@@ -8,7 +8,7 @@ The Feasibility Triangle part of this repository provides a site (data integrati
 
 The Feasibility Triangle is composed of four components:
 
-1. A Middleware Client (AKTIN or DSF)
+1. A Middleware Client (DSF)
 2. A Feasibility Analysis Request Executor (FLARE)
 3. A FHIR Server (Blaze)
 4. Reverse Proxy (NGINX)
