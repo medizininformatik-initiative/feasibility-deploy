@@ -3,7 +3,7 @@
 COMPOSE_PROJECT=${FEASIBILITY_COMPOSE_PROJECT:-feasibility-deploy}
 BASE_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit 1 ; pwd -P )"
 CERT_FILE=${CERT_FILE:-$BASE_DIR/auth/cert.pem}
-KEY_FILE=${KEY_FILE:-$BASE_DIR/auth/key.pem}
+KEY_FILE=${KEY_FILE:-$BASE_DIR/auth/cert.key}
 TRUST_STORE_FILE=${KEY_FILE:-$BASE_DIR/auth/trust-store.p12}
 
 

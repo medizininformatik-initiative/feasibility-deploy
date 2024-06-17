@@ -64,12 +64,12 @@ Running this setup safely at your site requires a valid certificate and domains.
 - FLARE
 - Keycloak (optional, see step 8)
 
-You will require two .pem files: a `cert.pem` (certificate) and `key.pem` (private key).
+You will require two .pem files: a `cert.pem` (certificate) and `cert.key` (private key).
 
 Once you have the appropriate certificates you should save them under `/opt/feasibility-deploy/feasibility-triangle/auth`.
 Set the rights for all files of the auth folder to 655 `chmod 655 /opt/feasibility-deploy/feasibility-triangle/auth/*`.
 
-- If you do not provide a cert.pem and key.pem file the reverse proxy will not start up, as it will not be able to provide a secure https connection.
+- If you do not provide a cert.pem and cert.key file the reverse proxy will not start up, as it will not be able to provide a secure https connection.
 - The rest of the feasibility triangle will still work, as it does create a connection to the outside without the need to make itself accessible.
 - However, if you would for example load data into the FHIR server from an ETL job on another VM you will need to expose the FHIR server via a reverse proxy, which will require the certificates above.
 
@@ -77,7 +77,7 @@ Set the rights for all files of the auth folder to 655 `chmod 655 /opt/feasibili
 
 Generate a PKCS12 certificate file `/opt/feasibility-deploy/feasibility-triangle/auth/trust-store.p12` containing the `cert.pem`
 (see step 5 above). Running the script `/opt/feasibility-deploy/feasibility-triangle/generate-cert.sh` will generate the PKCS12
-certificate file (and a self-signed `cert.pem` and `key.pem`, if these don't exist).
+certificate file (and a self-signed `cert.pem` and `cert.key`, if these don't exist).
 
 ### Step 7 - Configure your feasibility triangle
 
@@ -90,12 +90,7 @@ Also note that you need to change the hostnames (default `fhir.localhost` and `k
 (`/opt/feasibility-deploy/feasibility-triangle/fhir-server/.env` and `/opt/feasibility-deploy/feasibility-triangle/rev-proxy/.env` to the domains
 you received in step 5.
 
-### Step 8 - Start the feasibility triangle
-
-To start the triangle execute `/opt/feasibility-deploy/feasibility-triangle/start-triangle.sh`.
-
-This starts the following default triangle:
-FLARE (FHIR Search executor) - BLAZE (FHIR Server) - Keycloak (optional)
+The triangle is configured by default to start the following services:
 
 - FLARE: A Rest Service, which is needed to translate, execute and evaluate a feasibility query on a FHIR Server using FHIR Search
 - BLAZE: The FHIR Server which holds the patient data for feasibility queries
@@ -107,6 +102,15 @@ secrets in `/opt/feasibility-deploy/feasibility-triangle/fhir-server/.env` befor
 If you want to use your own OpenID Connect provider you will need to set the correct issuer url and client credentials
 in and disable the bundled keycloak service by setting environment variable `FHIR_SERVER_FRONTEND_KEYCLOAK_ENABLED`
 to `false` in `/opt/feasibility-deploy/feasibility-triangle/fhir-server/.env`.
+The bundled keycloak service is enabled by default and is preconfigured, so you only need to change passwords and
+secrets in `/opt/feasibility-deploy/feasibility-triangle/fhir-server/.env` before starting the service.
+
+### Step 8 - Start the feasibility triangle
+
+To start the triangle execute `/opt/feasibility-deploy/feasibility-triangle/start-triangle.sh`.
+
+This starts the following default triangle:
+FLARE (FHIR Search executor) - BLAZE (FHIR Server) - Keycloak (optional)
 
 If you would like to pick other component combinations you can start each component individually by setting your compose project (`export FEASIBILITY_COMPOSE_PROJECT=feasibility-deploy`)
 navigating to the respective components folder and executing:

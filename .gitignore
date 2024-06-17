@@ -2,6 +2,7 @@ test/testdata
 .env
 deploy-config.json
 *.pem
+*.key
 !ca.pem
 .htpasswd
 *.p12
