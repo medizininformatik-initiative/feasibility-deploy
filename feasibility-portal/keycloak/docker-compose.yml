@@ -10,7 +10,7 @@ services:
       - "feasibility-auth-db:/var/lib/postgresql/data"
 
   auth:
-    image: keycloak/keycloak:22.0
+    image: keycloak/keycloak:25.0
     command: ["start", "--import-realm"]
     restart: unless-stopped
     environment:
@@ -21,8 +21,8 @@ services:
       KEYCLOAK_ADMIN: ${FEASIBILITY_KC_ADMIN_USER}
       KEYCLOAK_ADMIN_PASSWORD: ${FEASIBILITY_KC_ADMIN_PW}
       KC_HTTP_RELATIVE_PATH:  ${FEASIBILITY_KC_HTTP_RELATIVE_PATH}
-      KC_HOSTNAME_URL: ${FEASIBILITY_KC_HOSTNAME_URL:-https://localhost/auth}
-      KC_HOSTNAME_ADMIN_URL: ${FEASIBILITY_KC_HOSTNAME_ADMIN_URL}
+      KC_HOSTNAME: ${FEASIBILITY_KC_HOSTNAME_URL:-https://auth.datenportal.localhost}
+      KC_HOSTNAME_ADMIN: ${FEASIBILITY_KC_HOSTNAME_ADMIN_URL}
       KC_LOG_LEVEL: ${FEASIBILITY_KC_LOG_LEVEL:-info}
       KC_PROXY: ${FEASIBILITY_KC_PROXY:-edge}
     volumes:
