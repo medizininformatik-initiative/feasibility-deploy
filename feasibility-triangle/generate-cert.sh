@@ -9,8 +9,8 @@ then
     req -nodes -subj '/CN=localhost' \
     -addext "basicConstraints=CA:false" \
     -addext "subjectAltName = DNS:localhost, DNS:fhir.localhost, DNS:keycloak.localhost" \
-    -x509 -newkey rsa:4096 -keyout /export/key.pem -out /export/cert.pem -days 99999
-  docker run -v "$BASE_DIR/auth":/export alpine chmod +r "/export/key.pem"
+    -x509 -newkey rsa:4096 -keyout /export/cert.key -out /export/cert.pem -days 99999
+  docker run -v "$BASE_DIR/auth":/export alpine chmod +r "/export/cert.key"
 fi
 
 if ! [ -f "$BASE_DIR/auth/trust-store.p12" ]
