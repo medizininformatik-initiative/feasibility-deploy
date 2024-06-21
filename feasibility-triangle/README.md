@@ -248,6 +248,13 @@ If new search parameters have been added follow the "fhir-server/README.md -> Re
 | FLARE_LOG_LEVEL                                  |                                                                                                                                                                 | `info`                                        | `off`, `fatal`, `error`, `warn`, `info`, `debug`, `trace` | FLARE     |
 | FEASIBILITY_TRIANGLE_REV_PROXY_PORT              | The exposed docker port of the reverse proxy - set to 443 if you want to use standard https and you only have the feasibility triangle installed on your server | `444`                                         | Integer (valid port)                                      | REV Proxy |
 
+FHIR_SERVER_HOSTNAME |   change the default value of the domain names where the services are reachable   | http://fhir-server:8080   |      |   REV-PROXY|  
+KEYCLOAK_HOSTNAME |   change the default value of the domain names where the services are reachable   |  https://keycloak.localhost:444/realms/blaze  |      |  REV-PROXY  |  
+FLARE_HOSTNAME |    change the default value of the domain names where the services are reachable  |  http://fhir-server:8080/fhir  |      |  REV-PROXY  |  
+
+
+
+
 
 ### Support for self-singed certificates
 

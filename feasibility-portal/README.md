@@ -45,8 +45,8 @@ If you use the default local feasibility portal setup you will only have to chan
 
 | file                   | environment variable                       | value for local setup                                              |
 |------------------------|--------------------------------------------|--------------------------------------------------------------------|
-| keycloak/.env          | FEASIBILITY_KC_HOSTNAME_URL                | base-url-of-your-local-feasibility-portal/auth                     |
-| keycloak/.env          | FEASIBILITY_KC_HOSTNAME_ADMIN_URL          | base-url-of-your-local-feasibility-portal/auth/keycloakadmin       |
+| keycloak/.env          | FEASIBILITY_KC_HOSTNAME_URL                | base-url-of-your-local-feasibility-portal                          |
+| keycloak/.env          | FEASIBILITY_KC_HOSTNAME_ADMIN_URL          | base-url-of-your-local-feasibility-portal                          |
 | keycloak/.env          | FEASIBILITY_KC_ADMIN_USER                  | keycloak admin user name                                           |
 | keycloak/.env          | FEASIBILITY_KC_ADMIN_PW                    | choose a secure password here e.g. Ykc2PINWatNqL5Wq,OIxFz1Sv3dzmQ2 |
 | backend/.env           | FEASIBILITY_BACKEND_AKTIN_ENABLED          | false                                                              |
@@ -54,7 +54,7 @@ If you use the default local feasibility portal setup you will only have to chan
 | backend/.env           | FEASIBILITY_BACKEND_API_BASE_URL           | base-url-of-your-local-feasibility-portal/api                      |
 | backend/.env           | FLARE_WEBSERVICE_BASE_URL                  | http://flare:8080                                                  |
 | backend/.env           | FEASIBILITY_BACKEND_ALLOWED_ORIGINS        | base-url-of-your-local-feasibility-portal                          |
-|backend/.env            |FEASIBILITY_BACKEND_KEYCLOAK_BASE_URL_ISSUER| base-url-of-your-local-feasibility-portal/auth                     |
+|backend/.env            |FEASIBILITY_BACKEND_KEYCLOAK_BASE_URL_ISSUER| base-url-of-your-local-feasibility-portal                          |
 | gui/deploy-config.json | uiBackendApi > baseUrl                     | base-url-of-your-local-feasibility-portal/api/v3                   |
 | gui/deploy-config.json | auth > baseUrl                             | base-url-of-your-local-feasibility-portal                          |
 
@@ -233,6 +233,11 @@ and press "send".
 | ### additional dsf configs ###                                                    |                                                                                                                                                                              |                                                    |                 |           |
 | FEASIBILITY_DSF_BROKER_PROCESS_ORGANIZATION_IDENTIFIER                            | Identifier of this organization.                                                                                                                                             | Test_ZARS                                          | String          | DSF       |
 | FEASIBILITY_DSF_BROKER_PROCESS_FHIR_SERVER_BASE_URL                               | Base URL to a FHIR server or proxy for feasibility evaluation. This can also be the base URL of a reverse proxy if used. Only required if evaluation strategy is set to cql. | https://dsf-zars-fhir-proxy/fhir                   | URL             | DSF       |
+| ### Proxy configs ###                                                    |  
+| Proxy              |
+GUI_HOSTNAME     |    change the default value of the domain names where the services are reachable |   https://api.datenportal.localhost |      |   PROXY |  
+KEYCLOAK_HOSTNAME |  change  the default value of the domain names where the services are reachable    | https://auth.datenportal.localhost    |      |    PROXY|  
+BACKEND_HOSTNAME  |    change  the default value of the domain names where the services are reachable  |   https://api.datenportal.localhost  |      |   PROXY |  
 
 
 ### Support for self-signed certificates
