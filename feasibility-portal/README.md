@@ -237,7 +237,8 @@ and press "send".
 
 GUI_HOSTNAME     |    change the default value of the domain names where the services are reachable |   https://datenportal.localhost |      |   PROXY |  
 KEYCLOAK_HOSTNAME |  change  the default value of the domain names where the services are reachable    | https://auth.datenportal.localhost    |      |    PROXY|  
-BACKEND_HOSTNAME  |    change  the default value of the domain names where the services are reachable  |   https://api.datenportal.localhost  |      |   PROXY |  
+
+BACKEND_HOSTNAME                                                | change  the default value of the domain names where the services are reachable                                                                                                                    | (https://api.datenportal.localhost) |                 | PROXY   |
 
 
 ### Support for self-signed certificates
