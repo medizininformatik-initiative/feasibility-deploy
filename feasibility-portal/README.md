@@ -233,6 +233,7 @@ and press "send".
 | ### additional dsf configs ###                                                    |                                                                                                                                                                              |                                                    |                 |           |
 | FEASIBILITY_DSF_BROKER_PROCESS_ORGANIZATION_IDENTIFIER                            | Identifier of this organization.                                                                                                                                             | Test_ZARS                                          | String          | DSF       |
 | FEASIBILITY_DSF_BROKER_PROCESS_FHIR_SERVER_BASE_URL                               | Base URL to a FHIR server or proxy for feasibility evaluation. This can also be the base URL of a reverse proxy if used. Only required if evaluation strategy is set to cql. | https://dsf-zars-fhir-proxy/fhir                   | URL             | DSF       |
+
 | ### Proxy configs - Environmental variables  ###                                                    |  
 
 GUI_HOSTNAME     |    change the default value of the domain names where the services are reachable |   https://datenportal.localhost |      |   PROXY |  
