@@ -127,6 +127,10 @@ These are the URLs for access to the webclients via nginx:
 | Flare       | <https://your-domain/flare>      | chosen in step 3 | chosen in step 3 |
 | FHIR Server | <https://your-domain/fhir>       | chosen in step 3 | chosen in step 3 |
 
+> [!IMPORTANT]
+> In order to access the frontend of the BLAZE FHIR Server you will need to create a keycloak user account in the realm
+> `blaze`, if you are using the bundled keycloak service.
+
 Accessible service via localhost:
 
 | Component   | URL                              | Authentication Type | Notes                |
