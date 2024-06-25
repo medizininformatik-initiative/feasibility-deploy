@@ -576,28 +576,7 @@
     },
     "notBefore" : 0,
     "groups" : [ ]
-  }, {
-    "id" : "18fb5db1-ebae-4824-ba72-a412330fe026",
-    "username" : "john",
-    "firstName" : "John",
-    "lastName" : "Doe",
-    "emailVerified" : false,
-    "createdTimestamp" : 1710947689953,
-    "enabled" : true,
-    "totp" : false,
-    "credentials" : [ {
-      "id" : "beee2f20-4a46-41e3-ace8-c56dca1e351f",
-      "type" : "password",
-      "createdDate" : 1710947723777,
-      "secretData" : "{\"value\":\"XmSnkmkJIk2SiZmdURejFJeEV+Jrvwqfi4NIKBwvcHXpRKtyaUFRSZb+cLuy4YyhhGXK/jn7sIbY3lNg/OwJNA==\",\"salt\":\"Fe3FD77W0p8xSfIckS7BpQ==\",\"additionalParameters\":{}}",
-      "credentialData" : "{\"hashIterations\":210000,\"algorithm\":\"pbkdf2-sha512\",\"additionalParameters\":{}}"
-    } ],
-    "disableableCredentialTypes" : [ ],
-    "requiredActions" : [ ],
-    "realmRoles" : [ "default-roles-blaze" ],
-    "notBefore" : 0,
-    "groups" : [ ]
-  }, {
+  },{
     "id" : "72a7f37e-b33f-4908-9ad9-33be0d4c1620",
     "username" : "service-account-${KEYCLOAK_CLIENT_ID}",
     "emailVerified" : false,
