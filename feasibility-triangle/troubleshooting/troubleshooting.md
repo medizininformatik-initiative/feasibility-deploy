@@ -51,15 +51,13 @@ Note: If you have a FHIR server other than Blaze please contact the appropriate 
 
 CQL queries are directly executed on your FHIR server and do not require any additional tooling like FLARE.
 
-To test your cql queries execute the `test-cql.sh` in this folder.
+To test standard cql queries from the monitoring used at the time of this release execute the `test-cql.sh` in this folder.
 
 Note that this requires you to install blazectl <https://github.com/samply/blazectl> and jq <https://jqlang.github.io/jq/> on your server.
 
-Further the new version of blaze requires you to use an access token to access it in the default and recommended installation.
+Further the new version of blaze requires you to use an access token to access it in the default and recommended installation. To get an access token to pass to the `test-cql.sh` script use the `get-fhir-server-access-token.sh` of this repo.
 
-
-
-```
+You can also get the newest CQL and CCDL query recieved via your DSF, by using the `get-last-queries-from-dsf.sh` of this repository.
 
 
 ## FLARE
@@ -183,6 +181,10 @@ The return value should be a number >= 0
 ## DSF
 
 The DSF installation is described elsewhere. This troubleshooting focusses on troubleshooting the DSF Feasibility plugin.
+
+### Feasibility Plugin
+
+You can get the newest CQL and CCDL query recieved via your DSF, by using the `get-last-queries-from-dsf.sh` of this repository.
 
 
 ## Manual Connection test
