@@ -63,11 +63,13 @@ If you use the default local feasibility portal setup you will only have to chan
 
 Please note that all user env variables (variables containing USER) should be changed and all password variables (variables containing PASSWORD or PW) should be set to secure passwords.
 
-To configure domain proxies, change the following environment variables in the file `/opt/feasibility-deploy/feasibility-portal/proxy/.env.default` according to the paragraph **Configurable environment variables** of this README:
+To configure domain proxies, change the hostnames in the following environment variables in the file `/opt/feasibility-deploy/feasibility-portal/proxy/.env.default` according to the domains you possess. 
 
-- BACKEND_HOSTNAME
-- KEYCLOAK_HOSTNAME
-- GUI_HOSTNAME
+The portal is configured by default to start the following services:
+
+- Backend
+- Grahpical User Interface
+- Keycloak
 
 For more details on the environment variables see the paragraph **Configurable environment variables** of this README.
 
