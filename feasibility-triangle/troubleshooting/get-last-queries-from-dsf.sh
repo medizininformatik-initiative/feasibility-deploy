@@ -6,6 +6,7 @@ DSF_KEY_PATH="${3:-}"
 LAST_UPDATE="${4:-2024-06-01T01:01:01.000+02:00}"
 PRINT_CCDL="${5:-true}"
 PRINT_CQL="${6:-true}"
+FEAS_TASK_VERSION="${7:-1.0}"
 
 exec_query() {
 
@@ -19,7 +20,7 @@ exec_query() {
 
 printf '## Getting last feasibility Task from server: %s where LAST_UPDATE > %s...\n' "$BASE_DSF_FHIR" "$LAST_UPDATE"
 
-LAST_FEASIBILITY_TASK=$(exec_query "$BASE_DSF_FHIR/Task?_profile=http://medizininformatik-initiative.de/fhir/StructureDefinition/feasibility-task-execute|1.0&_format=json&_lastUpdated=ge$LAST_UPDATE&_sort=-_lastUpdated")
+LAST_FEASIBILITY_TASK=$(exec_query "$BASE_DSF_FHIR/Task?_profile=http://medizininformatik-initiative.de/fhir/StructureDefinition/feasibility-task-execute|$FEAS_TASK_VERSION&_format=json&_lastUpdated=ge$LAST_UPDATE&_sort=-_lastUpdated")
 NEWEST_FEAS_TASK_DATE=$(echo "$LAST_FEASIBILITY_TASK" | jq -r ".entry[0].resource.meta.lastUpdated")
 
 printf "### Selected feasibility task has lastUpdate: %s\...n" "$NEWEST_FEAS_TASK_DATE"
