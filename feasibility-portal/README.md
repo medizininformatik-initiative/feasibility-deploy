@@ -57,8 +57,17 @@ If you use the default local feasibility portal setup you will only have to chan
 |backend/.env            |FEASIBILITY_BACKEND_KEYCLOAK_BASE_URL_ISSUER| base-url-of-your-local-feasibility-portal                          |
 | gui/deploy-config.json | uiBackendApi > baseUrl                     | base-url-of-your-local-feasibility-portal/api/v3                   |
 | gui/deploy-config.json | auth > baseUrl                             | base-url-of-your-local-feasibility-portal                          |
+| proxy/.env.default	 | BACKEND_HOSTNAME                           | base-url-of-your-local-feasibility-portal 	                   |
+| proxy/.env.default     | KEYCLOAK_HOSTNAM                           | base-url-of-your-local-feasibility-portal                          |
+| proxy/.env.default     | GUI_HOSTNAME                               | base-url-of-your-local-feasibility-portal                          |
 
 Please note that all user env variables (variables containing USER) should be changed and all password variables (variables containing PASSWORD or PW) should be set to secure passwords.
+
+To configure domain proxies, change the following environment variables in the file `/opt/feasibility-deploy/feasibility-portal/proxy/.env.default` according to the paragraph **Configurable environment variables** of this README:
+
+BACKEND_HOSTNAME
+KEYCLOAK_HOSTNAME
+GUI_HOSTNAME
 
 For more details on the environment variables see the paragraph **Configurable environment variables** of this README.
 
