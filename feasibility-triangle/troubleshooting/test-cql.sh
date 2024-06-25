@@ -9,6 +9,7 @@ evaluate_measure() {
   echo "Evaluate measure: $1..."
   OUTPUT="$(blazectl --server "$BASE" -k --token "$ACCESS_TOKEN" evaluate-measure "$SCRIPT_DIR/cql/$1.yml" 2> /dev/null)"
   REPORT="$(echo "$OUTPUT" | jq -f "$SCRIPT_DIR/cql/report.jq")"
+  echo $OUTPUT
   printf "Result: %d patients in %.3f s with %d of %d Bloom filters available\n\n" \
     "$(echo "$REPORT" | jq -r '.result')" \
     "$(echo "$REPORT" | jq -r '.duration')" \
