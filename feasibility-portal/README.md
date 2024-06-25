@@ -35,11 +35,7 @@ Set the rights for all files of the auth folder to 655 `chmod 655 /opt/feasibili
 
 - Not providing the certificate files is not an option.
 
-### Step 5 - Load the ontology
-
-**Note:** The ontology is now part of the image and will not have to be loaded manually.
-
-### Step 6 - Configure your feasibility portal
+### Step 5 - Configure your feasibility portal
 
 If you use the default local feasibility portal setup you will only have to change the following environment variables:
 
@@ -54,12 +50,12 @@ If you use the default local feasibility portal setup you will only have to chan
 | backend/.env           | FEASIBILITY_BACKEND_API_BASE_URL           | base-url-of-your-local-feasibility-portal/api                      |
 | backend/.env           | FLARE_WEBSERVICE_BASE_URL                  | http://flare:8080                                                  |
 | backend/.env           | FEASIBILITY_BACKEND_ALLOWED_ORIGINS        | base-url-of-your-local-feasibility-portal                          |
-|backend/.env            |FEASIBILITY_BACKEND_KEYCLOAK_BASE_URL_ISSUER| base-url-of-your-local-feasibility-portal                          |
+| backend/.env           |FEASIBILITY_BACKEND_KEYCLOAK_BASE_URL_ISSUER| base-url-of-your-local-feasibility-portal                          |
 | gui/deploy-config.json | uiBackendApi > baseUrl                     | base-url-of-your-local-feasibility-portal/api/v3                   |
 | gui/deploy-config.json | auth > baseUrl                             | base-url-of-your-local-feasibility-portal                          |
-| proxy/.env.default	 | BACKEND_HOSTNAME                           | base-url-of-your-local-feasibility-portal 	                   |
-| proxy/.env.default     | KEYCLOAK_HOSTNAM                           | base-url-of-your-local-feasibility-portal                          |
-| proxy/.env.default     | GUI_HOSTNAME                               | base-url-of-your-local-feasibility-portal                          |
+| proxy/.env.default	 | BACKEND_HOSTNAME                           | hostname (inkl. subdomain) of the local backend                    |
+| proxy/.env.default     | KEYCLOAK_HOSTNAM                           | hostname (inkl. subdomain) of the local keycloak                   |
+| proxy/.env.default     | GUI_HOSTNAME                               | hostname (inkl. subdomain) of the local ui                         |
 
 Please note that all user env variables (variables containing USER) should be changed and all password variables (variables containing PASSWORD or PW) should be set to secure passwords.
 
@@ -68,12 +64,12 @@ To configure domain proxies, change the hostnames in the following environment v
 The portal is configured by default to start the following services:
 
 - Backend
-- Grahpical User Interface
+- UI
 - Keycloak
 
 For more details on the environment variables see the paragraph **Configurable environment variables** of this README.
 
-### Step 7 - Start the feasibility portal
+### Step 6 - Start the feasibility portal
 
 To start the portal navigate to `/opt/feasibility-deploy/feasibility-portal` and
 execute `bash start-feasibility-portal-local.sh`.
@@ -82,11 +78,12 @@ This starts the following default local feasibility portal, with the following c
 
 | Component | url                                | description |
 |-----------|------------------------------------|-------------|
-| GUI       | https://my-fesibility-domain       |             |
-| Keycloak  | https://my-feasibility-domain/auth |             |
+| GUI       | https://feasibility-subdomain.my-feasibility-domain      |             |
+| Keycloak  | https:/keycloak-subdomain.my-feasibility-domain/auth |             |
+| Backend   | https:/backend-subdomain.my-feasibility-domain//api/v3 |             |
 
 
-### Step 8 - Configure keycloak and add a user for the user interface
+### Step 7 - Configure keycloak and add a user for the user interface
 
 Please note that the keycloak provided here is an example setup, and we strongly recommend for each site to adjust the keycloak installation to their local security requirements or connect the local feasibility portal to a keycloak already provided at the site.
 
@@ -114,7 +111,7 @@ Click on **Credentials** > **Set Password** and fill the `Password` and `Passwor
 Click on ** Role Mapping > Assign Role **  , select FeasibilityUser and click `Assign`
 
 
-### Step 9 - Access the user interface and send first query
+### Step 8 - Access the user interface and send first query
 
 Access your user interface under <https://your-feasibility-domain> and log in with the user created in step 8.
 
@@ -141,16 +138,12 @@ If you have already installed the local feasibility portal and just want to upda
 Compare the .env and .env.default files for each component and add any new variables from the .env.default file to the .env file.
 Keep the existing configuration as is.
 
-### Step 4 - Update your ontology
-
-**Note:** The ontology is now part of the image and will not have to be loaded manually.
-
-### Step 5 - Start your portal
+### Step 4 - Start your portal
 
 To start the portal navigate to `/opt/feasibility-deploy/feasibility-portal` and
 execute `bash start-feasibility-portal-local.sh`.
 
-### Step 6 - Log in to the local feasibility portal and test your connection
+### Step 5 - Log in to the local feasibility portal and test your connection
 
 Ask for the Url of the central portal at the FDPG or check Confluence for the correct address.
 
@@ -166,10 +159,6 @@ and press "send".
 
 | Env Var                                                                           | Description                                                                                                                                                                  | Default                                            | Possible values | Component |
 |-----------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------|-----------------|-----------|
-| ### aktin config ###                                                              |                                                                                                                                                                              |                                                    |                 |           |
-| AKTIN_BROKER_LOG_LEVEL                                                            | Log level of the aktin broker                                                                                                                                                | INFO                                               |                 | AKTIN     |
-| AKTIN_ADMIN_PW                                                                    | password for the web admin of the aktin broker Admin is accessible via: http://localhost:AKTIN_BROKER_HOST_AND_PORT/admin/html/index.html                                    | changeme                                           |                 | AKTIN     |
-| AKTIN_BROKER_HOST_AND_PORT                                                        | aktin broker Docker port                                                                                                                                                     | 127.0.0.1:8080                                     |                 | AKTIN     |
 | ### backend db-config ###                                                         |                                                                                                                                                                              |                                                    |                 |           |
 | FEASIBILITY_BACKEND_DATASOURCE_HOST                                               | backend database host                                                                                                                                                        | feasibility-gui-backend-db                         |                 | BACKEND   |
 | FEASIBILITY_BACKEND_DATASOURCE_PORT                                               | backend database port                                                                                                                                                        | 5432                                               |                 | BACKEND   |
@@ -242,7 +231,7 @@ and press "send".
 | ### additional dsf configs ###                                                    |                                                                                                                                                                              |                                                    |                 |           |
 | FEASIBILITY_DSF_BROKER_PROCESS_ORGANIZATION_IDENTIFIER                            | Identifier of this organization.                                                                                                                                             | Test_ZARS                                          | String          | DSF       |
 | FEASIBILITY_DSF_BROKER_PROCESS_FHIR_SERVER_BASE_URL                               | Base URL to a FHIR server or proxy for feasibility evaluation. This can also be the base URL of a reverse proxy if used. Only required if evaluation strategy is set to cql. | https://dsf-zars-fhir-proxy/fhir                   | URL             | DSF       |
-| ### Proxy configs - Environmental variables  ###                                  |  
+| ### Proxy configs ###                                  |  
 | GUI_HOSTNAME     								    | change the default value of the domain names where the services are reachable 		       						|   https://datenportal.localhost |      |   PROXY |  
 | KEYCLOAK_HOSTNAME								    | change  the default value of the domain names where the services are reachable  							  | https://auth.datenportal.localhost    |      |    PROXY|  
 | BACKEND_HOSTNAME 		                                                    | change  the defaul value of the domain names where the services are reachable                                                                                                                    | (https://api.datenportal.localhost) |                 | PROXY   |

@@ -52,7 +52,6 @@ The feasibility portal requires .env files for the docker-compose setup. If you 
 If you have set up the portal before compare the `.env` to the `.env.default` env files of each component and copy the additional params as appropriate.
 
 ### Step 4 - Set Up basic auth
-
 To set up basic auth you can execute the `setup-base-auth.sh <username> <password>` to add a simple .htpasswd to protect your FHIR Server and FLARE component with basic authentication.
 This creates a .htpasswd file in the `auth` directory, which will be mounted to the nginx, which is part of this deployment repository.
 
@@ -86,9 +85,12 @@ If you use the default triangle setup you only have to configure the DSF middlew
 Please note that all user env variables should be changed and all PASSWORD and SECRET variables should be set to secure
 passwords.
 
-Also note that you need to change the hostnames (default `fhir.localhost` and `keycloak.localhost`) in all env variables
-(`/opt/feasibility-deploy/feasibility-triangle/fhir-server/.env` and `/opt/feasibility-deploy/feasibility-triangle/rev-proxy/.env` to the domains
+Also note that you need to change the hostnames (default `fhir.localhost`, `keycloak.localhost` and `flare.localhost`) in all env variables
+(`/opt/feasibility-deploy/feasibility-triangle/fhir-server/.env`, `/opt/feasibility-deploy/feasibility-triangle/rev-proxy/.env` and `/opt/feasibility-deploy/feasibility-triangle/flare/.env`to the domains
 you received in step 5.
+
+> **Note !!**: The variable `FHIR_SERVER_BASE_URL=http://fhir-server:8080`should be kept as is for the standard setup, so that the UI can 
+> correctly access the blaze fhir server.
 
 The triangle is configured by default to start the following services:
 
@@ -124,15 +126,15 @@ These are the URLs for access to the webclients via nginx:
 
 | Component   | URL                              | User             | Password         |
 |-------------|----------------------------------|------------------|------------------|
-| Flare       | <https://your-domain/flare>      | chosen in step 3 | chosen in step 3 |
-| FHIR Server | <https://your-domain/fhir>       | chosen in step 3 | chosen in step 3 |
+| Flare       | <https://your-flare-subdomain.your-domain:configured-port>      | chosen in step 3 | chosen in step 3 |
+| FHIR Server | <https://your-fhir-subdomain.your-domain:configured-port/fhir>       | chosen in step 3 | chosen in step 3 |
 
 Accessible service via localhost:
 
 | Component   | URL                              | Authentication Type | Notes                |
 |-------------|----------------------------------|---------------------|----------------------|
 | Flare       | <http://localhost:8084>          | None required       |                      |
-| FHIR Server | <http://localhost:8081>          | Bearer Token        | Configured in step 8 |
+| FHIR Server | <http://localhost:8081/fhir>          | Bearer Token        | Configured in step 8 |
 
 Please be aware that you will need to set up an ssh tunnel to your server and forward the respective ports if you would like to access the services on localhost without a password.
 

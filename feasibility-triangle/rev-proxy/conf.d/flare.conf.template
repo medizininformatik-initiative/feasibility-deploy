@@ -10,7 +10,7 @@ server {
         root   /usr/share/nginx/html;
     }
 
-    location /flare/ {
+    location / {
         auth_basic "Restricted";
         auth_basic_user_file /etc/nginx/.htpasswd;
         set $upstream flare:8080;
