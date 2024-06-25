@@ -1,7 +1,7 @@
 server {
     listen       8443 ssl;
     http2        on;
-    server_name  localhost;
+    server_name  ${FLARE_HOSTNAME};
 
     # redirect server error pages to the static page /50x.html
     #
@@ -10,7 +10,7 @@ server {
         root   /usr/share/nginx/html;
     }
 
-    location /flare/ {
+    location / {
         auth_basic "Restricted";
         auth_basic_user_file /etc/nginx/.htpasswd;
         set $upstream flare:8080;
