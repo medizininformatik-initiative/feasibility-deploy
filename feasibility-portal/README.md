@@ -65,9 +65,9 @@ Please note that all user env variables (variables containing USER) should be ch
 
 To configure domain proxies, change the following environment variables in the file `/opt/feasibility-deploy/feasibility-portal/proxy/.env.default` according to the paragraph **Configurable environment variables** of this README:
 
-BACKEND_HOSTNAME
-KEYCLOAK_HOSTNAME
-GUI_HOSTNAME
+- BACKEND_HOSTNAME
+- KEYCLOAK_HOSTNAME
+- GUI_HOSTNAME
 
 For more details on the environment variables see the paragraph **Configurable environment variables** of this README.
 
