@@ -1,22 +1,22 @@
 {
   "env": {
-    "name": "dev-test"
+    "name": "dev"
   },
   "api": {
     "baseUrl": "/api"
   },
   "uiBackendApi": {
-    "baseUrl": "https://localhost/api/v3"
+    "baseUrl": "https://api.datenportal.localhost/api/v3"
   },
   "auth": {
-    "baseUrl": "https://localhost/auth",
+    "baseUrl": "https://auth.datenportal.localhost",
     "realm": "feasibility",
     "clientId": "feasibility-webapp",
     "roles": ["FeasibilityUser"]
   },
   "legal": {
-    "version": "0.9.0",
-    "copyrightOwner": "MII Team"
+    "version": "5.0.0-alpha.1",
+    "copyrightOwner": "FDPG+ Team"
   },
   "features": {
     "v2": {

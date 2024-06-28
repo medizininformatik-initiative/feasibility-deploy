@@ -691,7 +691,8 @@
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "https://localhost/*"
+        "https://localhost/*",
+        "https://datenportal.localhost/*"
       ],
       "webOrigins": [
         "+"

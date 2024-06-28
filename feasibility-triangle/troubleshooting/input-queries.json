@@ -3,6 +3,7 @@
     {
       "query-name": "patient-gender",
       "module": "Patient",
+      "optional": false,
       "sq": {
         "version": "http://to_be_decided.com/draft-1/schema#",
         "display": "",
@@ -16,6 +17,12 @@
                   "display": "Geschlecht"
                 }
               ],
+              "context": {
+                "code": "Patient",
+                "system": "fdpg.mii.cds",
+                "version": "1.0.0",
+                "display": "Patient"
+              },
               "valueFilter": {
                 "selectedConcepts": [
                   {
@@ -39,6 +46,7 @@
     {
       "query-name": "diabetes-any",
       "module": "Condition",
+      "optional": false,
       "sq": {
         "version": "http://to_be_decided.com/draft-1/schema#",
         "display": "",
@@ -52,7 +60,13 @@
                   "version": "2023",
                   "display": "Diabetes mellitus"
                 }
-              ]
+              ],
+              "context": {
+                "code": "Diagnose",
+                "system": "fdpg.mii.cds",
+                "version": "1.0.0",
+                "display": "Diagnose"
+              }
             }
           ]
         ]
@@ -61,6 +75,7 @@
     {
       "query-name": "hemoglobin-718-7",
       "module": "Laboratory",
+      "optional": false,
       "sq": {
         "version": "http://to_be_decided.com/draft-1/schema#",
         "display": "",
@@ -74,15 +89,11 @@
                   "display": "Hämoglobin"
                 }
               ],
-              "valueFilter": {
-                "selectedConcepts": [],
-                "type": "quantity-comparator",
-                "unit": {
-                  "code": "g/dL",
-                  "display": "g/dL"
-                },
-                "value": 0,
-                "comparator": "gt"
+              "context": {
+                "code": "Laboruntersuchung",
+                "system": "fdpg.mii.cds",
+                "version": "1.0.0",
+                "display": "Laboruntersuchung"
               }
             },
             {
@@ -93,15 +104,11 @@
                   "display": "Hämoglobin A1c"
                 }
               ],
-              "valueFilter": {
-                "selectedConcepts": [],
-                "type": "quantity-comparator",
-                "unit": {
-                  "code": "%",
-                  "display": "%"
-                },
-                "value": 0,
-                "comparator": "gt"
+              "context": {
+                "code": "Laboruntersuchung",
+                "system": "fdpg.mii.cds",
+                "version": "1.0.0",
+                "display": "Laboruntersuchung"
               }
             },
             {
@@ -112,15 +119,11 @@
                   "display": "Hämoglobin A1c"
                 }
               ],
-              "valueFilter": {
-                "selectedConcepts": [],
-                "type": "quantity-comparator",
-                "unit": {
-                  "code": "%",
-                  "display": "%"
-                },
-                "value": 0,
-                "comparator": "gt"
+              "context": {
+                "code": "Laboruntersuchung",
+                "system": "fdpg.mii.cds",
+                "version": "1.0.0",
+                "display": "Laboruntersuchung"
               }
             },
             {
@@ -131,69 +134,42 @@
                   "display": "Hemoglobin A1c/Hemoglobin.total in Blood by Electrophoresis"
                 }
               ],
-              "valueFilter": {
-                "selectedConcepts": [],
-                "type": "quantity-comparator",
-                "unit": {
-                  "code": "%",
-                  "display": "%"
-                },
-                "value": 0,
-                "comparator": "gt"
+              "context": {
+                "code": "Laboruntersuchung",
+                "system": "fdpg.mii.cds",
+                "version": "1.0.0",
+                "display": "Laboruntersuchung"
               }
-            }
-          ]
-        ]
-      }
-    },
-    {
-      "query-name": "procedure-endocronological-function",
-      "module": "Procedure",
-      "sq": {
-        "version": "http://to_be_decided.com/draft-1/schema#",
-        "display": "",
-        "inclusionCriteria": [
-          [
-            {
-              "termCodes": [
-                {
-                  "code": "3-20",
-                  "system": "http://fhir.de/CodeSystem/bfarm/ops",
-                  "version": "2023",
-                  "display": "Computertomographie [CT], nativ"
-                }
-              ]
             },
             {
               "termCodes": [
                 {
-                  "code": "8-19",
-                  "system": "http://fhir.de/CodeSystem/bfarm/ops",
-                  "version": "2023",
-                  "display": "Verbände und Entfernung von erkranktem Gewebe an Haut und Unterhaut"
+                  "code": "20509-6",
+                  "system": "http://loinc.org",
+                  "display": "Hemoglobin [Mass/volume] in Blood by calculation"
                 }
-              ]
-            }
-          ]
-        ]
-      }
-    },
-    {
-      "query-name": "central-consent-eudsgvoniveau",
-      "module": "Consent",
-      "sq": {
-        "version": "http://to_be_decided.com/draft-1/schema#",
-        "display": "",
-        "inclusionCriteria": [
-          [
+              ],
+              "context": {
+                "code": "Laboruntersuchung",
+                "system": "fdpg.mii.cds",
+                "version": "1.0.0",
+                "display": "Laboruntersuchung"
+              }
+            },
             {
               "termCodes": [
                 {
-                  "code": "central-consent",
-                  "system": "mii.abide",
-                  "display": "MDAT wissenschaftlich nutzen - EU DSGVO Niveau"
+                  "code": "30352-9",
+                  "system": "http://loinc.org",
+                  "display": "Totales Hämoglobin kapillär"
                 }
-              ]
+              ],
+              "context": {
+                "code": "Laboruntersuchung",
+                "system": "fdpg.mii.cds",
+                "version": "1.0.0",
+                "display": "Laboruntersuchung"
+              }
             }
           ]
         ]
@@ -202,6 +178,7 @@
     {
       "query-name": "medication-administration-antidiab",
       "module": "Medication",
+      "optional": true,
       "sq": {
         "version": "http://to_be_decided.com/draft-1/schema#",
         "display": "",
@@ -215,7 +192,58 @@
                   "version": "2022",
                   "display": "Antidiabetika"
                 }
-              ]
+              ],
+              "context": {
+                "code": "Medikamentenverabreichung",
+                "system": "fdpg.mii.cds",
+                "version": "1.0.0",
+                "display": "Verabreichung von Medikamenten"
+              }
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "query-name": "procedure-endocronological-function",
+      "module": "Procedure",
+      "optional": false,
+      "sq": {
+        "version": "http://to_be_decided.com/draft-1/schema#",
+        "display": "",
+        "inclusionCriteria": [
+          [
+            {
+              "termCodes": [
+                {
+                  "code": "3-20",
+                  "system": "http://fhir.de/CodeSystem/bfarm/ops",
+                  "version": "2023",
+                  "display": "Computertomographie [CT], nativ"
+                }
+              ],
+              "context": {
+                "code": "Procedure",
+                "system": "fdpg.mii.cds",
+                "version": "1.0.0",
+                "display": "Prozedur"
+              }
+            },
+            {
+              "termCodes": [
+                {
+                  "code": "8-19",
+                  "system": "http://fhir.de/CodeSystem/bfarm/ops",
+                  "version": "2023",
+                  "display": "Verbände und Entfernung von erkranktem Gewebe an Haut und Unterhaut"
+                }
+              ],
+              "context": {
+                "code": "Procedure",
+                "system": "fdpg.mii.cds",
+                "version": "1.0.0",
+                "display": "Prozedur"
+              }
             }
           ]
         ]
@@ -224,6 +252,7 @@
     {
       "query-name": "specimen-test",
       "module": "Specimen",
+      "optional": true,
       "sq": {
         "version": "http://to_be_decided.com/draft-1/schema#",
         "display": "",
@@ -237,7 +266,13 @@
                   "version": "http://snomed.info/sct/900000000000207008/version/20220930",
                   "display": "Blood specimen"
                 }
-              ]
+              ],
+              "context": {
+                "code": "Specimen",
+                "system": "fdpg.mii.cds",
+                "version": "1.0.0",
+                "display": "Bioprobe"
+              }
             },
             {
               "termCodes": [
@@ -247,7 +282,13 @@
                   "version": "http://snomed.info/sct/900000000000207008/version/20220930",
                   "display": "Plasma specimen"
                 }
-              ]
+              ],
+              "context": {
+                "code": "Specimen",
+                "system": "fdpg.mii.cds",
+                "version": "1.0.0",
+                "display": "Bioprobe"
+              }
             },
             {
               "termCodes": [
@@ -257,7 +298,13 @@
                   "version": "http://snomed.info/sct/900000000000207008/version/20220930",
                   "display": "Tissue specimen"
                 }
-              ]
+              ],
+              "context": {
+                "code": "Specimen",
+                "system": "fdpg.mii.cds",
+                "version": "1.0.0",
+                "display": "Bioprobe"
+              }
             },
             {
               "termCodes": [
@@ -267,7 +314,13 @@
                   "version": "http://snomed.info/sct/900000000000207008/version/20220930",
                   "display": "Formalin-fixed paraffin-embedded tissue specimen"
                 }
-              ]
+              ],
+              "context": {
+                "code": "Specimen",
+                "system": "fdpg.mii.cds",
+                "version": "1.0.0",
+                "display": "Bioprobe"
+              }
             },
             {
               "termCodes": [
@@ -277,17 +330,74 @@
                   "version": "http://snomed.info/sct/900000000000207008/version/20220930",
                   "display": "Fresh tissue specimen"
                 }
-              ]
+              ],
+              "context": {
+                "code": "Specimen",
+                "system": "fdpg.mii.cds",
+                "version": "1.0.0",
+                "display": "Bioprobe"
+              }
             },
             {
               "termCodes": [
                 {
-                  "code": "420135007",
+                  "code": "258580003",
                   "system": "http://snomed.info/sct",
                   "version": "http://snomed.info/sct/900000000000207008/version/20220930",
                   "display": "Whole blood"
                 }
-              ]
+              ],
+              "context": {
+                "code": "Specimen",
+                "system": "fdpg.mii.cds",
+                "version": "1.0.0",
+                "display": "Bioprobe"
+              }
+            },
+            {
+              "termCodes": [
+                {
+                  "code": "119342007",
+                  "system": "http://snomed.info/sct",
+                  "version": "http://snomed.info/sct/900000000000207008/version/20220930",
+                  "display": "Whole blood"
+                }
+              ],
+              "context": {
+                "code": "Specimen",
+                "system": "fdpg.mii.cds",
+                "version": "1.0.0",
+                "display": "Bioprobe"
+              }
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "query-name": "central-consent-eudsgvoniveau",
+      "module": "Consent",
+      "optional": false,
+      "sq": {
+        "version": "http://to_be_decided.com/draft-1/schema#",
+        "display": "",
+        "inclusionCriteria": [
+          [
+            {
+              "termCodes": [
+                {
+                  "code": "2.16.840.1.113883.3.1937.777.24.5.3.8",
+                  "system": "urn:oid:2.16.840.1.113883.3.1937.777.24.5.3",
+                  "version": "1.0.2",
+                  "display": "MDAT wissenschaftlich nutzen EU DSGVO NIVEAU"
+                }
+              ],
+              "context": {
+                "code": "Einwilligung",
+                "system": "fdpg.mii.cds",
+                "version": "1.0.0",
+                "display": "Einwilligung"
+              }
             }
           ]
         ]
