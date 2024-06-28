@@ -118,7 +118,16 @@ If you would like to pick other component combinations you can start each compon
 navigating to the respective components folder and executing:
 `-p $FEASIBILITY_COMPOSE_PROJECT up -d`
 
-### Step 9 - Access the Triangle
+
+### Step 9 - Configure keycloak to create a user account in the realm blaze
+
+Please note that the keycloak provided here is an example setup, and we strongly recommend for each site to adjust the keycloak installation to their local security requirements or connect the local feasibility portal to a keycloak already provided at the site.
+
+Navigate to https://your-flare-subdomain.your-domain:configured-port and log into keycloak using the admin user and password set in step 7 (FLARE_FHIR_OAUTH_CLIENT_SECRET). User: admin Pw: my password set in step 7
+1. Set the domain for your client: Switch to the blaze  realm (realm name might be different if you use your own keycloak) by using the realm changer on top of the left navigation bar (should be set to master when logging in) 
+2. Add a user for your realm blaze: Click on Users > Create new user and fill in the field Username with a username of your choice. Click on Credentials > Set Password and fill the Password and Password Confirmation fields with a password of your choice and save the changes by clicking set password. 
+
+### Step 10 - Access the Triangle
 
 In the default configuration, and given that you have set up a SSL certificate in step 4, the setup will expose the following services:
 
@@ -253,6 +262,7 @@ If new search parameters have been added follow the "fhir-server/README.md -> Re
 | FLARE_JAVA_TOOL_OPTIONS                          | java tool options passed to the flare container                                                                                                                 | `-Xmx4g`                                      |                                                           | FLARE     |
 | FLARE_LOG_LEVEL                                  |                                                                                                                                                                 | `info`                                        | `off`, `fatal`, `error`, `warn`, `info`, `debug`, `trace` | FLARE     |
 | FEASIBILITY_TRIANGLE_REV_PROXY_PORT              | The exposed docker port of the reverse proxy - set to 443 if you want to use standard https and you only have the feasibility triangle installed on your server | `444`                                         | Integer (valid port)                                      | REV Proxy |
+| # rev-proxy/env 			           | 
 | FHIR_SERVER_HOSTNAME 			           | change the default value of the domain names where the services are reachable                                                                                   | http://fhir-server:8080   |      |   REV-PROXY|  
 | KEYCLOAK_HOSTNAME                                | change the default value of the domain names where the services are reachable										     | https://keycloak.localhost:444/realms/blaze  |      |  REV-PROXY  |  
 | FLARE_HOSTNAME                                   |change the default value of the domain names where the services are reachable					                                             |  http://fhir-server:8080/fhir  |      |  REV-PROXY  |  
