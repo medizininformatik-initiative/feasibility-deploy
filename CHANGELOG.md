@@ -12,11 +12,45 @@ Please refer to the respective repositories for a more in depth changelog of sin
 |Ontology Generation|<https://github.com/medizininformatik-initiative/fhir-ontology-generator>|
 |sq2cql|<https://github.com/medizininformatik-initiative/sq2cql>|
 |Backend|<https://github.com/medizininformatik-initiative/feasibility-backend>|
-|AKTIN Broker|<https://github.com/aktin/broker>|
-|AKTIN Feasibility Plugin|<https://github.com/medizininformatik-initiative/feasibility-aktin-plugin>|
 |DSF Feasibility Plugin|<https://github.com/medizininformatik-initiative/feasibility-dsf-process>|
 |FLARE|<https://github.com/medizininformatik-initiative/flare>|
 |Blaze FHIR server|<https://github.com/medizininformatik-initiative/blaze>|
+
+
+## [4.0.0] - 2024-07-01
+
+### Overall
+
+- Updated components and underlying libraries to the new versions and added new components:
+  - Portal: gui `5.0.0`, backend `5.0.1`, keycloak `25.0`
+  - Triangle:  flare `2.3.0`, blaze `0.28`, keycloak `25.0`
+- Components above are based on ontology  ([2.2.0](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v2.2.0))
+- Changed to subdomain configuration for default setup
+- Separated portal webserver from UI for default deploy
+- Removed AKTIN
+
+### Features
+
+| Feature | Affected Components |
+| -- | -- |
+|Improved support for referenced criteria|UI|
+|Refactored Code Base|UI|
+|Add OAuth2|DSF Feasibility Plugin|
+|Add frontend|Blaze|
+|Add dynamic indexing|Blaze|
+|Add oAuth to direct broker for CQL|backend|
+
+### Bugfix
+
+| Bug | Affected Components |
+| -- | -- |
+|Fix Translation on Expanded Criteria with Reference Attribute Filters|sq2cql|
+|Add Basic Auth to direct broker|backend|
+
+### Removed
+
+- Removed AKTIN support
+
 
 ## [3.2.0] - 2023-11-17
 
