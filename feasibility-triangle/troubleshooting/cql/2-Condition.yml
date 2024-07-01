@@ -1,0 +1,5 @@
+library: cql/2-Condition.cql
+group:
+- type: Patient
+  population:
+  - expression: InInitialPopulation

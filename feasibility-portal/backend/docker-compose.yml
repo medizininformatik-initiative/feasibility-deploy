@@ -1,7 +1,6 @@
-version: '3.7'
 services:
   feasibility-gui-backend:
-    image: ghcr.io/medizininformatik-initiative/feasibility-backend:4.2.0
+    image: ghcr.io/medizininformatik-initiative/feasibility-backend:5.0.1
     ports:
     - ${FEASIBILITY_BACKEND_PORT:-127.0.0.1:8091}:8090
     depends_on:
@@ -35,6 +34,11 @@ services:
       BROKER_CLIENT_OBFUSCATE_RESULT_COUNT: ${FEASIBILITY_BACKEND_BROKER_CLIENT_OBFUSCATE_RESULT_COUNT:-false}
       FLARE_WEBSERVICE_BASE_URL: ${FEASIBILITY_BACKEND_FLARE_WEBSERVICE_BASE_URL:-http://flare:8080}
       CQL_SERVER_BASE_URL: ${FEASIBILITY_BACKEND_CQL_SERVER_BASE_URL:-http://fhir-server:8080/fhir}
+      BROKER_CLIENT_DIRECT_AUTH_BASIC_USERNAME: ${FEASIBILITY_BACKEND_BROKER_CLIENT_DIRECT_AUTH_BASIC_USERNAME}
+      BROKER_CLIENT_DIRECT_AUTH_BASIC_PASSWORD: ${FEASIBILITY_BACKEND_BROKER_CLIENT_DIRECT_AUTH_BASIC_PASSWORD}
+      BROKER_CLIENT_DIRECT_AUTH_OAUTH_ISSUER_URL: ${FEASIBILITY_BACKEND_BROKER_CLIENT_DIRECT_AUTH_OAUTH_ISSUER_URL:-https://keycloak.localhost:444/realms/blaze}
+      BROKER_CLIENT_DIRECT_AUTH_OAUTH_CLIENT_ID: ${FEASIBILITY_BACKEND_BROKER_CLIENT_DIRECT_AUTH_OAUTH_CLIENT_ID:-account}
+      BROKER_CLIENT_DIRECT_AUTH_OAUTH_CLIENT_SECRET: ${FEASIBILITY_BACKEND_BROKER_CLIENT_DIRECT_AUTH_OAUTH_CLIENT_SECRET:-insecure}
       # ---- Aktin broker
       BROKER_CLIENT_AKTIN_ENABLED: ${FEASIBILITY_BACKEND_AKTIN_ENABLED:-false}
       AKTIN_BROKER_BASE_URL: ${FEASIBILITY_BACKEND_AKTIN_BROKER_BASE_URL:-http://aktin-broker:8080/broker/}
@@ -65,6 +69,8 @@ services:
       # ---- logging
       LOG_LEVEL_SQL: ${FEASIBILITY_BACKEND_LOG_LEVEL_SQL:-warn}
       LOG_LEVEL: ${FEASIBILITY_BACKEND_LOG_LEVEL:-warn}
+    extra_hosts:
+      - "keycloak.localhost:host-gateway"
     restart: unless-stopped
     volumes:
       - ${FEASIBILITY_BACKEND_CERTS_PATH:-../secrets}:/opt/codex-feasibility-security

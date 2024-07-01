@@ -1,14 +1,8 @@
 services:
-  feasibility-gui:
-    image: ghcr.io/medizininformatik-initiative/feasibility-gui:2.2.0
-    ports:
-    - "443:8443"
+  dataportal-ui:
+    image: ghcr.io/medizininformatik-initiative/feasibility-gui:5.0.0
     restart: unless-stopped
+    ports:
+    - "127.0.0.1:8080:8080"
     volumes:
-      - ../auth/cert.pem:/etc/nginx/conf.d/cert.pem
-      - ../auth/key.pem:/etc/nginx/conf.d/key.pem
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./mime.types:/etc/nginx/conf.d/mime.types
       - ./deploy-config.json:/usr/share/nginx/html/assets/config/config.deploy.json
-      - ./language/de.json:/usr/share/nginx/html/assets/i18n/de.json
-      - ./language/en.json:/usr/share/nginx/html/assets/i18n/en.json
