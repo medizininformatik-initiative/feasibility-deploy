@@ -1,6 +1,6 @@
 # Feasibility Deploy
 
-[![version](https://img.shields.io/badge/version-3.1.0-green.svg)](https://github.com/medizininformatik-initiative/feasibility-deploy/releases)
+[![version](https://img.shields.io/badge/version-4.0.0-green.svg)](https://github.com/medizininformatik-initiative/feasibility-deploy/releases)
 
 This feasibility deployment repository offers an example deployment repository using docker-compose and official images to set up a feasibility portal (central) as well as feasibility triangle (decentral - at site)
 
