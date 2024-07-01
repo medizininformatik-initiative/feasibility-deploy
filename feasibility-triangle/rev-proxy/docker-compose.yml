@@ -5,6 +5,7 @@ services:
     environment:
       FHIR_SERVER_HOSTNAME: ${FHIR_SERVER_HOSTNAME:-fhir.localhost}
       KEYCLOAK_HOSTNAME: ${KEYCLOAK_HOSTNAME:-keycloak.localhost}
+      FLARE_HOSTNAME: ${FLARE_HOSTNAME:-flare.localhost}
     ports:
       - ${FEASIBILITY_TRIANGLE_REV_PROXY_PORT:-444}:8443
     volumes:
