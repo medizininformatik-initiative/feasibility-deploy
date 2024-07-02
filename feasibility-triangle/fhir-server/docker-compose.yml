@@ -16,13 +16,13 @@ services:
       DB_RESOURCE_CACHE_SIZE: ${BLAZE_DB_RESOURCE_CACHE_SIZE:-2000000}
       DB_SEARCH_PARAM_BUNDLE: "/app/custom-search-parameters.json"
       ENABLE_ADMIN_API: "true"
-      OPENID_PROVIDER_URL: ${FHIR_SERVER_OPENID_PROVIDER_URL:-https://keycloak.localhost:444/realms/blaze}
+      OPENID_PROVIDER_URL: ${FHIR_SERVER_OPENID_PROVIDER_URL}
       OPENID_CLIENT_TRUST_STORE: "/app/trust-store.p12"
       OPENID_CLIENT_TRUST_STORE_PASS: ${FHIR_SERVER_OPENID_CLIENT_TRUST_STORE_PASS:-insecure}
     ports:
     - ${PORT_FHIR_SERVER_LOCALHOST:-127.0.0.1:8081}:8080
     extra_hosts:
-    - "keycloak.localhost:host-gateway"
+    - "auth.localhost:host-gateway"
     restart: unless-stopped
     volumes:
     - "./custom-search-parameters.json:/app/custom-search-parameters.json:ro"
@@ -41,7 +41,7 @@ services:
       BACKEND_BASE_URL: ${FHIR_SERVER_BASE_URL:-http://fhir-server:8080}
       AUTH_CLIENT_ID: ${FHIR_SERVER_FRONTEND_AUTH_CLIENT_ID:-account}
       AUTH_CLIENT_SECRET: ${FHIR_SERVER_FRONTEND_AUTH_CLIENT_SECRET:-insecure}
-      AUTH_ISSUER: ${FHIR_SERVER_FRONTEND_AUTH_ISSUER_URL:-https://keycloak.localhost:444/realms/blaze}
+      AUTH_ISSUER: ${FHIR_SERVER_OPENID_PROVIDER_URL:-https://auth.localhost:444/realms/blaze}
       AUTH_SECRET: ${FHIR_SERVER_FRONTEND_AUTH_SECRET:-insecure}
       PROTOCOL_HEADER: "X-Forwarded-Proto"
       HOST_HEADER: "X-Forwarded-Host"
@@ -49,7 +49,7 @@ services:
     ports:
     - ${PORT_FHIR_SERVER_FRONTEND_LOCALHOST:-127.0.0.1:8300}:3000
     extra_hosts:
-    - "keycloak.localhost:host-gateway"
+    - "auth.localhost:host-gateway"
     volumes:
     - "${FHIR_SERVER_FRONTEND_CA_CERT:-../auth/cert.pem}:/app/cert.pem:ro"
 

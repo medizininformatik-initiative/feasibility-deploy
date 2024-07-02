@@ -22,7 +22,7 @@ services:
       LOG_LEVEL: ${FLARE_LOG_LEVEL:-info}
     restart: unless-stopped
     extra_hosts:
-      - "keycloak.localhost:host-gateway"
+      - "auth.localhost:host-gateway"
     volumes:
       - ${FLARE_SELF_SIGNED_CA_CERT_PATH:-../auth}:/app/certs:ro}
       - type: volume
