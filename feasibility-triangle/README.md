@@ -74,8 +74,8 @@ Set the rights for all files of the auth folder to 655 `chmod 655 /opt/feasibili
 
 ### Step 6 - Create trust store for blaze
 
-Generate a PKCS12 certificate file `/opt/feasibility-deploy/feasibility-triangle/auth/trust-store.p12` containing the `cert.pem`
-(see step 5 above). Running the script `/opt/feasibility-deploy/feasibility-triangle/generate-cert.sh` will generate the PKCS12
+Generate a PKCS12 certificate file `./auth/trust-store.p12` containing the `cert.pem`
+(see step 5 above). Running the script [generate-cert.sh](./generate-cert.sh) will generate the PKCS12
 certificate file (and a self-signed `cert.pem` and `cert.key`, if these don't exist).
 
 ### Step 7 - Configure your feasibility triangle
@@ -85,11 +85,37 @@ If you use the default triangle setup you only have to configure the DSF middlew
 Please note that all user env variables should be changed and all PASSWORD and SECRET variables should be set to secure
 passwords.
 
-Also note that you need to change the hostnames (default `fhir.localhost`, `keycloak.localhost` and `flare.localhost`) in all env variables
-(`/opt/feasibility-deploy/feasibility-triangle/fhir-server/.env`, `/opt/feasibility-deploy/feasibility-triangle/rev-proxy/.env` and `/opt/feasibility-deploy/feasibility-triangle/flare/.env`to the domains
-you received in step 5.
+Also note that you need to configure the domains/hostnames in all env variables for the access from outside and for the OpenID Connect Provider
+used for OAuth authentication against the BLAZE FHIR server, which is needed for logging into the BLAZE frontend. The domains/hostnames
+correspond to the domain(s) covered by the ssl certificate you received in step 5.
 
-> **Note !!**: The variable `FHIR_SERVER_BASE_URL=http://fhir-server:8080`should be kept as is for the standard setup, so that the UI can 
+For the reverse proxy you need to choose the configuration (variable `FEASIBILITY_TRIANGLE_REV_PROXY_NGINX_CONFIG` in
+[rev-proxy/.env](./rev-proxy/.env)) which also decides what the changes to the `.env` files are you have to make:
+
+- [./subdomains.nginx.conf](./rev-proxy/subdomains.nginx.conf) with separate domains for the services (fhir-server (incl) and optionally flare and keycloak)
+  - All subdomains must point to the host machine the triangle will run.
+  - Set the service hostnames (`FLARE_HOSTNAME`, `FHIR_HOSTNAME` and `KEYCLOAK_HOSTNAME`, depending on which services you need) in [rev-proxy/.env](./rev-proxy/.env).
+  - If you use the bundled keycloak change the following variables in [fhir-server/.env](./fhir-server/.env):
+    - `FHIR_SERVER_FRONTEND_KEYCLOAK_HOSTNAME_URL`: set the domain part to the value you set for `KEYCLOAK_HOSTNAME` before.
+    - `FHIR_SERVER_FRONTEND_KEYCLOAK_HTTP_RELATIVE_PATH`: set to `/`.
+  - Change the values for the variables `FLARE_FHIR_OAUTH_ISSUER_URI` in [flare/.env](./flare/.env) and `FHIR_SERVER_OPENID_PROVIDER_URL` in [fhir-server/.env](./fhir-server/.env)
+    to the issuer url of your OpenID Connect provider.
+    - When using the bundled keycloak replace the values with `https://KEYCLOAK_HOSTNAME:REV_PROXY_PORT/realms/blaze`
+      where `KEYCLOAK_HOSTNAME` is the domain you set before and `REV_PROXY_PORT` is the port number set in [rev-proxy/.env](./rev-proxy/.env) (default `444`).
+    - When using your own OpenID Connect provider replace the values the corresponding issuer url.
+- [./context-paths.nginx.conf](./rev-proxy/subdomains.nginx.conf) which requires only one domain and uses context paths (`/` for flare,`/fhir` for fhir-server
+  - The domain must point to the host machine the triangle will run.
+  - If you use the bundled keycloak change the following variables in [fhir-server/.env](./fhir-server/.env):
+    - `FHIR_SERVER_FRONTEND_KEYCLOAK_HOSTNAME_URL`: set the domain part to the domain/hostname f
+    - `FHIR_SERVER_FRONTEND_KEYCLOAK_HTTP_RELATIVE_PATH`: set to `/`
+  - Change the values for the variables `FLARE_FHIR_OAUTH_ISSUER_URI` in [flare/.env](./flare/.env) and `FHIR_SERVER_OPENID_PROVIDER_URL` in [fhir-server/.env](./fhir-server/.env)
+    to the issuer url of your OpenID Connect provider.
+    - When using the bundled keycloak replace the values with `https://KEYCLOAK_HOSTNAME:REV_PROXY_PORT/auth/realms/blaze`
+      where `KEYCLOAK_HOSTNAME` is your domain and `REV_PROXY_PORT` is the port number set in [rev-proxy/.env](./rev-proxy/.env) (default `444`).
+      and `/auth` for keycloak).
+    - When using your own OpenID Connect provider replace the values the corresponding issuer url.
+
+> **Note !!**: The variable `FHIR_SERVER_BASE_URL=http://fhir-server:8080`should be kept as is for the standard setup, so that the UI can
 > correctly access the blaze fhir server.
 
 The triangle is configured by default to start the following services:
@@ -124,8 +150,8 @@ navigating to the respective components folder and executing:
 Please note that the keycloak provided here is an example setup, and we strongly recommend for each site to adjust the keycloak installation to their local security requirements or connect the local feasibility portal to a keycloak already provided at the site.
 
 Navigate to https://your-flare-subdomain.your-domain:configured-port and log into keycloak using the admin user and password set in step 7 (FLARE_FHIR_OAUTH_CLIENT_SECRET). User: admin Pw: my password set in step 7
-1. Set the domain for your client: Switch to the blaze  realm (realm name might be different if you use your own keycloak) by using the realm changer on top of the left navigation bar (should be set to master when logging in) 
-2. Add a user for your realm blaze: Click on Users > Create new user and fill in the field Username with a username of your choice. Click on Credentials > Set Password and fill the Password and Password Confirmation fields with a password of your choice and save the changes by clicking set password. 
+1. Set the domain for your client: Switch to the blaze  realm (realm name might be different if you use your own keycloak) by using the realm changer on top of the left navigation bar (should be set to master when logging in)
+2. Add a user for your realm blaze: Click on Users > Create new user and fill in the field Username with a username of your choice. Click on Credentials > Set Password and fill the Password and Password Confirmation fields with a password of your choice and save the changes by clicking set password.
 
 ### Step 10 - Access the Triangle
 
@@ -233,12 +259,12 @@ If new search parameters have been added follow the "fhir-server/README.md -> Re
 | BLAZE_BLOCK_CACHE_SIZE                           | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md                                                                       | `256`                                         |                                                           | BLAZE     |
 | BLAZE_DB_RESOURCE_CACHE_SIZE                     | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md                                                                       | `2000000`                                     |                                                           | BLAZE     |
 | PORT_FHIR_SERVER_LOCALHOST                       | The exposed docker port of the FHIR server                                                                                                                      | `127.0.0.1:8081`                              | should always include 127.0.0.1                           | BLAZE     |
-| FHIR_SERVER_OPENID_PROVIDER_URL                  | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md                                                                       | `https://keycloak.localhost:444/realms/blaze` | URL                                                       | BLAZE     |
+| FHIR_SERVER_OPENID_PROVIDER_URL                  | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md                                                                       | `https://auth.localhost:444/realms/blaze`     | URL                                                       | BLAZE     |
 | FHIR_SERVER_OPENID_CLIENT_TRUST_STORE_PASS       | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md                                                                       | `insecure`                                    | secure password                                           | BLAZE     |
 | FHIR_SERVER_FRONTEND_ORIGIN                      | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md#frontend                                                              | `https://fhir.localhost:444`                  |                                                           | BLAZE     |
 | FHIR_SERVER_FRONTEND_AUTH_CLIENT_ID              | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md#frontend                                                              | `account`                                     |                                                           | BLAZE     |
 | FHIR_SERVER_FRONTEND_AUTH_CLIENT_SECRET          | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md#frontend                                                              | `insecure`                                    | secure password                                           | BLAZE     |
-| FHIR_SERVER_FRONTEND_AUTH_ISSUER_URL             | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md#frontend                                                              | `https://keycloak.localhost:444/realms/blaze` |                                                           | BLAZE     |
+| FHIR_SERVER_FRONTEND_AUTH_ISSUER_URL             | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md#frontend                                                              | `https://auth.localhost:444/realms/blaze`     |                                                           | BLAZE     |
 | FHIR_SERVER_FRONTEND_AUTH_SECRET                 | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md#frontend                                                              | `insecure`                                    | secure password                                           | BLAZE     |
 | FHIR_SERVER_FRONTEND_CA_CERT                     | Certificate PEM file containing the certificate of `cert.pem` or the certificate authority by which the `cert.pem` was signed                                   | `./auth/cert.pem`                             | host path                                                 | BLAZE     |
 | FHIR_SERVER_FRONTEND_KEYCLOAK_ENABLED            | Enable/Disable automatic start of bundled Keycloak service executing `/opt/feasibility-deploy/feasibility-triangle/start-triangle.sh`                           | `true`                                        | `true` or `false`                                         | Keycloak  |
@@ -262,10 +288,10 @@ If new search parameters have been added follow the "fhir-server/README.md -> Re
 | FLARE_JAVA_TOOL_OPTIONS                          | java tool options passed to the flare container                                                                                                                 | `-Xmx4g`                                      |                                                           | FLARE     |
 | FLARE_LOG_LEVEL                                  |                                                                                                                                                                 | `info`                                        | `off`, `fatal`, `error`, `warn`, `info`, `debug`, `trace` | FLARE     |
 | FEASIBILITY_TRIANGLE_REV_PROXY_PORT              | The exposed docker port of the reverse proxy - set to 443 if you want to use standard https and you only have the feasibility triangle installed on your server | `444`                                         | Integer (valid port)                                      | REV Proxy |
-| # rev-proxy/env 			           | 
-| FHIR_SERVER_HOSTNAME 			           | change the default value of the domain names where the services are reachable                                                                                   | http://fhir-server:8080   |      |   REV-PROXY|  
-| KEYCLOAK_HOSTNAME                                | change the default value of the domain names where the services are reachable										     | https://keycloak.localhost:444/realms/blaze  |      |  REV-PROXY  |  
-| FLARE_HOSTNAME                                   |change the default value of the domain names where the services are reachable					                                             |  http://fhir-server:8080/fhir  |      |  REV-PROXY  |  
+| # rev-proxy/env 			           |
+| FHIR_SERVER_HOSTNAME 			           | change the default value of the domain names where the services are reachable                                                                                   | http://fhir-server:8080   |      |   REV-PROXY|
+| KEYCLOAK_HOSTNAME                                | change the default value of the domain names where the services are reachable										     | https://auth.localhost:444/realms/blaze  |      |  REV-PROXY  |
+| FLARE_HOSTNAME                                   |change the default value of the domain names where the services are reachable					                                             |  http://fhir-server:8080/fhir  |      |  REV-PROXY  |
 
 
 

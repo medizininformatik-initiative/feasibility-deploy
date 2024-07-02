@@ -41,10 +41,24 @@ jobs:
     - name: Initialize .env's
       run: feasibility-triangle/initialise-triangle-env-files.sh
 
-    - name: Change Flare External Port
-      run: sed -i 's/8084/18084/g' feasibility-triangle/flare/.env
+    - name: Change Configuration for localhost
+      run: |
+        sed -i -r -e 's#^(FHIR_SERVER_OPENID_PROVIDER_URL)=.*$#\1=https://auth.localhost:444/realms/blaze#' \
+                  -e 's#^(FHIR_SERVER_FRONTEND_KEYCLOAK_HOSTNAME_URL)=.*$#\1=https://auth.localhost:444/#' \
+                  -e 's#^(FHIR_SERVER_FRONTEND_KEYCLOAK_HTTP_RELATIVE_PATH)=.*$#\1=/#' \
+            feasibility-triangle/fhir-server/.env
+        sed -i -r -e 's#8084#18084#g' \
+                  -e 's#^(FLARE_FHIR_OAUTH_ISSUER_URI)=.*$#\1=https://auth.localhost:444/realms/blaze#' \
+            feasibility-triangle/flare/.env
+        sed -i -r -e 's#^(FHIR_SERVER_HOSTNAME)=.*$#\1=fhir.localhost#' \
+                  -e 's#^(FLARE_HOSTNAME)=.*$#\1=flare.localhost#' \
+                  -e 's#^(KEYCLOAK_HOSTNAME)=.*$#\1=auth.localhost#' \
+                  -e 's#^(FEASIBILITY_TRIANGLE_REV_PROXY_NGINX_CONFIG)=.*$#\1=./subdomains.nginx.conf#' \
+            feasibility-triangle/rev-proxy/.env
 
     - name: Generate certificate
+      env:
+        CERT_DOMAINS: "fhir.localhost, flare.localhost, auth.localhost"
       run: feasibility-triangle/generate-cert.sh
 
     - name: Start Triangle
