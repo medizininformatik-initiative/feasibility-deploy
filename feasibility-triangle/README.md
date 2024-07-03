@@ -154,17 +154,17 @@ Please be aware that you will need to set up an ssh tunnel to your server and fo
 For example for the FHIR Server: ssh -L 8081:127.0.0.1:8081 your-username@your-server-ip
 
 
-### Step 10 - Update your Blaze Search indices
+### Step 11 - Update your Blaze Search indices
 
 If you are using the Blaze server provided in this repository check if new items have been added to the fhir-server/custom-search-parameters.json since your last update.
 If new search parameters have been added follow the "fhir-server/README.md -> Re-indexing for new custom search parameters" section to update your FHIR server indices.
 
-### Step 11 - Init Testdata (Optional)
+### Step 12 - Init Testdata (Optional)
 
 To initialise testdata execute `get-mii-testdata.sh`. This will download MII core dataset compliant testdata from <https://github.com/medizininformatik-initiative/kerndatensatz-testdaten>,
 unpack it and save it to the testdata folder of this repository.
 
-You can then load the data into your FHIR Server using the `upload-testdata.sh` script.
+You can then load the data into your FHIR Server using the `upload-testdata.sh` script. Before  executing the `upload-testdata.sh` if you're not using fhir.localhost set the FEASIBILITY_TESTDATA_UPLOAD_FHIR_BASE_URL variable to your FHIR_SERVER_HOSTNAME. 
 
 ## Updating the Feasibility Triangle
 
@@ -262,7 +262,6 @@ If new search parameters have been added follow the "fhir-server/README.md -> Re
 | FLARE_JAVA_TOOL_OPTIONS                          | java tool options passed to the flare container                                                                                                                 | `-Xmx4g`                                      |                                                           | FLARE     |
 | FLARE_LOG_LEVEL                                  |                                                                                                                                                                 | `info`                                        | `off`, `fatal`, `error`, `warn`, `info`, `debug`, `trace` | FLARE     |
 | FEASIBILITY_TRIANGLE_REV_PROXY_PORT              | The exposed docker port of the reverse proxy - set to 443 if you want to use standard https and you only have the feasibility triangle installed on your server | `444`                                         | Integer (valid port)                                      | REV Proxy |
-| # rev-proxy/env 			           | 
 | FHIR_SERVER_HOSTNAME 			           | change the default value of the domain names where the services are reachable                                                                                   | http://fhir-server:8080   |      |   REV-PROXY|  
 | KEYCLOAK_HOSTNAME                                | change the default value of the domain names where the services are reachable										     | https://keycloak.localhost:444/realms/blaze  |      |  REV-PROXY  |  
 | FLARE_HOSTNAME                                   |change the default value of the domain names where the services are reachable					                                             |  http://fhir-server:8080/fhir  |      |  REV-PROXY  |  
