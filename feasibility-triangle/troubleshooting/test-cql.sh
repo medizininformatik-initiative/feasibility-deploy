@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 
 SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 
@@ -20,6 +20,12 @@ fi
 evaluate_measure() {
   echo "Evaluate measure: $1..."
   OUTPUT="$(blazectl --server "$BASE" -k --token "$ACCESS_TOKEN" evaluate-measure "$SCRIPT_DIR/cql/$1.yml" 2> /dev/null)"
+
+  if [ $? -ne 0 ]; then
+      echo "Measure evaluation failed. Please check the base URL of your FHIR server ($BASE) and provide an access token if needed."
+      exit 1
+  fi
+
   REPORT="$(echo "$OUTPUT" | jq -f "$SCRIPT_DIR/cql/report.jq")"
   printf "Result: %d patients in %.3f s with %d of %d Bloom filters available\n\n" \
     "$(echo "$REPORT" | jq -r '.result')" \
@@ -37,10 +43,3 @@ evaluate_measure "6-Medication"
 evaluate_measure "7-Specimen"
 
 evaluate_measure "All"
-
-if [[ -z "${ACCESS_TOKEN}" ]]
-then
-    printf "\n#####\n!\nNo access token was supplied - if your server requires an access token make sure you supply it\n"
-    printf "Supply access token as second parameter to this script\n"
-    printf "If your server is not protected ignore this message\n!\n#####\n\n"
-fi
