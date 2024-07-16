@@ -17,6 +17,14 @@ Please refer to the respective repositories for a more in depth changelog of sin
 |Blaze FHIR server|<https://github.com/medizininformatik-initiative/blaze>|
 
 
+## [4.1.0] - 2024-07-16
+
+### Overall
+
+- Changed to context configuration (installing using one domain) for default setup
+- Added option to switch between subdomain and context setup
+
+
 ## [4.0.0] - 2024-07-01
 
 ### Overall
