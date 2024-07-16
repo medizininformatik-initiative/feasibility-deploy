@@ -141,7 +141,8 @@ The triangle is configured by default to start the following services:
 
 - FLARE: A Rest Service, which is needed to translate, execute and evaluate a feasibility query on a FHIR Server using FHIR Search
 - BLAZE: The FHIR Server which holds the patient data for feasibility queries
-- Keycloak (optional): OpenID Connect provider for authorization used by BLAZE components
+- Keycloak (optional): OpenID Connect provider for authorization used by BLAZE component
+  - We recommend using your own keyloak and configuring a blaze realm there
 
 The bundled keycloak service is enabled by default and is preconfigured, so you only need to change passwords and
 secrets in `/opt/feasibility-deploy/feasibility-triangle/fhir-server/.env` before starting the service.
@@ -222,6 +223,10 @@ You can then load the data into your FHIR Server using the `upload-testdata.sh` 
 ## Updating the Feasibility Triangle
 
 If you have already installed the feasibility triangle and just want to update it, follow these steps:
+
+> [!NOTE]
+> If you are upgrading to version >4.0.0 the structure of the project has changed significantly, as oauth was added to the Blaze FHIR server.
+> We therefore ask you to follow the *Setting up the Feasibility Triangle* above
 
 
 ### Step 1 - Stop your triangle
