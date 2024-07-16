@@ -45,8 +45,8 @@ services:
       AKTIN_BROKER_API_KEY: ${FEASIBILITY_BACKEND_AKTIN_BROKER_API_KEY:-xxxApiKeyAdmin123}
       # ---- DSF  broker
       BROKER_CLIENT_DSF_ENABLED: ${FEASIBILITY_BACKEND_DSF_ENABLED:-false}
-      DSF_SECURITY_CACERT: ${FEASIBILITY_BACKEND_DSF_CACERT:-/opt/codex-feasibility-security/ca.pem}
-      DSF_SECURITY_KEYSTORE_P12FILE: ${FEASIBILITY_BACKEND_DSF_DSF_SECURITY_KEYSTORE_P12FILE:-/opt/codex-feasibility-security/test-user.p12}
+      DSF_SECURITY_CACERT: ${FEASIBILITY_BACKEND_DSF_CACERT:-/opt/mii-feasibility-security/ca.pem}
+      DSF_SECURITY_KEYSTORE_P12FILE: ${FEASIBILITY_BACKEND_DSF_DSF_SECURITY_KEYSTORE_P12FILE:-/opt/mii-feasibility-security/test-user.p12}
       DSF_SECURITY_KEYSTORE_PASSWORD: ${FEASIBILITY_BACKEND_DSF_SECURITY_KEYSTORE_PASSWORD:-password}
       DSF_PROXY_HOST: ${FEASIBILITY_BACKEND_DSF_PROXY_HOST}
       DSF_PROXY_USERNAME: ${FEASIBILITY_BACKEND_DSF_PROXY_USERNAME}
@@ -73,8 +73,8 @@ services:
       - "keycloak.localhost:host-gateway"
     restart: unless-stopped
     volumes:
-      - ${FEASIBILITY_BACKEND_CERTS_PATH:-../secrets}:/opt/codex-feasibility-security
-      - ./certs:/opt/codex-feasibility-backend/certs
+      - ${FEASIBILITY_BACKEND_CERTS_PATH:-../secrets}:/opt/mii-feasibility-security
+      - ./certs:/opt/mii-feasibility-backend/certs
 
   feasibility-gui-backend-db:
     image: 'postgres:15-alpine'
@@ -83,7 +83,7 @@ services:
     environment:
       POSTGRES_USER: ${FEASIBILITY_BACKEND_DATASOURCE_USERNAME:-guidbuser}
       POSTGRES_PASSWORD: ${FEASIBILITY_BACKEND_DATASOURCE_PASSWORD:-guidbpw}
-      POSTGRES_DB: codex_ui
+      POSTGRES_DB: feasibility_ui
     restart: unless-stopped
     volumes:
     - type: volume
