@@ -3,7 +3,7 @@ services:
     image: "keycloak/keycloak:25.0"
     command: ["start", "--import-realm"]
     healthcheck:
-      test: ["CMD-SHELL", "exec 3<>/dev/tcp/127.0.0.1/9000;echo -e \"GET /health/ready  HTTP/1.1\r\nhost: localhost\r\nConnection: close\r\n\r\n\" >&3;grep \"HTTP/1.1 200 OK\" <&3"]
+      test: ["CMD-SHELL", "exec 3<>/dev/tcp/127.0.0.1/9000;echo -e \"GET ${FHIR_SERVER_FRONTEND_KEYCLOAK_HTTP_RELATIVE_PATH}/health/ready  HTTP/1.1\r\nhost: localhost\r\nConnection: close\r\n\r\n\" >&3;grep \"HTTP/1.1 200 OK\" <&3"]
       interval: 5s
       timeout: 5s
       retries: 3
@@ -14,8 +14,8 @@ services:
       KEYCLOAK_CLIENT_ID: ${FHIR_SERVER_FRONTEND_AUTH_CLIENT_ID:-account}
       KEYCLOAK_CLIENT_SECRET: ${FHIR_SERVER_FRONTEND_AUTH_CLIENT_SECRET:-e11a3a8e-6e24-4f9d-b914-da7619e8b31f}
       KEYCLOAK_CLIENT_HOST_URL: ${FHIR_SERVER_FRONTEND_ORIGIN:-https://fhir.localhost:444}
-      KC_HOSTNAME: ${FHIR_SERVER_FRONTEND_KEYCLOAK_HOSTNAME_URL:-https://keycloak.localhost:444}
-      KC_HOSTNAME_ADMIN: ${FHIR_SERVER_FRONTEND_KEYCLOAK_HOSTNAME_URL:-https://keycloak.localhost:444}
+      KC_HOSTNAME: ${FHIR_SERVER_FRONTEND_KEYCLOAK_HOSTNAME_URL:-https://auth.localhost:444}
+      KC_HOSTNAME_ADMIN: ${FHIR_SERVER_FRONTEND_KEYCLOAK_HOSTNAME_URL:-https://auth.localhost:444}
       KC_HTTP_RELATIVE_PATH: ${FHIR_SERVER_FRONTEND_KEYCLOAK_HTTP_RELATIVE_PATH:-/}
       KC_PROXY_HEADERS: xforwarded
       KC_HTTP_ENABLED: "true"

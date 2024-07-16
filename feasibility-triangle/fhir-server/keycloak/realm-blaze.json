@@ -78,20 +78,6 @@
       "containerId" : "blaze",
       "attributes" : { }
     }, {
-      "id" : "ddf3601e-7689-4e9a-8dce-69a964a14d8c",
-      "name" : "admin",
-      "description" : "${role_admin}",
-      "composite" : true,
-      "composites" : {
-        "realm" : [ "create-realm" ],
-        "client" : {
-          "blaze-realm" : [ "view-users", "manage-events", "view-realm", "view-clients", "view-events", "query-realms", "query-users", "impersonation", "view-authorization", "manage-clients", "manage-identity-providers", "query-groups", "query-clients", "create-client", "manage-authorization", "view-identity-providers", "manage-users", "manage-realm" ]
-        }
-      },
-      "clientRole" : false,
-      "containerId" : "blaze",
-      "attributes" : { }
-    }, {
       "id" : "319558ae-0ae5-4110-b688-5f30f94f652e",
       "name" : "create-realm",
       "description" : "${role_create-realm}",
@@ -554,29 +540,7 @@
   "webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister" : false,
   "webAuthnPolicyPasswordlessAcceptableAaguids" : [ ],
   "webAuthnPolicyPasswordlessExtraOrigins" : [ ],
-  "users" : [ {
-    "id" : "b0ef6edd-d503-4c74-a5ac-587fc56ea8ec",
-    "username" : "admin",
-    "emailVerified" : false,
-    "createdTimestamp" : 1619179992044,
-    "enabled" : true,
-    "totp" : false,
-    "credentials" : [ {
-      "id" : "a364bc10-e50d-46e7-9a4b-a2e81cfb97ef",
-      "type" : "password",
-      "createdDate" : 1619179992264,
-      "secretData" : "{\"value\":\"HFaSOho+7v2/pNE05AzCJs+MGKga2UuZFpCJwrEwyRWXq8xhYI+QZlsrsvkXbg8yye0ajxvKMhoQ8StOIw92hQ==\",\"salt\":\"0FxKxt+bGWwoWSZptMOXlw==\",\"additionalParameters\":{}}",
-      "credentialData" : "{\"hashIterations\":27500,\"algorithm\":\"pbkdf2-sha256\",\"additionalParameters\":{}}"
-    } ],
-    "disableableCredentialTypes" : [ ],
-    "requiredActions" : [ ],
-    "realmRoles" : [ "offline_access", "uma_authorization", "admin" ],
-    "clientRoles" : {
-      "${KEYCLOAK_CLIENT_ID}" : [ "view-profile", "manage-account" ]
-    },
-    "notBefore" : 0,
-    "groups" : [ ]
-  },{
+  "users" : [{
     "id" : "72a7f37e-b33f-4908-9ad9-33be0d4c1620",
     "username" : "service-account-${KEYCLOAK_CLIENT_ID}",
     "emailVerified" : false,

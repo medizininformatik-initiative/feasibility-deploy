@@ -78,7 +78,7 @@ This starts the following default local feasibility portal, with the following c
 | Component | url                                | description |
 |-----------|------------------------------------|-------------|
 | GUI       | https://feasibility-subdomain.my-feasibility-domain      |             |
-| Keycloak  | https:/keycloak-subdomain.my-feasibility-domain/auth |             |
+| Keycloak  | https:/keycloak-subdomain.my-feasibility-domain |             |
 | Backend   | https:/backend-subdomain.my-feasibility-domain//api/v3 |             |
 
 
@@ -86,7 +86,7 @@ This starts the following default local feasibility portal, with the following c
 
 Please note that the keycloak provided here is an example setup, and we strongly recommend for each site to adjust the keycloak installation to their local security requirements or connect the local feasibility portal to a keycloak already provided at the site.
 
-Navigate to https://my-fesibility-domain/auth/keycloakadmin/admin
+Navigate to https://keycloak-subdomain.my-fesibility-domain/admin/master/console/
 click on "Administration Console" and log in to keycloak using the admin user and password set in step 6 (FEASIBILITY_KC_ADMIN_USER, FEASIBILITY_KC_ADMIN_PW).
 User: admin
 Pw: my password set in step 6
