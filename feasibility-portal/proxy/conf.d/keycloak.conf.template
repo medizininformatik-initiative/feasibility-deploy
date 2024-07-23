@@ -1,30 +1,21 @@
 server {
+    listen       8443 ssl;
+    http2        on;
+    server_name ${KEYCLOAK_HOSTNAME};
 
-        listen       8443 ssl;
-        server_name ${KEYCLOAK_HOSTNAME};
-
-        location / {
-            proxy_buffers 4 128k;
-            proxy_busy_buffers_size 128k;
-            proxy_buffer_size 64k;
-            proxy_pass http://auth:8080;
-            proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_set_header X-Forwarded-Host $host;
-            proxy_set_header X-Forwarded-Port $server_port;
-            proxy_set_header X-Real-IP $remote_addr;
-        }
-
-  #location /keycloakadmin {
-  #        proxy_buffers 4 128k;
-  #        proxy_busy_buffers_size 128k;
-  #        proxy_buffer_size 64k;
-  #        proxy_pass http://auth:8080;
-  #        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-  #        proxy_set_header X-Forwarded-Proto $scheme;
-  #        proxy_set_header X-Forwarded-Host $host;
-  #        proxy_set_header X-Forwarded-Port $server_port;
-  #        proxy_set_header X-Real-IP $remote_addr;
-  #    }
+    # redirect server error pages to the static page /50x.html
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
     }
 
+    location / {
+        #Used with 'subdomains.nginx.conf' 
+        proxy_pass http://auth:8080;
+
+        #Used with 'context-paths.nginx.conf'     
+        #set $auth_upstream http://auth:8080;
+        #proxy_pass http://$auth_upstream$request_uri;
+    }
+
+}
