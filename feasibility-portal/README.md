@@ -73,6 +73,12 @@ For the reverse proxy you need to choose the configuration (variable `FEASIBILIT
   - All subdomains must point to the host machine the portal will run.
  
   - Set the service hostnames (`BACKEND_HOSTNAME`, `KEYCLOAK_HOSTNAME` and `GUI_HOSTNAME`, depending on which services you need) in [proxy/.env](./proxy/.env).
+- Change the following variables in [keycloak/.env](./keycloak /.env):
+      - `FEASIBILITY_KC_HOSTNAME_URL`and `FEASIBILITY_KC_HOSTNAME_ADMIN_URL`: set the domain part to the value you set for `KEYCLOAK_HOSTNAME` before.
+      -` FEASIBILITY_KC_HTTP_RELATIVE_PATH`: set to `/auth`.
+- Change the values for the variables `FEASIBILITY_BACKEND_API_BASE_URL` in [backend/.env](./backend/.env) and `FEASIBILITY_BACKEND_ALLOWED_ORIGINS` in [backend /.env](./backend/.env)
+          to the base url of your feasibility portal backend. In the [backend/.env](./backend/.env) change the values for the variable `FEASIBILITY_BACKEND_KEYCLOAK_BASE_URL_ISSUER`	to the base url of your feasibility portal keycloak.
+      
   
 
 
