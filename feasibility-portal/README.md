@@ -66,6 +66,20 @@ The portal is configured by default to start the following services:
 - UI
 - Keycloak
 
+For the reverse proxy you need to choose the configuration (variable `FEASIBILITY_PORTAL_PROXY_NGINX_CONFIG` in
+[proxy/.env](./proxy/.env)) which also decides what the changes to the `.env` files you have to make:
+
+- [./subdomains.nginx.conf](./proxy/subdomains.nginx.conf) with separate domains for the services (Backend, UI, keycloak)
+  - All subdomains must point to the host machine the portal will run.
+ 
+  - Set the service hostnames (`BACKEND_HOSTNAME`, `KEYCLOAK_HOSTNAME` and `GUI_HOSTNAME`, depending on which services you need) in [proxy/.env](./proxy/.env).
+  
+
+
+
+
+
+
 For more details on the environment variables see the paragraph **Configurable environment variables** of this README.
 
 ### Step 6 - Start the feasibility portal
