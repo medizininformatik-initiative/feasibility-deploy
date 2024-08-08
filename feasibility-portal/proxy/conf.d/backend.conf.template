@@ -10,7 +10,7 @@
     }
 
         location / {
-            set $backend_upstream http://flare:8080;
+            set $backend_upstream http://feasibility-gui-backend:8090;
             proxy_pass http://$backend_upstream$request_uri;
         }
 
