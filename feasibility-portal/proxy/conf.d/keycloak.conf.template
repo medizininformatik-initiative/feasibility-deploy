@@ -1,14 +1,19 @@
 server {
+    listen       8443 ssl;
+    http2        on;
+    server_name ${KEYCLOAK_HOSTNAME};
 
-        listen       8443 ssl;
-        server_name ${KEYCLOAK_HOSTNAME};
-
-        location / {
-            set              $auth_upstream http://keycloak:8080;
-            proxy_pass       http://$auth_upstream$request_uri;
-            
-        }
-
- 
+    # redirect server error pages to the static page /50x.html
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
     }
 
+    location / {
+        proxy_pass http://auth:8080;
+            
+        #set $backend_upstream http://auth:8080;
+        #proxy_pass http://$backend_upstream$request_uri;
+    }
+
+}
