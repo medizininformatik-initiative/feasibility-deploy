@@ -12,10 +12,10 @@ server {
 
     location / {
         #Used with 'subdomains.nginx.conf' 
-        proxy_pass http://feasibility-gui-backend:8090/;
+        proxy_pass http://dataportal-backend:8090/;
         
         #Used with 'context-paths.nginx.conf'
-        #set $backend_upstream http://feasibility-gui-backend:8090;
+        #set $backend_upstream http://dataportal-backend:8090;
         #proxy_pass http://$backend_upstream$request_uri;
     }
 
