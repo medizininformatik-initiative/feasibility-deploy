@@ -4,7 +4,7 @@
         server_name ${BACKEND_HOSTNAME};
 
         location / {
-            proxy_pass http://feasibility-gui-backend:8090/;
+            proxy_pass http://dataportal-backend:8090/;
             proxy_set_header X-Forwarded-Proto $scheme;
             proxy_set_header X-Forwarded-Host  $host;
         }

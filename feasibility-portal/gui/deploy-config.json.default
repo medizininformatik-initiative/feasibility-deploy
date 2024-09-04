@@ -6,7 +6,7 @@
     "baseUrl": "/api"
   },
   "uiBackendApi": {
-    "baseUrl": "https://api.datenportal.localhost/api/v3"
+    "baseUrl": "https://api.datenportal.localhost/api/v4"
   },
   "auth": {
     "baseUrl": "https://auth.datenportal.localhost",
