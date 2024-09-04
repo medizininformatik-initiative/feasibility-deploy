@@ -92,7 +92,7 @@ services:
       LOG_LEVEL: ${DATAPORTAL_BACKEND_LOG_LEVEL:-warn}
     volumes:
       - ${DATAPORTAL_BACKEND_CERTS_PATH:-../secrets}:/opt/dataportal-security
-      - ./certs:/opt/codex-feasibility-backend/certs
+      - ./certs:/opt/dataportal-backend/certs
 
   dataportal-postgres:
     image: 'postgres:16-alpine'
