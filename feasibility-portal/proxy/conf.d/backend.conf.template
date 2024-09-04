@@ -1,12 +1,22 @@
- server {
+server {
+    listen       8443 ssl;
+    http2        on;
+    server_name ${BACKEND_HOSTNAME};
 
-        listen       8443 ssl;
-        server_name ${BACKEND_HOSTNAME};
-
-        location / {
-            proxy_pass http://dataportal-backend:8090/;
-            proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_set_header X-Forwarded-Host  $host;
-        }
-
+    # redirect server error pages to the static page /50x.html
+    #
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
     }
+
+    location / {
+        #Used with 'subdomains.nginx.conf' 
+        proxy_pass http://dataportal-backend:8090/;
+        
+        #Used with 'context-paths.nginx.conf'
+        #set $backend_upstream http://dataportal-backend:8090;
+        #proxy_pass http://$backend_upstream$request_uri;
+    }
+
+}

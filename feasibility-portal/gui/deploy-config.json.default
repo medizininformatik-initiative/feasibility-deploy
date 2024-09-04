@@ -9,7 +9,7 @@
     "baseUrl": "https://api.datenportal.localhost/api/v4"
   },
   "auth": {
-    "baseUrl": "https://auth.datenportal.localhost",
+    "baseUrl": "https://example.org/auth",
     "realm": "feasibility",
     "clientId": "feasibility-webapp",
     "roles": ["FeasibilityUser"]
