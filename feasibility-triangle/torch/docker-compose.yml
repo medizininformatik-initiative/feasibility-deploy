@@ -15,6 +15,9 @@ services:
     environment:
       TORCH_FHIR_URL: ${TORCH_FHIR_URL:-http://torch-data-store:8080/fhir}
       TORCH_FLARE_URL: ${TORCH_FLARE_URL:-http://torch-flare:8080}
+      TORCH_MAPPING_CONSENT: /app/Mappings/consent-mappings_fhir.json
+      TORCH_MAPPING_CONSENT_TO_PROFILE: /app/Mappings/profile_to_consent.json
+      TORCH_PROFILE_DIR: /app/structureDefinitions
       TORCH_RESULTS_PERSISTENCE: ${TORCH_RESULTS_PERSISTENCE:-PT12H30M5S}
       LOG_LEVEL: ${TORCH_LOG_LEVEL:-debug}
       NGINX_FILELOCATION: ${TORCH_NGINX_FILELOCATION:-http://localhost:80}
