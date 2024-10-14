@@ -40,3 +40,14 @@ else
         rm "$BASE_DIR/rev-proxy/conf.d/flare.conf"
     fi
 fi
+
+if [ -f "$BASE_DIR/torch/.env" ] && grep -qE '^TORCH_ENABLED=true\s*$' "$BASE_DIR/torch/.env"; then
+    if [ ! -f "$BASE_DIR/rev-proxy/conf.d/torch.conf" ]; then
+        cp "$BASE_DIR/rev-proxy/conf.d/torch.conf.template" "$BASE_DIR/rev-proxy/conf.d/torch.conf"
+    fi
+    COMPOSE_IGNORE_ORPHANS=True docker compose -p "$COMPOSE_PROJECT" -f "$BASE_DIR"/torch/docker-compose.yml up -d
+else
+    if [ -f "$BASE_DIR/rev-proxy/conf.d/torch.conf" ]; then
+        rm "$BASE_DIR/rev-proxy/conf.d/torch.conf"
+    fi
+fi
