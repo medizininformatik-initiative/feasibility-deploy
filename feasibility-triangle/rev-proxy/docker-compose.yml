@@ -4,11 +4,9 @@ services:
     image: nginxinc/nginx-unprivileged:1.25.5-alpine
     environment:
       FHIR_SERVER_HOSTNAME: ${FHIR_SERVER_HOSTNAME:-fhir.localhost}
-
       KEYCLOAK_HOSTNAME: ${KEYCLOAK_HOSTNAME:-auth.localhost}
-
-     
       FLARE_HOSTNAME: ${FLARE_HOSTNAME:-flare.localhost}
+      TORCH_HOSTNAME: ${TORCH_HOSTNAME:-torch.localhost}
     ports:
       - ${FEASIBILITY_TRIANGLE_REV_PROXY_PORT:-444}:8443
     volumes:
