@@ -10,8 +10,9 @@ The Feasibility Triangle is composed of four components:
 
 1. A Middleware Client (DSF)
 2. A Feasibility Analysis Request Executor (FLARE)
-3. A FHIR Server (Blaze)
-4. Reverse Proxy (NGINX)
+3. A Dataselection and Extraction Executor (TORCH)
+4. A FHIR Server (Blaze)
+5. Reverse Proxy (NGINX)
 
 The reverse proxy allows for integration into a site's multi-server infrastructure. It also provides basic auth capability for FHIR server and FLARE components.
 
@@ -61,6 +62,7 @@ Running this setup safely at your site requires a valid certificate and domains.
 
 - FHIR server
 - FLARE
+- TORCH
 - Keycloak (optional, see step 8)
 
 You will require two .pem files: a `cert.pem` (certificate) and `cert.key` (private key).
@@ -140,6 +142,7 @@ For the reverse proxy you need to choose the configuration (variable `FEASIBILIT
 The triangle is configured by default to start the following services:
 
 - FLARE: A Rest Service, which is needed to translate, execute and evaluate a feasibility query on a FHIR Server using FHIR Search
+- TORCH: A Rest Service, which is needed to execute Dataselection and Extraction queries (CRTDLs - clinical-resource-transfer-definition-languge)
 - BLAZE: The FHIR Server which holds the patient data for feasibility queries
 - Keycloak (optional): OpenID Connect provider for authorization used by BLAZE component
   - We recommend using your own keyloak and configuring a blaze realm there
