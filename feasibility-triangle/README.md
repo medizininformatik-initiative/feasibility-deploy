@@ -10,8 +10,9 @@ The Feasibility Triangle is composed of four components:
 
 1. A Middleware Client (DSF)
 2. A Feasibility Analysis Request Executor (FLARE)
-3. A FHIR Server (Blaze)
-4. Reverse Proxy (NGINX)
+3. A Dataselection and Extraction Executor (TORCH)
+4. A FHIR Server (Blaze)
+5. Reverse Proxy (NGINX)
 
 The reverse proxy allows for integration into a site's multi-server infrastructure. It also provides basic auth capability for FHIR server and FLARE components.
 
@@ -61,6 +62,7 @@ Running this setup safely at your site requires a valid certificate and domains.
 
 - FHIR server
 - FLARE
+- TORCH
 - Keycloak (optional, see step 8)
 
 You will require two .pem files: a `cert.pem` (certificate) and `cert.key` (private key).
@@ -94,7 +96,7 @@ For the reverse proxy you need to choose the configuration (variable `FEASIBILIT
 
 - [./subdomains.nginx.conf](./rev-proxy/subdomains.nginx.conf) with separate domains for the services (fhir-server (incl) and optionally flare and keycloak)
   - All subdomains must point to the host machine the triangle will run on.
-  - Set the service hostnames (`FLARE_HOSTNAME`, `FHIR_HOSTNAME` and `KEYCLOAK_HOSTNAME`, depending on which services you need) in [rev-proxy/.env](./rev-proxy/.env).
+  - Set the service hostnames (`FLARE_HOSTNAME`, `FHIR_HOSTNAME`, `TORCH_HOSTNAME` and `KEYCLOAK_HOSTNAME`, depending on which services you need) in [rev-proxy/.env](./rev-proxy/.env).
   - You can change the default external port the reverse proxy listens on in [rev-proxy/.env](./rev-proxy/.env) (variable `FEASIBILITY_TRIANGLE_REV_PROXY_PORT`).
     Any value other than `443` needs to be added to all external url's in the `.env` files and to the url's used for accessing the triangle from outside.
     The default value is `444` to avoid a conflict with the proxy of the local feasibility portal when it is deployed on the same host.
@@ -140,6 +142,7 @@ For the reverse proxy you need to choose the configuration (variable `FEASIBILIT
 The triangle is configured by default to start the following services:
 
 - FLARE: A Rest Service, which is needed to translate, execute and evaluate a feasibility query on a FHIR Server using FHIR Search
+- TORCH: A Rest Service, which is needed to execute Dataselection and Extraction queries (CRTDLs - clinical-resource-transfer-definition-languge)
 - BLAZE: The FHIR Server which holds the patient data for feasibility queries
 - Keycloak (optional): OpenID Connect provider for authorization used by BLAZE component
   - We recommend using your own keyloak and configuring a blaze realm there
@@ -156,7 +159,7 @@ to `false` in `/opt/feasibility-deploy/feasibility-triangle/fhir-server/.env`.
 To start the triangle execute `/opt/feasibility-deploy/feasibility-triangle/start-triangle.sh`.
 
 This starts the following default triangle:
-FLARE (FHIR Search executor) - BLAZE (FHIR Server) - Keycloak (optional)
+FLARE (FHIR Search executor) - TORCH (FHIR Data Extractor) - BLAZE (FHIR Server) - Keycloak (optional)
 
 If you would like to pick other component combinations you can start each component individually by setting your compose project (`export FEASIBILITY_COMPOSE_PROJECT=feasibility-deploy`)
 navigating to the respective components folder and executing:
@@ -186,6 +189,7 @@ These are the URLs for access to the webclients via nginx:
 | Component   | URL                                                              | User             | Password         |
 |-------------|------------------------------------------------------------------|------------------|------------------|
 | Flare       | `https://your-flare-subdomain.your-domain:configured-port/`      | chosen in step 3 | chosen in step 3 |
+| TORCH       | `https://your-torch-subdomain.your-domain:configured-port/`      | chosen in step 3 | chosen in step 3 |
 | FHIR Server | `https://your-fhir-subdomain.your-domain:configured-port/fhir`   | chosen in step 3 | chosen in step 3 |
 
 > [!NOTE]
@@ -201,7 +205,8 @@ Accessible service via localhost:
 | Component   | URL                              | Authentication Type | Notes                |
 |-------------|----------------------------------|---------------------|----------------------|
 | Flare       | <http://localhost:8084>          | None required       |                      |
-| FHIR Server | <http://localhost:8081/fhir>          | Bearer Token        | Configured in step 8 |
+| TORCH       | <http://localhost:8086>          | None required       |                      |
+| FHIR Server | <http://localhost:8081/fhir>     | Bearer Token        | Configured in step 8 |
 
 Please be aware that you will need to set up an ssh tunnel to your server and forward the respective ports if you would like to access the services on localhost without a password.
 
@@ -322,6 +327,15 @@ If new search parameters have been added follow the "fhir-server/README.md -> Re
 | FHIR_SERVER_HOSTNAME 			           | change the default value of the domain names where the services are reachable                                                                                   | http://fhir-server:8080   |      |   REV-PROXY|  
 | KEYCLOAK_HOSTNAME                                | change the default value of the domain names where the services are reachable										     | https://keycloak.localhost:444/realms/blaze  |      |  REV-PROXY  |  
 | FLARE_HOSTNAME                                   |change the default value of the domain names where the services are reachable					                                             |  http://fhir-server:8080/fhir  |      |  REV-PROXY  |  
+| TORCH_FHIR_URL                | The base URL of the FHIR server which contains the patient data Torch is used to extract. | http://fhir-server:8080/fhir |                  | TORCH     |
+| TORCH_FLARE_URL               | The base URL of the FLARE component if used.                                              | http://flare:8080    |                  | TORCH     |
+| TORCH_RESULTS_PERSISTENCE     |                                                                                             | PT12H30M5S           |                  | TORCH     |
+| TORCH_LOG_LEVEL               | Log level                                                                                  | debug                |                  | TORCH     |
+| TORCH_NGINX_FILELOCATION      | The base URL of the NGINX, which is used to serve the extracted patient data.            | https://torch.localhost:444/fileserver | | TORCH     |
+| TORCH_BATCHSIZE               | The number of patients Torch processes in one batch.                                       | 100                  |                  | TORCH     |
+| TORCH_MAXCONCURRENCY          | Maximum number of parallel threads Torch uses to process the data extractions.            | 4                    |                  | TORCH     |
+| TORCH_USE_CQL                 | Whether or not to use CQL - if false FLARE is used.                                       | true                 |                  | TORCH     |
+| TORCH_ENABLED                 | Whether or not Torch should be started.                                                   | true                 |                  | TORCH     |
 
 
 ### Support for self-singed certificates
