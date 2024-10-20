@@ -1,7 +1,7 @@
 services:
   dataportal-backend:
     restart: unless-stopped
-    image: ghcr.io/medizininformatik-initiative/feasibility-backend:6.0.0-test.1
+    image: ghcr.io/medizininformatik-initiative/feasibility-backend:6.0.0-alpha.3
     ports:
     - ${DATAPORTAL_BACKEND_PORT:-127.0.0.1:8091}:8090
     depends_on:
@@ -30,8 +30,6 @@ services:
       # ---- ontology
       ONTOLOGY_FILES_FOLDER_UI: ${DATAPORTAL_BACKEND_ONTOLOGY_FILES_FOLDER:-/opt/dataportal-backend/ontology}
       ONTOLOGY_DB_MIGRATION_FOLDER: ${DATAPORTAL_BACKEND_ONTOLOGY_DB_MIGRATION_FOLDER:-/opt/dataportal-backend/ontology/migration}
-      MAPPINGS_FILE: ${DATAPORTAL_BACKEND_ONTOLOGY_FILES_FOLDER:-/opt/dataportal-backend/ontology}/codex-term-code-mapping.json
-      CONCEPT_TREE_FILE: ${DATAPORTAL_BACKEND_ONTOLOGY_FILES_FOLDER:-/opt/dataportal-backend/ontology}/codex-code-tree.json
       # ---- auth
       KEYCLOAK_ENABLED: ${DATAPORTAL_BACKEND_KEYCLOAK_ENABLED:-true}
       KEYCLOAK_BASE_URL: ${DATAPORTAL_BACKEND_KEYCLOAK_BASE_URL:-http://keycloak:8080}
@@ -43,7 +41,7 @@ services:
       KEYCLOAK_BASE_URL_JWK: ${DATAPORTAL_BACKEND_KEYCLOAK_BASE_URL_JWK:-http://auth:8080}
       KEYCLOAK_REALM: ${DATAPORTAL_BACKEND_KEYCLOAK_REALM:-dataportal}
       #---- Mock broker
-      BROKER_CLIENT_MOCK_ENABLED: ${DATAPORTAL_BACKEND_BROKER_CLIENT_MOCK_ENABLED:-true}
+      BROKER_CLIENT_MOCK_ENABLED: ${DATAPORTAL_BACKEND_BROKER_CLIENT_MOCK_ENABLED:-false}
       #---- Direct broker
       BROKER_CLIENT_DIRECT_ENABLED: ${DATAPORTAL_BACKEND_BROKER_CLIENT_DIRECT_ENABLED:-false}
       BROKER_CLIENT_DIRECT_USE_CQL: ${DATAPORTAL_BACKEND_BROKER_CLIENT_DIRECT_USE_CQL:-false}
@@ -90,6 +88,8 @@ services:
       # ---- logging
       LOG_LEVEL_SQL: ${DATAPORTAL_BACKEND_LOG_LEVEL_SQL:-warn}
       LOG_LEVEL: ${DATAPORTAL_BACKEND_LOG_LEVEL:-warn}
+    extra_hosts:
+      - "auth.localhost:host-gateway"
     volumes:
       - ${DATAPORTAL_BACKEND_CERTS_PATH:-../secrets}:/opt/dataportal-security
       - ./certs:/opt/dataportal-backend/certs

@@ -9,7 +9,7 @@ services:
         - triangle-torch-data-store:/app/output
   torch:
     restart: unless-stopped
-    image: ghcr.io/medizininformatik-initiative/torch:develop
+    image: ghcr.io/medizininformatik-initiative/torch:1.0.0-alpha.1
     ports:
       - ${TORCH_PORT:-127.0.0.1:8086}:8080
     environment:
