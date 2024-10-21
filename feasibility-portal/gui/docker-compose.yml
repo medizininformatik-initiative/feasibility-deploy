@@ -1,8 +1,6 @@
 services:
   dataportal-ui:
-    image: ghcr.io/medizininformatik-initiative/feasibility-gui:5.0.0
+    image: ghcr.io/medizininformatik-initiative/feasibility-gui:6.0.0-alpha.4
     restart: unless-stopped
-    ports:
-    - "127.0.0.1:8080:8080"
     volumes:
       - ./deploy-config.json:/usr/share/nginx/html/assets/config/config.deploy.json

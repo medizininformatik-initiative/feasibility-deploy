@@ -66,6 +66,39 @@ The portal is configured by default to start the following services:
 - UI
 - Keycloak
 
+For the reverse proxy you need to choose the configuration (variable `FEASIBILITY_PORTAL_PROXY_NGINX_CONFIG` in
+[proxy/.env](./proxy/.env)) which also decides what the changes to the `.env` files you have to make:
+
+- [./subdomains.nginx.conf](./proxy/subdomains.nginx.conf) with separate domains for the services (Backend, UI, Keycloak)
+  - All subdomains must point to the host machine the portal will run.
+ 
+  - Set the service hostnames (`BACKEND_HOSTNAME`, `KEYCLOAK_HOSTNAME` and `GUI_HOSTNAME`, depending on which services you need) in [proxy/.env](./proxy/.env).
+- Change the following variables in [keycloak/.env](./keycloak /.env):
+      - `FEASIBILITY_KC_HOSTNAME_URL`and `FEASIBILITY_KC_HOSTNAME_ADMIN_URL`: set the domain part to the value you set for `KEYCLOAK_HOSTNAME` before.
+      -` FEASIBILITY_KC_HTTP_RELATIVE_PATH`: set to `/auth`.
+- Change the values for the variables `FEASIBILITY_BACKEND_API_BASE_URL` in [backend/.env](./backend/.env) and `FEASIBILITY_BACKEND_ALLOWED_ORIGINS` in [backend /.env](./backend/.env)
+          to the base url of your feasibility portal backend. In the [backend/.env](./backend/.env) change the values for the variable `FEASIBILITY_BACKEND_KEYCLOAK_BASE_URL_ISSUER`	to the base url of your feasibility portal keycloak.
+- Change the following variables in [gui/deploy-config.json](./gui/deploy-config.json):
+      - `uiBackendApi > baseUrl`: set the domain part of the local feasibility portal backend.
+      -  `auth > baseUrl`: set the domain part of the local feasibility portal keycloak.
+- On the [proxy/.env] use this variable `FEASIBILITY_PORTAL_PROXY_NGINX_CONFIG=./subdomains.nginx.conf`.
+
+- [./context-paths.nginx.conf](./proxy/context-paths.nginx.conf) which requires only one domain and uses context paths (`/auth` for keycloak,`/api` for backend and `/`) for user interface.
+- The domain must point to the host machine the portal will run.
+- On the [proxy/.env] use this variable`FEASIBILITY_PORTAL_PROXY_NGINX_CONFIG=./context-paths.nginx.conf`
+-  Change the following variable `FEASIBILITY_KC_HOSTNAME_URL` and `FEASIBILITY_KC_HOSTNAME_ADMIN_URL` in [keycloak/.env]: set the domain part of your domain. The path must be set to /auth at the end of the url. For example, https://example.org/auth.
+- Add `/auth` in the following variable `FEASIBILITY_KC_HTTP_RELATIVE_PATH` in [keycloak/.env]
+- Change the following variable `FEASIBILITY_BACKEND_API_BASE_URL` in [backend/.env]: set the domain part of your domain. The path must be set to /api at the end of the url. For example, https://example.org/api.
+- Change the following variable `FEASIBILITY_BACKEND_ALLOWED_ORIGINS`  in [backend/.env]: set the domain part of your domain. For example, https://example.org.
+- Change the following variable`FEASIBILITY_BACKEND_KEYCLOAK_BASE_URL_ISSUER` in [backend/.env]: set the domain part of your domain. The path must be set to /api at the end of the url. For example, https://example.org/auth.
+- Add `/auth` in the following variable `FEASIBILITY_BACKEND_KEYCLOAK_BASE_URL_JWK` in [backend/.env]
+- Change the variable `FEASIBILITY_BACKEND_BROKER_CLIENT_DIRECT_AUTH_OAUTH_ISSUER_URL` when using the bundled keycloak in [backend/.env]replace the values with https://DOMAIN:REV_PROXY_PORT/auth/realms/blaze where DOMAIN is your domain and REV_PROXY_PORT is the port number set in rev-proxy/.env (default 444). For example, https://example.org:444/auth/realms/blaze.
+- On the [gui/deploy-config.json] change the following variables:
+  - `uiBackendApi > baseUrl`: set the domain part of the local feasibility portal backend with the context path `/api`. For example https://example.org/api.
+  -  `auth > baseUrl`: set the domain part of the local feasibility portal keycloak the context path `/auth`. For example https://example.org/auth.
+
+Please note that the keycloak provided here is an example setup, and we strongly recommend for each site to adjust the keycloak installation to their local security requirements or connect the local feasibility portal to a keycloak already provided at the site.
+
 For more details on the environment variables see the paragraph **Configurable environment variables** of this README.
 
 ### Step 6 - Start the feasibility portal
