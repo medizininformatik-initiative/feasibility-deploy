@@ -14,7 +14,27 @@ Please refer to the respective repositories for a more in depth changelog of sin
 |Backend|<https://github.com/medizininformatik-initiative/feasibility-backend>|
 |DSF Feasibility Plugin|<https://github.com/medizininformatik-initiative/feasibility-dsf-process>|
 |FLARE|<https://github.com/medizininformatik-initiative/flare>|
-|Blaze FHIR server|<https://github.com/medizininformatik-initiative/blaze>|
+|TORCH|<https://github.com/medizininformatik-initiative/torch|
+|Blaze FHIR server|<https://github.com/samply/blaze>|
+
+
+## [5.0.0-alpha] - 2024-10-21
+
+### Features
+
+| Feature | Affected Components |
+| -- | -- |
+|UI Re-Desig, Restructuring of Code|UI, Backend|
+|Extended Criteria Search (Elastic Search)|UI, Backend, Ontology Generation|
+|Add OAuth2 to triangle components|TORCH, FLARE|
+|Added Dataselection and Extraction |UI, Backend, Ontology Generation, TORCH|
+|Migrated from Mapping code system tree strcture to poly tree structure to support non strict hierarchical code systems like sct |UI, Backend, Ontology Generation, TORCH, FLARE|
+|Loading and displaying of criteria availability |UI, Backend, Ontology Generation|
+
+### Overall
+
+- Updated all components to new versions
+- Added TORCH component for data selection and extraction in the triangle
 
 
 ## [4.1.0] - 2024-07-16
