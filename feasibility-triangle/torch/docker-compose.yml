@@ -13,6 +13,7 @@ services:
     ports:
       - ${TORCH_PORT:-127.0.0.1:8086}:8080
     environment:
+      JAVA_TOOL_OPTIONS: ${TORCH_JVM_ARGS:--Xmx4g}
       TORCH_FHIR_URL: ${TORCH_FHIR_URL:-http://torch-data-store:8080/fhir}
       TORCH_FLARE_URL: ${TORCH_FLARE_URL:-http://torch-flare:8080}
       TORCH_MAPPING_CONSENT: /app/mappings/consent-mappings_fhir.json
