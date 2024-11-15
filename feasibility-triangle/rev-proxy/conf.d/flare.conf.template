@@ -17,4 +17,8 @@ server {
         proxy_pass http://$upstream$request_uri;
         proxy_set_header Authorization "";
     }
+
+    location /query/execute-cohort {
+        auth_basic "Restricted";
+    }
 }

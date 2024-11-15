@@ -1,7 +1,7 @@
 services:
   dataportal-backend:
     restart: unless-stopped
-    image: ghcr.io/medizininformatik-initiative/feasibility-backend:6.0.0-alpha.3
+    image: ghcr.io/medizininformatik-initiative/feasibility-backend:6.0.0-alpha.6
     ports:
     - ${DATAPORTAL_BACKEND_PORT:-127.0.0.1:8091}:8090
     depends_on:
@@ -108,7 +108,7 @@ services:
         source: dataportal-postgres-data
         target: /var/lib/postgresql/data
   dataportal-elastic:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.16.0
     ports:
       - "127.0.0.1:9200:9200"
       - "127.0.0.1:9300:9300"
@@ -128,22 +128,18 @@ services:
         source: dataportal-elastic-data
         target: /usr/share/elasticsearch/data
   init-elasticsearch:
-    image: curlimages/curl:8.8.0
+    image: ghcr.io/medizininformatik-initiative/dataportal-es-init:latest
     depends_on:
       dataportal-elastic:
         condition: service_healthy
     environment:
-      ELASTIC_HOST: http://dataportal-elastic:9200
-      ELASTIC_GIT_TAG: v3.0.0-test.2
-      ELASTIC_FILEPATH: https://github.com/medizininformatik-initiative/fhir-ontology-generator/raw/TAGPLACEHOLDER/example/fdpg-ontology/
-      ELASTIC_FILENAME: elastic.zip
-      # if set to false, existing indices are not overridden.
-      OVERRIDE_EXISTING: true
-    entrypoint: [ "sh", "-c", "/tmp/init.sh" ]
-    volumes:
-      - type: bind
-        source: ./elastic-init.sh
-        target: /tmp/init.sh
+      ES_HOST: http://dataportal-elastic
+      ES_PORT: 9200
+      ONTO_GIT_TAG: v3.0.0-alpha.1
+      ONTO_REPO: https://github.com/medizininformatik-initiative/fhir-ontology-generator/raw/
+      ONTO_RELATIVE_PATH: /example/fdpg-ontology/
+      DOWNLOAD_FILENAME: elastic.zip
+      EXIT_ON_EXISTING_INDICES: ${DATAPORTAL_ES_INIT_EXIT_ON_EXISTING_INDICES:-false}
 
 volumes:
   dataportal-postgres-data:
