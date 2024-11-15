@@ -17,6 +17,13 @@ Please refer to the respective repositories for a more in depth changelog of sin
 |TORCH|<https://github.com/medizininformatik-initiative/torch|
 |Blaze FHIR server|<https://github.com/samply/blaze>|
 
+## [5.0.0-alpha.1] - 2024-11-15
+
+### Overall
+
+- Updated all components to new versions
+- Made FLARE execute-cohort endpoint only available on local docker network and new FLARE version makes enabling execute-cohort endpoint configurable
+
 
 ## [5.0.0-alpha] - 2024-10-21
 
@@ -24,7 +31,7 @@ Please refer to the respective repositories for a more in depth changelog of sin
 
 | Feature | Affected Components |
 | -- | -- |
-|UI Re-Desig, Restructuring of Code|UI, Backend|
+|UI Re-Design, Restructuring of Code|UI, Backend|
 |Extended Criteria Search (Elastic Search)|UI, Backend, Ontology Generation|
 |Add OAuth2 to triangle components|TORCH, FLARE|
 |Added Dataselection and Extraction |UI, Backend, Ontology Generation, TORCH|

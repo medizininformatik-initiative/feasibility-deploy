@@ -1,10 +1,11 @@
 services:
   flare:
-    image: ghcr.io/medizininformatik-initiative/flare:2.4.0-alpha.2
+    image: ghcr.io/medizininformatik-initiative/flare:2.4.0-alpha.3
     ports:
       - ${FEASIBILITY_FLARE_PORT:-127.0.0.1:8084}:8080
     environment:
       FLARE_FHIR_SERVER: ${FLARE_FHIR_SERVER_URL:-http://fhir-server:8080/fhir/}
+      FLARE_ENABLE_COHORT_ENDPOINT: ${FLARE_ENABLE_COHORT_ENDPOINT:-false}
       FLARE_FHIR_USER: ${FLARE_FHIR_USER:-}
       FLARE_FHIR_PASSWORD: ${FLARE_FHIR_PW:-}
       FLARE_FHIR_MAX_CONNECTIONS: ${FLARE_FHIR_MAX_CONNECTIONS:-32}
