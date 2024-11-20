@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BASE_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit 1 ; pwd -P )"
-envfiles=( "$BASE_DIR/fhir-server/.env" "$BASE_DIR/flare/.env" "$BASE_DIR/torch/.env" "$BASE_DIR/rev-proxy/.env")
+envfiles=( "$BASE_DIR/fhir-server/.env" "$BASE_DIR/flare/.env" "$BASE_DIR/torch/.env" "$BASE_DIR/rev-proxy/.env" "$BASE_DIR/fhir-data-evaluator/.env")
 
 for file in "${envfiles[@]}"
 do
