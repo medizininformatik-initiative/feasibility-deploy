@@ -17,6 +17,33 @@ Please refer to the respective repositories for a more in depth changelog of sin
 |TORCH|<https://github.com/medizininformatik-initiative/torch|
 |Blaze FHIR server|<https://github.com/samply/blaze>|
 
+
+## [5.0.0] - 2024-11-21
+
+### Ontology
+
+This Release is based on ontology Version [v3.0.0](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.0.0)
+
+
+### Overall
+
+- Updated all components to new versions
+- Made FLARE execute-cohort endpoint only available on local docker network and new FLARE version makes enabling execute-cohort endpoint configurable
+- Added Fhir-Data-Evaluator (FDE) to triangle
+
+### Features
+
+| Feature | Affected Components |
+| -- | -- |
+|UI Re-Design, Restructuring of Code|UI, Backend|
+|Extended Criteria Search (Elastic Search)|UI, Backend, Ontology Generation|
+|Add OAuth2 to triangle components|TORCH, FLARE|
+|Added Dataselection and Extraction |UI, Backend, Ontology Generation, TORCH|
+|Migrated from Mapping code system tree strcture to poly tree structure to support non strict hierarchical code systems like sct |UI, Backend, Ontology Generation, TORCH, FLARE|
+|Loading and displaying of criteria availability |UI, Backend, Ontology Generation|
+|Added new modules and Updated Ontology|UI, Backend, Ontology Generation, FLARE, sq2cq, TORCH|
+
+
 ## [5.0.0-alpha.1] - 2024-11-15
 
 ### Overall

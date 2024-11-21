@@ -1,7 +1,7 @@
 
 services:
   auth-db:
-    image: postgres:15-alpine
+    image: postgres:17-alpine
     restart: unless-stopped
     environment:
       POSTGRES_DB: ${FEASIBILITY_KC_DB:-keycloakdb}
@@ -11,7 +11,7 @@ services:
       - "feasibility-auth-db:/var/lib/postgresql/data"
 
   auth:
-    image: keycloak/keycloak:25.0
+    image: keycloak/keycloak:26.0
     command: ["start", "--import-realm"]
     restart: unless-stopped
     environment:
