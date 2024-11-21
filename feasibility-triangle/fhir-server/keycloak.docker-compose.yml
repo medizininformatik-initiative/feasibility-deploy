@@ -1,6 +1,6 @@
 services:
   fhir-server-frontend-keycloak:
-    image: "keycloak/keycloak:25.0"
+    image: "keycloak/keycloak:26.0"
     command: ["start", "--import-realm"]
     healthcheck:
       test: ["CMD-SHELL", "exec 3<>/dev/tcp/127.0.0.1/9000;echo -e \"GET ${FHIR_SERVER_FRONTEND_KEYCLOAK_HTTP_RELATIVE_PATH}/health/ready  HTTP/1.1\r\nhost: localhost\r\nConnection: close\r\n\r\n\" >&3;grep \"HTTP/1.1 200 OK\" <&3"]

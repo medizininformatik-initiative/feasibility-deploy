@@ -1,7 +1,7 @@
 services:
   rev-proxy:
     restart: unless-stopped
-    image: nginxinc/nginx-unprivileged:1.25.5-alpine
+    image: nginxinc/nginx-unprivileged:1.27-alpine
     environment:
       FHIR_SERVER_HOSTNAME: ${FHIR_SERVER_HOSTNAME:-fhir.localhost}
       KEYCLOAK_HOSTNAME: ${KEYCLOAK_HOSTNAME:-auth.localhost}
