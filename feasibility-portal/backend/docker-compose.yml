@@ -134,7 +134,7 @@ services:
     environment:
       ES_HOST: http://dataportal-elastic
       ES_PORT: 9200
-      ONTO_GIT_TAG: v3.0.0-alpha.1
+      ONTO_GIT_TAG: v3.0.0
       ONTO_REPO: https://github.com/medizininformatik-initiative/fhir-ontology-generator/raw/
       ONTO_RELATIVE_PATH: /example/fdpg-ontology/
       DOWNLOAD_FILENAME: elastic.zip
