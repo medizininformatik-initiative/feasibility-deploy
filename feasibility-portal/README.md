@@ -97,6 +97,8 @@ For the reverse proxy you need to choose the configuration (variable `FEASIBILIT
   - `uiBackendApi > baseUrl`: set the domain part of the local feasibility portal backend with the context path `/api`. For example https://example.org/api.
   -  `auth > baseUrl`: set the domain part of the local feasibility portal keycloak the context path `/auth`. For example https://example.org/auth.
 
+In case you do **not** have a docker-wide configuration of your organizations proxy server(s) you might need to add the following parameters to the `environment` section of the `init-elasticsearch` service in `backend/docker-compose.yml`: `HTTP_PROXY`, `HTTPS_PROXY` and `NO_PROXY`. The first two should obviously be your proxy server, the last one must include `dataportal-elastic`. 
+
 Please note that the keycloak provided here is an example setup, and we strongly recommend for each site to adjust the keycloak installation to their local security requirements or connect the local feasibility portal to a keycloak already provided at the site.
 
 For more details on the environment variables see the paragraph **Configurable environment variables** of this README.
