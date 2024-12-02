@@ -108,9 +108,6 @@ services:
         target: /var/lib/postgresql/data
   dataportal-elastic:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.16.0
-    ports:
-      - "127.0.0.1:9200:9200"
-      - "127.0.0.1:9300:9300"
     healthcheck:
       test: [ "CMD-SHELL", "curl --silent --fail localhost:9200/_cluster/health || exit 1" ]
       interval: 30s
@@ -134,7 +131,7 @@ services:
     environment:
       ES_HOST: http://dataportal-elastic
       ES_PORT: 9200
-      ONTO_GIT_TAG: v3.0.0-alpha.1
+      ONTO_GIT_TAG: v3.0.0
       ONTO_REPO: https://github.com/medizininformatik-initiative/fhir-ontology-generator/raw/
       ONTO_RELATIVE_PATH: /example/fdpg-ontology/
       DOWNLOAD_FILENAME: elastic.zip
