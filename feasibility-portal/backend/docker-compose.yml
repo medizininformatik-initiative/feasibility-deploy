@@ -1,7 +1,7 @@
 services:
   dataportal-backend:
     restart: unless-stopped
-    image: ghcr.io/medizininformatik-initiative/feasibility-backend:6.0.0
+    image: ghcr.io/medizininformatik-initiative/feasibility-backend:6.0.3
     ports:
     - ${DATAPORTAL_BACKEND_PORT:-127.0.0.1:8091}:8090
     depends_on:
@@ -127,15 +127,15 @@ services:
         source: dataportal-elastic-data
         target: /usr/share/elasticsearch/data
   init-elasticsearch:
-    image: ghcr.io/medizininformatik-initiative/dataportal-es-init:latest
+    image: ghcr.io/medizininformatik-initiative/dataportal-es-init:1.1
     depends_on:
       dataportal-elastic:
         condition: service_healthy
     environment:
       ES_HOST: http://dataportal-elastic
       ES_PORT: 9200
-      ONTO_GIT_TAG: v3.0.0-alpha.1
-      ONTO_REPO: https://github.com/medizininformatik-initiative/fhir-ontology-generator/raw/
+      ONTO_GIT_TAG: v3.0.1
+      ONTO_REPO: https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/download
       ONTO_RELATIVE_PATH: /example/fdpg-ontology/
       DOWNLOAD_FILENAME: elastic.zip
       EXIT_ON_EXISTING_INDICES: ${DATAPORTAL_ES_INIT_EXIT_ON_EXISTING_INDICES:-false}
