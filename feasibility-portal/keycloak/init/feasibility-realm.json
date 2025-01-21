@@ -110,6 +110,15 @@
         "clientRole": false,
         "containerId": "2268ed68-686a-4c9e-8637-6c366a60d459",
         "attributes": {}
+      },
+      {
+        "id": "f3229666-6699-42fb-b3bc-399cd8256e79",
+        "name": "dsf_admin",
+        "description": "Administrative access to DSF instance of FDPG",
+        "composite": false,
+        "clientRole": false,
+        "containerId": "2268ed68-686a-4c9e-8637-6c366a60d459",
+        "attributes": {}
       }
     ],
     "client": {

@@ -1,7 +1,7 @@
 services:
   dataportal-backend:
     restart: unless-stopped
-    image: ghcr.io/medizininformatik-initiative/feasibility-backend:6.0.0
+    image: ghcr.io/medizininformatik-initiative/feasibility-backend:6.0.3
     ports:
     - ${DATAPORTAL_BACKEND_PORT:-127.0.0.1:8091}:8090
     depends_on:
@@ -127,7 +127,7 @@ services:
         source: dataportal-elastic-data
         target: /usr/share/elasticsearch/data
   init-elasticsearch:
-    image: ghcr.io/medizininformatik-initiative/dataportal-es-init:latest
+    image: ghcr.io/medizininformatik-initiative/dataportal-es-init:1.2.1
     depends_on:
       dataportal-elastic:
         condition: service_healthy
