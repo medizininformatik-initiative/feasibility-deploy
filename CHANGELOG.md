@@ -18,6 +18,49 @@ Please refer to the respective repositories for a more in depth changelog of sin
 |Blaze FHIR server|<https://github.com/samply/blaze>|
 
 
+## [5.0.2] - 2025-02-03
+
+**minor fixes in v5.0.2**
+
+- sq2cql was updated to handle consent MedicationStatement and MedicationRequest correctly
+
+### known bugs
+
+- Encounter Module faulty at sq2cql translation and therefore non functioning (CQL)
+
+### Ontology
+
+This Release is based on ontology Version [v3.0.1](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.0.1)
+
+### no updates to
+
+- Everything except backend
+
+
+## [5.0.1] - 2024-12-18
+
+**minor fixes in v5.0.1**
+
+- Ontology contained multiple instances of the same codes but lacked others -> fixed, v3.0.1
+- sq2cql was updated to handle consent correctly
+- UI was unable to save cohort selections -> fixed
+
+### known bugs
+
+- Encounter Module faulty at sq2cql translation and therefore non functioning (CQL)
+- Medication Statement, Medication request faulty at sq2cql level and therefore non functioning (CQL)
+
+### Ontology
+
+This Release is based on ontology Version [v3.0.1](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.0.1)
+Flare contains new ontology
+
+### no updates to
+
+- Torch
+- FDE
+
+
 ## [5.0.0] - 2024-11-21
 
 ### Ontology
