@@ -731,23 +731,23 @@ define "2-Condition":
   exists [Condition: Code 'E13.91' from icd10] or
   exists [Condition: Code 'E13.90' from icd10]
 
-define "3-Labor-1":
+define "3-Laboratory-1":
   exists [Observation: Code '718-7' from loinc]
 
-define "3-Labor-2":
+define "3-Laboratory-2":
   exists [Observation: Code '17856-6' from loinc]
 
-define "3-Labor-3":
+define "3-Laboratory-3":
   exists [Observation: Code '4548-4' from loinc]
 
-define "3-Labor-4":
+define "3-Laboratory-4":
   exists [Observation: Code '4549-2' from loinc]
 
-define "3-Labor":
-  "3-Labor-1" or
-  "3-Labor-2" or
-  "3-Labor-3" or
-  "3-Labor-4"
+define "3-Laboratory":
+  "3-Laboratory-1" or
+  "3-Laboratory-2" or
+  "3-Laboratory-3" or
+  "3-Laboratory-4"
 
 define "4-Prozedur-1":
   exists [Procedure: Code '3-20' from oops] or
@@ -898,11 +898,11 @@ define "4-Prozedur":
   "4-Prozedur-1" or
   "4-Prozedur-2"
 
-define "5-Konsent":
+define "5-Consent":
   exists (from [Consent] C
     where C.provision.provision.code.coding contains Code '2.16.840.1.113883.3.1937.777.24.5.3.8' from consent_policy)
 
-define "6-Medikation":
+define "6-Medication":
   exists (from [MedicationAdministration] M
     where M.medication.reference in AntidiabetikaA10Ref) or
   exists (from [MedicationAdministration] M
@@ -1665,8 +1665,8 @@ define "7-Specimen":
 define InInitialPopulation:
   "1-Patient" and
   "2-Condition" and
-  "3-Labor" and
+  "3-Laboratory" and
   "4-Prozedur" and
-  "5-Konsent" and
-  "6-Medikation" and
+  "5-Consent" and
+  "6-Medication" and
   "7-Specimen"
