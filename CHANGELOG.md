@@ -17,6 +17,32 @@ Please refer to the respective repositories for a more in depth changelog of sin
 |TORCH|<https://github.com/medizininformatik-initiative/torch|
 |Blaze FHIR server|<https://github.com/samply/blaze>|
 
+## [5.1.0] - 2025-02-18
+
+**minor fixes in v5.1.0**
+
+- sq2cql and ontology were updated to handle time restrictions by type correctly
+- UI Bugfixes: Remove hashes from feasibility detail results, Fixed error message display, Resolve inconsistency between summary and details results
+
+### New Features
+
+- Added translations
+- Added new CDS modules to dataselection - see ontology release
+
+### known bugs
+
+- Encounter Module faulty at sq2cql translation and therefore non functioning (CQL)
+
+### Ontology
+
+This Release is based on ontology Version [v3.1.0](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.1.0)
+
+### Updates to
+
+- backend and within sq2cql
+- ontology
+- UI
+
 
 ## [5.0.2] - 2025-02-03
 
