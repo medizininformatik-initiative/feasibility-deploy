@@ -17,6 +17,25 @@ Please refer to the respective repositories for a more in depth changelog of sin
 |TORCH|<https://github.com/medizininformatik-initiative/torch|
 |Blaze FHIR server|<https://github.com/samply/blaze>|
 
+## [5.1.1] - 2025-03-03
+
+**minor fixes in v5.1.1**
+
+- Backend Bugfixes: Improve elastic search query for better results, fix initial counter value of remaining result details views
+
+### known bugs
+
+- Encounter Module faulty at sq2cql translation and therefore non functioning (CQL)
+
+### Ontology
+
+This Release is based on ontology Version [v3.1.0](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.1.0)
+
+### Updates to
+
+- backend
+
+
 ## [5.1.0] - 2025-02-18
 
 **minor fixes in v5.1.0**
