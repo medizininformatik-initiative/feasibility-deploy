@@ -50,7 +50,7 @@ This release is based on ontology version [v3.2.0](https://github.com/medizininf
 
 ### Updates to
 
-- backend to v6.2.0 and within sq2cql to v1.0.0
+- backend to [v6.2.0](https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v6.2.0) and within sq2cql to [v1.0.0](https://github.com/medizininformatik-initiative/sq2cql/releases/tag/v1.0.0)
 - ontology to [v3.2.0](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.2.0)
 - UI to [v6.0.8](https://github.com/medizininformatik-initiative/feasibility-gui/releases/tag/v6.0.8)
 - Blaze to [v0.33](https://github.com/samply/blaze/releases/tag/v0.33.0)
