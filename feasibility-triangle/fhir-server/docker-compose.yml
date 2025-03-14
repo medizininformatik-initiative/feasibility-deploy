@@ -1,6 +1,6 @@
 services:
   fhir-server:
-    image: samply/blaze:0.30
+    image: samply/blaze:0.33
     healthcheck:
       test: ["CMD-SHELL", "curl --fail -s http://localhost:8080/health"]
       interval: 5s
