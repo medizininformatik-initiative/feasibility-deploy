@@ -6,16 +6,55 @@ All notable changes to this project will be documented in this file.
 
 Please refer to the respective repositories for a more in depth changelog of single components:
 
-|Component|Link|
-|--|--|
-|UI|<https://github.com/medizininformatik-initiative/feasibility-gui>|
-|Ontology Generation|<https://github.com/medizininformatik-initiative/fhir-ontology-generator>|
-|sq2cql|<https://github.com/medizininformatik-initiative/sq2cql>|
-|Backend|<https://github.com/medizininformatik-initiative/feasibility-backend>|
-|DSF Feasibility Plugin|<https://github.com/medizininformatik-initiative/feasibility-dsf-process>|
-|FLARE|<https://github.com/medizininformatik-initiative/flare>|
-|TORCH|<https://github.com/medizininformatik-initiative/torch|
-|Blaze FHIR server|<https://github.com/samply/blaze>|
+|Component|Link|Version|
+|--|--|--|
+|UI|<https://github.com/medizininformatik-initiative/feasibility-gui>|[6.0.8][ui]|
+|Ontology Generation|<https://github.com/medizininformatik-initiative/fhir-ontology-generator>|[3.2.0][onto]|
+|sq2cql|<https://github.com/medizininformatik-initiative/sq2cql>|[1.0.0][sq2cql]|
+|Backend|<https://github.com/medizininformatik-initiative/feasibility-backend>|[6.2.0][backend]|
+|DSF Feasibility Plugin|<https://github.com/medizininformatik-initiative/feasibility-dsf-process>|[1.0.0.7][dsf-feas]|
+|FLARE|<https://github.com/medizininformatik-initiative/flare>|[2.5.0][flare]|
+|TORCH|<https://github.com/medizininformatik-initiative/torch>|[1.0.0-alpha.3][torch]|
+|Blaze FHIR server|<https://github.com/samply/blaze>|[0.33][blaze]|
+
+[ui]: https://github.com/medizininformatik-initiative/feasibility-gui/releases/tag/v6.0.8
+[onto]: https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.2.0
+[sq2cql]: https://github.com/medizininformatik-initiative/sq2cql/releases/tag/v1.0.0
+[backend]: https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v6.2.0
+[dsf-feas]: https://github.com/medizininformatik-initiative/mii-process-feasibility/releases/tag/v1.0.0.7
+[flare]: https://github.com/medizininformatik-initiative/flare/releases/tag/v2.5.0
+[torch]: https://github.com/medizininformatik-initiative/torch/releases/tag/v1.0.0-alpha.3
+[blaze]: https://github.com/samply/blaze/releases/tag/v0.33.0
+
+
+## [5.2.0] - 2025-03-14
+
+**minor fixes in v5.2.0**
+
+- GUI:
+  - Details counter gets incremented correctly
+  - Combined consent is set in downloaded CCDL
+- Backend:
+  - Encounter Module fixed by fixed typing in ontology
+
+### New Features
+
+- Backend:
+  - Provide an endpoint for version information, accessible at path `/actuator/info`
+- GUI:
+  - Translation for consent text
+
+### Ontology
+
+This release is based on ontology version [v3.2.0](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.2.0)
+
+### Updates to
+
+- backend to v6.2.0 and within sq2cql to v1.0.0
+- ontology to [v3.2.0](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.2.0)
+- UI to [v6.0.8](https://github.com/medizininformatik-initiative/feasibility-gui/releases/tag/v6.0.8)
+- Blaze to [v0.33](https://github.com/samply/blaze/releases/tag/v0.33.0)
+
 
 ## [5.1.1] - 2025-03-03
 
