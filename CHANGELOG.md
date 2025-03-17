@@ -9,22 +9,39 @@ Please refer to the respective repositories for a more in depth changelog of sin
 |Component|Link|Version|
 |--|--|--|
 |UI|<https://github.com/medizininformatik-initiative/feasibility-gui>|[6.0.8][ui]|
-|Ontology Generation|<https://github.com/medizininformatik-initiative/fhir-ontology-generator>|[3.2.0][onto]|
+|Ontology Generation|<https://github.com/medizininformatik-initiative/fhir-ontology-generator>|[3.2.1][onto]|
 |sq2cql|<https://github.com/medizininformatik-initiative/sq2cql>|[1.0.0][sq2cql]|
-|Backend|<https://github.com/medizininformatik-initiative/feasibility-backend>|[6.2.0][backend]|
+|Backend|<https://github.com/medizininformatik-initiative/feasibility-backend>|[6.2.1][backend]|
 |DSF Feasibility Plugin|<https://github.com/medizininformatik-initiative/feasibility-dsf-process>|[1.0.0.7][dsf-feas]|
 |FLARE|<https://github.com/medizininformatik-initiative/flare>|[2.5.0][flare]|
 |TORCH|<https://github.com/medizininformatik-initiative/torch>|[1.0.0-alpha.3][torch]|
 |Blaze FHIR server|<https://github.com/samply/blaze>|[0.33][blaze]|
 
 [ui]: https://github.com/medizininformatik-initiative/feasibility-gui/releases/tag/v6.0.8
-[onto]: https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.2.0
+[onto]: https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.2.1
 [sq2cql]: https://github.com/medizininformatik-initiative/sq2cql/releases/tag/v1.0.0
-[backend]: https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v6.2.0
+[backend]: https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v6.2.1
 [dsf-feas]: https://github.com/medizininformatik-initiative/mii-process-feasibility/releases/tag/v1.0.0.7
 [flare]: https://github.com/medizininformatik-initiative/flare/releases/tag/v2.5.0
 [torch]: https://github.com/medizininformatik-initiative/torch/releases/tag/v1.0.0-alpha.3
 [blaze]: https://github.com/samply/blaze/releases/tag/v0.33.0
+
+
+## [5.2.1] - 2025-03-17
+
+**minor fixes in v5.2.1**
+
+- Ontology:
+  - Revert changes in FHIRSearch mapping to fix incompatibility with FLARE
+
+### Ontology
+
+This release is based on ontology version [v3.2.1](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.2.1)
+
+### Updates to
+
+- backend to [v6.2.1](https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v6.2.1)
+- ontology to [v3.2.1](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.2.1)
 
 
 ## [5.2.0] - 2025-03-14
@@ -50,7 +67,7 @@ This release is based on ontology version [v3.2.0](https://github.com/medizininf
 
 ### Updates to
 
-- backend to v6.2.0 and within sq2cql to v1.0.0
+- backend to [v6.2.0](https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v6.2.0) and within sq2cql to [v1.0.0](https://github.com/medizininformatik-initiative/sq2cql/releases/tag/v1.0.0)
 - ontology to [v3.2.0](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.2.0)
 - UI to [v6.0.8](https://github.com/medizininformatik-initiative/feasibility-gui/releases/tag/v6.0.8)
 - Blaze to [v0.33](https://github.com/samply/blaze/releases/tag/v0.33.0)
