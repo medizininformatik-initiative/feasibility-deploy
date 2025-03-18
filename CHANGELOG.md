@@ -27,6 +27,23 @@ Please refer to the respective repositories for a more in depth changelog of sin
 [blaze]: https://github.com/samply/blaze/releases/tag/v0.33.0
 
 
+## [5.2.2] - 2025-03-18
+
+**minor fixes**
+
+- Ontology:
+  - Fix - do not set reference fields as recommended for data selection
+
+### Ontology
+
+This release is based on ontology version [v3.2.2](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.2.2)
+
+### Updates to
+
+- backend to [v6.2.2](https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v6.2.2)
+- ontology to [v3.2.2](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.2.2)
+
+
 ## [5.2.1] - 2025-03-17
 
 **minor fixes in v5.2.1**
