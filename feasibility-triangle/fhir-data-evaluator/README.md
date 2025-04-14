@@ -1,20 +1,12 @@
 # The Fhir-Data-Evaluator (FDE)
 
 The FDE is used as part of the feasibility triangle to collect metadata about available data on the local FHIR server.
-This data can then be sent via the DSF to the central portal or loaded into the local portal to display the availability of single criteria in the fhir server.
+This data can then be sent via the DSF to the central portal or loaded into the local portal to display the availability
+of single criteria in the fhir server.
 
-## Running the FDE
+## Configuration
 
-To run the FDE copy the .env.default file to .env in the this folder and change the env variables according to your requirements.
-
-Run the FDE by executing the `run-fde` script provided here.
-
-You can as is configured by default send the metadata report back to your FHIR server which contains your patient data or
-alternatively send the data to a different fhir server.
-
-Regardless of this choice, the FHIR server which contains the report should be accessible from your DSE BPE in order to send the report to the central fdpg DSF using the
-data transfer plugin https://github.com/medizininformatik-initiative/mii-process-data-transfer.
-
+Copy the `.env.default` file to `.env` into this folder and change the env variables according to your requirements.
 
 | Env Variable                                    | Description                                                                                          | Default                                       | Possible Values                                 |
 |-------------------------------------------------|------------------------------------------------------------------------------------------------------|-----------------------------------------------|-------------------------------------------------|
@@ -39,3 +31,27 @@ data transfer plugin https://github.com/medizininformatik-initiative/mii-process
 | FDE_AUTHOR_IDENTIFIER_VALUE                     | Value for the author's identifier                                                                    | fde-dic                                       | String                                          |
 | FDE_PROJECT_IDENTIFIER_SYSTEM                   | System for the project's identifier                                                                  | http://medizininformatik-initiative.de/sid/project-identifier | URL                             |
 | FDE_PROJECT_IDENTIFIER_VALUE                    | Value for the project's identifier                                                                   | fdpg-data-availability-report                 | String                                          |
+
+## Running the FDE
+
+Run the FDE by executing the `run-fde` script provided here.
+
+You can, as is configured by default, send the metadata report back to your FHIR server which contains your patient data
+or alternatively send the data to a different fhir server. The metadata report is sent in the form of a FHIR resource of
+type `MeasureReport` along with a `DocumentReference` FHIR resource.
+
+Regardless of the choice, the FHIR server which contains the report should be accessible from your DSE BPE in order to 
+send the report to the central FDPG DSF using the [data transfer plugin][data-transfer].
+
+## Sending the report to the central portal
+
+If you want to send the report to the central portal, you need to install and configure the data transfer plugin in your
+DSE BPE according to the [data transfer plugin documentation][data-transfer-doc]. Then you follow the steps mentioned in
+the documentation's section [DIC: Start Send Process][start-send-process] to send the report to the central portal. Use
+the same project identifier as is configured in the FDE (`fdpg-data-availability-report` by default) and replace the DMS
+organization identifier placeholder with the FDPG organization identifier `forschen-fuer-gesundheit.de`.
+
+
+[data-transfer]:  https://github.com/medizininformatik-initiative/mii-process-data-transfer
+[data-transfer-doc]:  https://github.com/medizininformatik-initiative/mii-process-data-transfer/wiki
+[start-send-process]: https://github.com/medizininformatik-initiative/mii-process-data-transfer/wiki/Process-Data-Transfer-Start-v1.0.x.x#dic-start-send-process
