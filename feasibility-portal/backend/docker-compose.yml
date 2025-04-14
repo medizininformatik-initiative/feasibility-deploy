@@ -1,7 +1,7 @@
 services:
   dataportal-backend:
     restart: unless-stopped
-    image: ghcr.io/medizininformatik-initiative/feasibility-backend:6.2.2
+    image: ghcr.io/medizininformatik-initiative/feasibility-backend:7.0.0-alpha.1
     ports:
     - ${DATAPORTAL_BACKEND_PORT:-127.0.0.1:8091}:8090
     depends_on:

@@ -8,23 +8,49 @@ Please refer to the respective repositories for a more in depth changelog of sin
 
 |Component|Link|Version|
 |--|--|--|
-|UI|<https://github.com/medizininformatik-initiative/feasibility-gui>|[6.0.10][ui]|
+|UI|<https://github.com/medizininformatik-initiative/feasibility-gui>|[6.1.0][ui]|
 |Ontology Generation|<https://github.com/medizininformatik-initiative/fhir-ontology-generator>|[3.2.2][onto]|
 |sq2cql|<https://github.com/medizininformatik-initiative/sq2cql>|[1.0.0][sq2cql]|
-|Backend|<https://github.com/medizininformatik-initiative/feasibility-backend>|[6.2.2][backend]|
+|Backend|<https://github.com/medizininformatik-initiative/feasibility-backend>|[7.0.0-alpha.1][backend]|
 |DSF Feasibility Plugin|<https://github.com/medizininformatik-initiative/feasibility-dsf-process>|[1.0.0.8][dsf-feas]|
 |FLARE|<https://github.com/medizininformatik-initiative/flare>|[2.5.0][flare]|
 |TORCH|<https://github.com/medizininformatik-initiative/torch>|[1.0.0-alpha.3][torch]|
 |Blaze FHIR server|<https://github.com/samply/blaze>|[0.33][blaze]|
 
-[ui]: https://github.com/medizininformatik-initiative/feasibility-gui/releases/tag/v6.0.10
+[ui]: https://github.com/medizininformatik-initiative/feasibility-gui/releases/tag/v6.1.0
 [onto]: https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.2.2
 [sq2cql]: https://github.com/medizininformatik-initiative/sq2cql/releases/tag/v1.0.0
-[backend]: https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v6.2.2
+[backend]: https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v7.0.0-alpha.1
 [dsf-feas]: https://github.com/medizininformatik-initiative/mii-process-feasibility/releases/tag/v1.0.0.8
 [flare]: https://github.com/medizininformatik-initiative/flare/releases/tag/v2.5.0
 [torch]: https://github.com/medizininformatik-initiative/torch/releases/tag/v1.0.0-alpha.3
 [blaze]: https://github.com/samply/blaze/releases/tag/v0.33.0
+
+
+## [5.3.0-alpha] - 2025-04-14
+
+**minor fixes in v5.3.0-alpha**
+
+- Backend:
+  - Correctly read filter dates from data query
+- UI:
+  - Show dates in european format
+
+### New Features
+
+- Backend:
+  - Extend API to support save and load ot corhort and data selections
+- UI:
+  - Save dialog with option to save cohort and data selection
+
+### Ontology
+
+This release is based on ontology version [v3.2.2](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.2.2)
+
+### Updates to
+
+- backend to [v7.0.0-alpha.1](https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v7.0.0-alpha.1)
+- UI to [v6.1.0](https://github.com/medizininformatik-initiative/feasibility-gui/releases/tag/v6.1.0)
 
 
 ## [5.2.4] - 2025-03-21
