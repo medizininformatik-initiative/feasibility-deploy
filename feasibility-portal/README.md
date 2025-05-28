@@ -110,11 +110,11 @@ execute `bash start-feasibility-portal-local.sh`.
 
 This starts the following default local feasibility portal, with the following components:
 
-| Component | url                                | description |
-|-----------|------------------------------------|-------------|
-| GUI       | https://feasibility-subdomain.my-feasibility-domain      |             |
-| Keycloak  | https:/keycloak-subdomain.my-feasibility-domain |             |
-| Backend   | https:/backend-subdomain.my-feasibility-domain//api/v3 |             |
+| Component | url                                                   | description |
+|-----------|-------------------------------------------------------|-------------|
+| GUI       | https://feasibility-subdomain.my-feasibility-domain   |             |
+| Keycloak  | https:/keycloak-subdomain.my-feasibility-domain       |             |
+| Backend   | https:/backend-subdomain.my-feasibility-domain/api/v5 |             |
 
 
 ### Step 7 - Configure keycloak and add a user for the user interface
