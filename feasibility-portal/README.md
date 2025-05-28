@@ -1,6 +1,6 @@
 # Feasibility Portal
 
-The feasibility portal provides a feasibility query user interface with an appropriate backend, query translation to CQL and FHIR Search as well as 
+The feasibility portal provides a feasibility query user interface with an appropriate backend, query translation to CQL and FHIR Search as well as
 the central part of two middlewares for the transfer of the queries from the feasibility portal to the feasibility triangles located at participating sites (hospitals).
 
 
@@ -31,7 +31,7 @@ Running this setup safely at your site requires a valid certificate and domain. 
 You will require two .pem files: a cert.pem (certificate) and key.pem (private key).
 
 Once you have the appropriate certificates you should save them under `/opt/feasibility-deploy/feasibility-portal/auth`.
-Set the rights for all files of the auth folder to 655 `chmod 655 /opt/feasibility-deploy/feasibility-portal/auth/*`.  
+Set the rights for all files of the auth folder to 655 `chmod 655 /opt/feasibility-deploy/feasibility-portal/auth/*`.
 
 - Not providing the certificate files is not an option.
 
@@ -58,7 +58,7 @@ If you use the default local feasibility portal setup you will only have to chan
 
 Please note that all user env variables (variables containing USER) should be changed and all password variables (variables containing PASSWORD or PW) should be set to secure passwords.
 
-To configure domain proxies, change the hostnames in the following environment variables in the file `/opt/feasibility-deploy/feasibility-portal/proxy/.env.default` according to the domains you possess. 
+To configure domain proxies, change the hostnames in the following environment variables in the file `/opt/feasibility-deploy/feasibility-portal/proxy/.env.default` according to the domains you possess.
 
 The portal is configured by default to start the following services:
 
@@ -71,7 +71,7 @@ For the reverse proxy you need to choose the configuration (variable `FEASIBILIT
 
 - [./subdomains.nginx.conf](./proxy/subdomains.nginx.conf) with separate domains for the services (Backend, UI, Keycloak)
   - All subdomains must point to the host machine the portal will run.
- 
+
   - Set the service hostnames (`BACKEND_HOSTNAME`, `KEYCLOAK_HOSTNAME` and `GUI_HOSTNAME`, depending on which services you need) in [proxy/.env](./proxy/.env).
 - Change the following variables in [keycloak/.env](./keycloak /.env):
       - `FEASIBILITY_KC_HOSTNAME_URL`and `FEASIBILITY_KC_HOSTNAME_ADMIN_URL`: set the domain part to the value you set for `KEYCLOAK_HOSTNAME` before.
@@ -97,7 +97,7 @@ For the reverse proxy you need to choose the configuration (variable `FEASIBILIT
   - `uiBackendApi > baseUrl`: set the domain part of the local feasibility portal backend with the context path `/api`. For example https://example.org/api.
   -  `auth > baseUrl`: set the domain part of the local feasibility portal keycloak the context path `/auth`. For example https://example.org/auth.
 
-In case you do **not** have a docker-wide configuration of your organizations proxy server(s) you might need to add the following parameters to the `environment` section of the `init-elasticsearch` service in `backend/docker-compose.yml`: `HTTP_PROXY`, `HTTPS_PROXY` and `NO_PROXY`. The first two should obviously be your proxy server, the last one must include `dataportal-elastic`. 
+In case you do **not** have a docker-wide configuration of your organizations proxy server(s) you might need to add the following parameters to the `environment` section of the `init-elasticsearch` service in `backend/docker-compose.yml`: `HTTP_PROXY`, `HTTPS_PROXY` and `NO_PROXY`. The first two should obviously be your proxy server, the last one must include `dataportal-elastic`.
 
 Please note that the keycloak provided here is an example setup, and we strongly recommend for each site to adjust the keycloak installation to their local security requirements or connect the local feasibility portal to a keycloak already provided at the site.
 
@@ -127,11 +127,11 @@ User: admin
 Pw: my password set in step 6
 
 1. Set the domain for your client:
-Switch to the `feasibility` realm (realm name might be different if you use your own keycloak) by using the realm changer on top of the left navigation bar (should be set to `master` when logging in) 
+Switch to the `feasibility` realm (realm name might be different if you use your own keycloak) by using the realm changer on top of the left navigation bar (should be set to `master` when logging in)
 Click on `Clients > feasibility-webapp` and change the fields: Root URL, Home URL and Web Origins
-to: https://your-feasibility-domain  
-      
-    and **Valid Redirect URIs** to: https://your-feasibility-domain/*  
+to: https://your-feasibility-domain
+
+    and **Valid Redirect URIs** to: https://your-feasibility-domain/*
 
     and **Valid post logout redirect URIs** to: https://your-feasibility-domain/*
 
@@ -181,7 +181,7 @@ execute `bash start-feasibility-portal-local.sh`.
 
 Ask for the Url of the central portal at the FDPG or check Confluence for the correct address.
 
-Log in to the portal and send a request with the Inclusion Criterion chosen from the Inclusion criteria tree (folder sign under Inclusion Criteria) 
+Log in to the portal and send a request with the Inclusion Criterion chosen from the Inclusion criteria tree (folder sign under Inclusion Criteria)
 "Person > PatientIn > Geschlecht: Female,Male"
 
 and press "send".
@@ -225,18 +225,18 @@ and press "send".
 | FEASIBILITY_BACKEND_DSF_WEBSOCKET_URL                                             |                                                                                                                                                                              | wss://dsf-zars-fhir-proxy:443/fhir/ws              |                 | BACKEND   |
 | FEASIBILITY_BACKEND_DSF_ORGANIZATION_ID                                           |                                                                                                                                                                              | Test_ZARS                                          |                 | BACKEND   |
 | ### backend privacy ###                                                           |                                                                                                                                                                              |                                                    |                 | BACKEND   |
-| FEASIBILITY_BACKEND_PRIVACY_QUOTA_SOFT_CREATE_AMOUNT                              | Set how many queries a user can send in a soft interval minutes time                                                                                                         | 3                                                  |                 | BACKEND   |
-| FEASIBILITY_BACKEND_PRIVACY_QUOTA_SOFT_CREATE_INTERVALMINUTES                     | Set how many minutes time within which user can send soft create amount                                                                                                      | 1                                                  |                 | BACKEND   |
-| FEASIBILITY_BACKEND_PRIVACY_QUOTA_HARD_CREATE_AMOUNT                              | Set how many queries a user can send in a hard interval minutes time - if exceeded user will be blacklisted                                                                  | 50                                                 |                 | BACKEND   |
-| FEASIBILITY_BACKEND_PRIVACY_QUOTA_HARD_CREATE_INTERVALMINUTES                     | Set how many minutes time within which user can send hard create amount - if exceeded user will be blacklisted                                                               | 10080                                              |                 | BACKEND   |
-| FEASIBILITY_BACKEND_PRIVACY_QUOTA_READ_SUMMARY_POLLINGINTERVALSECONDS             | Set polling interval for summary results - sum of results across all connected sites                                                                                         | 10                                                 |                 | BACKEND   |
-| FEASIBILITY_BACKEND_PRIVACY_QUOTA_READ_DETAILED_OBFUSCATED_POLLINGINTERVALSECONDS | Set polling interval for detailed obfuscated results - detailed list of results per site - site name obfuscated                                                              | 10                                                 |                 | BACKEND   |
-| FEASIBILITY_BACKEND_PRIVACY_QUOTA_READ_DETAILEDOBFUSCATED_AMOUNT                  | Set how often a user can view detailed obfuscated query results in DETAILEDOBFUSCATED_INTERVALSECONDS seconds                                                                | 3                                                  |                 | BACKEND   |
-| FEASIBILITY_BACKEND_PRIVACY_QUOTA_READ_DETAILEDOBFUSCATED_INTERVALSECONDS         | Set how many seconds time within which user can view detailed results DETAILEDOBFUSCATED_AMOUNT                                                                              | 7200                                               |                 | BACKEND   |
+| FEASIBILITY_BACKEND_PRIVACY_QUOTA_SOFT_CREATE_AMOUNT                              | Set how many queries a user can send in a soft time interval (ISO 8601 duration)                                                                                             | 3                                                  |                 | BACKEND   |
+| FEASIBILITY_BACKEND_PRIVACY_QUOTA_SOFT_CREATE_INTERVAL                            | Set how much time within which user can send soft create amount                                                                                                              | PT1M                                               |                 | BACKEND   |
+| FEASIBILITY_BACKEND_PRIVACY_QUOTA_HARD_CREATE_AMOUNT                              | Set how many queries a user can send in a hard time interval - if exceeded user will be blacklisted                                                                          | 50                                                 |                 | BACKEND   |
+| FEASIBILITY_BACKEND_PRIVACY_QUOTA_HARD_CREATE_INTERVAL                            | Set how much time within which user can send hard create amount - if exceeded user will be blacklisted (ISO 8601 duration)                                                   | PT7D                                               |                 | BACKEND   |
+| FEASIBILITY_BACKEND_PRIVACY_QUOTA_READ_SUMMARY_POLLINGINTERVAL                    | Set polling interval for summary results - sum of results across all connected sites (ISO 8601 duration)                                                                     | PT10S                                              |                 | BACKEND   |
+| FEASIBILITY_BACKEND_PRIVACY_QUOTA_READ_DETAILED_OBFUSCATED_POLLINGINTERVAL        | Set polling interval for detailed obfuscated results - detailed list of results per site - site name obfuscated (ISO 8601 duration)                                          | PT10S                                              |                 | BACKEND   |
+| FEASIBILITY_BACKEND_PRIVACY_QUOTA_READ_DETAILEDOBFUSCATED_AMOUNT                  | Set how often a user can view detailed obfuscated query results in DETAILEDOBFUSCATED_INTERVAL time                                                                          | 3                                                  |                 | BACKEND   |
+| FEASIBILITY_BACKEND_PRIVACY_QUOTA_READ_DETAILEDOBFUSCATED_INTERVAL                | Set how much time within which user can view detailed results DETAILEDOBFUSCATED_AMOUNT (ISO 8601 duration)                                                                  | PT2H                                               |                 | BACKEND   |
 | FEASIBILITY_BACKEND_PRIVACY_THRESHOLD_RESULTS                                     | Set results size which has to be exceeded for results to be shown                                                                                                            | 20                                                 |                 | BACKEND   |
 | FEASIBILITY_BACKEND_PRIVACY_THRESHOLD_SITES                                       | Set number of sites which have to be exceeded for results to be shown                                                                                                        | 3                                                  |                 | BACKEND   |
 | FEASIBILITY_BACKEND_CERTS_PATH                                                    | path to certificates                                                                                                                                                         | ../dsf-broker/certs                                |                 | BACKEND   |
-| FEASIBILITY_BACKEND_QUERYRESULT_EXPIRY_MINUTES                                    | The time it takes for query results to expire and be deleted                                                                                                                 | 5                                                  |                 | BACKEND   |
+| FEASIBILITY_BACKEND_QUERYRESULT_EXPIRY                                            | The time it takes for query results to expire and be deleted (ISO 8601 duration)                                                                                             | PT5M                                               |                 | BACKEND   |
 | ### backend logging ###                                                           |                                                                                                                                                                              |                                                    |                 | BACKEND   |
 | FEASIBILITY_BACKEND_LOG_LEVEL_SQL                                                 | log level of the backend for hibernate                                                                                                                                       | info                                               |                 | BACKEND   |
 | FEASIBILITY_BACKEND_LOG_LEVEL                                                     | log level of the backend                                                                                                                                                     | info                                               |                 | BACKEND   |
@@ -265,9 +265,9 @@ and press "send".
 | ### additional dsf configs ###                                                    |                                                                                                                                                                              |                                                    |                 |           |
 | FEASIBILITY_DSF_BROKER_PROCESS_ORGANIZATION_IDENTIFIER                            | Identifier of this organization.                                                                                                                                             | Test_ZARS                                          | String          | DSF       |
 | FEASIBILITY_DSF_BROKER_PROCESS_FHIR_SERVER_BASE_URL                               | Base URL to a FHIR server or proxy for feasibility evaluation. This can also be the base URL of a reverse proxy if used. Only required if evaluation strategy is set to cql. | https://dsf-zars-fhir-proxy/fhir                   | URL             | DSF       |
-| ### Proxy configs ###                                  |  
-| GUI_HOSTNAME     								    | change the default value of the domain names where the services are reachable 		       						|   https://datenportal.localhost |      |   PROXY |  
-| KEYCLOAK_HOSTNAME								    | change  the default value of the domain names where the services are reachable  							  | https://auth.datenportal.localhost    |      |    PROXY|  
+| ### Proxy configs ###                                  |
+| GUI_HOSTNAME     								    | change the default value of the domain names where the services are reachable 		       						|   https://datenportal.localhost |      |   PROXY |
+| KEYCLOAK_HOSTNAME								    | change  the default value of the domain names where the services are reachable  							  | https://auth.datenportal.localhost    |      |    PROXY|
 | BACKEND_HOSTNAME 		                                                    | change  the defaul value of the domain names where the services are reachable                                                                                                                    | (https://api.datenportal.localhost) |                 | PROXY   |
 
 
