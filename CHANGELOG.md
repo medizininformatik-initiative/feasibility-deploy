@@ -8,23 +8,62 @@ Please refer to the respective repositories for a more in depth changelog of sin
 
 |Component|Link|Version|
 |--|--|--|
-|UI|<https://github.com/medizininformatik-initiative/feasibility-gui>|[6.0.10][ui]|
-|Ontology Generation|<https://github.com/medizininformatik-initiative/fhir-ontology-generator>|[3.2.2][onto]|
+|UI|<https://github.com/medizininformatik-initiative/feasibility-gui>|[6.2.0][ui]|
+|Ontology Generation|<https://github.com/medizininformatik-initiative/fhir-ontology-generator>|[3.7.0][onto]|
 |sq2cql|<https://github.com/medizininformatik-initiative/sq2cql>|[1.0.0][sq2cql]|
-|Backend|<https://github.com/medizininformatik-initiative/feasibility-backend>|[6.2.2][backend]|
+|Backend|<https://github.com/medizininformatik-initiative/feasibility-backend>|[7.1.1][backend]|
 |DSF Feasibility Plugin|<https://github.com/medizininformatik-initiative/feasibility-dsf-process>|[1.0.0.8][dsf-feas]|
 |FLARE|<https://github.com/medizininformatik-initiative/flare>|[2.5.0][flare]|
 |TORCH|<https://github.com/medizininformatik-initiative/torch>|[1.0.0-alpha.3][torch]|
-|Blaze FHIR server|<https://github.com/samply/blaze>|[0.33][blaze]|
+|Blaze FHIR server|<https://github.com/samply/blaze>|[1.0.0][blaze]|
 
-[ui]: https://github.com/medizininformatik-initiative/feasibility-gui/releases/tag/v6.0.10
-[onto]: https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.2.2
+[ui]: https://github.com/medizininformatik-initiative/feasibility-gui/releases/tag/v6.2.0
+[onto]: https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.7.0
 [sq2cql]: https://github.com/medizininformatik-initiative/sq2cql/releases/tag/v1.0.0
-[backend]: https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v6.2.2
+[backend]: https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v7.1.1
 [dsf-feas]: https://github.com/medizininformatik-initiative/mii-process-feasibility/releases/tag/v1.0.0.8
 [flare]: https://github.com/medizininformatik-initiative/flare/releases/tag/v2.5.0
 [torch]: https://github.com/medizininformatik-initiative/torch/releases/tag/v1.0.0-alpha.3
-[blaze]: https://github.com/samply/blaze/releases/tag/v0.33.0
+[blaze]: https://github.com/samply/blaze/releases/tag/v1.0.0
+
+
+## [5.3.0] - 2025-05-28
+
+**minor fixes in v5.3.0**
+
+- Backend:
+  - Fix - creating dataquery with filterdate causes error
+  - Fix - reading the crtdl part of a dataquery without cohortDefinition fails
+  - Fix - error reading query list
+  - Fix - missing Display Information for Parents and Children
+- GUI:
+  - Increased ElasticSearch visualization limit from 20 to 50 matches
+  - Adjusted CSS for indentation in tree view
+  - Switch date display to european format
+
+### New Features
+
+- Backend:
+  - Extend api to save and load cohort and dataselection
+  - Generate crtdl csv file
+  - Change configurable time intervals to ISO 8601 durations
+- GUI:
+  - New save dialog with checkboxes for cohort and data selection
+  - Added new editor pages for Criterion and Profile
+  - Added support for single feature patient profiles
+  - Implemented loading of reference profile lists
+  - Switch to backend API v5
+
+### Ontology
+
+This release is based on ontology version [v3.7.0](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.7.0)
+
+### Updates to
+
+- backend to [v7.1.1](https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v7.1.1)
+- ontology to [v3.7.0](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.7.0)
+- UI to [v6.2.0](https://github.com/medizininformatik-initiative/feasibility-gui/releases/tag/v6.2.0)
+- Blaze to [v1.0.0](https://github.com/samply/blaze/releases/tag/v1.0.0)
 
 
 ## [5.2.4] - 2025-03-21

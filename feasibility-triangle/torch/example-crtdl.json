@@ -39,6 +39,14 @@
     "dataExtraction": {
         "attributeGroups": [
             {
+                "id": "pat",
+                "name": "standard pat",
+                "groupReference": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient",
+                "attributes": []
+            },
+            {
+                "id": "diags",
+                "name": "My Diagnoses",
                 "groupReference": "https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose",
                 "attributes": [
                     {
