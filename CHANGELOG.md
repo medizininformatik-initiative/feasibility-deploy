@@ -27,6 +27,18 @@ Please refer to the respective repositories for a more in depth changelog of sin
 [blaze]: https://github.com/samply/blaze/releases/tag/v1.0.0
 
 
+## [5.3.2] - 2025-05-30
+
+**minor fixes in v5.3.2**
+
+- Backend:
+  - Fix interval syntax error
+
+### Ontology
+
+This release is based on ontology version [v3.7.0](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.7.0)
+
+
 ## [5.3.1] - 2025-05-30
 
 **minor fixes in v5.3.1**
