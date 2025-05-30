@@ -39,7 +39,8 @@
     "pollingtimeinseconds": 30,
     "pollingintervallinseconds": 10,
     "lowerboundarypatientresult": 0,
-    "lowerboundarylocationresult": 0
+    "lowerboundarylocationresult": 0,
+    "dsePatientProfileUrl": "https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/PatientPseudonymisiert"
   },
   "mock": {
     "terminology": false,
