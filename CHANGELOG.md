@@ -11,7 +11,7 @@ Please refer to the respective repositories for a more in depth changelog of sin
 |UI|<https://github.com/medizininformatik-initiative/feasibility-gui>|[6.2.0][ui]|
 |Ontology Generation|<https://github.com/medizininformatik-initiative/fhir-ontology-generator>|[3.7.0][onto]|
 |sq2cql|<https://github.com/medizininformatik-initiative/sq2cql>|[1.0.0][sq2cql]|
-|Backend|<https://github.com/medizininformatik-initiative/feasibility-backend>|[7.1.1][backend]|
+|Backend|<https://github.com/medizininformatik-initiative/feasibility-backend>|[7.1.2][backend]|
 |DSF Feasibility Plugin|<https://github.com/medizininformatik-initiative/feasibility-dsf-process>|[1.0.0.8][dsf-feas]|
 |FLARE|<https://github.com/medizininformatik-initiative/flare>|[2.5.0][flare]|
 |TORCH|<https://github.com/medizininformatik-initiative/torch>|[1.0.0-alpha.3][torch]|
@@ -20,11 +20,27 @@ Please refer to the respective repositories for a more in depth changelog of sin
 [ui]: https://github.com/medizininformatik-initiative/feasibility-gui/releases/tag/v6.2.0
 [onto]: https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.7.0
 [sq2cql]: https://github.com/medizininformatik-initiative/sq2cql/releases/tag/v1.0.0
-[backend]: https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v7.1.1
+[backend]: https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v7.1.2
 [dsf-feas]: https://github.com/medizininformatik-initiative/mii-process-feasibility/releases/tag/v1.0.0.8
 [flare]: https://github.com/medizininformatik-initiative/flare/releases/tag/v2.5.0
 [torch]: https://github.com/medizininformatik-initiative/torch/releases/tag/v1.0.0-alpha.3
 [blaze]: https://github.com/samply/blaze/releases/tag/v1.0.0
+
+
+## [5.3.3] - 2025-06-06
+
+**minor fixes in v5.3.3**
+
+- Backend:
+  - Fix admin user was not able to read all queries
+
+### Ontology
+
+This release is based on ontology version [v3.7.0](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.7.0)
+
+### Updates to
+
+- backend to [v7.1.2](https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v7.1.2)
 
 
 ## [5.3.2] - 2025-05-30
