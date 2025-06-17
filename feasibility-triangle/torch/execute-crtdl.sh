@@ -51,7 +51,7 @@ payload="$payload
 
 echo "$payload" > queries/temp-execute-crtdl.json
 
-response=$(curl --location -i $CURL_OPTIONS "${TORCH_BASE_URL}/fhir/\$extract-data" \
+response=$(curl --location -s -i $CURL_OPTIONS "${TORCH_BASE_URL}/fhir/\$extract-data" \
   --header 'Content-Type: application/fhir+json' \
   --header "Authorization: Basic ${TORCH_AUTHORIZATION}" \
   --data @queries/temp-execute-crtdl.json)
@@ -62,7 +62,7 @@ rm queries/temp-execute-crtdl.json
 content_location=$(printf "%s" "$response" | grep -i 'Content-Location:' | awk '{print $2}' | tr -d '\r')
 
 if [ -n "$content_location" ]; then
-  printf "Extraction submitted, find your extraction under:\n %s%s\n" "$content_location"
+  printf "\nExtraction submitted, find your extraction under:\n\n%s\n\n" "$content_location"
 else
   printf "Content-Location header not found in the response.\n"
 fi
