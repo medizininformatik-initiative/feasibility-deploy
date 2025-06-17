@@ -6,30 +6,36 @@ services:
         - ${TORCH_NGINX_PORT:-127.0.0.1:80}:8080
       volumes:
         - ./torch.nginx.conf:/etc/nginx/nginx.conf
-        - triangle-torch-data-store:/app/output
+        - "triangle-torch-data-store:/app/output"
   torch:
     restart: unless-stopped
-    image: ghcr.io/medizininformatik-initiative/torch:1.0.0-test2
+    image: ghcr.io/medizininformatik-initiative/torch:main
     ports:
       - ${TORCH_PORT:-127.0.0.1:8086}:8080
     environment:
-      JAVA_TOOL_OPTIONS: ${TORCH_JVM_ARGS:--Xmx4g}
-      TORCH_FLARE_URL: ${TORCH_FLARE_URL:-http://torch-flare:8080}
-      TORCH_MAPPING_CONSENT: /app/mappings/consent-mappings_fhir.json
-      TORCH_MAPPING_CONSENT_TO_PROFILE: /app/mappings/profile_to_consent.json
-      TORCH_PROFILE_DIR: /app/structureDefinitions
       TORCH_RESULTS_PERSISTENCE: ${TORCH_RESULTS_PERSISTENCE:-PT12H30M5S}
-      LOG_LEVEL: ${TORCH_LOG_LEVEL:-INFO}
-      NGINX_FILELOCATION: ${TORCH_NGINX_FILELOCATION:-http://localhost:80}
-      TORCH_BATCHSIZE: ${TORCH_BATCHSIZE:-100}
-      TORCH_MAXCONCURRENCY: ${TORCH_MAXCONCURRENCY:-4}
-      TORCH_USE_CQL: ${TORCH_USE_CQL:-true}
-      TORCH_FHIR_URL: ${TORCH_FHIR_URL:-http://torch-data-store:8080/fhir}
+      TORCH_BUFFERSIZE: ${TORCH_BUFFERSIZE:-100}
+      # Connection Config
+      TORCH_BASE_URL: ${TORCH_BASE_URL:-http://localhost:8080}
+      TORCH_OUTPUT_FILE_SERVER_URL: ${TORCH_OUTPUT_FILE_SERVER_URL:-http://localhost:80}
+      TORCH_FLARE_URL: ${TORCH_FLARE_URL:-http://torch-flare:8080}
+      TORCH_FHIR_URL: ${TORCH_FHIR_URL:-http://fhir-server:8080/fhir}
       TORCH_FHIR_USER: ${TORCH_FHIR_USER:-""}
       TORCH_FHIR_PASSWORD: ${TORCH_FHIR_PASSWORD:-""}
-      TORCH_FHIR_OAUTH_ISSUER_URI: ${TORCH_FHIR_OAUTH_ISSUER_URI:-https://auth.localhost:444/realms/blaze}
-      TORCH_FHIR_OAUTH_CLIENT_ID: ${TORCH_FHIR_OAUTH_CLIENT_ID:-account}
-      TORCH_FHIR_OAUTH_CLIENT_SECRET: ${TORCH_FHIR_OAUTH_CLIENT_SECRET:-insecure}
+      TORCH_FHIR_OAUTH_ISSUER_URI: ${TORCH_FHIR_OAUTH_ISSUER_URI:-""}
+      TORCH_FHIR_OAUTH_CLIENT_ID: ${TORCH_FHIR_OAUTH_CLIENT_ID:-""}
+      TORCH_FHIR_OAUTH_CLIENT_SECRET: ${TORCH_FHIR_OAUTH_CLIENT_SECRET:-""}
+      # Execution variables
+      JAVA_TOOL_OPTIONS: ${TORCH_JVM_ARGS:--Xmx8g}
+      TORCH_USE_CQL: ${TORCH_USE_CQL:-true}
+      TORCH_FHIR_DISABLE_ASYNC: ${TORCH_FHIR_DISABLE_ASYNC:-true}
+      TORCH_BATCHSIZE: ${TORCH_BATCHSIZE:-500}
+      TORCH_FHIR_PAGE_COUNT: ${TORCH_FHIR_PAGE_COUNT:-500}
+      TORCH_FHIR_MAX_CONNECTIONS: ${TORCH_FHIR_MAX_CONNECTIONS:-5}
+      TORCH_MAXCONCURRENCY: ${TORCH_MAXCONCURRENCY:-4}
+      # Other
+      LOG_LEVEL: ${TORCH_LOG_LEVEL:-info}
+      
     volumes:
       - "triangle-torch-data-store:/app/output"
       - ../auth:/app/certs
