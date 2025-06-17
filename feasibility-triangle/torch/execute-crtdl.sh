@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 TORCH_BASE_URL=${TORCH_BASE_URL:-http://localhost:8086}
 TORCH_USERNAME=${TORCH_USERNAME:-""}
