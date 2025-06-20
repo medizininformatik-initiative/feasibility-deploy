@@ -4,3 +4,7 @@
 troubleshooting/input-queries.json
 fhir-data-evaluator/output/*
 !fhir-data-evaluator/output/README.md
+torch/queries/*
+!torch/queries/example-crtdl.json
+!torch/queries/README.md
+output
