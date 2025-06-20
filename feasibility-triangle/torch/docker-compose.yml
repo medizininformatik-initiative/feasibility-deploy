@@ -6,10 +6,10 @@ services:
         - ${TORCH_NGINX_PORT:-127.0.0.1:80}:8080
       volumes:
         - ./torch.nginx.conf:/etc/nginx/nginx.conf
-        - "triangle-torch-data-store:/app/output"
+        - "${TORCH_DATA_VOLUME:-triangle-torch-data-store}:/app/output"
   torch:
     restart: unless-stopped
-    image: ghcr.io/medizininformatik-initiative/torch:main
+    image: ghcr.io/medizininformatik-initiative/torch:1.0.0-alpha.5
     ports:
       - ${TORCH_PORT:-127.0.0.1:8086}:8080
     environment:
@@ -37,7 +37,7 @@ services:
       LOG_LEVEL: ${TORCH_LOG_LEVEL:-info}
       
     volumes:
-      - "triangle-torch-data-store:/app/output"
+      - "${TORCH_DATA_VOLUME:-triangle-torch-data-store}:/app/output"
       - ../auth:/app/certs
     extra_hosts:
       - "auth.localhost:host-gateway"

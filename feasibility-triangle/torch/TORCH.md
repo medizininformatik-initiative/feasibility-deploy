@@ -37,10 +37,7 @@ You can start TORCH in two ways:
 TORCH exports extracted data to a mounted volume which is served via a webserver. By default, an `nginx` webserver is included in this setup to expose the files.
 
 - You can **customize** or **replace** the webserver in `docker-compose.yml`.
-- You may also mount the volume directly to your host for easier access:
-  ```yaml
-  - triangle-torch-data-store:/app/output
-  ```
+- You may also mount the volume directly to your host for easier access by setting the `TORCH_DATA_VOLUME` env variable to a local directory (e.g. `./output`)
 
 ---
 

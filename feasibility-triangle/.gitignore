@@ -7,3 +7,4 @@ fhir-data-evaluator/output/*
 torch/queries/*
 !torch/queries/example-crtdl.json
 !torch/queries/README.md
+output
