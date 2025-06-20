@@ -27,6 +27,22 @@ Please refer to the respective repositories for a more in depth changelog of sin
 [blaze]: https://github.com/samply/blaze/releases/tag/v1.0.0
 
 
+## [5.3.4] - 2025-06-20
+
+**minor fixes in v5.3.4**
+
+- Backend:
+  - Fix admin user was not able to read all queries
+
+### Ontology
+
+This release is based on ontology version [v3.7.0](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.7.0)
+
+### Updates to
+
+- Blaze to [1.0.2](https://github.com/samply/blaze/releases/tag/v1.0.2)
+- TORCH to [1.0.0-alpha.5](https://github.com/medizininformatik-initiative/torch/releases/tag/v1.0.0-alpha.5)
+
 ## [5.3.3] - 2025-06-06
 
 **minor fixes in v5.3.3**
