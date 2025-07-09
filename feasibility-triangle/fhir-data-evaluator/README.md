@@ -53,12 +53,16 @@ type `MeasureReport` along with a `DocumentReference` FHIR resource.
 Regardless of the choice, the FHIR server which contains the report should be accessible from your DSE BPE in order to 
 send the report to the central FDPG DSF using the [data transfer plugin][data-transfer].
 
+Note that the FDE creates to `MeasureReport` with respective `DocumentReference` on the target FHIR server.
+Only the one with teh project identifier `fdpg-data-availability-report-obfuscated` should be send to the FDPG.
+
+
 ## Sending the report to the central portal
 
 If you want to send the report to the central portal, you need to install and configure the data transfer plugin in your
 DSE BPE according to the [data transfer plugin documentation][data-transfer-doc]. Then you follow the steps mentioned in
 the documentation's section [DIC: Start Send Process][start-send-process] to send the report to the central portal. Use
-the same project identifier as is configured in the FDE (`fdpg-data-availability-report` by default) and replace the DMS
+the same project identifier as is configured in the FDE (`fdpg-data-availability-report-obfuscated` by default) and replace the DMS
 organization identifier placeholder with the FDPG organization identifier `forschen-fuer-gesundheit.de`.
 
 
