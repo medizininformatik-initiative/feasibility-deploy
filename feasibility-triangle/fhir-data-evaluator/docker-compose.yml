@@ -1,6 +1,6 @@
 services:
   fhir-data-evaluator:
-    image: ghcr.io/medizininformatik-initiative/fhir-data-evaluator:1.3.0
+    image: ghcr.io/medizininformatik-initiative/fhir-data-evaluator:1.3.1
     environment:
       FHIR_SOURCE_SERVER: ${FDE_FHIR_SOURCE_SERVER:-http://localhost:8080/fhir}
       FHIR_SOURCE_USER: ${FDE_FHIR_SOURCE_USER:-}
