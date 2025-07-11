@@ -12,7 +12,7 @@ services:
 
   auth:
     image: keycloak/keycloak:26.2
-    command: ["start", "--import-realm"]
+    command: ["start", "--import-realm", "--http-enabled=true"]
     restart: unless-stopped
     environment:
       KC_DB: postgres
