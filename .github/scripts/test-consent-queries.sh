@@ -6,8 +6,8 @@ SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 BASE="$1"
 TOKEN="$2"
 CACERT="$3"
-PERMIT_URI="$BASE/Consent?mii-provision-provision-code-type=2.16.840.1.113883.3.1937.777.24.5.1.1\$permit"
-DENY_URI="$BASE/Consent?mii-provision-provision-code-type=2.16.840.1.113883.3.1937.777.24.5.1.1\$deny"
+PERMIT_URI="$BASE/Consent?mii-provision-provision-code-type=2.16.840.1.113883.3.1937.777.24.5.3.6\$permit"
+CONDITION_URI="$BASE/Condition?code=http://fhir.de/CodeSystem/bfarm/icd-10-gm|B05.3"
 
 count() {
   RESP=$(curl -sH 'Prefer: handling=strict' -H 'Accept: application/fhir+json' -H "Authorization: Bearer $TOKEN" --cacert "$CACERT" "$1")
@@ -19,5 +19,5 @@ count() {
   fi
 }
 
-test "permit count" "$(count "$PERMIT_URI")" "1"
-test "permit count" "$(count "$DENY_URI")" "0"
+test "permit count" "$(count "$PERMIT_URI")" "3"
+test "Condition count" "$(count "$CONDITION_URI")" "1"
