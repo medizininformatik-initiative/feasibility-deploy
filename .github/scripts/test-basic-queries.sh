@@ -19,5 +19,5 @@ count() {
   fi
 }
 
-test "permit count" "$(count "$PERMIT_URI")" "3"
-test "Condition count" "$(count "$CONDITION_URI")" "1"
+test "Observation permit count" "$(count "$PERMIT_URI")" "3"
+test "Condition count B05.3" "$(count "$CONDITION_URI")" "1"

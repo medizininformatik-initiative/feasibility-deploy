@@ -72,4 +72,4 @@ jobs:
     - name: Run Test Queries
       run: |
         ACCESS_TOKEN="$(feasibility-triangle/get-fhir-server-access-token.sh)"
-        .github/scripts/test-consent-queries.sh https://fhir.localhost:444/fhir "$ACCESS_TOKEN" feasibility-triangle/auth/cert.pem
+        .github/scripts/test-basic-queries.sh https://fhir.localhost:444/fhir "$ACCESS_TOKEN" feasibility-triangle/auth/cert.pem
