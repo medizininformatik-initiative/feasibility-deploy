@@ -1,4 +1,3 @@
-
 services:
   auth-db:
     image: postgres:17-alpine
@@ -7,27 +6,52 @@ services:
       POSTGRES_DB: ${FEASIBILITY_KC_DB:-keycloakdb}
       POSTGRES_USER: ${FEASIBILITY_KC_DB_USER:-keycloakdbuser}
       POSTGRES_PASSWORD: ${FEASIBILITY_KC_DB_PW:-keycloakdbpw}
+    healthcheck:
+      test: [ "CMD-SHELL", "sh -c 'pg_isready -U ${DB_USER} -d ${DB_NAME}'" ]
+      interval: 30s
+      timeout: 60s
+      retries: 5
+      start_period: 80s
     volumes:
       - "feasibility-auth-db:/var/lib/postgresql/data"
 
   auth:
-    image: keycloak/keycloak:26.2
+    image: quay.io/keycloak/keycloak:26.3.1
     command: ["start", "--import-realm"]
     restart: unless-stopped
     environment:
       KC_DB: postgres
-      KC_DB_URL: "jdbc:postgresql://auth-db:5432/${FEASIBILITY_KC_DB}"
+      KC_DB_URL: "jdbc:postgresql://auth-db:5432/${FEASIBILITY_KC_DB:-keycloakdb}"
       KC_DB_USERNAME: ${FEASIBILITY_KC_DB_USER:-keycloakdbuser}
       KC_DB_PASSWORD: ${FEASIBILITY_KC_DB_PW:-keycloakdbpw}
-      KEYCLOAK_ADMIN: ${FEASIBILITY_KC_ADMIN_USER:-}
-      KEYCLOAK_ADMIN_PASSWORD: ${FEASIBILITY_KC_ADMIN_PW:-}
+      KC_BOOTSTRAP_ADMIN_USERNAME: ${FEASIBILITY_KC_ADMIN_USER:-}
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${FEASIBILITY_KC_ADMIN_PW:-}
       KC_HTTP_RELATIVE_PATH:  ${FEASIBILITY_KC_HTTP_RELATIVE_PATH:-/auth}
       KC_HOSTNAME: ${FEASIBILITY_KC_HOSTNAME_URL:-https://auth.localhost}
       KC_HOSTNAME_ADMIN: ${FEASIBILITY_KC_HOSTNAME_ADMIN_URL:-https://auth.localhost}
       KC_LOG_LEVEL: ${FEASIBILITY_KC_LOG_LEVEL:-info}
-      KC_PROXY: ${FEASIBILITY_KC_PROXY:-edge}
+      KC_HEALTH_ENABLED: ${FEASIBILITY_KC_HEALTH_ENABLED:-true}
+      KC_METRICS_ENABLED: ${FEASIBILITY_KC_METRICS_ENABLED:-true}
+      KC_PROXY_HEADERS: ${FEASIBILITY_KC_PROXY_HEADERS:-xforwarded}
+      KC_HTTP_ENABLED: ${FEASIBILITY_KC_HTTP_ENABLED:-true}
     volumes:
       - ./init/feasibility-realm.json:/opt/keycloak/data/import/realm.json:ro
+    healthcheck:
+      test: [
+        "CMD-SHELL",
+        "exec 3<>/dev/tcp/localhost/9000; \
+        echo -en 'GET /health/ready' >&3; \
+        # Give the server a moment to respond, then search for 'UP'
+        if timeout 3 cat <&3 | grep -m 1 'UP'; then \
+          exec 3<&-; exec 3>&-; exit 0; \
+        else \
+          exec 3<&-; exec 3>&-; exit 1; \
+        fi"
+      ]
+      start_period: 10s
+      interval: 5s
+      timeout: 2s
+      retries: 20
     depends_on:
       - auth-db
 

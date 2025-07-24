@@ -1,6 +1,6 @@
 services:
   fhir-server:
-    image: samply/blaze:1.0.2
+    image: samply/blaze:1.0.4
     healthcheck:
       test: ["CMD-SHELL", "curl --fail -s http://localhost:8080/health"]
       interval: 5s
@@ -8,6 +8,7 @@ services:
       retries: 3
       start_period: 60s
     environment:
+      ENFORCE_REFERENTIAL_INTEGRITY: ${FHIR_SERVER_ENFORCE_REFERENTIAL_INTEGRITY:-true}
       BASE_URL: ${FHIR_SERVER_BASE_URL:-http://fhir-server:8080}
       LOG_LEVEL: ${FHIR_SERVER_LOG_LEVEL:-info}
       JAVA_TOOL_OPTIONS: ${BLAZE_JVM_ARGS:--Xmx4g}
@@ -30,7 +31,7 @@ services:
     - "${FHIR_SERVER_OPENID_CLIENT_TRUST_STORE:-../auth/trust-store.p12}:/app/trust-store.p12"
 
   fhir-server-frontend:
-    image: samply/blaze-frontend:1.0.2
+    image: samply/blaze-frontend:1.0.4
     healthcheck:
       test: ["CMD-SHELL", "wget --spider http://127.0.0.1:3000/fhir/"]
       interval: 5s

@@ -103,10 +103,10 @@ For the reverse proxy you need to choose the configuration (variable `FEASIBILIT
   - Change the following variables in [fhir-server/.env](./fhir-server/.env):
     - `FHIR_SERVER_FRONTEND_KEYCLOAK_ENABLED`:
       - Set to `true` if you want to use the bundled keycloak.
-        - `FHIR_SERVER_FRONTEND_KEYCLOAK_HOSTNAME_URL`: set the domain part to the value you set for `KEYCLOAK_HOSTNAME` before and the port to the `REV_PROXY_PORT` set in [rev-proxy/.env](./rev-proxy/.env) (default `444`).
+        - `FHIR_SERVER_KC_HOSTNAME_URL`: set the domain part to the value you set for `KEYCLOAK_HOSTNAME` before and the port to the `REV_PROXY_PORT` set in [rev-proxy/.env](./rev-proxy/.env) (default `444`).
           The path must be set to `/` at the end of the url.
           For example, `https://auth.example.org:444/`.
-        - `FHIR_SERVER_FRONTEND_KEYCLOAK_HTTP_RELATIVE_PATH`: set to `/`.
+        - `FHIR_SERVER_KC_HTTP_RELATIVE_PATH`: set to `/`.
       - Set to `false` to use none or your existing OpenID Connect provider.
     - `FHIR_SERVER_FRONTEND_ORIGIN`: set the domain part to the value you set for `FHIR_HOSTNAME` before and the port to the `REV_PROXY_PORT` set in [rev-proxy/.env](./rev-proxy/.env) (default `444`).
       For example, `https://fhir.example.org:444`.
@@ -120,10 +120,10 @@ For the reverse proxy you need to choose the configuration (variable `FEASIBILIT
   - Change the following variables in [fhir-server/.env](./fhir-server/.env):
     - `FHIR_SERVER_FRONTEND_KEYCLOAK_ENABLED`:
       - Set to `true` if you want to use the bundled keycloak.
-        - `FHIR_SERVER_FRONTEND_KEYCLOAK_HOSTNAME_URL`: set the domain part to the value you set for `KEYCLOAK_HOSTNAME` before and the port to the `REV_PROXY_PORT` set in [rev-proxy/.env](./rev-proxy/.env) (default `444`).
+        - `FHIR_SERVER_KC_HOSTNAME_URL`: set the domain part to the value you set for `KEYCLOAK_HOSTNAME` before and the port to the `REV_PROXY_PORT` set in [rev-proxy/.env](./rev-proxy/.env) (default `444`).
           The path must be set to `/auth` at the end of the url.
           For example, `https://example.org:444/auth`.
-        - `FHIR_SERVER_FRONTEND_KEYCLOAK_HTTP_RELATIVE_PATH`: set to `/auth`.
+        - `FHIR_SERVER_KC_HTTP_RELATIVE_PATH`: set to `/auth`.
       - Set to `false` to use none or your existing OpenID Connect provider.
     - `FHIR_SERVER_FRONTEND_ORIGIN`: set the domain part to your domain/hostname and the port to the `REV_PROXY_PORT` set in [rev-proxy/.env](./rev-proxy/.env) (default `444`).
       For example, `https://example.org:444`.
@@ -171,7 +171,7 @@ navigating to the respective components folder and executing:
 > [!NOTE]
 > The keycloak provided here is an example setup, and we strongly recommend for each site to adjust the keycloak installation to their local security requirements or connect the local feasibility portal to a keycloak already provided at the site.
 
-Navigate to the keycloak administration url which is the value of the variable `FHIR_SERVER_FRONTEND_KEYCLOAK_HOSTNAME_URL` in
+ Navigate to the keycloak administration url which is the value of the variable `FHIR_SERVER_FRONTEND_KEYCLOAK_HOSTNAME_URL` in
 [fhir-server/.env](./fhir-server/.env) (e.g. `https://auth.example.org:444/` or `https://example.org:444/auth` depending
 on the nginx configuration used) and log into keycloak using the user `admin` and password set by the variable
 `FHIR_SERVER_FRONTEND_KEYCLOAK_ADMIN_PASSWORD` in [fhir-server/.env](./fhir-server/.env). Both variables had to be setup
@@ -304,10 +304,16 @@ If new search parameters have been added follow the "fhir-server/README.md -> Re
 | FHIR_SERVER_FRONTEND_AUTH_SECRET                 | see: https://github.com/samply/blaze/blob/master/docs/deployment/environment-variables.md#frontend                                                              | `insecure`                                    | secure password                                           | BLAZE     |
 | FHIR_SERVER_FRONTEND_CA_CERT                     | Certificate PEM file containing the certificate of `cert.pem` or the certificate authority by which the `cert.pem` was signed                                   | `./auth/cert.pem`                             | host path                                                 | BLAZE     |
 | FHIR_SERVER_FRONTEND_KEYCLOAK_ENABLED            | Enable/Disable automatic start of bundled Keycloak service executing `/opt/feasibility-deploy/feasibility-triangle/start-triangle.sh`                           | `true`                                        | `true` or `false`                                         | Keycloak  |
-| FHIR_SERVER_FRONTEND_KEYCLOAK_ADMIN_PASSWORD     | Keycloak admin password                                                                                                                                         | `admin`                                       | secure password                                           | Keycloak  |
-| FHIR_SERVER_FRONTEND_KEYCLOAK_HOSTNAME_URL       | URL for accessing Keycloak via proxy                                                                                                                            | `https://fhir.localhost:444`                  |                                                           | Keycloak  |
-| FHIR_SERVER_FRONTEND_KEYCLOAK_HTTP_RELATIVE_PATH | Relative path of Keycloak http service                                                                                                                          | `/`                                           | URL path                                                  | Keycloak  |
-| FHIR_SERVER_FRONTEND_KEYCLOAK_LOG_LEVEL          | Log level of Keycloak service                                                                                                                                   | `info`, `error`, `warn`, `info`, `debug`      |                                                           | Keycloak  |
+| FHIR_SERVER_KC_ADMIN_USER     | Keycloak admin user                                                                                                                                         | `admin`                                       | secure password                                           | Keycloak  |
+| FHIR_SERVER_KC_ADMIN_PW     | Keycloak admin pw password                                                                                                                                         | `admin`                                       | secure password                                           | Keycloak  |
+| FHIR_SERVER_KC_HOSTNAME_URL       | URL for accessing Keycloak via proxy                                                                                                                            | `https://fhir.localhost:444`                  |                                                           | Keycloak  |
+| FHIR_SERVER_KC_HOSTNAME_ADMIN_URL       | URL for accessing Keycloak admin via proxy                                                                                                                            | `https://fhir.localhost:444`                  |                                                           | Keycloak  |
+| FHIR_SERVER_KC_HTTP_RELATIVE_PATH | Relative path of Keycloak http service                                                                                                                          | `/`                                           | URL path                                                  | Keycloak  |
+| FHIR_SERVER_KC_LOG_LEVEL          | Log level of Keycloak service                                                                                                                                   | `info`, `error`, `warn`, `info`, `debug`      |                                                           | Keycloak  |
+| FHIR_SERVER_KC_DB          | db to be used for keycloak service                                                                                                                                   | string      |  keycloakdb                                                         | Keycloak  |
+| FHIR_SERVER_KC_DB_USER          | db user to be used for keycloak service                                                                                                                                   | string      |  keycloakdbuser                                                         | Keycloak  |
+| FHIR_SERVER_KC_DB_PW          | db pw to be used for keycloak service                                                                                                                                   | string      |  keycloakdbpw                                                         | Keycloak  |
+| FHIR_SERVER_KC_HTTP_ENABLED          | enable http for keycloak service - required for the docker default setup                                                                                                                                   | string      |  keycloakdbpw                                                         | Keycloak  |
 | FEASIBILITY_FLARE_PORT                           | The exposed docker port of the FLARE componenet                                                                                                                 | `127.0.0.1:8084`                              | should always include `127.0.0.1`                         | FLARE     |
 | FLARE_ENABLED                                    | Enable/Disable automatic start of bundled Keycloak service executing `/opt/feasibility-deploy/feasibility-triangle/start-triangle.sh`                           | `true`                                        | `true` or `false`                                         | Keycloak  |
 | FLARE_FHIR_SERVER_URL                            | The URL of the FHIR server FLARE uses to connect to the FHIR server                                                                                             | `http://fhir-server:8080/fhir/`               | URL                                                       | FLARE     |

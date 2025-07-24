@@ -27,6 +27,23 @@ Please refer to the respective repositories for a more in depth changelog of sin
 [blaze]: https://github.com/samply/blaze/releases/tag/v1.0.0
 
 
+## [5.4.0] - 2025-07-24
+
+
+### Ontology
+
+This release is based on ontology version [v3.8.1](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.8.1)
+
+### Updates to
+
+- UI to [v6.3.3](https://github.com/medizininformatik-initiative/feasibility-gui/releases/tag/v6.3.3)
+- backend to [v7.3.0](https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v7.3.0)
+- Blaze FHIR server to [v1.0.4](https://github.com/samply/blaze/releases/tag/v1.0.4)
+- Change keycloak to quay.io for portal and blaze [26.3.1](quay.io/keycloak/keycloak:26.3.1)
+- TORCH [1.0.0-alpha.6](https://github.com/medizininformatik-initiative/torch/releases/tag/v1.0.0-alpha.6)
+- FLARE [2.6.0](https://github.com/medizininformatik-initiative/flare/releases/tag/v2.6.0)
+- FDE [1.3.1](https://github.com/medizininformatik-initiative/fhir-data-evaluator/releases/tag/v1.3.1)
+
 ## [5.3.4] - 2025-06-20
 
 **minor fixes in v5.3.4**
@@ -42,6 +59,7 @@ This release is based on ontology version [v3.7.0](https://github.com/medizininf
 
 - Blaze to [1.0.2](https://github.com/samply/blaze/releases/tag/v1.0.2)
 - TORCH to [1.0.0-alpha.5](https://github.com/medizininformatik-initiative/torch/releases/tag/v1.0.0-alpha.5)
+
 
 ## [5.3.3] - 2025-06-06
 

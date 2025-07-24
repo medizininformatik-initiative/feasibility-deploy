@@ -1,25 +1,62 @@
 services:
-  fhir-server-frontend-keycloak:
-    image: "keycloak/keycloak:26.0"
-    command: ["start", "--import-realm"]
-    healthcheck:
-      test: ["CMD-SHELL", "exec 3<>/dev/tcp/127.0.0.1/9000;echo -e \"GET ${FHIR_SERVER_FRONTEND_KEYCLOAK_HTTP_RELATIVE_PATH}/health/ready  HTTP/1.1\r\nhost: localhost\r\nConnection: close\r\n\r\n\" >&3;grep \"HTTP/1.1 200 OK\" <&3"]
-      interval: 5s
-      timeout: 5s
-      retries: 3
-      start_period: 30s
+  fhir-server-keycloak-db:
+    image: postgres:17-alpine
+    restart: unless-stopped
     environment:
-      KEYCLOAK_ADMIN: admin
-      KEYCLOAK_ADMIN_PASSWORD: ${FHIR_SERVER_FRONTEND_KEYCLOAK_ADMIN_PASSWORD:-admin}
+      POSTGRES_DB: ${FEASIBILITY_KC_DB:-keycloakdb}
+      POSTGRES_USER: ${FEASIBILITY_KC_DB_USER:-keycloakdbuser}
+      POSTGRES_PASSWORD: ${FEASIBILITY_KC_DB_PW:-keycloakdbpw}
+    healthcheck:
+      test: [ "CMD-SHELL", "sh -c 'pg_isready -U ${DB_USER} -d ${DB_NAME}'" ]
+      interval: 30s
+      timeout: 60s
+      retries: 5
+      start_period: 80s
+    volumes:
+      - "fhir-server-keycloak-db:/var/lib/postgresql/data"
+  fhir-server-frontend-keycloak:
+    image: quay.io/keycloak/keycloak:26.3.1
+    command: ["start", "--import-realm"]
+    restart: unless-stopped
+    healthcheck:
+      test: [
+        "CMD-SHELL",
+        "exec 3<>/dev/tcp/localhost/9000; \
+        echo -en 'GET /health/ready' >&3; \
+        # Give the server a moment to respond, then search for 'UP'
+        if timeout 3 cat <&3 | grep -m 1 'UP'; then \
+          exec 3<&-; exec 3>&-; exit 0; \
+        else \
+          exec 3<&-; exec 3>&-; exit 1; \
+        fi"
+      ]
+      start_period: 10s
+      interval: 5s
+      timeout: 2s
+      retries: 20
+    environment:
+      environment:
+      KC_DB: postgres
+      KC_DB_URL: "jdbc:postgresql://fhir-server-keycloak-db:5432/${FHIR_SERVER_KC_DB:-keycloakdb}"
+      KC_DB_USERNAME: ${FHIR_SERVER_KC_DB_USER:-keycloakdbuser}
+      KC_DB_PASSWORD: ${FHIR_SERVER_KC_DB_PW:-keycloakdbpw}
+      KC_BOOTSTRAP_ADMIN_USERNAME: ${FHIR_SERVER_KC_ADMIN_USER:-admin}
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${FHIR_SERVER_KC_ADMIN_PW:-admin}
+      KC_HTTP_RELATIVE_PATH:  ${FHIR_SERVER_KC_HTTP_RELATIVE_PATH:-/}
+      KC_HOSTNAME: ${FHIR_SERVER_KC_HOSTNAME_URL:-https://auth.localhost:444}
+      KC_HOSTNAME_ADMIN: ${FHIR_SERVER_KC_HOSTNAME_ADMIN_URL:-https://auth.localhost:444}
+      KC_LOG_LEVEL: ${FHIR_SERVER_KC_LOG_LEVEL:-info}
+      KC_HEALTH_ENABLED: ${FHIR_SERVER_KC_HEALTH_ENABLED:-true}
+      KC_METRICS_ENABLED: ${FHIR_SERVER_KC_METRICS_ENABLED:-true}
+      KC_PROXY_HEADERS: ${FHIR_SERVER_KC_PROXY_HEADERS:-xforwarded}
+      KC_HTTP_ENABLED: ${FHIR_SERVER_KC_HTTP_ENABLED:-true}
       KEYCLOAK_CLIENT_ID: ${FHIR_SERVER_FRONTEND_AUTH_CLIENT_ID:-account}
       KEYCLOAK_CLIENT_SECRET: ${FHIR_SERVER_FRONTEND_AUTH_CLIENT_SECRET:-e11a3a8e-6e24-4f9d-b914-da7619e8b31f}
       KEYCLOAK_CLIENT_HOST_URL: ${FHIR_SERVER_FRONTEND_ORIGIN:-https://fhir.localhost:444}
-      KC_HOSTNAME: ${FHIR_SERVER_FRONTEND_KEYCLOAK_HOSTNAME_URL:-https://auth.localhost:444}
-      KC_HOSTNAME_ADMIN: ${FHIR_SERVER_FRONTEND_KEYCLOAK_HOSTNAME_URL:-https://auth.localhost:444}
-      KC_HTTP_RELATIVE_PATH: ${FHIR_SERVER_FRONTEND_KEYCLOAK_HTTP_RELATIVE_PATH:-/}
-      KC_PROXY_HEADERS: xforwarded
-      KC_HTTP_ENABLED: "true"
-      KC_HEALTH_ENABLED: "true"
-      KC_LOG_LEVEL: ${FHIR_SERVER_FRONTEND_KEYCLOAK_LOG_LEVEL:-info}
     volumes:
-    - "./keycloak:/opt/keycloak/data/import"
+      - "./keycloak:/opt/keycloak/data/import"
+    depends_on:
+      - fhir-server-keycloak-db
+
+volumes:
+  fhir-server-keycloak-db:

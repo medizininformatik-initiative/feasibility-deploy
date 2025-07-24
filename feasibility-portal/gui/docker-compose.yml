@@ -1,6 +1,6 @@
 services:
   dataportal-ui:
-    image: ghcr.io/medizininformatik-initiative/feasibility-gui:6.2.0
+    image: ghcr.io/medizininformatik-initiative/feasibility-gui:6.3.3
     restart: unless-stopped
     volumes:
       - ./deploy-config.json:/usr/share/nginx/html/assets/config/config.deploy.json
