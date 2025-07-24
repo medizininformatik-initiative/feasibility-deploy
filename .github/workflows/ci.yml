@@ -44,8 +44,8 @@ jobs:
     - name: Change Configuration for localhost
       run: |
         sed -i -r -e 's#^(FHIR_SERVER_OPENID_PROVIDER_URL)=.*$#\1=https://auth.localhost:444/realms/blaze#' \
-                  -e 's#^(FHIR_SERVER_FRONTEND_KEYCLOAK_HOSTNAME_URL)=.*$#\1=https://auth.localhost:444/#' \
-                  -e 's#^(FHIR_SERVER_FRONTEND_KEYCLOAK_HTTP_RELATIVE_PATH)=.*$#\1=/#' \
+                  -e 's#^(FHIR_SERVER_KC_HOSTNAME_URL)=.*$#\1=https://auth.localhost:444/#' \
+                  -e 's#^(FHIR_SERVER_KC_HTTP_RELATIVE_PATH)=.*$#\1=/#' \
             feasibility-triangle/fhir-server/.env
         sed -i -r -e 's#8084#18084#g' \
                   -e 's#^(FLARE_FHIR_OAUTH_ISSUER_URI)=.*$#\1=https://auth.localhost:444/realms/blaze#' \
