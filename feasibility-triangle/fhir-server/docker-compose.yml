@@ -8,6 +8,7 @@ services:
       retries: 3
       start_period: 60s
     environment:
+      ENFORCE_REFERENTIAL_INTEGRITY: ${FHIR_SERVER_ENFORCE_REFERENTIAL_INTEGRITY:-true}
       BASE_URL: ${FHIR_SERVER_BASE_URL:-http://fhir-server:8080}
       LOG_LEVEL: ${FHIR_SERVER_LOG_LEVEL:-info}
       JAVA_TOOL_OPTIONS: ${BLAZE_JVM_ARGS:--Xmx4g}
