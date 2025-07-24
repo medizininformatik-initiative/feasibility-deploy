@@ -44,6 +44,23 @@ This release is based on ontology version [v3.8.1](https://github.com/medizininf
 - FLARE [2.6.0](https://github.com/medizininformatik-initiative/flare/releases/tag/v2.6.0)
 - FDE [1.3.1](https://github.com/medizininformatik-initiative/fhir-data-evaluator/releases/tag/v1.3.1)
 
+## [5.3.4] - 2025-06-20
+
+**minor fixes in v5.3.4**
+
+- Backend:
+  - Fix admin user was not able to read all queries
+
+### Ontology
+
+This release is based on ontology version [v3.7.0](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.7.0)
+
+### Updates to
+
+- Blaze to [1.0.2](https://github.com/samply/blaze/releases/tag/v1.0.2)
+- TORCH to [1.0.0-alpha.5](https://github.com/medizininformatik-initiative/torch/releases/tag/v1.0.0-alpha.5)
+
+
 ## [5.3.3] - 2025-06-06
 
 **minor fixes in v5.3.3**
