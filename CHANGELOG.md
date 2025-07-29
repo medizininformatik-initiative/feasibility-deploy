@@ -26,6 +26,11 @@ Please refer to the respective repositories for a more in depth changelog of sin
 
 Changed FROM [v3.7.0](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.7.0) to [v3.8.0](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.8.0)
 
+#### Major Ontology Updates
+
+* Update display generation for value definitions of criteria by @paulolaup in https://github.com/medizininformatik-initiative/fhir-ontology-generator/pull/289
+* Implement Cause of Death criteria class for cohort selection ontology by @paulolaup in https://github.com/medizininformatik-initiative/fhir-ontology-generator/pull/290
+
 
 ### Updates since last Major
 
