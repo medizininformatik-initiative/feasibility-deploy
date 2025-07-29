@@ -6,25 +6,17 @@ All notable changes to this project will be documented in this file.
 
 Please refer to the respective repositories for a more in depth changelog of single components:
 
-|Component|Link|Version|
-|--|--|--|
-|UI|<https://github.com/medizininformatik-initiative/feasibility-gui>|[6.2.0][ui]|
-|Ontology Generation|<https://github.com/medizininformatik-initiative/fhir-ontology-generator>|[3.7.0][onto]|
-|sq2cql|<https://github.com/medizininformatik-initiative/sq2cql>|[1.0.0][sq2cql]|
-|Backend|<https://github.com/medizininformatik-initiative/feasibility-backend>|[7.1.2][backend]|
-|DSF Feasibility Plugin|<https://github.com/medizininformatik-initiative/feasibility-dsf-process>|[1.0.0.8][dsf-feas]|
-|FLARE|<https://github.com/medizininformatik-initiative/flare>|[2.5.0][flare]|
-|TORCH|<https://github.com/medizininformatik-initiative/torch>|[1.0.0-alpha.3][torch]|
-|Blaze FHIR server|<https://github.com/samply/blaze>|[1.0.0][blaze]|
-
-[ui]: https://github.com/medizininformatik-initiative/feasibility-gui/releases/tag/v6.2.0
-[onto]: https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.7.0
-[sq2cql]: https://github.com/medizininformatik-initiative/sq2cql/releases/tag/v1.0.0
-[backend]: https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v7.1.2
-[dsf-feas]: https://github.com/medizininformatik-initiative/mii-process-feasibility/releases/tag/v1.0.0.8
-[flare]: https://github.com/medizininformatik-initiative/flare/releases/tag/v2.5.0
-[torch]: https://github.com/medizininformatik-initiative/torch/releases/tag/v1.0.0-alpha.3
-[blaze]: https://github.com/samply/blaze/releases/tag/v1.0.0
+|Component|Link|
+|--|--|
+|UI|<https://github.com/medizininformatik-initiative/feasibility-gui>|
+|Ontology Generation|<https://github.com/medizininformatik-initiative/fhir-ontology-generator>|
+|sq2cql|<https://github.com/medizininformatik-initiative/sq2cql>|
+|Backend|<https://github.com/medizininformatik-initiative/feasibility-backend>|
+|DSF Feasibility Plugin|<https://github.com/medizininformatik-initiative/feasibility-dsf-process>|
+|FLARE|<https://github.com/medizininformatik-initiative/flare>|
+|TORCH|<https://github.com/medizininformatik-initiative/torch>|
+|Blaze FHIR server|<https://github.com/samply/blaze>|
+|Fhir Data Evaluator|<https://github.com/medizininformatik-initiative/fhir-data-evaluator>|
 
 
 ## [5.4.0] - 2025-07-24
@@ -32,17 +24,68 @@ Please refer to the respective repositories for a more in depth changelog of sin
 
 ### Ontology
 
-This release is based on ontology version [v3.8.1](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.8.1)
+Changed FROM [v3.7.0](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.7.0) to [v3.8.0](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.8.0)
 
-### Updates to
 
-- UI to [v6.3.3](https://github.com/medizininformatik-initiative/feasibility-gui/releases/tag/v6.3.3)
-- backend to [v7.3.0](https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v7.3.0)
-- Blaze FHIR server to [v1.0.4](https://github.com/samply/blaze/releases/tag/v1.0.4)
-- Change keycloak to quay.io for portal and blaze [26.3.1](quay.io/keycloak/keycloak:26.3.1)
-- TORCH [1.0.0-alpha.6](https://github.com/medizininformatik-initiative/torch/releases/tag/v1.0.0-alpha.6)
-- FLARE [2.6.0](https://github.com/medizininformatik-initiative/flare/releases/tag/v2.6.0)
-- FDE [1.3.1](https://github.com/medizininformatik-initiative/fhir-data-evaluator/releases/tag/v1.3.1)
+### Updates since last Major
+
+|Component|From|To|
+|--|--|--|
+|UI|[v6.2.0](https://github.com/medizininformatik-initiative/feasibility-gui/releases/tag/v6.2.0)|[v6.3.3](https://github.com/medizininformatik-initiative/feasibility-gui/releases/tag/v6.3.3)|
+|Backend|[v7.1.1](https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v7.1.1)|[v7.3.0](https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v7.3.0)|
+|Blaze|[v1.0.0](https://github.com/samply/blaze/releases/tag/v1.0.0)|[v1.0.4](https://github.com/samply/blaze/releases/tag/v1.0.4)|
+|Keycloak|keycloak/keycloak:26.2|quay.io/keycloak/keycloak:26.3.1|
+|TORCH|[1.0.0-test2](https://github.com/medizininformatik-initiative/torch/releases/tag/v1.0.0-test2)|[1.0.0-alpha.6](https://github.com/medizininformatik-initiative/torch/releases/tag/v1.0.0-alpha.6)|
+|FLARE|[2.5.0](https://github.com/medizininformatik-initiative/flare/releases/tag/v2.5.0)|[2.6.0](https://github.com/medizininformatik-initiative/flare/releases/tag/v2.6.0)|
+|FDE|[1.2.0](https://github.com/medizininformatik-initiative/fhir-data-evaluator/releases/tag/v1.2.0)|[1.3.1](https://github.com/medizininformatik-initiative/fhir-data-evaluator/releases/tag/v1.3.1)|
+
+
+### Major Changes since last Major
+
+#### UI
+
+* Preloaded criteria filter, criteria search results and data selection profiles before page load using Angular route resolver [#415](https://github.com/medizininformatik-initiative/feasibility-gui/issues/415)
+* **About Page** with system version information (UI, Backend, Ontology) [#403](https://github.com/medizininformatik-initiative/feasibility-gui/issues/403)
+* Updated **language files** in `src/assets/i18n` [#393](https://github.com/medizininformatik-initiative/feasibility-gui/issues/393), [#399](https://github.com/medizininformatik-initiative/feasibility-gui/issues/399), [#400](https://github.com/medizininformatik-initiative/feasibility-gui/issues/400)
+* Change download behaviour of Cohort selection ([#395](https://github.com/medizininformatik-initiative/feasibility-gui/issues/395))
+* Query without data selection is not saveable anymore ([#396](https://github.com/medizininformatik-initiative/feasibility-gui/issues/396))
+* Fix for mandatory patient feature is added to DSE on query load ([#394](https://github.com/medizininformatik-initiative/feasibility-gui/issues/394))
+* Checkbox for "Only if referenced" is only be visible if feature is referenced ([#397](https://github.com/medizininformatik-initiative/feasibility-gui/issues/397))
+
+#### Backend
+
+* #523  - Admin user should be able to read all queries by @michael-82 in https://github.com/medizininformatik-initiative/feasibility-backend/pull/524
+* #516 - provide export of CQL "translation" by @michael-82 in https://github.com/medizininformatik-initiative/feasibility-backend/pull/528
+* #537 - Move openai documentation to default api path by @michael-82 in https://github.com/medizininformatik-initiative/feasibility-backend/pull/538
+* Implement FHIR Async Request Pattern for Direct Broker using CQL by @EmteZogaf in https://github.com/medizininformatik-initiative/feasibility-backend/pull/539
+* #544 - Move cql config parameters in application yml by @michael-82 in https://github.com/medizininformatik-initiative/feasibility-backend/pull/545
+* #540 - Resultsize missing in dataquery list via by-user endpoint by @michael-82 in https://github.com/medizininformatik-initiative/feasibility-backend/pull/541
+
+#### Keycloak
+
+* Changed from Keycloak image to quay.io image to ensure use of the official, up-to-date container maintained by the Keycloak team.
+
+#### Blaze
+
+* Fix Consent Resource policyRule Property ([#2700](https://github.com/samply/blaze/issues/2700))
+* Support Resolving Relative References in Transaction Bundles ([#2734](https://github.com/samply/blaze/issues/2734))
+* Search for text/cql Content in Library ([#2718](https://github.com/samply/blaze/issues/2718))
+* Fix Query Sort in CQL ([#1315](https://github.com/samply/blaze/issues/1315))
+
+#### TORCH
+
+* First alpha Version release, which is released as part of the deployment
+* For features see TORCH Wiki
+
+#### FLARE
+
+* Update Ontology to v3.8.0 ([#294](https://github.com/medizininformatik-initiative/flare/issues/294))
+
+#### FDE - Fhir-Data-Evaluator
+
+* Add backpressure handling
+* Add additional logging
+* Add Option to Obfuscate Stratifier Results
 
 ## [5.3.4] - 2025-06-20
 
