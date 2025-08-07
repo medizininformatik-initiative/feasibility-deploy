@@ -19,6 +19,24 @@ Please refer to the respective repositories for a more in depth changelog of sin
 |Fhir Data Evaluator|<https://github.com/medizininformatik-initiative/fhir-data-evaluator>|
 
 
+## [5.4.1] - 2025-08-07
+
+**minor fixes in v5.4.1**
+
+- TORCH:
+  - Transfer script to FHIR DUP Server
+  - Fix Bundle PUT URL Not Set To Relative URL
+  - Fix ProfileMustHaveChecker Does Not Strip Versions
+
+### Ontology
+
+This release is based on ontology version [v3.7.0](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.7.0)
+
+### Updates to
+
+- TORCH to [1.0.0-alpha.7](https://github.com/medizininformatik-initiative/torch/releases/tag/v1.0.0-alpha.7)
+
+
 ## [5.4.0] - 2025-07-24
 
 
