@@ -19,6 +19,24 @@ Please refer to the respective repositories for a more in depth changelog of sin
 |Fhir Data Evaluator|<https://github.com/medizininformatik-initiative/fhir-data-evaluator>|
 
 
+## [5.4.2] - 2025-08-14
+
+### New Features
+
+- Ontology
+  - Added modules MII CDS Study, MII CDS Pathology, and MII CDS Imaging to DSE profile selection
+  - Updated translations
+
+### Ontology
+
+This release is based on ontology version [v3.8.3](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.8.3)
+
+### Updates to
+
+- Backend to [7.4.0](https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v7.4.0)
+- Ontology to [3.8.3](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.8.3)
+
+
 ## [5.4.1] - 2025-08-07
 
 **minor fixes in v5.4.1**
