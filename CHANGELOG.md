@@ -19,6 +19,25 @@ Please refer to the respective repositories for a more in depth changelog of sin
 |Fhir Data Evaluator|<https://github.com/medizininformatik-initiative/fhir-data-evaluator>|
 
 
+## [5.4.3] - 2025-08-18
+
+### New Features
+
+- GUI
+  - Infinite scrolling – implemented for CodeableConcept search, Criteria search, and Reference search
+  - Support loading of query by id via url params
+  - Add Link to Proposal Portal
+  - Display tree icon next to each search resul
+
+### Ontology
+
+This release is based on ontology version [v3.8.3](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.8.3)
+
+### Updates to
+
+- GUI to [6.3.4](https://github.com/medizininformatik-initiative/feasibility-gui/releases/tag/v6.3.4)
+
+
 ## [5.4.2] - 2025-08-14
 
 ### New Features
