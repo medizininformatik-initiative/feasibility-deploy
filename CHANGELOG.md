@@ -42,6 +42,7 @@ This release is based on ontology version [v3.8.3](https://github.com/medizininf
 - GUI to [6.3.5](https://github.com/medizininformatik-initiative/feasibility-gui/releases/tag/v6.3.5)
 - TORCH to [1.0.0-alpha.8](https://github.com/medizininformatik-initiative/torch/releases/tag/v1.0.0-alpha.8)
 
+
 ## [5.4.3] - 2025-08-18
 
 ### New Features
