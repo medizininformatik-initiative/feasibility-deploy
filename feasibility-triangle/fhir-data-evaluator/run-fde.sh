@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-ONTOLOGY_VERSION="3.8.1"
+ONTOLOGY_VERSION="3.9.0"
 
 BASE_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit 1 ; pwd -P )"
 

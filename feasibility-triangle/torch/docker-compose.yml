@@ -9,7 +9,7 @@ services:
         - "${TORCH_DATA_VOLUME:-triangle-torch-data-store}:/app/output"
   torch:
     restart: unless-stopped
-    image: ghcr.io/medizininformatik-initiative/torch:1.0.0-alpha.8
+    image: ghcr.io/medizininformatik-initiative/torch:1.0.0-alpha.10
     ports:
       - ${TORCH_PORT:-127.0.0.1:8086}:8080
     environment:
@@ -20,11 +20,11 @@ services:
       TORCH_OUTPUT_FILE_SERVER_URL: ${TORCH_OUTPUT_FILE_SERVER_URL:-http://localhost:80}
       TORCH_FLARE_URL: ${TORCH_FLARE_URL:-http://torch-flare:8080}
       TORCH_FHIR_URL: ${TORCH_FHIR_URL:-http://fhir-server:8080/fhir}
-      TORCH_FHIR_USER: ${TORCH_FHIR_USER:-""}
-      TORCH_FHIR_PASSWORD: ${TORCH_FHIR_PASSWORD:-""}
-      TORCH_FHIR_OAUTH_ISSUER_URI: ${TORCH_FHIR_OAUTH_ISSUER_URI:-""}
-      TORCH_FHIR_OAUTH_CLIENT_ID: ${TORCH_FHIR_OAUTH_CLIENT_ID:-""}
-      TORCH_FHIR_OAUTH_CLIENT_SECRET: ${TORCH_FHIR_OAUTH_CLIENT_SECRET:-""}
+      TORCH_FHIR_USER: ${TORCH_FHIR_USER}
+      TORCH_FHIR_PASSWORD: ${TORCH_FHIR_PASSWORD}
+      TORCH_FHIR_OAUTH_ISSUER_URI: ${TORCH_FHIR_OAUTH_ISSUER_URI}
+      TORCH_FHIR_OAUTH_CLIENT_ID: ${TORCH_FHIR_OAUTH_CLIENT_ID}
+      TORCH_FHIR_OAUTH_CLIENT_SECRET: ${TORCH_FHIR_OAUTH_CLIENT_SECRET}
       # Execution variables
       JAVA_TOOL_OPTIONS: ${TORCH_JVM_ARGS:--Xmx8g}
       TORCH_USE_CQL: ${TORCH_USE_CQL:-true}
