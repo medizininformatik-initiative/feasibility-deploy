@@ -31,7 +31,7 @@ services:
     - "${FHIR_SERVER_OPENID_CLIENT_TRUST_STORE:-../auth/trust-store.p12}:/app/trust-store.p12"
 
   fhir-server-frontend:
-    image: samply/blaze-frontend:1.0.4
+    image: samply/blaze-frontend:1.1.2
     healthcheck:
       test: ["CMD-SHELL", "wget --spider http://127.0.0.1:3000/fhir/"]
       interval: 5s
