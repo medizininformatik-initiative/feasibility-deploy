@@ -18,6 +18,40 @@ Please refer to the respective repositories for a more in depth changelog of sin
 |Blaze FHIR server|<https://github.com/samply/blaze>|
 |Fhir Data Evaluator|<https://github.com/medizininformatik-initiative/fhir-data-evaluator>|
 
+## [5.4.5] - 2025-09-24
+
+**minor fixes in v5.4.5**
+
+- TORCH
+  - Update to new structureDefinitions
+
+- GUI
+  - Fix allow deleting of dse feature filter
+  - Prevent field tree from collapsing
+  - Ensure Patient profile always part of DSE
+
+- ONTOLOGY
+ - Fix profile resolution
+ - Fix Orphanet and Ops translations
+ - Fix availability measure
+
+- BACKEND
+ - Search in original display
+ - Display all filter options
+
+ ### Updates to
+
+- GUI to [6.3.6](https://github.com/medizininformatik-initiative/feasibility-gui/releases/tag/v6.3.6)
+- BACKEND to [7.5.0](https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v7.5.0)
+- ONTOLOGY to [3.9.0](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.9.0)
+- TORCH to [1.0.0-alpha.10](https://github.com/medizininformatik-initiative/torch/releases/tag/v1.0.0-alpha.10)
+- Blaze to [1.1.2](https://github.com/samply/blaze/releases/tag/v1.1.2)
+
+### New Features
+
+- GUI, ONTOLOGY, BACKEND
+  - Updated UI profile to support multiple value sets and criteria sets for feasibility
+
 
 ## [5.4.4] - 2025-08-25
 
