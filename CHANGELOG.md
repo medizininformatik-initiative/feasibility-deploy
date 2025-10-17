@@ -40,10 +40,10 @@ Please refer to the respective repositories for a more in depth changelog of sin
 
  ### Updates to
 
-- GUI to [6.3.7](https://github.com/medizininformatik-initiative/feasibility-gui/releases/tag/v6.3.6)
-- BACKEND to [7.5.1](https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v7.5.0)
-- ONTOLOGY to [3.9.1](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.9.0)
-- TORCH to [1.0.0-alpha.11](https://github.com/medizininformatik-initiative/torch/releases/tag/v1.0.0-alpha.10)
+- GUI to [6.3.7](https://github.com/medizininformatik-initiative/feasibility-gui/releases/tag/v6.3.7)
+- BACKEND to [7.5.1](https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v7.5.1)
+- ONTOLOGY to [3.9.1](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.9.1)
+- TORCH to [1.0.0-alpha.11](https://github.com/medizininformatik-initiative/torch/releases/tag/v1.0.0-alpha.11)
 
 ## [5.4.5] - 2025-09-24
 
