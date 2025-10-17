@@ -18,6 +18,33 @@ Please refer to the respective repositories for a more in depth changelog of sin
 |Blaze FHIR server|<https://github.com/samply/blaze>|
 |Fhir Data Evaluator|<https://github.com/medizininformatik-initiative/fhir-data-evaluator>|
 
+## [5.4.6] - 2025-10-17
+
+**minor fixes in v5.4.6**
+
+- GUI
+  - Fixed missing token and date filters when loading a CRTDL.
+  - Fixed an issue where unmatched fields in a loaded CRTDL were not properly removed
+  - Corrected sorting behavior of criteria.
+
+- ONTOLOGY
+  - Allow multiple value set references in UI profile attributes 
+  - Ensure backbone references are selectable
+  - Adapt generator to new MII CDS ICU module version
+  - Restrict allowed units of age criterion class
+
+- TORCH
+  - Do not write empty ndjson
+  - Increase WebFlux Buffer Size
+  - Fix Literal Quotes in Env Vars
+
+ ### Updates to
+
+- GUI to [6.3.7](https://github.com/medizininformatik-initiative/feasibility-gui/releases/tag/v6.3.6)
+- BACKEND to [7.5.1](https://github.com/medizininformatik-initiative/feasibility-backend/releases/tag/v7.5.0)
+- ONTOLOGY to [3.9.1](https://github.com/medizininformatik-initiative/fhir-ontology-generator/releases/tag/v3.9.0)
+- TORCH to [1.0.0-alpha.11](https://github.com/medizininformatik-initiative/torch/releases/tag/v1.0.0-alpha.10)
+
 ## [5.4.5] - 2025-09-24
 
 **minor fixes in v5.4.5**
